@@ -17,7 +17,7 @@
 }
 
 .footer__logo {
-  margin-bottom: var(--spacing-md);
+  flex-shrink: 0;
 }
 
 .footer__contacts {

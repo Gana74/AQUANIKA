@@ -54,12 +54,9 @@
 }
 
 .logo {
-  font-family: var(--font-primary);
-  font-size: var(--font-size-2xl);
-  font-weight: 700;
-  color: var(--color-primary);
-  text-decoration: none;
-  transition: color var(--transition-normal);
+  display: inline-block;
+  padding: 5.5em 5.5em;
+  background: url("/assets/images/services/logo.png") center/cover no-repeat;
 }
 
 .logo:hover,
@@ -309,7 +306,7 @@
   z-index: 1;
   display: inline-block;
   padding: 0.5em 1.5em;
-  background: url("/assets/images/services/gold-brush2.png") center/cover
+  background: url("/assets/images/services/gold-brush.png") center/cover
     no-repeat;
   color: var(--color-gray-dark);
   font-weight: 700;

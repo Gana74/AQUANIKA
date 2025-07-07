@@ -65,7 +65,7 @@
         <div class="container">
           <div class="header__middle-content">
             <div class="header__logo">
-              <a href="/" class="logo">Aqvanika</a>
+              <a href="/" class="logo"></a>
             </div>
             <div class="header__info">
               <div class="header__address">
@@ -121,7 +121,7 @@
           <nav class="services-nav">
             <ul class="services-nav__list">
               <li class="services-nav__item">
-                <a href="/services/spa" class="services-nav__link"
+                <a href="spa-massage.html" class="services-nav__link"
                   >SPA и массаж</a
                 >
                 <div class="services-submenu services-submenu--wide">
@@ -253,13 +253,13 @@
                 <!-- Список категорий -->
                 <ul class="mobile-nav__categories">
                   <li>
-                    <button
+                    <a
+                      href="spa-massage.html"
                       class="mobile-nav__subcategory-btn"
-                      data-category="spa"
                     >
                       <span>SPA и массаж</span>
                       <i class="fas fa-chevron-right"></i>
-                    </button>
+                    </a>
                   </li>
                   <li>
                     <button
@@ -626,20 +626,34 @@
       </section>
 
       <section class="about">
+        <h2 class="section-title">О нас</h2>
         <div class="container">
-          <h2 class="section-title">О салоне</h2>
           <div class="about__content">
             <div class="about__text">
-              <p>Уникальная технология подводно-вакуумного массажа</p>
-              <!-- Дополнительный контент -->
+              <h3 class="about__philosophy-title">Наша философия</h3>
+              <p class="about__philosophy-text">
+                «Мы не стремимся стать крупнейшими — мы хотим стать лучшими для
+                тех, кто ценит персональный подход и безупречный результат»
+              </p>
+              <div class="about__buttons">
+                <button class="btn btn--secondary">Задать вопрос</button>
+                <button class="btn btn--outline">Подробнее</button>
+              </div>
+            </div>
+            <div class="about__image">
+              <!-- Здесь будет изображение -->
+              <img
+                src="/assets/images/about/philosophy.jpg"
+                alt="Философия салона красоты"
+              />
             </div>
           </div>
         </div>
       </section>
 
       <section class="team">
+        <h2 class="section-title">Наши специалисты</h2>
         <div class="container">
-          <h2 class="section-title">Наши специалисты</h2>
           <div class="team__grid">
             <!-- Здесь будут карточки специалистов -->
           </div>
@@ -649,15 +663,25 @@
 
     <aside class="sidebar">
       <div class="sidebar__buttons">
-        <button class="sidebar__button" data-action="callback">
-          Заказать звонок
-        </button>
-        <button class="sidebar__button" data-action="question">
-          Задать вопрос
-        </button>
-        <button class="sidebar__button" data-action="review">
-          Оставить отзыв
-        </button>
+        <!-- Кнопки теперь только с иконками, текст убран по требованию -->
+        <button
+          class="sidebar__button"
+          data-action="callback"
+          aria-label="Заказать звонок"
+          title="Заказать звонок"
+        ></button>
+        <button
+          class="sidebar__button"
+          data-action="question"
+          aria-label="Задать вопрос"
+          title="Задать вопрос"
+        ></button>
+        <button
+          class="sidebar__button"
+          data-action="review"
+          aria-label="Оставить отзыв"
+          title="Оставить отзыв"
+        ></button>
       </div>
     </aside>
 
@@ -665,7 +689,7 @@
       <div class="container footer__container">
         <div class="footer__info">
           <div class="footer__logo">
-            <a href="/" class="logo">Aqvanika</a>
+            <a href="/" class="logo"></a>
           </div>
           <div class="footer__contacts">
             <p>Адрес: [Адрес салона]</p>
@@ -698,7 +722,10 @@
         target="_blank"
         class="btn btn--booking"
       >
-        <span class="btn--booking__text">Онлайн запись</span>
+        <span class="btn--booking__text"
+          >Онлайн <br />
+          запись</span
+        >
       </a>
       <button class="btn btn--to-top" id="toTopButton" aria-label="Наверх">
         <svg
@@ -715,27 +742,6 @@
 
     <!-- Подключение JavaScript -->
     <script type="module" src="./js/main.js"></script>
-    <!-- Добавляем JavaScript для кнопки "Наверх" -->
-    <script>
-      // Кнопка "Наверх"
-      const toTopButton = document.getElementById("toTopButton");
-
-      // Показываем/скрываем кнопку при прокрутке
-      window.addEventListener("scroll", () => {
-        if (window.pageYOffset > 300) {
-          toTopButton.classList.add("show");
-        } else {
-          toTopButton.classList.remove("show");
-        }
-      });
-
-      // Плавная прокрутка наверх при клике
-      toTopButton.addEventListener("click", () => {
-        window.scrollTo({
-          top: 0,
-          behavior: "smooth",
-        });
-      });
-    </script>
+    <!-- Логика кнопки "Наверх" теперь вынесена в отдельный модуль JS (src/js/components/toTopButton.js) -->
   </body>
 </html>
