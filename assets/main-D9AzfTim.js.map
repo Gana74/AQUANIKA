@@ -1,0 +1,1 @@
+{"version":3,"file":"main-D9AzfTim.js","sources":["../../src/js/main.js"],"sourcesContent":["// Импорт стилей\nimport \"../styles/main.css\";\n\n// Инициализация при загрузке страницы\ndocument.addEventListener(\"DOMContentLoaded\", () => {\n  console.log(\"Сайт загружен\");\n});\n"],"names":[],"mappings":"ssBAIA,SAAS,iBAAiB,mBAAoB,IAAM,CAClD,QAAQ,IAAI,eAAe,CAC7B,CAAC"}

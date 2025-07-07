@@ -1,0 +1,742 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Салон красоты Aqvanika - профессиональный уход за красотой. Уникальная технология подводно-вакуумного массажа. Запишитесь онлайн!"
+    />
+    <meta
+      name="keywords"
+      content="салон красоты, подводно-вакуумный массаж, косметология, маникюр, педикюр, стрижки"
+    />
+    <title>Aqvanika - Салон красоты</title>
+    <!-- Стили подключатся автоматически через main.js -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+    <script type="module" crossorigin src="/AQUANIKA/assets/main-D9AzfTim.js"></script>
+    <link rel="stylesheet" crossorigin href="/AQUANIKA/assets/main-BmZMuJQp.css">
+  </head>
+  <body>
+    <header class="header">
+      <!-- Кнопка мобильного меню -->
+      <!-- <button
+        class="header__menu-button"
+        aria-label="Открыть меню"
+        aria-expanded="false"
+      >
+        <i class="fas fa-bars"></i>
+      </button> -->
+
+      <!-- Верхняя строка с основным меню -->
+      <div class="header__top">
+        <div class="container">
+          <nav class="header__nav">
+            <ul class="nav__list">
+              <li class="nav__item">
+                <a href="/about" class="nav__link">О нас</a>
+              </li>
+              <li class="nav__item">
+                <a href="/team" class="nav__link">Наша команда</a>
+              </li>
+              <li class="nav__item">
+                <a href="/prices" class="nav__link">Цены</a>
+              </li>
+              <li class="nav__item">
+                <a href="/gallery" class="nav__link">Галерея</a>
+              </li>
+              <li class="nav__item">
+                <a href="/promotions" class="nav__link">Акции</a>
+              </li>
+              <li class="nav__item">
+                <a href="/vacancies" class="nav__link">Вакансии</a>
+              </li>
+              <li class="nav__item">
+                <a href="/contacts" class="nav__link">Контакты</a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+
+      <!-- Средняя строка с логотипом и контактами -->
+      <div class="header__middle">
+        <div class="container">
+          <div class="header__middle-content">
+            <div class="header__logo">
+              <a href="/" class="logo">Aqvanika</a>
+            </div>
+            <div class="header__info">
+              <div class="header__address">
+                <i class="fas fa-location-dot"></i>
+                <p class="address">
+                  <span class="address__label"></span>
+                  <a
+                    href="https://yandex.ru/maps/-/CHsIBZZ2"
+                    class="address__link"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    г. Челябинск, улица Братьев Кашириных, 131
+                  </a>
+                </p>
+              </div>
+              <div class="header__hours">
+                <i class="far fa-clock"></i>
+                <span>Ежедневно: 10:00 - 22:00</span>
+              </div>
+            </div>
+            <div class="header__search">
+              <form class="search-form">
+                <input
+                  type="search"
+                  placeholder="Поиск услуг..."
+                  class="search-input"
+                />
+                <button type="submit" class="search-button">
+                  <i class="fas fa-search"></i>
+                </button>
+              </form>
+            </div>
+            <div class="header__social">
+              <a href="#" class="social-link"><i class="fab fa-vk"></i></a>
+              <a href="#" class="social-link"
+                ><i class="fab fa-telegram"></i
+              ></a>
+              <a href="#" class="social-link"
+                ><i class="fab fa-whatsapp"></i
+              ></a>
+              <a href="#" class="social-link"
+                ><i class="fab fa-instagram"></i
+              ></a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Нижняя строка с меню услуг -->
+      <div class="header__bottom">
+        <div class="container">
+          <nav class="services-nav">
+            <ul class="services-nav__list">
+              <li class="services-nav__item">
+                <a href="/services/spa" class="services-nav__link"
+                  >SPA и массаж</a
+                >
+                <div class="services-submenu services-submenu--wide">
+                  <div class="submenu__grid">
+                    <div class="submenu__column">
+                      <ul class="submenu__list">
+                        <li>
+                          <a href="#">Подводно-вакуумный массаж "Акваника"</a>
+                        </li>
+                      </ul>
+                    </div>
+                    <div class="submenu__column">
+                      <ul class="submenu__list">
+                        <li><a href="#">Массаж</a></li>
+                      </ul>
+                    </div>
+                    <div class="submenu__column">
+                      <ul class="submenu__list">
+                        <li><a href="#">Обертывание</a></li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </li>
+              <li class="services-nav__item">
+                <a href="/services/laser" class="services-nav__link"
+                  >Лазерная эпиляция</a
+                >
+                <div class="services-submenu">
+                  <ul class="submenu__list">
+                    <li><a href="#">Бикини</a></li>
+                    <li><a href="#">Ноги</a></li>
+                    <li><a href="#">Руки</a></li>
+                  </ul>
+                </div>
+              </li>
+              <li class="services-nav__item">
+                <a href="/services/brows" class="services-nav__link"
+                  >Брови и ресницы</a
+                >
+                <div class="services-submenu">
+                  <ul class="submenu__list">
+                    <li><a href="#">Архитектура бровей</a></li>
+                    <li><a href="#">Окрашивание бровей</a></li>
+                    <li><a href="#">Наращивание ресниц</a></li>
+                  </ul>
+                </div>
+              </li>
+              <li class="services-nav__item">
+                <a href="/services/nails" class="services-nav__link"
+                  >Маникюр/Педикюр</a
+                >
+                <div class="services-submenu">
+                  <ul class="submenu__list">
+                    <li><a href="#">Маникюр</a></li>
+                    <li><a href="#">Педикюр</a></li>
+                    <li><a href="#">Наращивание</a></li>
+                  </ul>
+                </div>
+              </li>
+              <li class="services-nav__item">
+                <a href="/services/cosmetology" class="services-nav__link"
+                  >Косметология</a
+                >
+                <div class="services-submenu">
+                  <ul class="submenu__list">
+                    <li><a href="#">Уход за лицом</a></li>
+                    <li><a href="#">Инъекции</a></li>
+                    <li><a href="#">Выведение татуажа</a></li>
+                  </ul>
+                </div>
+              </li>
+              <li class="services-nav__item">
+                <a href="/services/hairdressing" class="services-nav__link"
+                  >Парикмахерские услуги</a
+                >
+                <div class="services-submenu">
+                  <ul class="submenu__list">
+                    <li><a href="#">Стрижки</a></li>
+                    <li><a href="#">Окрашивание</a></li>
+                    <li><a href="#">Укладки</a></li>
+                  </ul>
+                </div>
+              </li>
+              <li class="services-nav__item">
+                <a href="/services/makeup" class="services-nav__link">Макияж</a>
+                <div class="services-submenu">
+                  <ul class="submenu__list">
+                    <li><a href="#">Дневной</a></li>
+                    <li><a href="#">Вечерний</a></li>
+                    <li><a href="#">Свадебный</a></li>
+                  </ul>
+                </div>
+              </li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+    </header>
+
+    <!-- Мобильное меню -->
+    <nav class="mobile-nav">
+      <!-- Боковое меню -->
+      <div class="mobile-nav__sidebar">
+        <!-- Контейнер для слайдов -->
+        <div class="mobile-nav__slides">
+          <!-- Основной слайд -->
+          <div class="mobile-nav__slide-main">
+            <div class="mobile-nav__header">
+              <div class="mobile-nav__city">
+                <i class="fas fa-location-dot"></i>
+                <span>Челябинск</span>
+              </div>
+              <button class="mobile-nav__close">
+                <i class="fas fa-times"></i>
+              </button>
+            </div>
+
+            <div class="mobile-nav__sidebar-content">
+              <!-- Основное меню услуг -->
+              <div class="mobile-nav__services">
+                <button
+                  class="mobile-nav__category-btn"
+                  data-action="show-categories"
+                >
+                  <span>ВСЕ УСЛУГИ</span>
+                  <i class="fas fa-chevron-down"></i>
+                </button>
+                <!-- Список категорий -->
+                <ul class="mobile-nav__categories">
+                  <li>
+                    <button
+                      class="mobile-nav__subcategory-btn"
+                      data-category="spa"
+                    >
+                      <span>SPA и массаж</span>
+                      <i class="fas fa-chevron-right"></i>
+                    </button>
+                  </li>
+                  <li>
+                    <button
+                      class="mobile-nav__subcategory-btn"
+                      data-category="laser"
+                    >
+                      <span>Лазерная эпиляция</span>
+                      <i class="fas fa-chevron-right"></i>
+                    </button>
+                  </li>
+                  <li>
+                    <button
+                      class="mobile-nav__subcategory-btn"
+                      data-category="brows"
+                    >
+                      <span>Брови и ресницы</span>
+                      <i class="fas fa-chevron-right"></i>
+                    </button>
+                  </li>
+                  <li>
+                    <button
+                      class="mobile-nav__subcategory-btn"
+                      data-category="nails"
+                    >
+                      <span>Маникюр/Педикюр</span>
+                      <i class="fas fa-chevron-right"></i>
+                    </button>
+                  </li>
+                  <li>
+                    <button
+                      class="mobile-nav__subcategory-btn"
+                      data-category="cosmetology"
+                    >
+                      <span>Косметология</span>
+                      <i class="fas fa-chevron-right"></i>
+                    </button>
+                  </li>
+                  <li>
+                    <button
+                      class="mobile-nav__subcategory-btn"
+                      data-category="hairdressing"
+                    >
+                      <span>Парикмахерские услуги</span>
+                      <i class="fas fa-chevron-right"></i>
+                    </button>
+                  </li>
+                  <li>
+                    <button
+                      class="mobile-nav__subcategory-btn"
+                      data-category="makeup"
+                    >
+                      <span>Макияж</span>
+                      <i class="fas fa-chevron-right"></i>
+                    </button>
+                  </li>
+                </ul>
+              </div>
+
+              <!-- Основное меню -->
+              <ul class="mobile-nav__main-menu">
+                <li><a href="/about">О нас</a></li>
+                <li><a href="/team">Наша команда</a></li>
+                <li><a href="/prices">Цены</a></li>
+                <li><a href="/gallery">Галерея</a></li>
+                <li><a href="/promotions">Акции</a></li>
+                <li><a href="/vacancies">Вакансии</a></li>
+                <li><a href="/contacts">Контакты</a></li>
+              </ul>
+
+              <!-- Информация -->
+              <div class="mobile-nav__info">
+                <div class="mobile-nav__address">
+                  <i class="fas fa-location-dot"></i>
+                  <a href="https://yandex.ru/maps/-/CHsIBZZ2" target="_blank">
+                    ул. Пушкина 56
+                  </a>
+                </div>
+                <div class="mobile-nav__hours">
+                  <i class="far fa-clock"></i>
+                  <span>с 9:00 до 21:00</span>
+                </div>
+                <div class="mobile-nav__email">
+                  <i class="far fa-envelope"></i>
+                  <a href="mailto:saxarclbsk@gmail.com">saxarclbsk@gmail.com</a>
+                </div>
+              </div>
+
+              <!-- Кнопка действия -->
+              <button class="mobile-nav__action-btn">ЗАДАТЬ ВОПРОС</button>
+
+              <!-- Социальные сети -->
+              <div class="mobile-nav__social">
+                <a href="#" class="social-link"><i class="fab fa-vk"></i></a>
+                <a href="#" class="social-link"
+                  ><i class="fab fa-telegram"></i
+                ></a>
+                <a href="#" class="social-link"
+                  ><i class="fab fa-whatsapp"></i
+                ></a>
+                <a href="#" class="social-link"
+                  ><i class="fab fa-instagram"></i
+                ></a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Слайд подменю -->
+          <div class="mobile-nav__slide-submenu">
+            <div class="mobile-nav__header">
+              <div class="mobile-nav__city">
+                <i class="fas fa-location-dot"></i>
+                <span>Челябинск</span>
+              </div>
+              <button class="mobile-nav__back">
+                <i class="fas fa-chevron-left"></i>
+              </button>
+            </div>
+
+            <div class="mobile-nav__sidebar-content">
+              <h2 class="mobile-nav__submenu-title">Подкатегории</h2>
+
+              <!-- Подкатегории для SPA и массаж -->
+              <ul class="mobile-nav__subsubmenu" data-category="spa">
+                <li><a href="#">ПВМ "Акваника"</a></li>
+                <li><a href="#">Массаж</a></li>
+                <li><a href="#">Обертывание</a></li>
+              </ul>
+
+              <!-- Подкатегории для Лазерная эпиляция -->
+              <ul class="mobile-nav__subsubmenu" data-category="laser">
+                <li><a href="#">Бикини</a></li>
+                <li><a href="#">Ноги</a></li>
+                <li><a href="#">Руки</a></li>
+              </ul>
+
+              <!-- Подкатегории для Брови и ресницы -->
+              <ul class="mobile-nav__subsubmenu" data-category="brows">
+                <li><a href="#">Архитектура бровей</a></li>
+                <li><a href="#">Окрашивание бровей</a></li>
+                <li><a href="#">Наращивание ресниц</a></li>
+              </ul>
+
+              <!-- Подкатегории для Маникюр/Педикюр -->
+              <ul class="mobile-nav__subsubmenu" data-category="nails">
+                <li><a href="#">Маникюр</a></li>
+                <li><a href="#">Педикюр</a></li>
+                <li><a href="#">Наращивание</a></li>
+              </ul>
+
+              <!-- Подкатегории для Косметология -->
+              <ul class="mobile-nav__subsubmenu" data-category="cosmetology">
+                <li><a href="#">Уход за лицом</a></li>
+                <li><a href="#">Инъекции</a></li>
+                <li><a href="#">Выведение татуажа</a></li>
+              </ul>
+
+              <!-- Подкатегории для Парикмахерские услуги -->
+              <ul class="mobile-nav__subsubmenu" data-category="hairdressing">
+                <li><a href="#">Стрижки</a></li>
+                <li><a href="#">Окрашивание</a></li>
+                <li><a href="#">Укладки</a></li>
+              </ul>
+
+              <!-- Подкатегории для Макияж -->
+              <ul class="mobile-nav__subsubmenu" data-category="makeup">
+                <li><a href="#">Дневной</a></li>
+                <li><a href="#">Вечерний</a></li>
+                <li><a href="#">Свадебный</a></li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Слайд подподменю ПВМ "Акваника" -->
+          <!-- Слайд подподподменю ПВМ "Акваника" и все его элементы удалены из мобильного меню -->
+        </div>
+      </div>
+
+      <!-- Нижняя панель навигации -->
+      <div class="mobile-nav__bottom-bar">
+        <a href="/price" class="mobile-nav__link">
+          <i class="fas fa-list-ul"></i>
+          <span>Прайс-лист</span>
+        </a>
+        <a href="/contacts" class="mobile-nav__link">
+          <i class="fas fa-address-book"></i>
+          <span>Контакты</span>
+        </a>
+        <a href="/" class="mobile-nav__link mobile-nav__link--home">
+          <i class="fas fa-home"></i>
+          <span>Главная</span>
+        </a>
+        <a href="/promotions" class="mobile-nav__link">
+          <i class="fas fa-percent"></i>
+          <span>Акции</span>
+        </a>
+        <button class="mobile-nav__menu-btn">
+          <i class="fas fa-bars"></i>
+          <span>Меню</span>
+        </button>
+      </div>
+    </nav>
+
+    <main>
+      <section class="promo">
+        <div class="container promo__container">
+          <div class="promo-carousel">
+            <div class="promo-carousel__container">
+              <div class="promo-carousel__slide">
+                <!-- Здесь будет контент слайда -->
+              </div>
+            </div>
+            <div class="promo-carousel__controls">
+              <!-- Здесь будут элементы управления -->
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="services">
+        <h2 class="section-title">Услуги</h2>
+
+        <div class="services-grid">
+          <!-- SPA и массаж -->
+          <div class="service-card">
+            <div class="service-card__image">
+              <img src="/assets/images/services/spa.jpg" alt="SPA и массаж" />
+            </div>
+            <div class="service-card__content">
+              <h3 class="service-card__title">SPA и массаж</h3>
+              <p class="service-card__description">
+                Расслабляющие SPA-процедуры и профессиональный массаж для вашего
+                комфорта и здоровья
+              </p>
+              <div class="service-card__buttons">
+                <button class="btn btn--secondary">Цены</button>
+                <button class="btn btn--outline">Подробнее</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Лазерная эпиляция -->
+          <div class="service-card">
+            <div class="service-card__image">
+              <img
+                src="/assets/images/services/laser.jpg"
+                alt="Лазерная эпиляция"
+              />
+            </div>
+            <div class="service-card__content">
+              <h3 class="service-card__title">Лазерная эпиляция</h3>
+              <p class="service-card__description">
+                Безопасное и эффективное удаление нежелательных волос с
+                использованием современного оборудования
+              </p>
+              <div class="service-card__buttons">
+                <button class="btn btn--secondary">Цены</button>
+                <button class="btn btn--outline">Подробнее</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Брови и ресницы -->
+          <div class="service-card">
+            <div class="service-card__image">
+              <img
+                src="/assets/images/services/brows.jpg"
+                alt="Брови и ресницы"
+              />
+            </div>
+            <div class="service-card__content">
+              <h3 class="service-card__title">Брови и ресницы</h3>
+              <p class="service-card__description">
+                Профессиональное оформление бровей и наращивание ресниц для
+                выразительного взгляда
+              </p>
+              <div class="service-card__buttons">
+                <button class="btn btn--secondary">Цены</button>
+                <button class="btn btn--outline">Подробнее</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Маникюр/Педикюр -->
+          <div class="service-card">
+            <div class="service-card__image">
+              <img
+                src="/assets/images/services/nails.jpg"
+                alt="Маникюр/Педикюр"
+              />
+            </div>
+            <div class="service-card__content">
+              <h3 class="service-card__title">Маникюр/Педикюр</h3>
+              <p class="service-card__description">
+                Качественный уход за ногтями рук и ног, современный дизайн и
+                стерильность инструментов
+              </p>
+              <div class="service-card__buttons">
+                <button class="btn btn--secondary">Цены</button>
+                <button class="btn btn--outline">Подробнее</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Косметология -->
+          <div class="service-card">
+            <div class="service-card__image">
+              <img
+                src="/assets/images/services/cosmetology.jpg"
+                alt="Косметология"
+              />
+            </div>
+            <div class="service-card__content">
+              <h3 class="service-card__title">Косметология</h3>
+              <p class="service-card__description">
+                Профессиональный уход за кожей лица и тела, омолаживающие
+                процедуры и лечение проблемной кожи
+              </p>
+              <div class="service-card__buttons">
+                <button class="btn btn--secondary">Цены</button>
+                <button class="btn btn--outline">Подробнее</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Парикмахерские услуги -->
+          <div class="service-card">
+            <div class="service-card__image">
+              <img
+                src="/assets/images/services/hair.jpg"
+                alt="Парикмахерские услуги"
+              />
+            </div>
+            <div class="service-card__content">
+              <h3 class="service-card__title">Парикмахерские услуги</h3>
+              <p class="service-card__description">
+                Стрижки, окрашивание и укладки любой сложности от опытных
+                мастеров
+              </p>
+              <div class="service-card__buttons">
+                <button class="btn btn--secondary">Цены</button>
+                <button class="btn btn--outline">Подробнее</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Макияж -->
+          <div class="service-card">
+            <div class="service-card__image">
+              <img src="/assets/images/services/makeup.jpg" alt="Макияж" />
+            </div>
+            <div class="service-card__content">
+              <h3 class="service-card__title">Макияж</h3>
+              <p class="service-card__description">
+                Профессиональный макияж для любого случая: дневной, вечерний,
+                свадебный
+              </p>
+              <div class="service-card__buttons">
+                <button class="btn btn--secondary">Цены</button>
+                <button class="btn btn--outline">Подробнее</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="about">
+        <div class="container">
+          <h2 class="section-title">О салоне</h2>
+          <div class="about__content">
+            <div class="about__text">
+              <p>Уникальная технология подводно-вакуумного массажа</p>
+              <!-- Дополнительный контент -->
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="team">
+        <div class="container">
+          <h2 class="section-title">Наши специалисты</h2>
+          <div class="team__grid">
+            <!-- Здесь будут карточки специалистов -->
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <aside class="sidebar">
+      <div class="sidebar__buttons">
+        <button class="sidebar__button" data-action="callback">
+          Заказать звонок
+        </button>
+        <button class="sidebar__button" data-action="question">
+          Задать вопрос
+        </button>
+        <button class="sidebar__button" data-action="review">
+          Оставить отзыв
+        </button>
+      </div>
+    </aside>
+
+    <footer class="footer">
+      <div class="container footer__container">
+        <div class="footer__info">
+          <div class="footer__logo">
+            <a href="/" class="logo">Aqvanika</a>
+          </div>
+          <div class="footer__contacts">
+            <p>Адрес: [Адрес салона]</p>
+            <p>Телефон: <a href="tel:+7XXXXXXXXXX">+7 (XXX) XXX-XX-XX</a></p>
+            <p>Email: <a href="mailto:info@aqvanika.ru">info@aqvanika.ru</a></p>
+          </div>
+        </div>
+        <div class="footer__nav">
+          <h3>Навигация</h3>
+          <ul class="footer__nav-list">
+            <li><a href="/about">О нас</a></li>
+            <li><a href="/services">Услуги</a></li>
+            <li><a href="/team">Наша команда</a></li>
+            <li><a href="/prices">Цены</a></li>
+            <li><a href="/gallery">Галерея</a></li>
+            <li><a href="/contacts">Контакты</a></li>
+          </ul>
+        </div>
+        <div class="footer__schedule">
+          <h3>Время работы</h3>
+          <p>Пн-Вс: 9:00 - 21:00</p>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Фиксированные кнопки -->
+    <div class="fixed-buttons">
+      <a
+        href="https://n265102.yclients.com/"
+        target="_blank"
+        class="btn btn--booking"
+      >
+        <span class="btn--booking__text">Онлайн запись</span>
+      </a>
+      <button class="btn btn--to-top" id="toTopButton" aria-label="Наверх">
+        <svg
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path d="M12 4L4 12H9V20H15V12H20L12 4Z" fill="currentColor" />
+        </svg>
+      </button>
+    </div>
+
+    <!-- Подключение JavaScript -->
+    <!-- Добавляем JavaScript для кнопки "Наверх" -->
+    <script>
+      // Кнопка "Наверх"
+      const toTopButton = document.getElementById("toTopButton");
+
+      // Показываем/скрываем кнопку при прокрутке
+      window.addEventListener("scroll", () => {
+        if (window.pageYOffset > 300) {
+          toTopButton.classList.add("show");
+        } else {
+          toTopButton.classList.remove("show");
+        }
+      });
+
+      // Плавная прокрутка наверх при клике
+      toTopButton.addEventListener("click", () => {
+        window.scrollTo({
+          top: 0,
+          behavior: "smooth",
+        });
+      });
+    </script>
+  </body>
+</html>
