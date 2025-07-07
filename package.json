@@ -4,6 +4,7 @@
   "description": "Сайт салона красоты Aqvanika",
   "private": true,
   "scripts": {
+    "deploy": "npm run build && git add . && git commit -m 'Build update' && git push",
     "init": "node scripts/init.js",
     "dev": "vite",
     "build": "vite build",
