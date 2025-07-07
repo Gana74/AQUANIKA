@@ -1,0 +1,29 @@
+/* Стили для главной страницы */
+.home {
+  /* Базовые стили */
+}
+
+/* Промо секция */
+.promo {
+  padding: var(--spacing-xl) 0;
+}
+
+.promo__container {
+  position: relative;
+}
+
+/* Карусель */
+.promo-carousel {
+  width: 100%;
+  overflow: hidden;
+}
+
+.promo-carousel__container {
+  display: flex;
+  transition: transform var(--transition-normal);
+}
+
+.promo-carousel__slide {
+  flex: 0 0 100%;
+  min-width: 100%;
+}

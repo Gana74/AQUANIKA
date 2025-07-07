@@ -1,0 +1,303 @@
+.card {
+  background-color: var(--color-background);
+  border-radius: var(--border-radius-lg);
+  box-shadow: var(--shadow-sm);
+  overflow: hidden;
+  transition:
+    transform var(--transition-normal),
+    box-shadow var(--transition-normal);
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 4px 24px 0 var(--color-secondary-light, #e8c874);
+}
+
+.card__image {
+  position: relative;
+  width: 100%;
+  padding-top: 66.67%; /* 3:2 aspect ratio */
+  overflow: hidden;
+}
+
+.card__image img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform var(--transition-normal);
+}
+
+.card:hover .card__image img {
+  transform: scale(1.05);
+  border-color: var(--color-secondary-light, #e8c874);
+}
+
+.card__content {
+  padding: var(--spacing-lg);
+}
+
+.card__title {
+  font-size: var(--font-size-xl);
+  font-weight: 600;
+  margin-bottom: var(--spacing-sm);
+  color: var(--color-text);
+}
+
+.card__description {
+  font-size: var(--font-size-base);
+  color: var(--color-text-light);
+  margin-bottom: var(--spacing-md);
+}
+
+.card__footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: var(--spacing-md);
+  border-top: 1px solid var(--color-border);
+}
+
+/* Service card */
+.service-card {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.service-card__content {
+  flex-grow: 1;
+}
+
+.service-card__price {
+  font-size: var(--font-size-lg);
+  font-weight: 600;
+  color: var(--color-primary);
+}
+
+/* Team card */
+.team-card__image {
+  padding-top: 100%; /* 1:1 aspect ratio */
+}
+
+.team-card__position {
+  font-size: var(--font-size-sm);
+  color: var(--color-text-light);
+  margin-bottom: var(--spacing-sm);
+}
+
+.team-card__specialization {
+  font-size: var(--font-size-sm);
+  color: var(--color-primary);
+  margin-bottom: var(--spacing-md);
+}
+
+/* Review card */
+.review-card__header {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-md);
+  margin-bottom: var(--spacing-md);
+}
+
+.review-card__avatar {
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.review-card__author {
+  font-weight: 500;
+}
+
+.review-card__date {
+  font-size: var(--font-size-sm);
+  color: var(--color-text-light);
+}
+
+.review-card__rating {
+  display: flex;
+  gap: var(--spacing-xs);
+  margin-bottom: var(--spacing-sm);
+}
+
+.review-card__star {
+  color: var(--color-accent);
+}
+
+/* Card grid */
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: var(--spacing-lg);
+}
+
+.card__button:hover,
+.card__button:focus {
+  background-color: var(--color-secondary-dark);
+  color: var(--color-white);
+}
+.card__button:active {
+  background-color: var(--color-secondary);
+  color: var(--color-white);
+}
+.card__link:hover,
+.card__link:focus {
+  color: var(--color-secondary-dark);
+}
+.card__link:active {
+  color: var(--color-secondary);
+}
+
+/* Сетка услуг */
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  padding: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Карточка услуги */
+.service-card {
+  background: var(--color-white);
+  border-radius: 1rem;
+  overflow: hidden;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.service-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Изображение услуги */
+.service-card__image {
+  position: relative;
+  width: 100%;
+  height: 200px;
+  overflow: hidden;
+}
+
+.service-card__image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.service-card:hover .service-card__image img {
+  transform: scale(1.05);
+}
+
+/* Контент карточки */
+.service-card__content {
+  padding: 1.5rem;
+}
+
+.service-card__title {
+  color: var(--color-gray-dark);
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.service-card__description {
+  color: var(--color-gray);
+  font-size: 1rem;
+  line-height: 1.5;
+  margin-bottom: 1.5rem;
+  min-height: 4.5rem; /* Для выравнивания высоты карточек */
+}
+
+/* Кнопки */
+.service-card__buttons {
+  display: flex;
+  gap: 1rem;
+  justify-content: flex-start;
+}
+
+/* Медиа-запросы */
+@media (max-width: 768px) {
+  .services-grid {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    padding: 1rem;
+  }
+
+  .service-card__image {
+    height: 180px;
+  }
+
+  .service-card__content {
+    padding: 1rem;
+  }
+
+  .service-card__title {
+    font-size: 1.25rem;
+  }
+
+  .service-card__description {
+    font-size: 0.9rem;
+  }
+}
+
+/* Анимация при появлении */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.service-card {
+  animation: fadeInUp 0.6s ease forwards;
+  opacity: 0;
+}
+
+/* Задержка анимации для каждой карточки */
+.service-card:nth-child(1) {
+  animation-delay: 0.1s;
+}
+.service-card:nth-child(2) {
+  animation-delay: 0.2s;
+}
+.service-card:nth-child(3) {
+  animation-delay: 0.3s;
+}
+.service-card:nth-child(4) {
+  animation-delay: 0.4s;
+}
+.service-card:nth-child(5) {
+  animation-delay: 0.5s;
+}
+.service-card:nth-child(6) {
+  animation-delay: 0.6s;
+}
+.service-card:nth-child(7) {
+  animation-delay: 0.7s;
+}
+
+@media (max-width: 640px) {
+  .card__content {
+    padding: var(--spacing-md);
+  }
+
+  .card__title {
+    font-size: var(--font-size-lg);
+  }
+
+  .card__description {
+    font-size: var(--font-size-sm);
+  }
+}

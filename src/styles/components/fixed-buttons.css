@@ -1,0 +1,98 @@
+/* Контейнер для фиксированных кнопок */
+.fixed-buttons {
+  position: fixed;
+  right: 2rem;
+  bottom: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  z-index: 1000;
+}
+
+/* Кнопка онлайн записи */
+.btn--booking {
+  background-color: var(--color-secondary);
+  color: var(--color-white);
+  padding: 1rem 2rem;
+  border-radius: 2rem;
+  font-weight: 600;
+  text-decoration: none;
+  box-shadow: 0 4px 12px rgba(212, 175, 55, 0.3);
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+  animation: pulse 2s infinite;
+}
+
+.btn--booking:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(212, 175, 55, 0.4);
+  background-color: var(--color-secondary-dark);
+  animation: none;
+}
+
+/* Пульсация для кнопки онлайн записи */
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+    box-shadow: 0 4px 12px rgba(212, 175, 55, 0.3);
+  }
+  50% {
+    transform: scale(1.05);
+    box-shadow: 0 8px 24px rgba(212, 175, 55, 0.4);
+  }
+  100% {
+    transform: scale(1);
+    box-shadow: 0 4px 12px rgba(212, 175, 55, 0.3);
+  }
+}
+
+/* Кнопка "Наверх" */
+.btn--to-top {
+  background-color: var(--color-white);
+  color: var(--color-secondary);
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  border: 2px solid var(--color-secondary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(20px);
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.btn--to-top:hover {
+  background-color: var(--color-secondary);
+  color: var(--color-white);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+}
+
+.btn--to-top.show {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+  .fixed-buttons {
+    right: 1rem;
+    bottom: 1rem;
+  }
+
+  .btn--booking {
+    padding: 0.75rem 1.5rem;
+    font-size: 0.9rem;
+  }
+
+  .btn--to-top {
+    width: 40px;
+    height: 40px;
+  }
+}
