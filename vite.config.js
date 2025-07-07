@@ -6,7 +6,7 @@ export default defineConfig(({ command }) => {
     root: "src",
     base: command === "serve" ? "/" : "/AQUANIKA/",
     build: {
-      outDir: "../dist",
+      outDir: "../docs",
       emptyOutDir: true,
       sourcemap: true,
       rollupOptions: {
