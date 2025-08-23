@@ -11,4 +11,3 @@ document.addEventListener("DOMContentLoaded", () => {
   // Инициализация мобильного меню
   new MobileMenu();
 });
- 

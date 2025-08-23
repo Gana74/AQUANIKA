@@ -14,7 +14,7 @@ h2,
   font-size: var(--font-size-3xl);
   font-weight: 700;
   line-height: 1.2;
-  margin-bottom: var(--spacing-md);
+  margin-bottom: var(--spacing-2xl);
 }
 
 h3,

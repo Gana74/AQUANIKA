@@ -10,16 +10,12 @@
     "preview": "vite preview",
     "lint:js": "eslint src/**/*.js",
     "lint:css": "stylelint src/**/*.css",
-    "format": "prettier --write \"src/**/*.{js,css,html}\"",
     "clean": "rimraf dist",
     "deploy": "npm run build && gh-pages -d dist"
   },
   "devDependencies": {
-    "@babel/core": "^7.24.0",
-    "@babel/preset-env": "^7.24.0",
     "eslint": "^8.57.0",
     "gh-pages": "^6.3.0",
-    "prettier": "^3.2.5",
     "rimraf": "^5.0.5",
     "stylelint": "^16.2.1",
     "stylelint-config-standard": "^36.0.0",

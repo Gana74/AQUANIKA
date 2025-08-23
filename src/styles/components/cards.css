@@ -3,8 +3,7 @@
   border-radius: var(--border-radius-lg);
   box-shadow: var(--shadow-sm);
   overflow: hidden;
-  transition:
-    transform var(--transition-normal),
+  transition: transform var(--transition-normal),
     box-shadow var(--transition-normal);
 }
 
@@ -157,9 +156,9 @@
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 2rem;
-  padding: 2rem;
-  max-width: 1200px;
-  margin: 0 auto;
+  /* padding: 2rem; */
+  /* max-width: 1200px; */
+  /* margin: 0 auto; */
 }
 
 /* Карточка услуги */
@@ -168,9 +167,7 @@
   border-radius: 1rem;
   overflow: hidden;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  transition:
-    transform 0.3s ease,
-    box-shadow 0.3s ease;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .service-card:hover {
