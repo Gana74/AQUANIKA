@@ -23,10 +23,17 @@ jobs:
       - name: Build
         run: npm run build
 
+      - name: List files after build
+        run: |
+          echo "Files in current directory:"
+          ls -la
+          echo "Docs folder contents:"
+          ls -la docs/ || echo "docs folder not found"
+
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: ./dist
+          path: ./docs
 
   deploy:
     needs: build
@@ -41,3 +48,5 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
+
+        
