@@ -1,0 +1,156 @@
+<!-- Страница "Вакансии" -->
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Вакансии в салоне красоты Aqvanika - присоединяйтесь к нашей команде!"
+    />
+    <title>Вакансии - Aqvanika</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+    <link rel="stylesheet" crossorigin href="/AQUANIKA/assets/main-BhRVzv7S.css">
+  </head>
+  <body>
+    <main>
+      <section class="vacancies-page">
+        <div class="container">
+          <h1 class="page-title">Вакансии</h1>
+
+          <div class="vacancies-page__intro">
+            <p>
+              Мы всегда рады талантливым и энергичным специалистам, готовым
+              развиваться вместе с нами. Присоединяйтесь к команде
+              профессионалов салона красоты Aqvanika!
+            </p>
+          </div>
+
+          <div class="vacancies-benefits">
+            <h2>Почему стоит работать с нами</h2>
+            <div class="benefits-grid">
+              <div class="benefit-card">
+                <i class="fas fa-chart-line"></i>
+                <h3>Профессиональный рост</h3>
+                <p>
+                  Регулярное обучение и повышение квалификации за счет компании
+                </p>
+              </div>
+              <div class="benefit-card">
+                <i class="fas fa-money-bill-wave"></i>
+                <h3>Достойная оплата</h3>
+                <p>Конкурентная зарплата и прозрачная система бонусов</p>
+              </div>
+              <div class="benefit-card">
+                <i class="fas fa-users"></i>
+                <h3>Дружный коллектив</h3>
+                <p>Поддерживающая атмосфера и командная работа</p>
+              </div>
+              <div class="benefit-card">
+                <i class="fas fa-calendar-alt"></i>
+                <h3>Удобный график</h3>
+                <p>Гибкий график работы и официальное трудоустройство</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="vacancies-list">
+            <h2>Открытые вакансии</h2>
+
+            <!-- Вакансия 1 -->
+            <div class="vacancy-card">
+              <div class="vacancy-card__header">
+                <h3 class="vacancy-card__title">Косметолог-эстетист</h3>
+                <div class="vacancy-card__salary">от 80 000 ₽</div>
+              </div>
+              <div class="vacancy-card__requirements">
+                <h4>Требования:</h4>
+                <ul>
+                  <li>Медицинское образование</li>
+                  <li>Опыт работы от 3 лет</li>
+                  <li>Владение современными методиками</li>
+                  <li>Действующий сертификат специалиста</li>
+                </ul>
+              </div>
+              <div class="vacancy-card__duties">
+                <h4>Обязанности:</h4>
+                <ul>
+                  <li>Проведение косметологических процедур</li>
+                  <li>Консультирование клиентов</li>
+                  <li>Составление индивидуальных программ ухода</li>
+                </ul>
+              </div>
+              <button class="button button--primary">Откликнуться</button>
+            </div>
+
+            <!-- Вакансия 2 -->
+            <div class="vacancy-card">
+              <div class="vacancy-card__header">
+                <h3 class="vacancy-card__title">Мастер маникюра и педикюра</h3>
+                <div class="vacancy-card__salary">от 60 000 ₽</div>
+              </div>
+              <div class="vacancy-card__requirements">
+                <h4>Требования:</h4>
+                <ul>
+                  <li>Профильное образование</li>
+                  <li>Опыт работы от 1 года</li>
+                  <li>Знание современных техник маникюра и педикюра</li>
+                </ul>
+              </div>
+              <div class="vacancy-card__duties">
+                <h4>Обязанности:</h4>
+                <ul>
+                  <li>Маникюр/педикюр</li>
+                  <li>Дизайн ногтей</li>
+                  <li>Наращивание ногтей</li>
+                </ul>
+              </div>
+              <button class="button button--primary">Откликнуться</button>
+            </div>
+          </div>
+
+          <div class="vacancies-form">
+            <h2>Отправить резюме</h2>
+            <p>
+              Не нашли подходящую вакансию? Отправьте нам свое резюме, и мы
+              свяжемся с вами при появлении подходящей позиции.
+            </p>
+            <form class="contact-form">
+              <div class="form-group">
+                <input type="text" placeholder="Ваше имя" required />
+              </div>
+              <div class="form-group">
+                <input type="email" placeholder="Email" required />
+              </div>
+              <div class="form-group">
+                <input type="tel" placeholder="Телефон" required />
+              </div>
+              <div class="form-group">
+                <select required>
+                  <option value="">Выберите специализацию</option>
+                  <option value="cosmetologist">Косметолог</option>
+                  <option value="masseur">Массажист</option>
+                  <option value="hairdresser">Парикмахер</option>
+                  <option value="manicurist">Мастер маникюра</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <textarea placeholder="Сопроводительное письмо"></textarea>
+              </div>
+              <div class="form-group">
+                <input type="file" accept=".pdf,.doc,.docx" />
+                <small>Прикрепите резюме (PDF, DOC, DOCX)</small>
+              </div>
+              <button type="submit" class="button button--primary">
+                Отправить резюме
+              </button>
+            </form>
+          </div>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>
