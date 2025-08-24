@@ -1,5 +1,5 @@
 // Объект с маршрутами и соответствующими путями к страницам
-const BASE_PATH = "/AQUANIKA";
+import { BASE_PATH, stripBasePath, addBasePath } from "../utils/paths.js";
 
 export const routes = {
   "/": `${BASE_PATH}/pages/home.html`,
@@ -94,7 +94,11 @@ async function loadPage(path) {
 
 // Обработчик изменения URL
 function handleLocation() {
-  const path = window.location.pathname;
+  let path = window.location.pathname;
+  // Убираем BASE_PATH из пути для правильного сопоставления с routes
+  if (path.startsWith(BASE_PATH)) {
+    path = path.substring(BASE_PATH.length) || "/";
+  }
   const route = routes[path] || routes["/"];
   loadPage(route);
 }
