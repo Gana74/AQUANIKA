@@ -28,6 +28,11 @@ export default defineConfig({
         footer: resolve(__dirname, "src/components/partials/footer.html"),
         sideMenu: resolve(__dirname, "src/components/partials/side-menu.html"),
       },
+      output: {
+        manualChunks: {
+          sideMenu: ["./src/js/components/sideMenu.js"],
+        },
+      },
     },
   },
   server: {

@@ -1,6 +1,8 @@
 // ==============  router.js  ==============
-// Базовый путь репозитория на GitHub Pages
-const basePath = "/AQUANIKA";
+// чтобы и локально и на GitHub Pages всё работало
+// const isDev = import.meta.env.DEV;
+// const basePath = isDev ? '' : '/AQUANIKA';
+export const basePath = "/AQUANIKA";
 
 // Маршруты: ключ — «чистый» pathname, значение — файл страницы
 export const routes = {
@@ -89,7 +91,7 @@ async function loadPage(route) {
       </div>`;
 
     // динамический импорт скрипта бокового меню
-    import(`${basePath}/components/partials/sideMenu.js`)
+    import(`/js/components/sideMenu.js`)
       .then((m) => m.initSideMenu?.())
       .catch((err) => console.error("sideMenu.js failed:", err));
   } else {

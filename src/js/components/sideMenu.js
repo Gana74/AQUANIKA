@@ -1,9 +1,9 @@
-import { routes } from "./router.js";
+import { routes, basePath } from "./router.js";
 
 // Управление боковым меню
 export function initSideMenu() {
   // Определение текущей страницы
-  const currentPath = window.location.pathname;
+  const currentPath = window.location.pathname.replace(basePath, "") || "/";
   const sideMenuLinks = document.querySelectorAll(".side-menu__link");
   const mainContent = document.querySelector("main");
 
@@ -67,7 +67,8 @@ function handleSideMenuClick(e) {
 
   // Загружаем новый контент
   if (routes[href]) {
-    fetch(routes[href])
+    // basePath импортирован из router.js
+    fetch(`${basePath}${routes[href]}`)
       .then((response) => {
         if (!response.ok) {
           throw new Error(`HTTP error! status: ${response.status}`);
