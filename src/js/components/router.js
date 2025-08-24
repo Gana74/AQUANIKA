@@ -1,7 +1,8 @@
-// Базовый путь для GitHub Pages
+// ==============  router.js  ==============
+// Базовый путь репозитория на GitHub Pages
 const basePath = "/AQUANIKA";
 
-// Объект с маршрутами и соответствующими путями к страницам
+// Маршруты: ключ — «чистый» pathname, значение — файл страницы
 export const routes = {
   "/": "/pages/home.html",
   "/about": "/pages/about.html",
@@ -12,6 +13,7 @@ export const routes = {
   "/prices": "/pages/prices.html",
   "/promotions": "/pages/promotions.html",
   "/contacts": "/pages/contacts.html",
+
   "/services/spa": "/pages/spa-and-massage.html",
   "/services/laser": "/pages/laser-epilation.html",
   "/services/brows": "/pages/brows-and-lashes.html",
@@ -22,7 +24,7 @@ export const routes = {
   "/services/men": "/pages/men-services.html",
 };
 
-// Страницы, на которых должно отображаться боковое меню
+// Страницы, где нужно показывать боковое меню
 const pagesWithSideMenu = [
   "/about",
   "/team",
@@ -31,116 +33,96 @@ const pagesWithSideMenu = [
   "/gallery",
 ];
 
-// Функция для загрузки компонента
+// ---------------- helpers ----------------
+// Загружает любой HTML-чунк
 async function loadComponent(path) {
-  try {
-    // Создаем правильный путь с учетом basePath
-    const fullPath = path.startsWith("/")
-      ? `${basePath}${path}`
-      : `${basePath}/${path}`;
-    const response = await fetch(fullPath);
-    if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
-    return await response.text();
-  } catch (error) {
-    console.error("Ошибка загрузки компонента:", error);
-    return "";
-  }
+  const url = path.startsWith("/")
+    ? `${basePath}${path}`
+    : `${basePath}/${path}`;
+  const res = await fetch(url);
+  if (!res.ok) throw new Error(`HTTP ${res.status} – ${url}`);
+  return res.text();
 }
 
 // Заголовки страниц
 const pageTitles = {
-  "/": "Aqvanika - Салон красоты премиум класса",
-  "/about": "О нас - Aqvanika",
-  "/team": "Наша команда - Aqvanika",
-  "/reviews": "Отзывы - Aqvanika",
-  "/vacancies": "Вакансии - Aqvanika",
-  "/gallery": "Галерея - Aqvanika",
-  "/prices": "Цены - Aqvanika",
-  "/promotions": "Акции - Aqvanika",
-  "/contacts": "Контакты - Aqvanika",
-  "/services/spa": "SPA и массаж - Aqvanika",
-  "/services/laser": "Лазерная эпиляция - Aqvanika",
-  "/services/brows": "Брови и ресницы - Aqvanika",
-  "/services/nails": "Маникюр и педикюр - Aqvanika",
-  "/services/cosmetology": "Косметология - Aqvanika",
-  "/services/hairdressing": "Парикмахерские услуги - Aqvanika",
-  "/services/makeup": "Макияж - Aqvanika",
-  "/services/men": "Услуги для мужчин - Aqvanika",
+  "/": "Aqvanika – салон красоты премиум-класса",
+  "/about": "О нас – Aqvanika",
+  "/team": "Наша команда – Aqvanika",
+  "/reviews": "Отзывы – Aqvanika",
+  "/vacancies": "Вакансии – Aqvanika",
+  "/gallery": "Галерея – Aqvanika",
+  "/prices": "Цены – Aqvanika",
+  "/promotions": "Акции – Aqvanika",
+  "/contacts": "Контакты – Aqvanika",
+  "/services/spa": "SPA и массаж – Aqvanika",
+  "/services/laser": "Лазерная эпиляция – Aqvanika",
+  "/services/brows": "Брови и ресницы – Aqvanika",
+  "/services/nails": "Маникюр и педикюр – Aqvanika",
+  "/services/cosmetology": "Косметология – Aqvanika",
+  "/services/hairdressing": "Парикмахерские услуги – Aqvanika",
+  "/services/makeup": "Макияж – Aqvanika",
+  "/services/men": "Услуги для мужчин – Aqvanika",
 };
 
-// Функция для загрузки содержимого страницы
-async function loadPage(path) {
-  try {
-    const currentPath = window.location.pathname.replace(basePath, "") || "/";
-    const shouldShowSideMenu = pagesWithSideMenu.includes(currentPath);
+// ---------------- routing ----------------
+// Определяет актуальный «чистый» маршрут
+function getRoute() {
+  return window.location.pathname.replace(basePath, "") || "/";
+}
 
-    // Обновляем заголовок страницы
-    document.title = pageTitles[currentPath] || "Aqvanika";
+// Загружает контент нужной страницы
+async function loadPage(route) {
+  const htmlPath = routes[route] || routes["/"];
+  const showSideMenu = pagesWithSideMenu.includes(route);
 
-    // Загружаем содержимое страницы
-    const pageContent = await loadComponent(path);
+  document.title = pageTitles[route] || "Aqvanika";
 
-    // Если нужно показать боковое меню
-    if (shouldShowSideMenu) {
-      const sideMenu = await loadComponent(
-        "/components/partials/side-menu.html"
-      );
-      document.querySelector("main").innerHTML = `
-        <div class="page-with-sidebar">
-          ${sideMenu}
-          <div class="page-content">
-            ${pageContent}
-          </div>
-        </div>
-      `;
+  const content = await loadComponent(htmlPath);
 
-      // Инициализируем функционал бокового меню
-      import(`${basePath}/components/partials/sideMenu.js`)
-        .then((module) => {
-          module.initSideMenu();
-        })
-        .catch((error) => {
-          console.error("Ошибка загрузки sideMenu.js:", error);
-        });
-    } else {
-      document.querySelector("main").innerHTML = pageContent;
-    }
-  } catch (error) {
-    console.error("Ошибка загрузки страницы:", error);
-    document.querySelector("main").innerHTML = "<h1>Страница не найдена</h1>";
+  if (showSideMenu) {
+    const sideMenu = await loadComponent("/components/partials/side-menu.html");
+    document.querySelector("main").innerHTML = `
+      <div class="page-with-sidebar">
+        ${sideMenu}
+        <div class="page-content">${content}</div>
+      </div>`;
+
+    // динамический импорт скрипта бокового меню
+    import(`${basePath}/components/partials/sideMenu.js`)
+      .then((m) => m.initSideMenu?.())
+      .catch((err) => console.error("sideMenu.js failed:", err));
+  } else {
+    document.querySelector("main").innerHTML = content;
   }
 }
 
-// Обработчик изменения URL
+// Переход по истории браузера
 function handleLocation() {
-  const path = window.location.pathname.replace(basePath, "") || "/";
-  const route = routes[path] || routes["/"];
-  loadPage(route);
+  loadPage(getRoute());
 }
 
-// Обработчик клика по ссылкам
+// Клик по внутренним ссылкам
 function handleNavigation(e) {
+  const link = e.target.closest("a");
+  if (!link) return;
+
+  const url = new URL(link.href);
   if (
-    e.target.matches("a") &&
-    e.target.href.startsWith(window.location.origin) &&
-    !e.target.closest(".side-menu") // Игнорируем клики в боковом меню
-  ) {
-    e.preventDefault();
-    const url = new URL(e.target.href);
-    const cleanPath = url.pathname.replace(basePath, "") || "/";
-    window.history.pushState({}, "", basePath + cleanPath);
-    handleLocation();
-  }
+    url.origin !== window.location.origin ||
+    link.closest(".side-menu") // исключаем боковое меню
+  )
+    return;
+
+  e.preventDefault();
+  const cleanPath = url.pathname.replace(basePath, "") || "/";
+  window.history.pushState({}, "", basePath + cleanPath);
+  handleLocation();
 }
 
-// Инициализация маршрутизации
+// ---------------- init ----------------
 export function initRouter() {
-  // Обработка клика по ссылкам
   document.addEventListener("click", handleNavigation);
-
-  // Обработка кнопок браузера "вперед/назад"
   window.addEventListener("popstate", handleLocation);
-
-  // Загрузка начальной страницы
   handleLocation();
 }
