@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Header Component</title>
+  </head>
+  <body>
+    <!-- Шапка сайта -->
+    <header class="header">
+      <!-- Верхняя строка с основным меню -->
+      <div class="header__top">
+        <div class="container">
+          <nav class="header__nav">
+            <ul class="nav__list">
+              <li class="nav__item">
+                <a href="/about" class="nav__link">О нас</a>
+              </li>
+              <li class="nav__item">
+                <a href="/team" class="nav__link">Наша команда</a>
+              </li>
+              <li class="nav__item">
+                <a href="/reviews" class="nav__link">Отзывы</a>
+              </li>
+              <li class="nav__item">
+                <a href="/vacancies" class="nav__link">Вакансии</a>
+              </li>
+              <li class="nav__item">
+                <a href="/gallery" class="nav__link">Галерея</a>
+              </li>
+              <li class="nav__item">
+                <a href="/prices" class="nav__link">Цены</a>
+              </li>
+              <li class="nav__item">
+                <a href="/promotions" class="nav__link">Акции</a>
+              </li>
+              <li class="nav__item">
+                <a href="/contacts" class="nav__link">Контакты</a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+
+      <!-- Средняя строка с логотипом и контактами -->
+      <div class="header__middle">
+        <div class="container">
+          <div class="header__middle-content">
+            <div class="header__logo">
+              <a href="/" class="logo"></a>
+            </div>
+            <div class="header__info">
+              <div class="header__address">
+                <i class="fas fa-location-dot"></i>
+                <p class="address">
+                  <span class="address__label"></span>
+                  <a
+                    href="https://yandex.ru/maps/-/CHsIBZZ2"
+                    class="address__link"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    г. Челябинск, улица Братьев Кашириных, 131
+                  </a>
+                </p>
+              </div>
+              <div class="header__hours">
+                <i class="far fa-clock"></i>
+                <span>Ежедневно: 10:00 - 22:00</span>
+              </div>
+            </div>
+            <div class="header__search">
+              <form class="search-form">
+                <input
+                  type="search"
+                  placeholder="Поиск услуг..."
+                  class="search-input"
+                />
+                <button type="submit" class="search-button">
+                  <i class="fas fa-search"></i>
+                </button>
+              </form>
+            </div>
+            <div class="header__social">
+              <a href="#" class="social-link"><i class="fab fa-vk"></i></a>
+              <a href="#" class="social-link"
+                ><i class="fab fa-telegram"></i
+              ></a>
+              <a href="#" class="social-link"
+                ><i class="fab fa-whatsapp"></i
+              ></a>
+              <a href="#" class="social-link"
+                ><i class="fab fa-instagram"></i
+              ></a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Нижняя строка с меню услуг -->
+      <div class="header__bottom">
+        <div class="container">
+          <nav class="services-nav">
+            <ul class="services-nav__list">
+              <li class="services-nav__item">
+                <a href="/services/spa" class="services-nav__link uppercase"
+                  >SPA и массаж</a
+                >
+                <div class="services-submenu services-submenu--wide">
+                  <div class="submenu__grid">
+                    <div class="submenu__column">
+                      <ul class="submenu__list">
+                        <li>
+                          <a href="#">Подводно-вакуумный массаж "Акваника"</a>
+                        </li>
+                      </ul>
+                    </div>
+                    <div class="submenu__column">
+                      <ul class="submenu__list">
+                        <li><a href="#">Массаж</a></li>
+                      </ul>
+                    </div>
+                    <div class="submenu__column">
+                      <ul class="submenu__list">
+                        <li><a href="#">Обертывание</a></li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </li>
+              <li class="services-nav__item">
+                <a href="/services/laser" class="services-nav__link uppercase"
+                  >Лазерная эпиляция</a
+                >
+                <div class="services-submenu">
+                  <ul class="submenu__list">
+                    <li><a href="#">Бикини</a></li>
+                    <li><a href="#">Ноги</a></li>
+                    <li><a href="#">Руки</a></li>
+                  </ul>
+                </div>
+              </li>
+              <li class="services-nav__item">
+                <a href="/services/brows" class="services-nav__link uppercase"
+                  >Брови и ресницы</a
+                >
+                <div class="services-submenu">
+                  <ul class="submenu__list">
+                    <li><a href="#">Архитектура бровей</a></li>
+                    <li><a href="#">Окрашивание бровей</a></li>
+                    <li><a href="#">Наращивание ресниц</a></li>
+                  </ul>
+                </div>
+              </li>
+              <li class="services-nav__item">
+                <a href="/services/nails" class="services-nav__link uppercase"
+                  >Маникюр/Педикюр</a
+                >
+                <div class="services-submenu">
+                  <ul class="submenu__list">
+                    <li><a href="#">Маникюр</a></li>
+                    <li><a href="#">Педикюр</a></li>
+                    <li><a href="#">Наращивание</a></li>
+                  </ul>
+                </div>
+              </li>
+              <li class="services-nav__item">
+                <a
+                  href="/services/cosmetology"
+                  class="services-nav__link uppercase"
+                  >Косметология</a
+                >
+                <div class="services-submenu">
+                  <ul class="submenu__list">
+                    <li><a href="#">Уход за лицом</a></li>
+                    <li><a href="#">Инъекции</a></li>
+                    <li><a href="#">Выведение татуажа</a></li>
+                  </ul>
+                </div>
+              </li>
+              <li class="services-nav__item">
+                <a
+                  href="/services/hairdressing"
+                  class="services-nav__link uppercase"
+                  >Парикмахерские услуги</a
+                >
+                <div class="services-submenu">
+                  <ul class="submenu__list">
+                    <li><a href="#">Стрижки</a></li>
+                    <li><a href="#">Окрашивание</a></li>
+                    <li><a href="#">Укладки</a></li>
+                  </ul>
+                </div>
+              </li>
+              <li class="services-nav__item">
+                <a href="/services/makeup" class="services-nav__link uppercase"
+                  >Макияж</a
+                >
+                <div class="services-submenu">
+                  <ul class="submenu__list">
+                    <li><a href="#">Дневной</a></li>
+                    <li><a href="#">Вечерний</a></li>
+                    <li><a href="#">Свадебный</a></li>
+                  </ul>
+                </div>
+              </li>
+              <li class="services-nav__item">
+                <a href="/services/men" class="services-nav__link uppercase"
+                  >Для Мужчин</a
+                >
+                <div class="services-submenu">
+                  <ul class="submenu__list">
+                    <li><a href="#">Стрижка</a></li>
+                    <li><a href="#">Массаж</a></li>
+                    <li><a href="#">Маникюр</a></li>
+                  </ul>
+                </div>
+              </li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+    </header>
+  </body>
+</html>

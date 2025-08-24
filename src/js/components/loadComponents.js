@@ -1,8 +1,8 @@
-// loadComponents.js - улучшенная версия
+// loadComponents.js - исправленная версия
 async function loadComponent(elementId, componentPath) {
   try {
-    // Создаем абсолютный путь с учетом базового URL
-    const basePath = "/AQUANIKA/"; // или используй window.location.origin + '/AQUANIKA/'
+    // Определяем базовый путь динамически
+    const basePath = window.location.origin + "/AQUANIKA/";
     const fullPath = `${basePath}${componentPath}`;
 
     const response = await fetch(fullPath);
@@ -26,5 +26,4 @@ document.addEventListener("DOMContentLoaded", () => {
   loadComponent("header-placeholder", "components/partials/header.html");
   loadComponent("footer-placeholder", "components/partials/footer.html");
 });
-
 export { loadComponent };

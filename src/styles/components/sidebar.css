@@ -59,15 +59,15 @@
 }
 
 .sidebar__button[data-action="callback"]::before {
-  background-image: url("../assets/icons/phone.svg");
+  background-image: url("@/assets/icons/phone.svg");
 }
 
 .sidebar__button[data-action="question"]::before {
-  background-image: url("../assets/icons/message.svg");
+  background-image: url("@/assets/icons/message.svg");
 }
 
 .sidebar__button[data-action="review"]::before {
-  background-image: url("../assets/icons/star.svg");
+  background-image: url("@/assets/icons/star.svg");
 }
 
 @media (max-width: 1024px) {

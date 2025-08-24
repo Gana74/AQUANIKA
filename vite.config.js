@@ -3,7 +3,10 @@ import { resolve } from "path";
 
 export default defineConfig({
   root: "src",
-  base: "/AQUANIKA/", // Всегда используем правильный base
+  base: "/AQUANIKA/",
+  optimizeDeps: {
+    include: ["**/*.svg"],
+  },
   build: {
     outDir: "../docs",
     emptyOutDir: true,
@@ -20,6 +23,8 @@ export default defineConfig({
         vacancies: resolve(__dirname, "src/pages/vacancies.html"),
         gallery: resolve(__dirname, "src/pages/gallery.html"),
         spa: resolve(__dirname, "src/pages/spa-and-massage.html"),
+        header: resolve(__dirname, "src/components/partials/header.html"),
+        footer: resolve(__dirname, "src/components/partials/footer.html"),
       },
     },
   },
@@ -35,6 +40,8 @@ export default defineConfig({
         { from: /^\/vacancies/, to: "/pages/vacancies.html" },
         { from: /^\/gallery/, to: "/pages/gallery.html" },
         { from: /^\/services\/spa/, to: "/pages/spa-and-massage.html" },
+        { from: /^\/header/, to: "/components/partials/header.html" },
+        { from: /^\/footer/, to: "/components/partials/footer.html" },
       ],
     },
   },
@@ -43,4 +50,19 @@ export default defineConfig({
       "@": resolve(__dirname, "src"),
     },
   },
+  assetsInclude: ["**/*.svg"],
+  plugins: [
+    {
+      name: "svg-loader",
+      enforce: "pre",
+      transform(code, id) {
+        if (id.endsWith(".svg")) {
+          return {
+            code: `export default ${JSON.stringify(code)}`,
+            map: null,
+          };
+        }
+      },
+    },
+  ],
 });
