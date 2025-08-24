@@ -1,3 +1,6 @@
+// Базовый путь для GitHub Pages
+const basePath = "/AQUANIKA";
+
 // Объект с маршрутами и соответствующими путями к страницам
 export const routes = {
   "/": "/pages/home.html",
@@ -31,7 +34,11 @@ const pagesWithSideMenu = [
 // Функция для загрузки компонента
 async function loadComponent(path) {
   try {
-    const response = await fetch(path);
+    // Создаем правильный путь с учетом basePath
+    const fullPath = path.startsWith("/")
+      ? `${basePath}${path}`
+      : `${basePath}/${path}`;
+    const response = await fetch(fullPath);
     if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
     return await response.text();
   } catch (error) {
@@ -64,7 +71,7 @@ const pageTitles = {
 // Функция для загрузки содержимого страницы
 async function loadPage(path) {
   try {
-    const currentPath = window.location.pathname;
+    const currentPath = window.location.pathname.replace(basePath, "") || "/";
     const shouldShowSideMenu = pagesWithSideMenu.includes(currentPath);
 
     // Обновляем заголовок страницы
@@ -88,9 +95,13 @@ async function loadPage(path) {
       `;
 
       // Инициализируем функционал бокового меню
-      import("./sideMenu.js").then((module) => {
-        module.initSideMenu();
-      });
+      import(`${basePath}/components/partials/sideMenu.js`)
+        .then((module) => {
+          module.initSideMenu();
+        })
+        .catch((error) => {
+          console.error("Ошибка загрузки sideMenu.js:", error);
+        });
     } else {
       document.querySelector("main").innerHTML = pageContent;
     }
@@ -102,7 +113,7 @@ async function loadPage(path) {
 
 // Обработчик изменения URL
 function handleLocation() {
-  const path = window.location.pathname;
+  const path = window.location.pathname.replace(basePath, "") || "/";
   const route = routes[path] || routes["/"];
   loadPage(route);
 }
@@ -116,7 +127,8 @@ function handleNavigation(e) {
   ) {
     e.preventDefault();
     const url = new URL(e.target.href);
-    window.history.pushState({}, "", url.pathname);
+    const cleanPath = url.pathname.replace(basePath, "") || "/";
+    window.history.pushState({}, "", basePath + cleanPath);
     handleLocation();
   }
 }

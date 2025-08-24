@@ -17,6 +17,7 @@ export default defineConfig({
     rollupOptions: {
       input: {
         main: resolve(__dirname, "src/index.html"),
+        home: resolve(__dirname, "src/pages/home.html"),
         about: resolve(__dirname, "src/pages/about.html"),
         team: resolve(__dirname, "src/pages/team.html"),
         reviews: resolve(__dirname, "src/pages/reviews.html"),
@@ -34,6 +35,7 @@ export default defineConfig({
     historyApiFallback: {
       rewrites: [
         { from: /^\/$/, to: "/index.html" },
+        { from: /^\/home/, to: "/pages/home.html" },
         { from: /^\/about/, to: "/pages/about.html" },
         { from: /^\/team/, to: "/pages/team.html" },
         { from: /^\/reviews/, to: "/pages/reviews.html" },
