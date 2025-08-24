@@ -6,7 +6,6 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "prebuild": "node scripts/copyStatic.js",
     "build": "vite build",
     "preview": "vite preview",
     "lint:js": "eslint src/**/*.js",
@@ -16,7 +15,6 @@
   },
   "devDependencies": {
     "eslint": "^8.57.0",
-    "fs-extra": "^11.3.1",
     "gh-pages": "^6.3.0",
     "rimraf": "^5.0.5",
     "stylelint": "^16.2.1",

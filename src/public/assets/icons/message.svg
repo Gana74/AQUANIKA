@@ -1,5 +1,0 @@
-<!-- Иконка сообщения для кнопки 'Задать вопрос' -->
-<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-  <path d="M4 4h16a2 2 0 012 2v12a2 2 0 01-2 2H6l-4 4V6a2 2 0 012-2z" stroke="#a78b3d" stroke-width="2" fill="none"/>
-  <path d="M22 6l-10 7L2 6" stroke="#a78b3d" stroke-width="2" fill="none"/>
-</svg> 

@@ -1,14 +1,22 @@
 // Объект с маршрутами и соответствующими путями к страницам
-import { BASE_PATH, stripBasePath, addBasePath } from "../utils/paths.js";
-
 export const routes = {
-  "/": `${BASE_PATH}/pages/home.html`,
-  "/about": `${BASE_PATH}/pages/about.html`,
-  "/team": `${BASE_PATH}/pages/team.html`,
-  "/reviews": `${BASE_PATH}/pages/reviews.html`,
-  "/vacancies": `${BASE_PATH}/pages/vacancies.html`,
-  "/gallery": `${BASE_PATH}/pages/gallery.html`,
-  "/services/spa": `${BASE_PATH}/pages/spa-and-massage.html`,
+  "/": "/pages/home.html",
+  "/about": "/pages/about.html",
+  "/team": "/pages/team.html",
+  "/reviews": "/pages/reviews.html",
+  "/vacancies": "/pages/vacancies.html",
+  "/gallery": "/pages/gallery.html",
+  "/prices": "/pages/prices.html",
+  "/promotions": "/pages/promotions.html",
+  "/contacts": "/pages/contacts.html",
+  "/services/spa": "/pages/spa-and-massage.html",
+  "/services/laser": "/pages/laser-epilation.html",
+  "/services/brows": "/pages/brows-and-lashes.html",
+  "/services/nails": "/pages/manicure-pedicure.html",
+  "/services/cosmetology": "/pages/cosmetology.html",
+  "/services/hairdressing": "/pages/hairdressing.html",
+  "/services/makeup": "/pages/makeup.html",
+  "/services/men": "/pages/men-services.html",
 };
 
 // Страницы, на которых должно отображаться боковое меню
@@ -68,7 +76,7 @@ async function loadPage(path) {
     // Если нужно показать боковое меню
     if (shouldShowSideMenu) {
       const sideMenu = await loadComponent(
-        `${BASE_PATH}/components/partials/side-menu.html`
+        "/components/partials/side-menu.html"
       );
       document.querySelector("main").innerHTML = `
         <div class="page-with-sidebar">
@@ -94,11 +102,7 @@ async function loadPage(path) {
 
 // Обработчик изменения URL
 function handleLocation() {
-  let path = window.location.pathname;
-  // Убираем BASE_PATH из пути для правильного сопоставления с routes
-  if (path.startsWith(BASE_PATH)) {
-    path = path.substring(BASE_PATH.length) || "/";
-  }
+  const path = window.location.pathname;
   const route = routes[path] || routes["/"];
   loadPage(route);
 }
