@@ -13,10 +13,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Загрузка хедера и футера
   if (document.getElementById("header-placeholder")) {
-    loadComponent("header-placeholder", "/AQUANIKA/components/partials/header.html");
+    loadComponent("header-placeholder", "/components/partials/header.html");
   }
   if (document.getElementById("footer-placeholder")) {
-    loadComponent("footer-placeholder", "/AQUANIKA/components/partials/footer.html");
+    loadComponent("footer-placeholder", "/components/partials/footer.html");
   }
 
   // Инициализация мобильного меню
