@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="SPA и массаж в салоне красоты Aqvanika - профессиональные услуги массажа и SPA-процедуры"
+    />
+    <title>SPA и массаж - Aqvanika</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+    <link rel="stylesheet" href="/styles/main.css" />
+  </head>
+  <body>
+    <main>
+      <div class="spa-page">
+        <!-- Подменю категорий -->
+        <div class="category-submenu">
+          <nav class="submenu">
+            <ul class="submenu__list">
+              <li class="submenu__item">
+                <a href="#spa" class="submenu__link active">SPA-процедуры</a>
+              </li>
+              <li class="submenu__item">
+                <a href="#massage" class="submenu__link">Массаж</a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+
+        <!-- Основной контент -->
+        <section class="service-description">
+          <div class="container">
+            <h1 class="page-title">SPA и массаж</h1>
+
+            <!-- Описание услуги -->
+            <div class="service-intro">
+              <div class="service-intro__content">
+                <p class="service-intro__text">
+                  Откройте для себя мир релаксации и восстановления с нашими
+                  профессиональными SPA-процедурами и массажными техниками. Мы
+                  предлагаем широкий спектр услуг, направленных на оздоровление
+                  тела и души, снятие стресса и восстановление жизненной
+                  энергии.
+                </p>
+                <div class="service-intro__buttons">
+                  <button class="btn btn--primary">Заказать услугу</button>
+                  <button class="btn btn--secondary">Задать вопрос</button>
+                </div>
+              </div>
+              <div class="service-intro__image">
+                <img
+                  src="/assets/images/services/spa-main.jpg"
+                  alt="SPA процедуры в Aqvanika"
+                />
+              </div>
+            </div>
+
+            <!-- Преимущества услуги -->
+            <div class="service-benefits">
+              <h2 class="section-title">Почему выбирают нас</h2>
+              <div class="benefits-grid">
+                <div class="benefit-card">
+                  <i class="fas fa-award"></i>
+                  <h3>Профессиональные мастера</h3>
+                  <p>
+                    Сертифицированные специалисты с опытом работы более 5 лет
+                  </p>
+                </div>
+                <div class="benefit-card">
+                  <i class="fas fa-spa"></i>
+                  <h3>Премиальная косметика</h3>
+                  <p>Используем только качественные материалы и средства</p>
+                </div>
+                <div class="benefit-card">
+                  <i class="fas fa-user-shield"></i>
+                  <h3>Индивидуальный подход</h3>
+                  <p>
+                    Программа процедур составляется с учетом ваших пожеланий
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Прайс-лист -->
+            <div class="service-prices">
+              <h2 class="section-title">Прайс-лист</h2>
+              <div class="price-tables">
+                <!-- SPA процедуры -->
+                <div class="price-table" id="spa">
+                  <h3>SPA-процедуры</h3>
+                  <table>
+                    <thead>
+                      <tr>
+                        <th>Услуга</th>
+                        <th>Длительность</th>
+                        <th>Цена</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>SPA-уход для лица</td>
+                        <td>60 мин</td>
+                        <td>4500 ₽</td>
+                      </tr>
+                      <tr>
+                        <td>Обертывание всего тела</td>
+                        <td>90 мин</td>
+                        <td>5500 ₽</td>
+                      </tr>
+                      <tr>
+                        <td>SPA-программа "Релакс"</td>
+                        <td>120 мин</td>
+                        <td>7500 ₽</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+
+                <!-- Массаж -->
+                <div class="price-table" id="massage">
+                  <h3>Массаж</h3>
+                  <table>
+                    <thead>
+                      <tr>
+                        <th>Услуга</th>
+                        <th>Длительность</th>
+                        <th>Цена</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>Классический массаж</td>
+                        <td>60 мин</td>
+                        <td>3500 ₽</td>
+                      </tr>
+                      <tr>
+                        <td>Спортивный массаж</td>
+                        <td>90 мин</td>
+                        <td>4500 ₽</td>
+                      </tr>
+                      <tr>
+                        <td>Антицеллюлитный массаж</td>
+                        <td>60 мин</td>
+                        <td>4000 ₽</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+
+            <!-- Галерея -->
+            <div class="service-gallery">
+              <h2 class="section-title">Галерея</h2>
+              <div class="gallery-grid">
+                <div class="gallery-item">
+                  <img
+                    src="/assets/images/services/spa-1.jpg"
+                    alt="SPA процедура 1"
+                  />
+                </div>
+                <div class="gallery-item">
+                  <img
+                    src="/assets/images/services/spa-2.jpg"
+                    alt="SPA процедура 2"
+                  />
+                </div>
+                <div class="gallery-item">
+                  <img
+                    src="/assets/images/services/massage-1.jpg"
+                    alt="Массаж 1"
+                  />
+                </div>
+                <div class="gallery-item">
+                  <img
+                    src="/assets/images/services/massage-2.jpg"
+                    alt="Массаж 2"
+                  />
+                </div>
+              </div>
+            </div>
+
+            <!-- Подробное описание услуг -->
+            <div class="service-details">
+              <h2 class="section-title">Подробное описание услуг</h2>
+
+              <div class="service-details__section">
+                <h3>SPA-процедуры</h3>
+                <p>
+                  Наши SPA-процедуры - это комплексный подход к красоте и
+                  здоровью вашего тела. Мы используем только натуральные
+                  компоненты и профессиональную косметику премиум-класса. Каждая
+                  процедура начинается с консультации специалиста, который
+                  подберет оптимальную программу исходя из ваших пожеланий и
+                  особенностей.
+                </p>
+                <ul class="service-details__list">
+                  <li>
+                    SPA-уход для лица: глубокое очищение, питание и увлажнение
+                    кожи
+                  </li>
+                  <li>
+                    Обертывания: антицеллюлитные, детокс, увлажняющие программы
+                  </li>
+                  <li>Комплексные SPA-программы для полного расслабления</li>
+                </ul>
+              </div>
+
+              <div class="service-details__section">
+                <h3>Массаж</h3>
+                <p>
+                  Массаж - это не просто процедура, это искусство прикосновений,
+                  которым в совершенстве владеют наши специалисты. Мы предлагаем
+                  различные виды массажа, каждый из которых направлен на решение
+                  определенных задач.
+                </p>
+                <ul class="service-details__list">
+                  <li>
+                    Классический массаж: снимает мышечное напряжение, улучшает
+                    кровообращение
+                  </li>
+                  <li>
+                    Спортивный массаж: помогает в восстановлении после
+                    тренировок
+                  </li>
+                  <li>
+                    Антицеллюлитный массаж: борьба с проявлениями целлюлита
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+    </main>
+  </body>
+</html>
