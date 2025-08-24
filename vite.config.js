@@ -4,7 +4,7 @@ import { resolve } from "path";
 export default defineConfig(({ command }) => {
   const config = {
     root: "src",
-    base: command === "serve" ? "/" : "/AQUANIKA/",
+    base: command === "serve" ? "/" : "./",
     build: {
       outDir: "../docs",
       emptyOutDir: true,
