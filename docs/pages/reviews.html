@@ -1,0 +1,160 @@
+<!-- Страница "Отзывы" -->
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Отзывы клиентов о салоне красоты Aqvanika"
+    />
+    <title>Отзывы - Aqvanika</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+    <link rel="stylesheet" crossorigin href="/AQUANIKA/assets/main-BhRVzv7S.css">
+  </head>
+  <body>
+    <main>
+      <section class="reviews-page">
+        <div class="container">
+          <h1 class="page-title">Отзывы наших клиентов</h1>
+
+          <div class="reviews-page__header">
+            <div class="reviews-page__stats">
+              <div class="stats-item">
+                <div class="stats-item__number">4.9</div>
+                <div class="stats-item__stars">
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star-half-alt"></i>
+                </div>
+                <div class="stats-item__text">Средняя оценка</div>
+              </div>
+              <div class="stats-item">
+                <div class="stats-item__number">1000+</div>
+                <div class="stats-item__text">Довольных клиентов</div>
+              </div>
+            </div>
+            <div class="reviews-page__actions">
+              <button class="button button--primary">Оставить отзыв</button>
+            </div>
+          </div>
+
+          <div class="reviews-filter">
+            <button class="filter-button active" data-filter="all">
+              Все отзывы
+            </button>
+            <button class="filter-button" data-filter="spa">
+              SPA и массаж
+            </button>
+            <button class="filter-button" data-filter="cosmetology">
+              Косметология
+            </button>
+            <button class="filter-button" data-filter="hair">
+              Парикмахерские услуги
+            </button>
+            <button class="filter-button" data-filter="nails">
+              Маникюр и педикюр
+            </button>
+          </div>
+
+          <div class="reviews-grid">
+            <!-- Отзыв 1 -->
+            <div class="review-card" data-category="cosmetology">
+              <div class="review-card__header">
+                <div class="review-card__author">
+                  <img
+                    src="/assets/images/reviews/avatar1.jpg"
+                    alt="Мария"
+                    class="review-card__avatar"
+                  />
+                  <div class="review-card__author-info">
+                    <h3 class="review-card__name">Мария</h3>
+                    <div class="review-card__date">15 августа 2025</div>
+                  </div>
+                </div>
+                <div class="review-card__rating">
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                </div>
+              </div>
+              <div class="review-card__service">
+                <span class="service-label">Услуга:</span>
+                <span class="service-name">Комплексный уход за лицом</span>
+              </div>
+              <div class="review-card__content">
+                <p>
+                  Прекрасный салон с профессиональными мастерами! Особенно хочу
+                  отметить работу косметолога Анны. Результат превзошел все мои
+                  ожидания. Кожа выглядит свежей и сияющей.
+                </p>
+              </div>
+              <div class="review-card__photos">
+                <img
+                  src="/assets/images/reviews/review1-1.jpg"
+                  alt="Фото результата"
+                />
+                <img
+                  src="/assets/images/reviews/review1-2.jpg"
+                  alt="Фото результата"
+                />
+              </div>
+            </div>
+
+            <!-- Отзыв 2 -->
+            <div class="review-card" data-category="spa">
+              <div class="review-card__header">
+                <div class="review-card__author">
+                  <img
+                    src="/assets/images/reviews/avatar2.jpg"
+                    alt="Александр"
+                    class="review-card__avatar"
+                  />
+                  <div class="review-card__author-info">
+                    <h3 class="review-card__name">Александр</h3>
+                    <div class="review-card__date">10 августа 2025</div>
+                  </div>
+                </div>
+                <div class="review-card__rating">
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                </div>
+              </div>
+              <div class="review-card__service">
+                <span class="service-label">Услуга:</span>
+                <span class="service-name">ПВМ "Акваника"</span>
+              </div>
+              <div class="review-card__content">
+                <p>
+                  Потрясающий массаж! Михаил - настоящий профессионал своего
+                  дела. После процедуры чувствуешь себя обновленным. Однозначно
+                  буду рекомендовать друзьям!
+                </p>
+              </div>
+            </div>
+
+            <!-- Дополнительные отзывы -->
+          </div>
+
+          <div class="reviews-pagination">
+            <button class="pagination-button" data-page="1">1</button>
+            <button class="pagination-button active" data-page="2">2</button>
+            <button class="pagination-button" data-page="3">3</button>
+            <span class="pagination-dots">...</span>
+            <button class="pagination-button" data-page="10">10</button>
+          </div>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>
