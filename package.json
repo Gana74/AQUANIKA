@@ -10,8 +10,8 @@
     "preview": "vite preview",
     "lint:js": "eslint src/**/*.js",
     "lint:css": "stylelint src/**/*.css",
-    "clean": "rimraf dist",
-    "deploy": "npm run build && gh-pages -d dist"
+    "clean": "rimraf docs",
+    "deploy": "npm run build && gh-pages -d docs"
   },
   "devDependencies": {
     "eslint": "^8.57.0",

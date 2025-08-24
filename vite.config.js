@@ -18,6 +18,10 @@ export default defineConfig(({ command }) => {
     server: {
       port: 3000,
       open: true,
+      // Настройка для правильной работы маршрутизации
+      historyApiFallback: {
+        rewrites: [{ from: /^\/.*/, to: "/index.html" }],
+      },
     },
     resolve: {
       alias: {

@@ -1,6 +1,5 @@
 /* Headings */
-h1,
-.h1 {
+h1 {
   font-family: var(--font-primary);
   font-size: var(--font-size-4xl);
   font-weight: 700;
@@ -8,8 +7,7 @@ h1,
   margin-bottom: var(--spacing-lg);
 }
 
-h2,
-.h2 {
+h2 {
   font-family: var(--font-primary);
   font-size: var(--font-size-3xl);
   font-weight: 700;
@@ -17,8 +15,7 @@ h2,
   margin-bottom: var(--spacing-2xl);
 }
 
-h3,
-.h3 {
+h3 {
   font-family: var(--font-primary);
   font-size: var(--font-size-2xl);
   font-weight: 600;
@@ -26,8 +23,7 @@ h3,
   margin-bottom: var(--spacing-md);
 }
 
-h4,
-.h4 {
+h4 {
   font-family: var(--font-primary);
   font-size: var(--font-size-xl);
   font-weight: 600;

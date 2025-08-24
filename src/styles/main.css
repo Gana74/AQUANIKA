@@ -18,9 +18,11 @@
 @import "./components/sidebar.css";
 @import "./components/mobile-nav.css";
 @import "./components/about.css";
+@import "./components/page-with-sidebar.css";
 
 /* Pages */
 @import "./pages/home.css";
+@import "./pages/spa-and-massage.css";
 
 /* Адаптивные стили для широких экранов */
 @media (--desktop-wide) {
@@ -47,4 +49,3 @@
     gap: var(--grid-gap-xl);
   }
 }
- 
