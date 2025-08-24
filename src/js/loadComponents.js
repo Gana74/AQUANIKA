@@ -4,16 +4,12 @@ import { getAssetPath } from "./utils/paths.js";
 async function loadComponents() {
   try {
     // Загрузка хедера
-    const headerResponse = await fetch(
-      getAssetPath("/components/partials/header.html")
-    );
+    const headerResponse = await fetch(getAssetPath("/header"));
     const headerContent = await headerResponse.text();
     document.querySelector("header").innerHTML = headerContent;
 
     // Загрузка футера
-    const footerResponse = await fetch(
-      getAssetPath("/components/partials/footer.html")
-    );
+    const footerResponse = await fetch(getAssetPath("/footer"));
     const footerContent = await footerResponse.text();
     document.querySelector("footer").innerHTML = footerContent;
 

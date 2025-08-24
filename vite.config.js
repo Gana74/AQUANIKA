@@ -26,7 +26,10 @@ export default defineConfig(({ command }) => {
           spa: resolve(__dirname, "src/pages/spa-and-massage.html"),
           header: resolve(__dirname, "src/components/partials/header.html"),
           footer: resolve(__dirname, "src/components/partials/footer.html"),
-          sideMenu: resolve(__dirname, "src/components/partials/side-menu.html"),
+          sideMenu: resolve(
+            __dirname,
+            "src/components/partials/side-menu.html"
+          ),
         },
       },
     },
@@ -44,9 +47,18 @@ export default defineConfig(({ command }) => {
           { from: /^\/vacancies/, to: "/pages/vacancies.html" },
           { from: /^\/gallery/, to: "/pages/gallery.html" },
           { from: /^\/services\/spa/, to: "/pages/spa-and-massage.html" },
-          { from: /^\/components\/header/, to: "/components/partials/header.html" },
-          { from: /^\/components\/footer/, to: "/components/partials/footer.html" },
-          { from: /^\/components\/side-menu/, to: "/components/partials/side-menu.html" },
+          {
+            from: /^\/header/,
+            to: "/components/partials/header.html",
+          },
+          {
+            from: /^\/footer/,
+            to: "/components/partials/footer.html",
+          },
+          {
+            from: /^\/side-menu/,
+            to: "/components/partials/side-menu.html",
+          },
         ],
       },
     },
