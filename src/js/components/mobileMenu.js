@@ -55,6 +55,13 @@ export class MobileMenu {
     // Закрытие меню при клике вне его
     document.addEventListener("click", this.handleClickOutside);
 
+    // Закрытие меню при клике на любую ссылку в меню
+    this.sidebar.addEventListener("click", (e) => {
+      if (e.target.closest("a")) {
+        this.closeMenu();
+      }
+    });
+
     // Добавляем эффекты при наведении и нажатии для всех интерактивных элементов
     this.addInteractiveEffects();
   }
@@ -129,11 +136,11 @@ export class MobileMenu {
     this.slides.classList.add("show-submenu");
 
     // Обновляем заголовок подменю
-    const submenuTitle = this.submenuSlide.querySelector(
-      ".mobile-nav__submenu-title"
-    );
-    const categoryBtn = document.querySelector(`[data-category="${category}"]`);
-    submenuTitle.textContent = categoryBtn.querySelector("span").textContent;
+    // const submenuTitle = this.submenuSlide.querySelector(
+    //   ".mobile-nav__submenu-title"
+    // );
+    // const categoryBtn = document.querySelector(`[data-category="${category}"]`);
+    // submenuTitle.textContent = categoryBtn.querySelector("span").textContent;
 
     // Показываем нужное подменю
     this.submenus.forEach((submenu) => {

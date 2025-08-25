@@ -167,12 +167,12 @@
 }
 
 /* Заголовок подменю */
-.mobile-nav__submenu-title {
+/* .mobile-nav__submenu-title {
   font-size: 18px;
   font-weight: 500;
   margin-bottom: 20px;
   color: var(--color-text);
-}
+} */
 
 /* Меню услуг */
 .mobile-nav__services {
