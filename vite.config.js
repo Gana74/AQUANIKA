@@ -14,6 +14,7 @@ export default defineConfig({
     assetsDir: "assets",
     cssCodeSplit: true,
     minify: true,
+    copyPublicDir: true,
     rollupOptions: {
       input: {
         main: resolve(__dirname, "src/index.html"),
