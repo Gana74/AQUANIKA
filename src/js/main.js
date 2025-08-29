@@ -1,5 +1,5 @@
 // Импорт стилей
-import "../styles/main.css";
+import "/styles/main.css";
 
 // Импорт компонентов
 import { loadComponent } from "./components/loadComponents.js";
