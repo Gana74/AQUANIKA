@@ -7,7 +7,6 @@ d:/Документы/Обучение/Frontend/прочее/AQUANIKA/
 ├── docs/
 │   ├── assets/
 │   │   ├── about-BEjKIyXg.js.map
-│   │   ├── apple-touch-icon-DmycnpKd.png
 │   │   ├── brows-l0sNRNKZ.js.map
 │   │   ├── browsArchitecture-l0sNRNKZ.js.map
 │   │   ├── browsExtensions-l0sNRNKZ.js.map
@@ -17,9 +16,6 @@ d:/Документы/Обучение/Frontend/прочее/AQUANIKA/
 │   │   ├── cosmetologyFace-l0sNRNKZ.js.map
 │   │   ├── cosmetologyInjections-l0sNRNKZ.js.map
 │   │   ├── cosmetologyTattooRemoval-l0sNRNKZ.js.map
-│   │   ├── favicon-96x96-CBpSb63d.png
-│   │   ├── favicon-ChIJU1tB.svg
-│   │   ├── favicon-CQJwCE-Y.ico
 │   │   ├── footer-l0sNRNKZ.js.map
 │   │   ├── gallery-BEjKIyXg.js.map
 │   │   ├── gold-brush-Nu-oZcNc.png
@@ -62,8 +58,7 @@ d:/Документы/Обучение/Frontend/прочее/AQUANIKA/
 │   │   ├── spa-KQnHmHoZ.png
 │   │   ├── spa-l0sNRNKZ.js.map
 │   │   ├── team-BEjKIyXg.js.map
-│   │   ├── vacancies-BEjKIyXg.js.map
-│   │   └── webmanifest-2yYvTDQz.json
+│   │   └── vacancies-BEjKIyXg.js.map
 │   ├── components/
 │   │   └── partials/
 │   │       ├── footer.html
@@ -106,21 +101,20 @@ d:/Документы/Обучение/Frontend/прочее/AQUANIKA/
 │       ├── tattoo-removal.html
 │       ├── team.html
 │       └── vacancies.html
-├── FAVICON_FIX.md
 ├─] node_modules/ (ignored)
 ├── package-lock.json
 ├── package.json
+├── public/
+│   ├── apple-touch-icon.png
+│   ├── favicon-96x96.png
+│   ├── favicon.ico
+│   ├── favicon.svg
+│   ├── web-app-manifest-192x192.png
+│   ├── web-app-manifest-512x512.png
+│   └── webmanifest.json
 ├── README.md
 ├── src/
 │   ├── assets/
-│   │   ├── favicon/
-│   │   │   ├── apple-touch-icon.png
-│   │   │   ├── favicon-96x96.png
-│   │   │   ├── favicon.ico
-│   │   │   ├── favicon.svg
-│   │   │   ├── web-app-manifest-192x192.png
-│   │   │   ├── web-app-manifest-512x512.png
-│   │   │   └── webmanifest.json
 │   │   ├── icons/
 │   │   │   ├── message.svg
 │   │   │   ├── phone.svg
@@ -153,8 +147,7 @@ d:/Документы/Обучение/Frontend/прочее/AQUANIKA/
 │   │   │   ├── sidebar.js
 │   │   │   ├── sideMenu.js
 │   │   │   └── toTopButton.js
-│   │   ├── main.js
-│   │   └── utils/
+│   │   └── main.js
 │   ├── pages/
 │   │   ├── about.html
 │   │   ├── aquanika-massage.html
