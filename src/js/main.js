@@ -5,7 +5,7 @@ import "/styles/main.css";
 import { loadComponent } from "./components/loadComponents.js";
 import "./components/toTopButton.js";
 import { MobileMenu } from "./components/mobileMenu.js";
-import { initRouter, basePath } from "./components/router.js";
+import { initRouter, basePath  } from "./components/router.js";
 
 // Умная загрузка компонентов header/footer
 async function loadLayoutComponents() {

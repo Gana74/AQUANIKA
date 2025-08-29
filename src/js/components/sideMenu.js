@@ -65,27 +65,15 @@ function handleSideMenuClick(e) {
   // Добавляем класс active текущей ссылке
   this.classList.add("active");
 
-  // Загружаем новый контент
+  // Загружаем новый контент через роутер
   if (routes[href]) {
-    // basePath импортирован из router.js
-    fetch(`${basePath}${routes[href]}`)
-      .then((response) => {
-        if (!response.ok) {
-          throw new Error(`HTTP error! status: ${response.status}`);
-        }
-        return response.text();
-      })
-      .then((content) => {
-        if (pageContent) {
-          pageContent.innerHTML = content;
-        }
-      })
-      .catch((error) => {
-        console.error("Ошибка загрузки контента:", error);
-        if (pageContent) {
-          pageContent.innerHTML = "<h1>Ошибка загрузки страницы</h1>";
-        }
-      });
+    // Используем глобальную функцию navigateTo
+    if (typeof window.navigateTo === 'function') {
+      window.navigateTo(href);
+    } else {
+      // Fallback: перезагружаем страницу
+      window.location.href = `${basePath}${href}`;
+    }
   } else {
     console.error("Маршрут не найден:", href);
     if (pageContent) {

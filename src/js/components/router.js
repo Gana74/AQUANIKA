@@ -196,6 +196,9 @@ export function navigateTo(path) {
   handleLocation();
 }
 
+// Сделайте navigateTo доступной глобально для использования в sideMenu.js
+window.navigateTo = navigateTo;
+
 // Переход по истории браузера
 function handleLocation() {
   loadPage(getRoute());

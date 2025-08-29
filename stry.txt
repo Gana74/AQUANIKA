@@ -5,106 +5,121 @@ d:/Документы/Обучение/Frontend/прочее/AQUANIKA/
 ├── .gitignore
 ├── .qodo/
 ├── docs/
+│   ├── 404.html
+│   ├── apple-touch-icon.png
 │   ├── assets/
 │   │   ├── about-BEjKIyXg.js.map
-│   │   ├── brows-l0sNRNKZ.js.map
-│   │   ├── browsArchitecture-l0sNRNKZ.js.map
-│   │   ├── browsExtensions-l0sNRNKZ.js.map
-│   │   ├── browsTinting-l0sNRNKZ.js.map
+│   │   ├── aquanika-BEjKIyXg.js.map
+│   │   ├── brows-BEjKIyXg.js.map
+│   │   ├── browsArchitecture-BEjKIyXg.js.map
+│   │   ├── browsExtensions-BEjKIyXg.js.map
+│   │   ├── browsTinting-BEjKIyXg.js.map
 │   │   ├── cosmet-uoq6DghS.jpg
-│   │   ├── cosmetology-l0sNRNKZ.js.map
-│   │   ├── cosmetologyFace-l0sNRNKZ.js.map
-│   │   ├── cosmetologyInjections-l0sNRNKZ.js.map
-│   │   ├── cosmetologyTattooRemoval-l0sNRNKZ.js.map
+│   │   ├── cosmetology-BEjKIyXg.js.map
+│   │   ├── cosmetologyFace-BEjKIyXg.js.map
+│   │   ├── cosmetologyInjections-BEjKIyXg.js.map
+│   │   ├── cosmetologyTattooRemoval-BEjKIyXg.js.map
 │   │   ├── footer-l0sNRNKZ.js.map
 │   │   ├── gallery-BEjKIyXg.js.map
 │   │   ├── gold-brush-Nu-oZcNc.png
 │   │   ├── hair-T1o549P1.jpg
-│   │   ├── hairColoring-l0sNRNKZ.js.map
-│   │   ├── haircuts-l0sNRNKZ.js.map
-│   │   ├── hairdressing-l0sNRNKZ.js.map
-│   │   ├── hairStyling-l0sNRNKZ.js.map
+│   │   ├── hairColoring-BEjKIyXg.js.map
+│   │   ├── haircuts-BEjKIyXg.js.map
+│   │   ├── hairdressing-BEjKIyXg.js.map
+│   │   ├── hairStyling-BEjKIyXg.js.map
 │   │   ├── header-l0sNRNKZ.js.map
 │   │   ├── home-BEjKIyXg.js.map
-│   │   ├── laser-l0sNRNKZ.js.map
-│   │   ├── laserArms-l0sNRNKZ.js.map
-│   │   ├── laserBikini-l0sNRNKZ.js.map
-│   │   ├── laserLegs-l0sNRNKZ.js.map
+│   │   ├── laser-BEjKIyXg.js.map
+│   │   ├── laserArms-BEjKIyXg.js.map
+│   │   ├── laserBikini-BEjKIyXg.js.map
+│   │   ├── laserLegs-BEjKIyXg.js.map
 │   │   ├── logo-BrWsfXBx.png
-│   │   ├── main-Cb2Gispc.js
-│   │   ├── main-Cb2Gispc.js.map
 │   │   ├── main-CbxnMVqs.css
+│   │   ├── main-DFBWFQN_.js
+│   │   ├── main-DFBWFQN_.js.map
+│   │   ├── makeup-BEjKIyXg.js.map
 │   │   ├── makeup-Bhg7V6vf.jpg
-│   │   ├── makeup-l0sNRNKZ.js.map
-│   │   ├── makeupDay-l0sNRNKZ.js.map
-│   │   ├── makeupEvening-l0sNRNKZ.js.map
-│   │   ├── makeupWedding-l0sNRNKZ.js.map
+│   │   ├── makeupDay-BEjKIyXg.js.map
+│   │   ├── makeupEvening-BEjKIyXg.js.map
+│   │   ├── makeupWedding-BEjKIyXg.js.map
 │   │   ├── manicure-pedicure-DC0nkdQa.jpg
+│   │   ├── massage-BEjKIyXg.js.map
+│   │   ├── men-BEjKIyXg.js.map
 │   │   ├── men-DcddwxIG.jpg
-│   │   ├── men-l0sNRNKZ.js.map
-│   │   ├── menHaircut-l0sNRNKZ.js.map
-│   │   ├── menManicure-l0sNRNKZ.js.map
-│   │   ├── menMassage-l0sNRNKZ.js.map
-│   │   ├── nails-l0sNRNKZ.js.map
-│   │   ├── nailsExtensions-l0sNRNKZ.js.map
-│   │   ├── nailsManicure-l0sNRNKZ.js.map
-│   │   ├── nailsPedicure-l0sNRNKZ.js.map
+│   │   ├── menHaircut-BEjKIyXg.js.map
+│   │   ├── menManicure-BEjKIyXg.js.map
+│   │   ├── menMassage-BEjKIyXg.js.map
+│   │   ├── nails-BEjKIyXg.js.map
+│   │   ├── nailsExtensions-BEjKIyXg.js.map
+│   │   ├── nailsManicure-BEjKIyXg.js.map
+│   │   ├── nailsPedicure-BEjKIyXg.js.map
 │   │   ├── orig-CXFGsbss.jpg
 │   │   ├── res-BgNzH5Bg.jpg
 │   │   ├── reviews-BEjKIyXg.js.map
-│   │   ├── sideMenu-BJLGEn2k.js
-│   │   ├── sideMenu-BJLGEn2k.js.map
+│   │   ├── sideMenu-BR7BCqcV.js
+│   │   ├── sideMenu-BR7BCqcV.js.map
 │   │   ├── sideMenu-l0sNRNKZ.js.map
+│   │   ├── spa-BEjKIyXg.js.map
 │   │   ├── spa-KQnHmHoZ.png
-│   │   ├── spa-l0sNRNKZ.js.map
 │   │   ├── team-BEjKIyXg.js.map
-│   │   └── vacancies-BEjKIyXg.js.map
+│   │   ├── vacancies-BEjKIyXg.js.map
+│   │   └── wrapping-BEjKIyXg.js.map
 │   ├── components/
 │   │   └── partials/
 │   │       ├── footer.html
 │   │       ├── header.html
 │   │       └── side-menu.html
+│   ├── favicon-96x96.png
+│   ├── favicon.ico
+│   ├── favicon.svg
 │   ├── index.html
-│   └── pages/
-│       ├── about.html
-│       ├── brows-and-lashes.html
-│       ├── brows-architecture.html
-│       ├── brows-extensions.html
-│       ├── brows-tinting.html
-│       ├── cosmetology.html
-│       ├── face-care.html
-│       ├── gallery.html
-│       ├── hair-coloring.html
-│       ├── hair-styling.html
-│       ├── haircuts.html
-│       ├── hairdressing.html
-│       ├── home.html
-│       ├── injections.html
-│       ├── laser-arms.html
-│       ├── laser-bikini.html
-│       ├── laser-epilation.html
-│       ├── laser-legs.html
-│       ├── makeup-day.html
-│       ├── makeup-evening.html
-│       ├── makeup-wedding.html
-│       ├── makeup.html
-│       ├── manicure-pedicure.html
-│       ├── manicure.html
-│       ├── men-haircut.html
-│       ├── men-manicure.html
-│       ├── men-massage.html
-│       ├── men-services.html
-│       ├── nails-extensions.html
-│       ├── pedicure.html
-│       ├── reviews.html
-│       ├── spa-and-massage.html
-│       ├── tattoo-removal.html
-│       ├── team.html
-│       └── vacancies.html
+│   ├── pages/
+│   │   ├── about.html
+│   │   ├── aquanika-massage.html
+│   │   ├── brows-and-lashes.html
+│   │   ├── brows-architecture.html
+│   │   ├── brows-extensions.html
+│   │   ├── brows-tinting.html
+│   │   ├── cosmetology.html
+│   │   ├── face-care.html
+│   │   ├── gallery.html
+│   │   ├── hair-coloring.html
+│   │   ├── hair-styling.html
+│   │   ├── haircuts.html
+│   │   ├── hairdressing.html
+│   │   ├── home.html
+│   │   ├── injections.html
+│   │   ├── laser-arms.html
+│   │   ├── laser-bikini.html
+│   │   ├── laser-epilation.html
+│   │   ├── laser-legs.html
+│   │   ├── makeup-day.html
+│   │   ├── makeup-evening.html
+│   │   ├── makeup-wedding.html
+│   │   ├── makeup.html
+│   │   ├── manicure-pedicure.html
+│   │   ├── manicure.html
+│   │   ├── massage.html
+│   │   ├── men-haircut.html
+│   │   ├── men-manicure.html
+│   │   ├── men-massage.html
+│   │   ├── men-services.html
+│   │   ├── nails-extensions.html
+│   │   ├── pedicure.html
+│   │   ├── reviews.html
+│   │   ├── spa-and-massage.html
+│   │   ├── tattoo-removal.html
+│   │   ├── team.html
+│   │   ├── vacancies.html
+│   │   └── wrapping.html
+│   ├── web-app-manifest-192x192.png
+│   ├── web-app-manifest-512x512.png
+│   └── webmanifest.json
 ├─] node_modules/ (ignored)
 ├── package-lock.json
 ├── package.json
 ├── public/
+│   ├── 404.html
 │   ├── apple-touch-icon.png
 │   ├── favicon-96x96.png
 │   ├── favicon.ico
