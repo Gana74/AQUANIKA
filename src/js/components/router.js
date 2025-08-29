@@ -1,8 +1,17 @@
 // ==============  router.js  ==============
-// чтобы и локально и на GitHub Pages всё работало
-// const isDev = import.meta.env.DEV;
-// const basePath = isDev ? '' : '/AQUANIKA';
-export const basePath = "/AQUANIKA";
+// Умное определение basePath для всех окружений
+export const basePath = (() => {
+  // Если GitHub Pages
+  if (window.location.hostname.includes('github.io')) {
+    return "/AQUANIKA";
+  }
+  // Если локальная разработка с Vite (порт 3000)
+  if (window.location.hostname === 'localhost' && window.location.port === '3000') {
+    return "/AQUANIKA";
+  }
+  // Для продакшена на собственном домене
+  return "";
+})();
 
 // Маршруты: ключ — «чистый» pathname, значение — файл страницы
 export const routes = {
@@ -59,17 +68,6 @@ const pagesWithSideMenu = [
   "/gallery",
 ];
 
-// ---------------- helpers ----------------
-// Загружает любой HTML-чунк
-async function loadComponent(path) {
-  const url = path.startsWith("/")
-    ? `${basePath}${path}`
-    : `${basePath}/${path}`;
-  const res = await fetch(url);
-  if (!res.ok) throw new Error(`HTTP ${res.status} – ${url}`);
-  return res.text();
-}
-
 // Заголовки страниц
 const pageTitles = {
   "/": "Aqvanika – салон красоты премиум-класса",
@@ -100,8 +98,7 @@ const pageTitles = {
   "/services/cosmetology": "Косметология – Aqvanika",
   "/services/cosmetology/face-care": "Косметология — Уход за лицом – Aqvanika",
   "/services/cosmetology/injections": "Косметология — Инъекции – Aqvanika",
-  "/services/cosmetology/tattoo-removal":
-    "Косметология — Выведение татуажа – Aqvanika",
+  "/services/cosmetology/tattoo-removal": "Косметология — Выведение татуажа – Aqvanika",
   "/services/hairdressing": "Парикмахерские услуги – Aqvanika",
   "/services/hairdressing/haircuts": "Стрижки – Aqvanika",
   "/services/hairdressing/coloring": "Окрашивание – Aqvanika",
@@ -116,36 +113,83 @@ const pageTitles = {
   "/services/men/manicure": "Для мужчин — Маникюр – Aqvanika",
 };
 
+// ---------------- helpers ----------------
+// Умная загрузка компонентов для всех окружений
+async function loadComponent(path) {
+  // Для абсолютных путей добавляем basePath только если он нужен
+  let url = path;
+  if (path.startsWith("/") && basePath) {
+    url = `${basePath}${path}`;
+  }
+  
+  const res = await fetch(url);
+  if (!res.ok) throw new Error(`HTTP ${res.status} – ${url}`);
+  return res.text();
+}
+
 // ---------------- routing ----------------
 // Определяет актуальный «чистый» маршрут
-function getRoute() {
-  return window.location.pathname.replace(basePath, "") || "/";
+export function getRoute() {
+  let path = window.location.pathname;
+  
+  // Убираем basePath если он присутствует
+  if (basePath && path.startsWith(basePath)) {
+    path = path.slice(basePath.length);
+  }
+  
+  return path || "/";
 }
 
 // Загружает контент нужной страницы
-async function loadPage(route) {
+export async function loadPage(route) {
   const htmlPath = routes[route] || routes["/"];
   const showSideMenu = pagesWithSideMenu.includes(route);
 
   document.title = pageTitles[route] || "Aqvanika";
 
-  const content = await loadComponent(htmlPath);
+  try {
+    const content = await loadComponent(htmlPath);
 
-  if (showSideMenu) {
-    const sideMenu = await loadComponent("/components/partials/side-menu.html");
-    document.querySelector("main").innerHTML = `
-      <div class="page-with-sidebar">
-        ${sideMenu}
-        <div class="page-content">${content}</div>
-      </div>`;
+    if (showSideMenu) {
+      const sideMenu = await loadComponent("/components/partials/side-menu.html");
+      document.querySelector("main").innerHTML = `
+        <div class="page-with-sidebar">
+          ${sideMenu}
+          <div class="page-content">${content}</div>
+        </div>`;
 
-    // динамический импорт скрипта бокового меню
-    import(`/js/components/sideMenu.js`)
-      .then((m) => m.initSideMenu?.())
-      .catch((err) => console.error("sideMenu.js failed:", err));
-  } else {
-    document.querySelector("main").innerHTML = content;
+      // Динамический импорт sideMenu.js
+      try {
+        const sideMenuModule = await import('./sideMenu.js');
+        if (sideMenuModule.initSideMenu) {
+          sideMenuModule.initSideMenu();
+        } else if (sideMenuModule.default && sideMenuModule.default.initSideMenu) {
+          sideMenuModule.default.initSideMenu();
+        }
+      } catch (err) {
+        console.warn("sideMenu.js not available:", err);
+      }
+    } else {
+      document.querySelector("main").innerHTML = content;
+    }
+
+    // Инициализация компонентов после загрузки страницы
+    initPageComponents();
+  } catch (error) {
+    console.error('Ошибка загрузки страницы:', error);
+    // Fallback на главную страницу
+    if (route !== '/') {
+      navigateTo('/');
+    }
   }
+}
+
+// Функция для программного перехода
+export function navigateTo(path) {
+  const cleanPath = path.startsWith('/') ? path : '/' + path;
+  const fullPath = basePath + cleanPath;
+  window.history.pushState({}, '', fullPath);
+  handleLocation();
 }
 
 // Переход по истории браузера
@@ -159,21 +203,68 @@ function handleNavigation(e) {
   if (!link) return;
 
   const url = new URL(link.href);
-  if (
-    url.origin !== window.location.origin ||
-    link.closest(".side-menu") // исключаем боковое меню
-  )
-    return;
+  if (url.origin !== window.location.origin || link.closest(".side-menu")) return;
 
   e.preventDefault();
-  const cleanPath = url.pathname.replace(basePath, "") || "/";
-  window.history.pushState({}, "", basePath + cleanPath);
-  handleLocation();
+  navigateTo(url.pathname.replace(basePath, "") || "/");
+}
+
+// Функция для обработки редиректов с GitHub Pages
+export function handleGitHubPagesRedirect() {
+  // Только для GitHub Pages
+  if (!window.location.hostname.includes('github.io')) return false;
+  
+  const redirectPath = sessionStorage.getItem('redirectPath');
+  if (redirectPath) {
+    console.log('Обнаружен редирект с 404 страницы:', redirectPath);
+    sessionStorage.removeItem('redirectPath');
+    navigateTo(redirectPath);
+    return true;
+  }
+  
+  // Проверяем URL при загрузке (для прямых ссылок)
+  const currentPath = window.location.pathname;
+  if (currentPath.includes('/services/') && !currentPath.endsWith('.html') && currentPath !== basePath + '/') {
+    const cleanPath = currentPath.replace(basePath, '');
+    console.log('Прямой переход по ссылке:', cleanPath);
+    navigateTo(cleanPath);
+    return true;
+  }
+  
+  return false;
+}
+
+// Инициализация компонентов страницы
+function initPageComponents() {
+  // Инициализация каруселей, форм и других компонентов
+  if (typeof window.initCarousels === 'function') {
+    window.initCarousels();
+  }
+  if (typeof window.initForms === 'function') {
+    window.initForms();
+  }
 }
 
 // ---------------- init ----------------
 export function initRouter() {
-  document.addEventListener("click", handleNavigation);
-  window.addEventListener("popstate", handleLocation);
-  handleLocation();
+  // Сначала проверяем редиректы с GitHub Pages
+  const hasRedirect = handleGitHubPagesRedirect();
+  
+  if (!hasRedirect) {
+    // Инициализируем обычный роутинг
+    document.addEventListener("click", handleNavigation);
+    window.addEventListener("popstate", handleLocation);
+    handleLocation();
+  }
 }
+
+// Экспорт для использования в других модулях
+export default {
+  basePath,
+  routes,
+  getRoute,
+  loadPage,
+  navigateTo,
+  handleGitHubPagesRedirect,
+  initRouter
+};
