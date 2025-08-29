@@ -5,13 +5,17 @@ export const basePath = (() => {
   if (window.location.hostname.includes('github.io')) {
     return "/AQUANIKA";
   }
-  // Если локальная разработка с Vite (порт 3000)
-  if (window.location.hostname === 'localhost' && window.location.port === '3000') {
+  // Если локальная разработка с Vite
+  if (window.location.hostname === 'localhost') {
     return "/AQUANIKA";
   }
   // Для продакшена на собственном домене
   return "";
 })();
+
+// Флаг для определения типа окружения
+export const isGitHubPages = window.location.hostname.includes('github.io');
+export const isLocal = window.location.hostname === 'localhost';
 
 // Маршруты: ключ — «чистый» pathname, значение — файл страницы
 export const routes = {
@@ -116,9 +120,9 @@ const pageTitles = {
 // ---------------- helpers ----------------
 // Умная загрузка компонентов для всех окружений
 async function loadComponent(path) {
-  // Для абсолютных путей добавляем basePath только если он нужен
+  // Всегда добавляем basePath для абсолютных путей
   let url = path;
-  if (path.startsWith("/") && basePath) {
+  if (path.startsWith("/")) {
     url = `${basePath}${path}`;
   }
   
@@ -209,28 +213,36 @@ function handleNavigation(e) {
   navigateTo(url.pathname.replace(basePath, "") || "/");
 }
 
-// Функция для обработки редиректов с GitHub Pages
-export function handleGitHubPagesRedirect() {
-  // Только для GitHub Pages
-  if (!window.location.hostname.includes('github.io')) return false;
+// Функция для обработки редиректов
+export function handleRedirects() {
+  // Для GitHub Pages - проверяем sessionStorage
+  if (isGitHubPages) {
+    const redirectPath = sessionStorage.getItem('redirectPath');
+    if (redirectPath) {
+      console.log('GitHub Pages редирект:', redirectPath);
+      sessionStorage.removeItem('redirectPath');
+      if (routes[redirectPath]) {
+        navigateTo(redirectPath);
+        return true;
+      }
+    }
+  }
+
+  // Для всех окружений - проверяем текущий URL
+  const currentPath = window.location.pathname;
+  let cleanPath = currentPath;
   
-  const redirectPath = sessionStorage.getItem('redirectPath');
-  if (redirectPath) {
-    console.log('Обнаружен редирект с 404 страницы:', redirectPath);
-    sessionStorage.removeItem('redirectPath');
-    navigateTo(redirectPath);
-    return true;
+  if (basePath && currentPath.startsWith(basePath)) {
+    cleanPath = currentPath.slice(basePath.length);
   }
   
-  // Проверяем URL при загрузке (для прямых ссылок)
-  const currentPath = window.location.pathname;
-  if (currentPath.includes('/services/') && !currentPath.endsWith('.html') && currentPath !== basePath + '/') {
-    const cleanPath = currentPath.replace(basePath, '');
+  // Если путь не корневой и не заканчивается на .html, но есть в маршрутах
+  if (cleanPath !== '/' && !cleanPath.endsWith('.html') && routes[cleanPath]) {
     console.log('Прямой переход по ссылке:', cleanPath);
     navigateTo(cleanPath);
     return true;
   }
-  
+
   return false;
 }
 
@@ -247,8 +259,8 @@ function initPageComponents() {
 
 // ---------------- init ----------------
 export function initRouter() {
-  // Сначала проверяем редиректы с GitHub Pages
-  const hasRedirect = handleGitHubPagesRedirect();
+  // Обрабатываем редиректы
+  const hasRedirect = handleRedirects();
   
   if (!hasRedirect) {
     // Инициализируем обычный роутинг
@@ -265,6 +277,6 @@ export default {
   getRoute,
   loadPage,
   navigateTo,
-  handleGitHubPagesRedirect,
+  handleRedirects,
   initRouter
 };

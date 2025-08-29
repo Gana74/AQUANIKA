@@ -4,27 +4,11 @@
     <meta charset="UTF-8">
     <title>Redirecting... - AQUANIKA</title>
     <script>
-        // Умный редирект для всех окружений
-        const path = window.location.pathname;
-        const isGitHub = window.location.hostname.includes('github.io');
-        const basePath = isGitHub ? '/AQUANIKA' : '';
-        
-        let redirectPath = path;
-        if (isGitHub && path.startsWith('/AQUANIKA')) {
-            redirectPath = path.slice('/AQUANIKA'.length);
-        }
-        
-        // Сохраняем только для GitHub Pages
-        if (isGitHub) {
-            sessionStorage.setItem('redirectPath', redirectPath);
-            window.location.href = basePath + '/';
-        } else {
-            // Для других хостингов - редирект на главную
-            window.location.href = '/';
-        }
+        // Простой редирект на главную
+        window.location.href = '/AQUANIKA/';
     </script>
 </head>
 <body>
-    <p>Redirecting... <a href="/">Click here if not redirected</a></p>
+    <p>Redirecting... <a href="/AQUANIKA/">Click here</a></p>
 </body>
 </html>
