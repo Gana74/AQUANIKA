@@ -1,11 +1,13 @@
-// loadComponents.js - исправленная версия
+import { basePath } from "./router.js";
+// loadComponents.js
 async function loadComponent(elementId, componentPath) {
   try {
-    // Определяем базовый путь динамически
-    const basePath = window.location.origin + "/AQUANIKA/";
-    const fullPath = `${basePath}${componentPath}`;
+    // Формируем URL с учётом централизованного basePath
+    const url = componentPath.startsWith("/")
+      ? `${basePath}${componentPath}`
+      : `${basePath}/${componentPath}`;
 
-    const response = await fetch(fullPath);
+    const response = await fetch(url);
     if (!response.ok) {
       throw new Error(`HTTP error! status: ${response.status}`);
     }
@@ -21,9 +23,4 @@ async function loadComponent(elementId, componentPath) {
   }
 }
 
-// Загружаем компоненты при загрузке страницы
-document.addEventListener("DOMContentLoaded", () => {
-  loadComponent("header-placeholder", "components/partials/header.html");
-  loadComponent("footer-placeholder", "components/partials/footer.html");
-});
 export { loadComponent };

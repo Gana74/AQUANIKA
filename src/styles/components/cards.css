@@ -1,170 +1,16 @@
-
-
-.card {
-  background-color: var(--color-background);
-  border-radius: var(--border-radius-lg);
-  box-shadow: var(--shadow-sm);
-  overflow: hidden;
-  transition: transform var(--transition-normal),
-    box-shadow var(--transition-normal);
-}
-
-.card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 4px 24px 0 var(--color-secondary-light, #e8c874);
-}
-
-.card__image {
-  position: relative;
-  width: 100%;
-  padding-top: 66.67%; /* 3:2 aspect ratio */
-  overflow: hidden;
-}
-
-.card__image img {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transition: transform var(--transition-normal);
-}
-
-.card:hover .card__image img {
-  transform: scale(1.05);
-  border-color: var(--color-secondary-light, #e8c874);
-}
-
-.card__content {
-  padding: var(--spacing-lg);
-}
-
-.card__title {
-  font-size: var(--font-size-xl);
-  font-weight: 600;
-  margin-bottom: var(--spacing-sm);
-  color: var(--color-text);
-}
-
-.card__description {
-  font-size: var(--font-size-base);
-  color: var(--color-text-light);
-  margin-bottom: var(--spacing-md);
-}
-
-.card__footer {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding-top: var(--spacing-md);
-  border-top: 1px solid var(--color-border);
-}
-
-/* Service card */
-.service-card {
-  display: flex;
-  flex-direction: column;
-  height: 100%;
-}
-
-.service-card__content {
-  flex-grow: 1;
-}
-
-.service-card__price {
-  font-size: var(--font-size-lg);
-  font-weight: 600;
-  color: var(--color-primary);
-}
-
-/* Team card */
-.team-card__image {
-  padding-top: 100%; /* 1:1 aspect ratio */
-}
-
-.team-card__position {
-  font-size: var(--font-size-sm);
-  color: var(--color-text-light);
-  margin-bottom: var(--spacing-sm);
-}
-
-.team-card__specialization {
-  font-size: var(--font-size-sm);
-  color: var(--color-primary);
-  margin-bottom: var(--spacing-md);
-}
-
-/* Review card */
-.review-card__header {
-  display: flex;
-  align-items: center;
-  gap: var(--spacing-md);
-  margin-bottom: var(--spacing-md);
-}
-
-.review-card__avatar {
-  width: 3rem;
-  height: 3rem;
-  border-radius: 50%;
-  overflow: hidden;
-}
-
-.review-card__author {
-  font-weight: 500;
-}
-
-.review-card__date {
-  font-size: var(--font-size-sm);
-  color: var(--color-text-light);
-}
-
-.review-card__rating {
-  display: flex;
-  gap: var(--spacing-xs);
-  margin-bottom: var(--spacing-sm);
-}
-
-.review-card__star {
-  color: var(--color-accent);
-}
-
-/* Card grid */
-.card-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: var(--spacing-lg);
-}
-
-.card__button:hover,
-.card__button:focus {
-  background-color: var(--color-secondary-dark);
-  color: var(--color-white);
-}
-.card__button:active {
-  background-color: var(--color-secondary);
-  color: var(--color-white);
-}
-.card__link:hover,
-.card__link:focus {
-  color: var(--color-secondary-dark);
-}
-.card__link:active {
-  color: var(--color-secondary);
-}
-
 /* Сетка услуг */
 .services-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 2rem;
-  /* padding: 2rem; */
-  /* max-width: 1200px; */
-  /* margin: 0 auto; */
 }
 
 /* Карточка услуги */
 .service-card {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  min-height: 470px;
   background: var(--color-white);
   border-radius: 1rem;
   overflow: hidden;
@@ -198,6 +44,9 @@
 
 /* Контент карточки */
 .service-card__content {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
   padding: 1.5rem;
 }
 
@@ -210,41 +59,15 @@
 
 .service-card__description {
   color: var(--color-gray);
-  font-size: 1rem;
-  line-height: 1.5;
-  margin-bottom: 1.5rem;
-  min-height: 4.5rem; /* Для выравнивания высоты карточек */
+  margin-bottom: auto;
+  line-height: 1.6;
 }
 
 /* Кнопки */
 .service-card__buttons {
   display: flex;
   gap: 1rem;
-  justify-content: flex-start;
-}
-
-/* Медиа-запросы */
-@media (max-width: 768px) {
-  .services-grid {
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    padding: 1rem;
-  }
-
-  .service-card__image {
-    height: 180px;
-  }
-
-  .service-card__content {
-    padding: 1rem;
-  }
-
-  .service-card__title {
-    font-size: 1.25rem;
-  }
-
-  .service-card__description {
-    font-size: 0.9rem;
-  }
+  margin-top: auto;
 }
 
 /* Анимация при появлении */
@@ -286,17 +109,39 @@
 .service-card:nth-child(7) {
   animation-delay: 0.7s;
 }
+.service-card:nth-child(8) {
+  animation-delay: 0.8s;
+}
 
-@media (max-width: 640px) {
-  .card__content {
-    padding: var(--spacing-md);
+/* Медиа-запросы */
+@media (max-width: 768px) {
+  .services-grid {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1rem;
+    padding: 1rem;
   }
 
-  .card__title {
-    font-size: var(--font-size-lg);
+  .service-card__image {
+    height: 180px;
   }
 
-  .card__description {
-    font-size: var(--font-size-sm);
+  .service-card__content {
+    padding: 1rem;
+  }
+
+  .service-card__title {
+    font-size: 1.25rem;
+  }
+
+  .service-card__description {
+    font-size: 0.9rem;
+  }
+
+  .service-card__buttons {
+    flex-direction: column;
+  }
+
+  .button {
+    width: 100%;
   }
 }

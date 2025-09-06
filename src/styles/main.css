@@ -1,6 +1,5 @@
 /* Base */
 @import "./base/variables.css";
-@import "./base/media.css";
 @import "./base/reset.css";
 @import "./base/typography.css";
 
@@ -22,30 +21,4 @@
 
 /* Pages */
 @import "./pages/home.css";
-@import "./pages/spa-and-massage.css";
-
-/* Адаптивные стили для широких экранов */
-@media (--desktop-wide) {
-  html {
-    font-size: 18px;
-  }
-
-  .section {
-    padding-top: var(--spacing-3xl);
-    padding-bottom: var(--spacing-3xl);
-  }
-
-  h1,
-  .h1 {
-    font-size: var(--font-size-6xl);
-  }
-
-  h2,
-  .h2 {
-    font-size: var(--font-size-5xl);
-  }
-
-  .grid {
-    gap: var(--grid-gap-xl);
-  }
-}
+@import "./pages/pages.css";

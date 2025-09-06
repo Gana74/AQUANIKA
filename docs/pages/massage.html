@@ -11,8 +11,8 @@
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
-    />
-    <link rel="stylesheet" crossorigin href="/AQUANIKA/assets/main-CbxnMVqs.css">
+    />
+    <link rel="stylesheet" crossorigin href="/AQUANIKA/assets/main-8QlSH2XO.css">
   </head>
   <body>
     <main>
@@ -50,27 +50,62 @@
         <!-- Основной контент -->
         <section class="service-description">
           <div class="container">
-            <h1 class="page-title">Массаж</h1>
+            <div class="container__title">
+              <div class="container__title-left">
+                <h1 class="page-title">Массаж в Челябинске</h1>
 
-            <!-- Описание услуги -->
-            <div class="service-intro">
-              <div class="service-intro__content">
-                <p class="service-intro__text">
-                  Профессиональный массаж от мастеров салона Aqvanika – это
-                  искусство прикосновений, направленное на оздоровление тела и
-                  души. Мы предлагаем широкий спектр массажных техник, каждая из
-                  которых подбирается индивидуально для решения ваших задач.
-                </p>
-                <div class="service-intro__buttons">
-                  <button class="btn btn--primary">Заказать услугу</button>
-                  <button class="btn btn--secondary">Задать вопрос</button>
+                <!-- Описание услуги -->
+                <div class="service-intro">
+                  <div class="service-intro__content">
+                    <p class="service-intro__text">
+                      Профессиональный массаж от мастеров салона Aquanika – это
+                      искусство прикосновений, направленное на оздоровление тела
+                      и души. Мы предлагаем широкий спектр массажных техник,
+                      каждая из которых подбирается индивидуально для решения
+                      ваших задач.
+                    </p>
+                    <div class="service-intro__buttons">
+                      <button class="button button--primary">
+                        <a
+                          href="https://n265102.yclients.com/"
+                          target="_blank"
+                          rel="noopener"
+                          >Записаться</a
+                        >
+                      </button>
+                      <button class="button button--outline">
+                        Задать вопрос
+                      </button>
+                    </div>
+                  </div>
                 </div>
               </div>
-              <div class="service-intro__image">
-                <img
-                  src="/AQUANIKA/assets/images/services/massage-main.jpg"
-                  alt="Массаж в Aqvanika"
-                />
+
+              <div class="container__title-right">
+                <picture>
+                  <source
+                    srcset="/AQUANIKA/assets/massage1024px-GAVsRcvR.webp"
+                    type="image/webp"
+                    media="(max-width: 1024px)"
+                  />
+                  <source
+                    srcset="/assets/images/services/massage1024px.png"
+                    type="image/png"
+                    media="(max-width: 1024px)"
+                  />
+                  <source
+                    srcset="/AQUANIKA/assets/massage-BZoqhnSo.webp"
+                    type="image/webp"
+                  />
+                  <img
+                    src="/AQUANIKA/assets/massage-l1ET_vGR.png"
+                    alt="Массаж в Челябинске"
+                    loading="lazy"
+                    width="100%"
+                    height="auto"
+                    style="width: 100%; height: auto"
+                  />
+                </picture>
               </div>
             </div>
 
@@ -102,75 +137,104 @@
             <div class="service-prices">
               <h2 class="section-title">Прайс-лист на массаж</h2>
               <div class="price-tables">
-                <div class="price-table">
-                  <h3>Виды массажа</h3>
+                <div id="massageTables" class="price-table">
                   <table>
                     <thead>
                       <tr>
                         <th>Услуга</th>
-                        <th>Длительность</th>
                         <th>Цена</th>
                       </tr>
                     </thead>
-                    <tbody>
+                    <tbody class="price-table__bg">
                       <tr>
-                        <td>Классический массаж</td>
-                        <td>60 мин</td>
-                        <td>3500 ₽</td>
+                        <td>Пробное посещение: классический массаж</td>
+                        <td><strong>1 300 ₽</strong></td>
                       </tr>
                       <tr>
-                        <td>Спортивный массаж</td>
-                        <td>60 мин</td>
-                        <td>4000 ₽</td>
+                        <td>Массаж шейно-воротниковой зоны</td>
+                        <td><strong>700 ₽</strong></td>
                       </tr>
                       <tr>
-                        <td>Антицеллюлитный массаж</td>
-                        <td>60 мин</td>
-                        <td>4000 ₽</td>
+                        <td>Массаж лица от отеков и шлаков</td>
+                        <td><strong>900 ₽</strong></td>
                       </tr>
                       <tr>
-                        <td>Лимфодренажный массаж</td>
-                        <td>60 мин</td>
-                        <td>4000 ₽</td>
+                        <td>Скульптурно-буccкальный массаж лица</td>
+                        <td><strong>1 300 ₽</strong></td>
                       </tr>
                       <tr>
-                        <td>Релакс-массаж</td>
-                        <td>90 мин</td>
-                        <td>5000 ₽</td>
+                        <td>Массаж ног: ягодицы, бедра, голени, стопы</td>
+                        <td><strong>1 000 ₽</strong></td>
+                      </tr>
+                      <tr>
+                        <td>Точечный массаж стоп</td>
+                        <td><strong>1 000 ₽</strong></td>
+                      </tr>
+                      <tr>
+                        <td>Массаж спины</td>
+                        <td><strong>1 500 ₽</strong></td>
+                      </tr>
+                      <tr>
+                        <td>Общий массаж спины</td>
+                        <td><strong>1 500 ₽</strong></td>
+                      </tr>
+                      <tr>
+                        <td>Расслабляющий массаж всего тела</td>
+                        <td><strong>2 500 ₽</strong></td>
+                      </tr>
+                      <tr>
+                        <td>Оздоровительный массаж всего тела</td>
+                        <td><strong>3 000 ₽</strong></td>
+                      </tr>
+                      <tr>
+                        <td>Лимфодренажный массаж: 2 зоны на выбор</td>
+                        <td><strong>1 500 ₽</strong></td>
+                      </tr>
+                      <tr>
+                        <td>
+                          Лимфодренажный массаж: спина + живот + руки + ноги
+                        </td>
+                        <td><strong>2 500 ₽</strong></td>
+                      </tr>
+                      <tr>
+                        <td>Антицеллюлитный массаж: ягодицы + бедра</td>
+                        <td><strong>1 500 ₽</strong></td>
+                      </tr>
+                      <tr>
+                        <td>
+                          Антицеллюлитный массаж: ягодицы + бедра + живот +
+                          спина
+                        </td>
+                        <td><strong>2 500 ₽</strong></td>
+                      </tr>
+                      <tr>
+                        <td>Антицеллюлитный массаж + обёртывание</td>
+                        <td><strong>3 000 ₽</strong></td>
+                      </tr>
+                      <tr>
+                        <td>
+                          Миофасциальный массаж<br /><small
+                            >Уникальная техника воздействия на фасции: мягкие
+                            захваты и растяжение тканей (пальцы, кулаки, локти,
+                            предплечья)</small
+                          >
+                        </td>
+                        <td><strong>2 500 ₽</strong></td>
+                      </tr>
+                      <tr>
+                        <td>Постизометрическая релаксация (ПИР)</td>
+                        <td><strong>3 000 ₽</strong></td>
+                      </tr>
+                      <tr>
+                        <td>Абонемент: 5 сеансов сегментарного массажа</td>
+                        <td><strong>10 000 ₽</strong></td>
+                      </tr>
+                      <tr>
+                        <td>Скульптурный массаж лица + маска по типу кожи</td>
+                        <td><strong>2 000 ₽</strong></td>
                       </tr>
                     </tbody>
                   </table>
-                </div>
-              </div>
-            </div>
-
-            <!-- Галерея -->
-            <div class="service-gallery">
-              <h2 class="section-title">Галерея</h2>
-              <div class="gallery-grid">
-                <div class="gallery-item">
-                  <img
-                    src="/AQUANIKA/assets/images/services/massage-1.jpg"
-                    alt="Классический массаж"
-                  />
-                </div>
-                <div class="gallery-item">
-                  <img
-                    src="/AQUANIKA/assets/images/services/massage-2.jpg"
-                    alt="Спортивный массаж"
-                  />
-                </div>
-                <div class="gallery-item">
-                  <img
-                    src="/AQUANIKA/assets/images/services/massage-3.jpg"
-                    alt="Антицеллюлитный массаж"
-                  />
-                </div>
-                <div class="gallery-item">
-                  <img
-                    src="/AQUANIKA/assets/images/services/massage-4.jpg"
-                    alt="Релакс-массаж"
-                  />
                 </div>
               </div>
             </div>

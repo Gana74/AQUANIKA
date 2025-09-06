@@ -71,7 +71,8 @@
 
 .header__info {
   display: flex;
-  gap: var(--spacing-xl);
+  flex-direction: column;
+  /* gap: var(--spacing-xl); */
 }
 
 .header__address {
@@ -129,7 +130,7 @@
   font-size: var(--font-size-sm);
 }
 
-.header__hours i {
+.fa-clock {
   color: var(--color-primary);
   font-size: var(--font-size-lg);
 }
@@ -225,7 +226,7 @@
 }
 
 .services-nav__link {
-  color: var(--color-text);
+  color: var(--color-text-light);
   text-decoration: none;
   font-weight: 500;
   padding: var(--spacing-sm) 0;
@@ -233,6 +234,8 @@
   display: flex;
   align-items: center;
   gap: var(--spacing-xs);
+  font-size: 16px;
+  font-weight: 600;
 }
 
 .services-nav__link:hover,
@@ -307,17 +310,6 @@
 
 .header__menu-button:active {
   color: var(--color-secondary);
-}
-
-.section-title {
-  position: relative;
-  z-index: 1;
-  display: inline-block;
-  padding: 0.5em 1.5em;
-  background: url("/assets/images/services/gold-brush.png") center/cover
-    no-repeat;
-  color: var(--color-dark);
-  font-size: var(--font-size-4xl);
 }
 
 @media (max-width: 1200px) {

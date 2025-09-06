@@ -26,5 +26,8 @@
     ">0.2%",
     "not dead",
     "not op_mini all"
-  ]
+  ],
+  "dependencies": {
+    "lazysizes": "^5.3.2"
+  }
 }

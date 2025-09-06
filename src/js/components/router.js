@@ -2,11 +2,11 @@
 // Умное определение basePath для всех окружений
 export const basePath = (() => {
   // Если GitHub Pages
-  if (window.location.hostname.includes('github.io')) {
+  if (window.location.hostname.includes("github.io")) {
     return "/AQUANIKA";
   }
   // Если локальная разработка с Vite
-  if (window.location.hostname === 'localhost') {
+  if (window.location.hostname === "localhost") {
     return "/AQUANIKA";
   }
   // Для продакшена на собственном домене
@@ -14,8 +14,8 @@ export const basePath = (() => {
 })();
 
 // Флаг для определения типа окружения
-export const isGitHubPages = window.location.hostname.includes('github.io');
-export const isLocal = window.location.hostname === 'localhost';
+export const isGitHubPages = window.location.hostname.includes("github.io");
+export const isLocal = window.location.hostname === "localhost";
 
 // Маршруты: ключ — «чистый» pathname, значение — файл страницы
 export const routes = {
@@ -34,9 +34,6 @@ export const routes = {
   "/services/massage": "/pages/massage.html",
   "/services/wrapping": "/pages/wrapping.html",
   "/services/laser": "/pages/laser-epilation.html",
-  "/services/laser/bikini": "/pages/laser-bikini.html",
-  "/services/laser/legs": "/pages/laser-legs.html",
-  "/services/laser/arms": "/pages/laser-arms.html",
   "/services/brows": "/pages/brows-and-lashes.html",
   "/services/brows/architecture": "/pages/brows-architecture.html",
   "/services/brows/tinting": "/pages/brows-tinting.html",
@@ -88,9 +85,6 @@ const pageTitles = {
   "/services/massage": "Массаж – Aqvanika",
   "/services/wrapping": "Обертывания – Aqvanika",
   "/services/laser": "Лазерная эпиляция – Aqvanika",
-  "/services/laser/bikini": "Лазерная эпиляция — Бикини – Aqvanika",
-  "/services/laser/legs": "Лазерная эпиляция — Ноги – Aqvanika",
-  "/services/laser/arms": "Лазерная эпиляция — Руки – Aqvanika",
   "/services/brows": "Брови и ресницы – Aqvanika",
   "/services/brows/architecture": "Брови — Архитектура – Aqvanika",
   "/services/brows/tinting": "Брови — Окрашивание – Aqvanika",
@@ -102,7 +96,8 @@ const pageTitles = {
   "/services/cosmetology": "Косметология – Aqvanika",
   "/services/cosmetology/face-care": "Косметология — Уход за лицом – Aqvanika",
   "/services/cosmetology/injections": "Косметология — Инъекции – Aqvanika",
-  "/services/cosmetology/tattoo-removal": "Косметология — Выведение татуажа – Aqvanika",
+  "/services/cosmetology/tattoo-removal":
+    "Косметология — Выведение татуажа – Aqvanika",
   "/services/hairdressing": "Парикмахерские услуги – Aqvanika",
   "/services/hairdressing/haircuts": "Стрижки – Aqvanika",
   "/services/hairdressing/coloring": "Окрашивание – Aqvanika",
@@ -125,22 +120,39 @@ async function loadComponent(path) {
   if (path.startsWith("/")) {
     url = `${basePath}${path}`;
   }
-  
+
   const res = await fetch(url);
   if (!res.ok) throw new Error(`HTTP ${res.status} – ${url}`);
   return res.text();
+}
+
+// Извлекает только содержимое основной части страницы, исключая теги из <head>
+function extractPageContent(html) {
+  try {
+    const parser = new DOMParser();
+    const doc = parser.parseFromString(html, "text/html");
+    // Предпочитаем содержимое <main>
+    const mainEl = doc.querySelector("main");
+    if (mainEl) return mainEl.innerHTML;
+    // Fallback на <body>
+    if (doc.body) return doc.body.innerHTML;
+  } catch (e) {
+    console.warn("HTML parse failed, using raw content", e);
+  }
+  // Если парсинг не удался — возвращаем как есть
+  return html;
 }
 
 // ---------------- routing ----------------
 // Определяет актуальный «чистый» маршрут
 export function getRoute() {
   let path = window.location.pathname;
-  
+
   // Убираем basePath если он присутствует
   if (basePath && path.startsWith(basePath)) {
     path = path.slice(basePath.length);
   }
-  
+
   return path || "/";
 }
 
@@ -152,47 +164,53 @@ export async function loadPage(route) {
   document.title = pageTitles[route] || "Aqvanika";
 
   try {
-    const content = await loadComponent(htmlPath);
+    const rawContent = await loadComponent(htmlPath);
+    const pageContent = extractPageContent(rawContent);
 
     if (showSideMenu) {
-      const sideMenu = await loadComponent("/components/partials/side-menu.html");
+      const sideMenu = await loadComponent(
+        "/components/partials/side-menu.html"
+      );
       document.querySelector("main").innerHTML = `
         <div class="page-with-sidebar">
           ${sideMenu}
-          <div class="page-content">${content}</div>
+          <div class="page-content">${pageContent}</div>
         </div>`;
 
       // Динамический импорт sideMenu.js
       try {
-        const sideMenuModule = await import('./sideMenu.js');
+        const sideMenuModule = await import("./sideMenu.js");
         if (sideMenuModule.initSideMenu) {
           sideMenuModule.initSideMenu();
-        } else if (sideMenuModule.default && sideMenuModule.default.initSideMenu) {
+        } else if (
+          sideMenuModule.default &&
+          sideMenuModule.default.initSideMenu
+        ) {
           sideMenuModule.default.initSideMenu();
         }
       } catch (err) {
         console.warn("sideMenu.js not available:", err);
       }
     } else {
-      document.querySelector("main").innerHTML = content;
+      document.querySelector("main").innerHTML = pageContent;
     }
 
     // Инициализация компонентов после загрузки страницы
     initPageComponents();
   } catch (error) {
-    console.error('Ошибка загрузки страницы:', error);
+    console.error("Ошибка загрузки страницы:", error);
     // Fallback на главную страницу
-    if (route !== '/') {
-      navigateTo('/');
+    if (route !== "/") {
+      navigateTo("/");
     }
   }
 }
 
 // Функция для программного перехода
 export function navigateTo(path) {
-  const cleanPath = path.startsWith('/') ? path : '/' + path;
+  const cleanPath = path.startsWith("/") ? path : "/" + path;
   const fullPath = basePath + cleanPath;
-  window.history.pushState({}, '', fullPath);
+  window.history.pushState({}, "", fullPath);
   handleLocation();
 }
 
@@ -210,7 +228,8 @@ function handleNavigation(e) {
   if (!link) return;
 
   const url = new URL(link.href);
-  if (url.origin !== window.location.origin || link.closest(".side-menu")) return;
+  if (url.origin !== window.location.origin || link.closest(".side-menu"))
+    return;
 
   e.preventDefault();
   navigateTo(url.pathname.replace(basePath, "") || "/");
@@ -220,10 +239,10 @@ function handleNavigation(e) {
 export function handleRedirects() {
   // Для GitHub Pages - проверяем sessionStorage
   if (isGitHubPages) {
-    const redirectPath = sessionStorage.getItem('redirectPath');
+    const redirectPath = sessionStorage.getItem("redirectPath");
     if (redirectPath) {
-      console.log('GitHub Pages редирект:', redirectPath);
-      sessionStorage.removeItem('redirectPath');
+      console.log("GitHub Pages редирект:", redirectPath);
+      sessionStorage.removeItem("redirectPath");
       if (routes[redirectPath]) {
         navigateTo(redirectPath);
         return true;
@@ -234,14 +253,14 @@ export function handleRedirects() {
   // Для всех окружений - проверяем текущий URL
   const currentPath = window.location.pathname;
   let cleanPath = currentPath;
-  
+
   if (basePath && currentPath.startsWith(basePath)) {
     cleanPath = currentPath.slice(basePath.length);
   }
-  
+
   // Если путь не корневой и не заканчивается на .html, но есть в маршрутах
-  if (cleanPath !== '/' && !cleanPath.endsWith('.html') && routes[cleanPath]) {
-    console.log('Прямой переход по ссылке:', cleanPath);
+  if (cleanPath !== "/" && !cleanPath.endsWith(".html") && routes[cleanPath]) {
+    console.log("Прямой переход по ссылке:", cleanPath);
     navigateTo(cleanPath);
     return true;
   }
@@ -252,11 +271,15 @@ export function handleRedirects() {
 // Инициализация компонентов страницы
 function initPageComponents() {
   // Инициализация каруселей, форм и других компонентов
-  if (typeof window.initCarousels === 'function') {
+  if (typeof window.initCarousels === "function") {
     window.initCarousels();
   }
-  if (typeof window.initForms === 'function') {
+  if (typeof window.initForms === "function") {
     window.initForms();
+  }
+  // Инициализация видео-модалки после вставки контента страницы
+  if (typeof window.initVideoModal === "function") {
+    window.initVideoModal();
   }
 }
 
@@ -264,7 +287,7 @@ function initPageComponents() {
 export function initRouter() {
   // Обрабатываем редиректы
   const hasRedirect = handleRedirects();
-  
+
   if (!hasRedirect) {
     // Инициализируем обычный роутинг
     document.addEventListener("click", handleNavigation);
@@ -281,5 +304,5 @@ export default {
   loadPage,
   navigateTo,
   handleRedirects,
-  initRouter
+  initRouter,
 };

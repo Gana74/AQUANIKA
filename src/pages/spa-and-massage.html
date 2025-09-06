@@ -22,9 +22,7 @@
           <nav class="submenu">
             <ul class="submenu__list">
               <li class="submenu__item">
-                <a
-                  href="/AQUANIKA/services/spa#spa"
-                  class="submenu__link active"
+                <a href="/AQUANIKA/services/spa" class="submenu__link active"
                   >SPA-процедуры</a
                 >
               </li>
@@ -50,34 +48,66 @@
         <!-- Основной контент -->
         <section class="service-description">
           <div class="container">
-            <h1 class="page-title">SPA и массаж</h1>
-
-            <!-- Описание услуги -->
-            <div class="service-intro">
-              <div class="service-intro__content">
-                <p class="service-intro__text">
-                  Откройте для себя мир релаксации и восстановления с нашими
-                  профессиональными SPA-процедурами и массажными техниками. Мы
-                  предлагаем широкий спектр услуг, направленных на оздоровление
-                  тела и души, снятие стресса и восстановление жизненной
-                  энергии.
-                </p>
-                <div class="service-intro__buttons">
-                  <button class="btn btn--primary">Заказать услугу</button>
-                  <button class="btn btn--secondary">Задать вопрос</button>
+            <div class="container__title">
+              <div class="container__title-left">
+                <h1 class="page-title">SPA и массаж в Челябинске</h1>
+                <!-- Описание услуги -->
+                <div class="service-intro">
+                  <div class="service-intro__content">
+                    <p class="service-intro__text">
+                      Откройте для себя мир релаксации и восстановления с нашими
+                      профессиональными SPA-процедурами и массажными техниками.
+                      Мы предлагаем широкий спектр услуг, направленных на
+                      оздоровление тела и души, снятие стресса и восстановление
+                      жизненной энергии.
+                    </p>
+                    <div class="service-intro__buttons">
+                      <button class="button button--primary">
+                        <a
+                          href="https://n265102.yclients.com/"
+                          target="_blank"
+                          rel="noopener"
+                          >Записаться</a
+                        >
+                      </button>
+                      <button class="button button--outline">
+                        Задать вопрос
+                      </button>
+                    </div>
+                  </div>
                 </div>
               </div>
-              <div class="service-intro__image">
-                <img
-                  src="#"
-                  alt="SPA процедуры в Aqvanika"
-                />
+              <div class="container__title-right">
+                <picture>
+                  <source
+                    srcset="/assets/images/services/spa&massage1024px.webp"
+                    type="image/webp"
+                    media="(max-width: 1024px)"
+                  />
+                  <source
+                    srcset="/assets/images/services/spa&massage1024px.png"
+                    type="image/png"
+                    media="(max-width: 1024px)"
+                  />
+                  <source
+                    srcset="/assets/images/services/spa&massage.webp"
+                    type="image/webp"
+                  />
+                  <img
+                    src="/assets/images/services/spa&massage.png"
+                    alt="спа и массаж в Челябинске"
+                    loading="lazy"
+                    width="100%"
+                    height="auto"
+                    style="width: 100%; height: auto"
+                  />
+                </picture>
               </div>
             </div>
 
             <!-- Преимущества услуги -->
             <div class="service-benefits">
-              <h2 class="section-title">Почему выбирают нас</h2>
+              <h2 class="section-title">Преимущества</h2>
               <div class="benefits-grid">
                 <div class="benefit-card">
                   <i class="fas fa-award"></i>
@@ -106,62 +136,94 @@
               <h2 class="section-title">Прайс-лист</h2>
               <div class="price-tables">
                 <!-- SPA процедуры -->
-                <div class="price-table" id="spa">
-                  <h3>SPA-процедуры</h3>
+                <div class="price-table">
                   <table>
                     <thead>
                       <tr>
                         <th>Услуга</th>
-                        <th>Длительность</th>
                         <th>Цена</th>
                       </tr>
                     </thead>
-                    <tbody>
+                    <tbody class="price-table__bg">
                       <tr>
-                        <td>SPA-уход для лица</td>
-                        <td>60 мин</td>
-                        <td>4500 ₽</td>
+                        <td>
+                          <strong>Подводно-вакуумный массаж "Акваника"</strong>
+                        </td>
+                        <td>
+                          <a
+                            class="price-table__all"
+                            href="/AQUANIKA/services/aquanika#aquanikaTables"
+                            >смотреть все цены</a
+                          >
+                        </td>
                       </tr>
                       <tr>
-                        <td>Обертывание всего тела</td>
-                        <td>90 мин</td>
-                        <td>5500 ₽</td>
+                        <td>Пробное посещение</td>
+                        <td>1 300 ₽</td>
                       </tr>
                       <tr>
-                        <td>SPA-программа "Релакс"</td>
-                        <td>120 мин</td>
-                        <td>7500 ₽</td>
-                      </tr>
-                    </tbody>
-                  </table>
-                </div>
-
-                <!-- Массаж -->
-                <div class="price-table" id="massage">
-                  <h3>Массаж</h3>
-                  <table>
-                    <thead>
-                      <tr>
-                        <th>Услуга</th>
-                        <th>Длительность</th>
-                        <th>Цена</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      <tr>
-                        <td>Классический массаж</td>
-                        <td>60 мин</td>
-                        <td>3500 ₽</td>
+                        <td>ПВМ "Акваника"</td>
+                        <td>2 000 ₽</td>
                       </tr>
                       <tr>
-                        <td>Спортивный массаж</td>
-                        <td>90 мин</td>
-                        <td>4500 ₽</td>
+                        <td>Абонемент 5 сеансов ПВМ "Акваника"</td>
+                        <td>7 000 ₽</td>
                       </tr>
                       <tr>
-                        <td>Антицеллюлитный массаж</td>
-                        <td>60 мин</td>
-                        <td>4000 ₽</td>
+                        <td>
+                          <strong>Массаж</strong>
+                        </td>
+                        <td>
+                          <a
+                            class="price-table__all"
+                            href="/AQUANIKA/services/massage#massageTables"
+                            >смотреть все цены</a
+                          >
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>Пробное посещение: классический массаж</td>
+                        <td>1 300 ₽</td>
+                      </tr>
+                      <tr>
+                        <td>Массаж шейно-воротниковой зоны</td>
+                        <td>700 ₽</td>
+                      </tr>
+                      <tr>
+                        <td>Массаж ног</td>
+                        <td>1 000 ₽</td>
+                      </tr>
+                      <tr>
+                        <td>Общий массаж спины</td>
+                        <td>1 500 ₽</td>
+                      </tr>
+                      <tr>
+                        <td>Антицеллюлитный массаж + обёртывание</td>
+                        <td>3 000 ₽</td>
+                      </tr>
+                      <tr>
+                        <td>
+                          <strong>Обертывание</strong>
+                        </td>
+                        <td>
+                          <a
+                            class="price-table__all"
+                            href="/AQUANIKA/services/wrapping#wrappingTables"
+                            >смотреть все цены</a
+                          >
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>Обертывание: антицеллюлитный уход</td>
+                        <td>500 ₽</td>
+                      </tr>
+                      <tr>
+                        <td>Шоколадное обертывание</td>
+                        <td>1 400 ₽</td>
+                      </tr>
+                      <tr>
+                        <td>Обертывание водоросли</td>
+                        <td>1 200 ₽</td>
                       </tr>
                     </tbody>
                   </table>
@@ -175,27 +237,21 @@
               <div class="gallery-grid">
                 <div class="gallery-item">
                   <img
-                    src="#"
+                    src="/assets/images/spa/aqu.webp"
                     alt="SPA процедура 1"
                   />
                 </div>
                 <div class="gallery-item">
                   <img
-                    src="#"
+                    src="/assets/images/spa/aqua.webp"
                     alt="SPA процедура 2"
                   />
                 </div>
                 <div class="gallery-item">
-                  <img
-                    src="#"
-                    alt="Массаж 1"
-                  />
+                  <img src="/assets/images/spa/mas.webp" alt="Массаж 1" />
                 </div>
                 <div class="gallery-item">
-                  <img
-                    src="#"
-                    alt="Массаж 2"
-                  />
+                  <img src="/assets/images/spa/mass.webp" alt="Массаж 2" />
                 </div>
               </div>
             </div>

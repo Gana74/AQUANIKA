@@ -5,32 +5,30 @@
   --color-primary-dark: #b38c2e; /* Глубокое античное золото */
 
   /* Дополнительные акценты */
-  --color-secondary: #c5a645; /* Матовое золото */
+  --color-secondary: #c5a645; /* Матовое золото, заголовки  */
   --color-secondary-light: #e8d174; /* Шампанское золото */
   --color-secondary-dark: #a78b3d; /* Состаренное золото */
 
-  /* Нейтральные цвета */
-  --color-white: #ffffff;
-  --color-cream: #fff5f3; /* Розоватый кремовый */
-  --color-gray-light: #f0e6e4;
-  --color-gray: #b8a9a7;
-  --color-gray-dark: #4a3f3e;
+  /* фон  */
+  --color-cream: #fff5f3; /* Розоватый кремовый  фон */
+  --color-dark: #333333; /* Глубокий серый для текста */
+  --color-dark-alt: #2d2d2d; /* Альтернативный темный */
+  --color-background: #fff;
+  --color-background-alt: #f2f2f2;
 
   /* Дополнительные акценты */
   --color-accent: #d9b38c; /* Теплый персиково-золотой */
   --color-accent-dark: #bf9770;
 
-  /* Текст и фоны */
-  --color-dark: #333333; /* Глубокий серый для текста */
-  --color-dark-alt: #2d2d2d; /* Альтернативный темный */
+  /* Текст */
+  --color-white: #ffff;
+  --color-gray: #b8a9a7;
   --color-text: var(--color-dark);
+  --color-gray-dark: #4a3f3e;
+  --color-gray-light: #f0e6e4;
   --color-text-light: #666666;
 
-  --color-background: var(--color-white);
-  --color-background-alt: var(--color-cream);
-  --color-background-dark: var(--color-dark);
-
-  /* Границы и тени */
+  /* Границы */
   --color-border: #e0e0e0;
   --color-border-light: #f0f0f0;
   --color-border-dark: var(--color-dark);
@@ -62,9 +60,13 @@
   --spacing-xl: 2rem; /* 32px */
   --spacing-2xl: 3rem; /* 48px */
 
-  /* Borders */
+  /* Borders radius */
   --border-radius: 4px;
   --border-radius-lg: 8px;
+  --border-radius-md: 10px;
+  --border-radius-xl: 16px;
+  --border-radius-xxl: 32px;
+  --border-radius-xxxl: 64px;
 
   /* Shadows */
   --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.1);
@@ -76,6 +78,7 @@
   --z-index-sticky: 200;
   --z-index-modal: 300;
   --z-index-popover: 400;
+  --z-index-fixed: 500;
 
   /* Transitions */
   --transition-normal: 0.3s ease;

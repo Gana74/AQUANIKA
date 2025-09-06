@@ -17,54 +17,52 @@
   <body>
     <main>
       <div class="spa-page">
-        <div class="category-submenu">
-          <nav class="submenu">
-            <ul class="submenu__list">
-              <li class="submenu__item">
-                <a href="/AQUANIKA/services/laser" class="submenu__link active"
-                  >Общее</a
-                >
-              </li>
-              <li class="submenu__item">
-                <a href="/AQUANIKA/services/laser/bikini" class="submenu__link"
-                  >Бикини</a
-                >
-              </li>
-              <li class="submenu__item">
-                <a href="/AQUANIKA/services/laser/legs" class="submenu__link"
-                  >Ноги</a
-                >
-              </li>
-              <li class="submenu__item">
-                <a href="/AQUANIKA/services/laser/arms" class="submenu__link"
-                  >Руки</a
-                >
-              </li>
-            </ul>
-          </nav>
-        </div>
-
         <section class="service-description">
           <div class="container">
-            <h1 class="page-title">Лазерная эпиляция</h1>
-
-            <div class="service-intro">
-              <div class="service-intro__content">
-                <p class="service-intro__text">
-                  Современная и безопасная лазерная эпиляция для гладкой кожи
-                  надолго. Индивидуальные протоколы, сертифицированное
-                  оборудование и комфорт во время процедур.
-                </p>
-                <div class="service-intro__buttons">
-                  <button class="btn btn--primary">Записаться</button>
-                  <button class="btn btn--secondary">Задать вопрос</button>
+            <div class="container__title">
+              <div class="container__title-left">
+                <h1 class="page-title">Лазерная эпиляция в Челябинске</h1>
+                <div class="service-intro">
+                  <div class="service-intro__content">
+                    <p class="service-intro__text">
+                      Современная и безопасная лазерная эпиляция для гладкой
+                      кожи надолго. Индивидуальные протоколы, сертифицированное
+                      оборудование и комфорт во время процедур.
+                    </p>
+                    <div class="service-intro__buttons">
+                      <button class="button button--primary">Записаться</button>
+                      <button class="button button--outline">
+                        Задать вопрос
+                      </button>
+                    </div>
+                  </div>
                 </div>
               </div>
-              <div class="service-intro__image">
-                <img
-                  src="/assets/images/services/orig.jpg"
-                  alt="Лазерная эпиляция в Aqvanika"
-                />
+              <div class="container__title-right">
+                <picture>
+                  <source
+                    srcset="/assets/images/services/laser1024px.webp"
+                    type="image/webp"
+                    media="(max-width: 1024px)"
+                  />
+                  <source
+                    srcset="/assets/images/services/laser1024px.png"
+                    type="image/png"
+                    media="(max-width: 1024px)"
+                  />
+                  <source
+                    srcset="/assets/images/services/laser.webp"
+                    type="image/webp"
+                  />
+                  <img
+                    src="/assets/images/services/laser.png"
+                    alt="Лазерная эпиляция  в Челябинске"
+                    loading="lazy"
+                    width="100%"
+                    height="auto"
+                    style="width: 100%; height: auto"
+                  />
+                </picture>
               </div>
             </div>
 
@@ -93,88 +91,126 @@
             </div>
 
             <div class="service-prices">
-              <h2 class="section-title">Прайс-лист</h2>
+              <h2 class="section-title">Прайс-лист на лазерную эпиляцию</h2>
               <div class="price-tables">
-                <div class="price-table" id="bikini">
-                  <h3>Бикини</h3>
+                <div id="laserEpilationTables" class="price-table">
                   <table>
                     <thead>
                       <tr>
                         <th>Услуга</th>
-                        <th>Длительность</th>
                         <th>Цена</th>
                       </tr>
                     </thead>
-                    <tbody>
+                    <tbody class="price-table__bg">
                       <tr>
-                        <td>Классическое бикини</td>
-                        <td>30 мин</td>
-                        <td>1900 ₽</td>
+                        <td>Усики (лазер)</td>
+                        <td>400 ₽</td>
                       </tr>
                       <tr>
-                        <td>Глубокое бикини</td>
-                        <td>40 мин</td>
-                        <td>2500 ₽</td>
-                      </tr>
-                    </tbody>
-                  </table>
-                </div>
-
-                <div class="price-table" id="legs">
-                  <h3>Ноги</h3>
-                  <table>
-                    <thead>
-                      <tr>
-                        <th>Услуга</th>
-                        <th>Длительность</th>
-                        <th>Цена</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      <tr>
-                        <td>Голени</td>
-                        <td>30 мин</td>
-                        <td>2200 ₽</td>
+                        <td>Зона лица (лазер)</td>
+                        <td>600 ₽</td>
                       </tr>
                       <tr>
-                        <td>Бёдра</td>
-                        <td>30 мин</td>
-                        <td>2400 ₽</td>
+                        <td>Одна зона (лазер)</td>
+                        <td>600 ₽</td>
                       </tr>
                       <tr>
-                        <td>Ноги полностью</td>
-                        <td>60 мин</td>
-                        <td>4200 ₽</td>
-                      </tr>
-                    </tbody>
-                  </table>
-                </div>
-
-                <div class="price-table" id="arms">
-                  <h3>Руки</h3>
-                  <table>
-                    <thead>
-                      <tr>
-                        <th>Услуга</th>
-                        <th>Длительность</th>
-                        <th>Цена</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      <tr>
-                        <td>Предплечья</td>
-                        <td>20 мин</td>
-                        <td>1500 ₽</td>
+                        <td>Ареолы / дорожка (лазер)</td>
+                        <td>600 ₽</td>
                       </tr>
                       <tr>
-                        <td>Плечи</td>
-                        <td>20 мин</td>
-                        <td>1600 ₽</td>
+                        <td>Лицо полностью (лазер)</td>
+                        <td>1 000 ₽</td>
                       </tr>
                       <tr>
-                        <td>Руки полностью</td>
-                        <td>40 мин</td>
-                        <td>2800 ₽</td>
+                        <td>Подмышечные впадины (лазер)</td>
+                        <td>1 000 ₽</td>
+                      </tr>
+                      <tr>
+                        <td>Классическое бикини (лазер)</td>
+                        <td>1 000 ₽</td>
+                      </tr>
+                      <tr>
+                        <td>Тотальное бикини (лазер)</td>
+                        <td>1 500 ₽</td>
+                      </tr>
+                      <tr>
+                        <td>Руки до локтя (лазер)</td>
+                        <td>1 200 ₽</td>
+                      </tr>
+                      <tr>
+                        <td>Бёдра (лазер)</td>
+                        <td>1 300 ₽</td>
+                      </tr>
+                      <tr>
+                        <td>Голени (лазер)</td>
+                        <td>1 300 ₽</td>
+                      </tr>
+                      <tr>
+                        <td>Руки полностью (лазер)</td>
+                        <td>1 700 ₽</td>
+                      </tr>
+                      <tr>
+                        <td>Ноги полностью (лазер)</td>
+                        <td>2 200 ₽</td>
+                      </tr>
+                      <tr>
+                        <td>Живот полностью (лазер)</td>
+                        <td>1 200 ₽</td>
+                      </tr>
+                      <tr>
+                        <td>Спина полностью (лазер)</td>
+                        <td>2 000 ₽</td>
+                      </tr>
+                      <tr>
+                        <td>
+                          Пакет № 1: Подмышечные впадины + бикини классическое
+                          (лазер)
+                        </td>
+                        <td>1 800 ₽</td>
+                      </tr>
+                      <tr>
+                        <td>Пакет № 2: Подмышечные впадины + голени (лазер)</td>
+                        <td>1 900 ₽</td>
+                      </tr>
+                      <tr>
+                        <td>Пакет № 3: Бикини классическое + голени (лазер)</td>
+                        <td>2 200 ₽</td>
+                      </tr>
+                      <tr>
+                        <td>
+                          Пакет № 4: Тотальное бикини + подмышечные впадины
+                          (лазер)
+                        </td>
+                        <td>2 300 ₽</td>
+                      </tr>
+                      <tr>
+                        <td>Пакет № 5: Тотальное бикини + голени (лазер)</td>
+                        <td>2 600 ₽</td>
+                      </tr>
+                      <tr>
+                        <td>
+                          Пакет № 6: Тотальное бикини + ноги полностью (лазер)
+                        </td>
+                        <td>3 500 ₽</td>
+                      </tr>
+                      <tr>
+                        <td>
+                          Пакет № 7: Усики + подмышечные впадины + голени +
+                          тотальное бикини (лазер)
+                        </td>
+                        <td>3 900 ₽</td>
+                      </tr>
+                      <tr>
+                        <td>
+                          Пакет № 8: Усики + подмышечные впадины + тотальное
+                          бикини + руки и ноги полностью (лазер)
+                        </td>
+                        <td>5 800 ₽</td>
+                      </tr>
+                      <tr>
+                        <td>Пакет № 9: Безлимит (лазер)</td>
+                        <td>6 500 ₽</td>
                       </tr>
                     </tbody>
                   </table>
@@ -182,22 +218,73 @@
               </div>
             </div>
 
+            <!-- Подробное описание услуг -->
             <div class="service-details">
-              <h2 class="section-title">Подробности процедуры</h2>
+              <h2 class="section-title">Подробное описание процедур</h2>
+
               <div class="service-details__section">
-                <h3>Как проходит процедура</h3>
+                <h3>Лазерная эпиляция</h3>
                 <p>
-                  Перед началом мастер оценивает тип кожи и волос, подбирает
-                  оптимальные параметры. Во время процедуры используется
-                  охлаждение для дополнительного комфорта.
+                  Современная и эффективная процедура удаления волос на
+                  длительный срок с помощью лазерного излучения. Подходит для
+                  всех зон тела и обеспечивает гладкость кожи надолго. Идеальное
+                  решение для тех, кто хочет забыть о необходимости регулярного
+                  бритья или воска.
                 </p>
+                <ul class="service-details__list">
+                  <li>Удаляет волосы на длительный срок</li>
+                  <li>Подходит для чувствительной кожи</li>
+                  <li>Минимизирует риск раздражений</li>
+                  <li>Экономит время на ежедневный уход</li>
+                </ul>
               </div>
+
               <div class="service-details__section">
-                <h3>Курс и рекомендации</h3>
+                <h3>Эпиляция лица</h3>
                 <p>
-                  Рекомендуемый курс — 6–8 процедур с интервалом 4–6 недель. За
-                  24 часа до процедуры зону необходимо аккуратно сбрить.
+                  Безопасная и щадящая процедура лазерной эпиляции для зоны
+                  лица. Помогает избавиться от нежелательных волос на верхней
+                  губе, подбородке, щеках, сохраняя естественную
+                  чувствительность кожи и её здоровый вид.
                 </p>
+                <ul class="service-details__list">
+                  <li>Устраняет волосы без раздражения</li>
+                  <li>Подходит для деликатных зон</li>
+                  <li>Делает кожу гладкой и чистой</li>
+                  <li>Подходит для чувствительной кожи лица</li>
+                </ul>
+              </div>
+
+              <div class="service-details__section">
+                <h3>Эпиляция тела</h3>
+                <p>
+                  Профессиональная лазерная эпиляция для зон ног, подмышек,
+                  бикини и спины. Быстро, безболезненно и эффективно. Позволяет
+                  забыть о волосах на длительное время и чувствовать себя
+                  уверенно в любое время года.
+                </p>
+                <ul class="service-details__list">
+                  <li>Долгосрочный результат</li>
+                  <li>Минимум дискомфорта</li>
+                  <li>Подходит для больших зон</li>
+                  <li>Идеально перед отпуском или важным событием</li>
+                </ul>
+              </div>
+
+              <div class="service-details__section">
+                <h3>Глубокое бикини</h3>
+                <p>
+                  Популярная зона эпиляции, при которой удаляются все волосы в
+                  интимной области, включая зону вокруг ягодиц. Процедура
+                  проводится с максимальной осторожностью и гигиеной,
+                  обеспечивая комфорт и безопасность.
+                </p>
+                <ul class="service-details__list">
+                  <li>Полное удаление волос в интимной зоне</li>
+                  <li>Гигиенично и безопасно</li>
+                  <li>Подходит для постоянного использования</li>
+                  <li>Дарит ощущение свежести и чистоты</li>
+                </ul>
               </div>
             </div>
           </div>
