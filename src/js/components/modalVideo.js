@@ -1,3 +1,4 @@
+import homeVideoUrl from "@/assets/video/home.mp4";
 // modalVideo.js
 
 export function initVideoModal() {
@@ -13,18 +14,29 @@ export function initVideoModal() {
         return;
     }
     
+    // Назначаем корректный URL видео через Vite, чтобы файл попал в сборку
+    try {
+        if (homeVideoUrl) {
+            video.src = homeVideoUrl;
+            video.setAttribute('preload', 'none');
+            video.setAttribute('playsinline', '');
+        }
+    } catch (e) {
+        console.warn("Не удалось назначить src для видео:", e);
+    }
     // Функция открытия модального окна
     function openVideoModal() {
         modal.style.display = "block";
         document.body.style.overflow = "hidden";
         document.body.style.paddingRight = getScrollbarWidth() + 'px';
         
-        // Автовоспроизведение при открытии модального окна
-        setTimeout(() => {
-            video.play().catch(e => {
+        // Автовоспроизведение при открытии модального окна (в рамках жеста пользователя)
+        const playPromise = video.play();
+        if (playPromise && typeof playPromise.catch === "function") {
+            playPromise.catch(e => {
                 console.log("Автовоспроизведение не разрешено: ", e);
             });
-        }, 300);
+        }
     }
     
     // Функция закрытия модального окна
