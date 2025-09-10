@@ -19,7 +19,7 @@
             <ul class="submenu__list">
               <li class="submenu__item">
                 <a href="/AQUANIKA/services/nails" class="submenu__link"
-                  >Общее</a
+                  >Маникюр и педикюр</a
                 >
               </li>
               <li class="submenu__item">
@@ -49,23 +49,46 @@
 
         <section class="service-description">
           <div class="container">
-            <h1 class="page-title">Маникюр</h1>
+            <div class="container__title">
+              <div class="container__title-left">
+                <h1 class="page-title">Маникюр</h1>
 
-            <div class="service-intro">
-              <div class="service-intro__content">
-                <p class="service-intro__text">
-                  Классический и аппаратный маникюр, укрепление и покрытие.
-                </p>
-                <div class="service-intro__buttons">
-                  <button class="btn btn--primary">Записаться</button>
-                  <button class="btn btn--secondary">Задать вопрос</button>
+                <div class="service-intro">
+                  <p class="service-intro__text">
+                    Классический и аппаратный маникюр, укрепление и покрытие.
+                  </p>
+                  <div class="service-intro__buttons">
+                    <button class="btn btn--primary">Записаться</button>
+                    <button class="btn btn--secondary">Задать вопрос</button>
+                  </div>
                 </div>
               </div>
-              <div class="service-intro__image">
-                <img
-                  src="/assets/images/services/manicure-pedicure.jpg"
-                  alt="Маникюр"
-                />
+
+              <div class="container__title-right">
+                <picture>
+                  <source
+                    srcset="/assets/images/services/manicure1024px.webp"
+                    type="image/webp"
+                    media="(max-width: 1024px)"
+                  />
+                  <source
+                    srcset="/assets/images/services/manicure1024px.png"
+                    type="image/png"
+                    media="(max-width: 1024px)"
+                  />
+                  <source
+                    srcset="/assets/images/services/manicure.webp"
+                    type="image/webp"
+                  />
+                  <img
+                    src="/assets/images/services/manicure.png"
+                    alt="маникюр в Aqvanika"
+                    loading="lazy"
+                    width="100%"
+                    height="auto"
+                    style="width: 100%; height: auto"
+                  />
+                </picture>
               </div>
             </div>
 

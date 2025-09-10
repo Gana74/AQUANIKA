@@ -9,31 +9,28 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
     />
-    <link rel="stylesheet" crossorigin href="/AQUANIKA/assets/main-8QlSH2XO.css">
+    <link rel="stylesheet" crossorigin href="/AQUANIKA/assets/main-B8e7XFtA.css">
   </head>
   <body>
     <main>
       <div class="spa-page">
+        <!-- Подменю категорий -->
         <div class="category-submenu">
           <nav class="submenu">
             <ul class="submenu__list">
               <li class="submenu__item">
-                <a href="/AQUANIKA/services/brows" class="submenu__link active"
-                  >Общее</a
+                <a href="/AQUANIKA/services/brows" class="submenu__link active">
+                  Бриви и ресницы</a
                 >
               </li>
               <li class="submenu__item">
                 <a
                   href="/AQUANIKA/services/brows/architecture"
                   class="submenu__link"
-                  >Архитектура бровей</a
+                  >Архитектура бровей и ламинирование ресниц</a
                 >
               </li>
-              <li class="submenu__item">
-                <a href="/AQUANIKA/services/brows/tinting" class="submenu__link"
-                  >Окрашивание бровей</a
-                >
-              </li>
+
               <li class="submenu__item">
                 <a
                   href="/AQUANIKA/services/brows/extensions"
@@ -47,27 +44,59 @@
 
         <section class="service-description">
           <div class="container">
-            <h1 class="page-title">Брови и ресницы</h1>
+            <div class="container__title">
+              <div class="container__title-left">
+                <h1 class="page-title">Брови и ресницы в Челябинске</h1>
 
-            <div class="service-intro">
-              <div class="service-intro__content">
-                <p class="service-intro__text">
-                  Комплексные услуги по оформлению бровей и ресниц: архитектура
-                  формы, окрашивание и наращивание для выразительного взгляда.
-                </p>
-                <div class="service-intro__buttons">
-                  <button class="btn btn--primary">Записаться</button>
-                  <button class="btn btn--secondary">Задать вопрос</button>
+                <div class="service-intro">
+                  <p class="service-intro__text">
+                    Комплексные услуги по оформлению бровей и ресниц:
+                    архитектура формы, окрашивание и наращивание для
+                    выразительного взгляда.
+                  </p>
+                  <div class="service-intro__buttons">
+                    <button class="button button--primary">
+                      <a
+                        href="https://n265102.yclients.com/"
+                        target="_blank"
+                        rel="noopener"
+                        >Записаться</a
+                      >
+                    </button>
+                    <button class="button button--outline">
+                      Задать вопрос
+                    </button>
+                  </div>
                 </div>
               </div>
-              <div class="service-intro__image">
-                <img
-                  src="/AQUANIKA/assets/res-BgNzH5Bg.jpg"
-                  alt="Брови и ресницы в Aqvanika"
-                />
+
+              <div class="container__title-right">
+                <picture>
+                  <source
+                    srcset="/AQUANIKA/assets/br-la1024px-ZYLfVBGJ.webp"
+                    type="image/webp"
+                    media="(max-width: 1024px)"
+                  />
+                  <source
+                    srcset="/AQUANIKA/assets/br-la1024px-BtKbWERB.png"
+                    type="image/png"
+                    media="(max-width: 1024px)"
+                  />
+                  <source
+                    srcset="/AQUANIKA/assets/br-la-B9eczVsm.webp"
+                    type="image/webp"
+                  />
+                  <img
+                    src="/AQUANIKA/assets/br-la-BdepHPOf.png"
+                    alt="Брови и ресницы в Aqvanika"
+                    loading="lazy"
+                    width="100%"
+                    height="auto"
+                    style="width: 100%; height: auto"
+                  />
+                </picture>
               </div>
             </div>
-
             <div class="service-benefits">
               <h2 class="section-title">Преимущества</h2>
               <div class="benefits-grid">
@@ -92,80 +121,173 @@
             <div class="service-prices">
               <h2 class="section-title">Прайс-лист</h2>
               <div class="price-tables">
-                <div class="price-table" id="architecture">
-                  <h3>Архитектура бровей</h3>
+                <!-- Архитектура бровей / Ламинирование ресниц -->
+                <div class="price-table">
                   <table>
                     <thead>
                       <tr>
                         <th>Услуга</th>
-                        <th>Длительность</th>
                         <th>Цена</th>
                       </tr>
                     </thead>
-                    <tbody>
+                    <tbody class="price-table__bg">
                       <tr>
-                        <td>Коррекция формы</td>
-                        <td>30 мин</td>
-                        <td>900 ₽</td>
+                        <td>
+                          <strong
+                            >Архитектура бровей / ламинирование ресниц</strong
+                          >
+                        </td>
+                        <td>
+                          <a
+                            class="price-table__all"
+                            href="/AQUANIKA/services/brows/architecture#architectureTables"
+                            >смотреть все цены</a
+                          >
+                        </td>
                       </tr>
-                      <tr>
-                        <td>Комплекс: архитектура + окрашивание</td>
-                        <td>50 мин</td>
-                        <td>1500 ₽</td>
-                      </tr>
-                    </tbody>
-                  </table>
-                </div>
 
-                <div class="price-table" id="tinting">
-                  <h3>Окрашивание бровей</h3>
-                  <table>
-                    <thead>
                       <tr>
-                        <th>Услуга</th>
-                        <th>Длительность</th>
-                        <th>Цена</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      <tr>
-                        <td>Краска</td>
-                        <td>25 мин</td>
-                        <td>700 ₽</td>
+                        <td>Коррекция бровей пинцет/воск</td>
+                        <td>800 ₽</td>
                       </tr>
                       <tr>
-                        <td>Хна</td>
-                        <td>35 мин</td>
-                        <td>900 ₽</td>
+                        <td>Создание формы бровей без окрашивания</td>
+                        <td>1 000 ₽</td>
                       </tr>
-                    </tbody>
-                  </table>
-                </div>
+                      <tr>
+                        <td>Ботокс для бровей</td>
+                        <td>400 ₽</td>
+                      </tr>
+                      <tr>
+                        <td>Ботокс для ресниц</td>
+                        <td>400 ₽</td>
+                      </tr>
 
-                <div class="price-table" id="extensions">
-                  <h3>Наращивание ресниц</h3>
-                  <table>
-                    <thead>
                       <tr>
-                        <th>Услуга</th>
-                        <th>Длительность</th>
-                        <th>Цена</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      <tr>
-                        <td>Классическое 1D</td>
-                        <td>120 мин</td>
-                        <td>3000 ₽</td>
+                        <td><strong>Наращивание ресниц</strong></td>
+                        <td>
+                          <a
+                            class="price-table__all"
+                            href="/AQUANIKA/services/brows/extensions#br-laTables"
+                            >смотреть все цены</a
+                          >
+                        </td>
                       </tr>
                       <tr>
-                        <td>Объёмное 2D-3D</td>
-                        <td>150 мин</td>
-                        <td>3800 ₽</td>
+                        <td>
+                          Элитные эффекты: Стрелки/ Лучики/ Барби/ Mascara/
+                          Аниме/ Американка/ Эффект подводки
+                        </td>
+                        <td>2 300 ₽</td>
+                      </tr>
+
+                      <tr>
+                        <td>Экспресс наращивание ресниц</td>
+                        <td>1 200 ₽</td>
+                      </tr>
+                      <tr>
+                        <td>Классическое наращивание ресниц</td>
+                        <td>1 600 ₽</td>
+                      </tr>
+
+                      <tr>
+                        <td>Коррекция наращивания</td>
+                        <td>1 200 ₽</td>
                       </tr>
                     </tbody>
                   </table>
                 </div>
+              </div>
+            </div>
+
+            <!-- Галерея -->
+            <div class="service-gallery">
+              <h2 class="section-title">Галерея</h2>
+              <div class="gallery-grid">
+                <div class="gallery-item">
+                  <img
+                    src="/AQUANIKA/assets/br1-CCQJtzTE.webp"
+                    alt="идеальные ресницы"
+                  />
+                </div>
+                <div class="gallery-item">
+                  <img
+                    src="/AQUANIKA/assets/br2-CwHhxNxR.webp"
+                    alt="идеальные брови"
+                  />
+                </div>
+                <div class="gallery-item">
+                  <img
+                    src="/AQUANIKA/assets/br3-JIzazgjw.webp"
+                    alt="результат работы мастера по брови\ресницы"
+                  />
+                </div>
+                <div class="gallery-item">
+                  <img
+                    src="/AQUANIKA/assets/br4-Vnn4Fitp.webp"
+                    alt="результат работы мастера по брови\ресницы"
+                  />
+                </div>
+              </div>
+            </div>
+
+            <!-- Подробное описание услуг -->
+            <div class="service-details">
+              <h2 class="section-title">Подробное описание услуг</h2>
+
+              <!-- Архитектура бровей -->
+              <div class="service-details__section">
+                <h3>Архитектура бровей</h3>
+                <p>
+                  Архитектура бровей — это профессиональное оформление, которое
+                  придает бровям идеальную форму, соответствующую вашему лицу.
+                  Наши мастера подбирают форму, учитывая овал лица, тип
+                  внешности и ваши предпочтения.
+                </p>
+                <ul class="service-details__list">
+                  <li>Индивидуальный подход к каждому клиенту</li>
+                  <li>Использование качественных красителей и материалов</li>
+                  <li>Долговременный результат и естественный вид</li>
+                </ul>
+              </div>
+
+              <!-- Ламинирование ресниц -->
+              <div class="service-details__section">
+                <h3>Ламинирование ресниц</h3>
+                <p>
+                  Ламинирование ресниц — это процедура, которая придает ресницам
+                  здоровый блеск, питает и укрепляет их. За счет специального
+                  состава ресницы выглядят более густыми и длинными, а эффект
+                  сохраняется до 6-8 недель.
+                </p>
+                <ul class="service-details__list">
+                  <li>Увеличение объема и длины ресниц без наращивания</li>
+                  <li>Питание и укрепление натуральных ресниц</li>
+                  <li>Экономия времени на ежедневный макияж</li>
+                </ul>
+              </div>
+
+              <!-- Наращивание ресниц -->
+              <div class="service-details__section">
+                <h3>Наращивание ресниц</h3>
+                <p>
+                  Наращивание ресниц — это популярная процедура, которая придает
+                  взгляду выразительность и привлекательность. Мы используем
+                  качественные материалы и современные техники для создания
+                  идеального образа.
+                </p>
+                <ul class="service-details__list">
+                  <li>
+                    Разнообразные эффекты: классика, объем, дизайнерские решения
+                  </li>
+                  <li>
+                    Комфортное наращивание без дискомфорта и повреждения
+                    натуральных ресниц
+                  </li>
+                  <li>
+                    Долговечный результат до 4-6 недель с регулярной коррекцией
+                  </li>
+                </ul>
               </div>
             </div>
           </div>

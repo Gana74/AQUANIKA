@@ -1,6 +1,5 @@
 /* Подменю категорий */
 .category-submenu {
-  background-color: var(--color-bg-light);
   padding-top: 2rem;
 }
 
@@ -19,7 +18,7 @@
 }
 
 .submenu__link {
-  color: var(--color-text);
+  color: var(--color-text-light);
   text-decoration: none;
   font-weight: 500;
   padding: 0.5rem 1rem;
@@ -37,18 +36,24 @@
 .container__title {
   display: flex;
   flex-direction: row;
+  justify-content: space-between;
+  gap: 1.25rem;
   margin-top: 4rem;
-  margin-bottom: 60px;
+  margin-bottom: 3.5rem;
+  max-height: 480px;
+  height: 100%;
   background: var(--color-cream);
   border-radius: var(--border-radius-xxl);
 }
 
 .container__title-left {
-  padding: 60px 0 60px 60px;
+  padding: 3.5rem 0 3.5rem 3.5rem;
 }
 
 .container__title-right {
   flex: none;
+  border-radius: 0 var(--border-radius-xxl) var(--border-radius-xxl) 0;
+  overflow: hidden;
 }
 
 .page-title {
@@ -57,14 +62,10 @@
 }
 
 .service-intro {
-  margin-bottom: 3rem;
-}
-
-.service-intro__content {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  gap: 1.5rem;
+  gap: 2.5rem;
 }
 
 .service-intro__text {
@@ -81,22 +82,22 @@
 /* Преимущества */
 
 .service-benefits {
-  margin-bottom: 60px;
+  margin-bottom: 3.5rem;
 }
 
 .section-title {
   position: relative;
   z-index: 1;
-  display: inline-flex; /* Используем flex для лучшего контроля */
+  display: inline-flex;
   align-items: center;
   justify-content: center;
-  padding: 0.8em 1.5em; /* Увеличенный padding по вертикали */
+  padding: 0.8em 1.5em;
   background: url("/assets/images/services/gold-brush.png") center/contain
     no-repeat;
-  background-size: 90% 90%; /* Меньше размер, чтобы точно помещался */
+  background-size: 90% 90%;
   color: var(--color-dark);
   font-size: var(--font-size-4xl);
-  min-height: 1.8em; /* Минимальная высота для всех случаев */
+  min-height: 1.8em;
   line-height: 1.3;
 }
 
@@ -104,7 +105,6 @@
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 2rem;
-  /* margin: 2rem 0; */
 }
 
 .benefit-card {
@@ -113,6 +113,12 @@
   background-color: var(--color-cream);
   border-radius: var(--border-radius-xxl);
   box-shadow: var(--shadow-md);
+  transition: all 0.3s ease;
+  cursor: default;
+}
+
+.benefit-card:hover {
+  transform: scale(1.05);
 }
 
 .benefit-card i {
@@ -124,7 +130,7 @@
 /* Прайс-лист */
 
 .service-prices {
-  margin-bottom: 60px;
+  margin-bottom: 3.5rem;
 }
 
 .price-table {
@@ -191,7 +197,7 @@
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 1rem;
-  margin-bottom: 60px;
+  margin-bottom: 3.5rem;
 }
 
 .gallery-item img {
@@ -207,8 +213,6 @@
 }
 
 /* Подробное описание */
-.service-details__section {
-}
 
 .service-details__list {
   list-style: none;

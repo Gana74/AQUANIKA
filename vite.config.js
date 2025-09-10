@@ -45,7 +45,6 @@ export default defineConfig({
           __dirname,
           "src/pages/brows-architecture.html"
         ),
-        browsTinting: resolve(__dirname, "src/pages/brows-tinting.html"),
         browsExtensions: resolve(__dirname, "src/pages/brows-extensions.html"),
         laser: resolve(__dirname, "src/pages/laser-epilation.html"),
         hairdressing: resolve(__dirname, "src/pages/hairdressing.html"),
@@ -112,10 +111,7 @@ export default defineConfig({
           from: /^\/services\/brows\/architecture/,
           to: "/pages/brows-architecture.html",
         },
-        {
-          from: /^\/services\/brows\/tinting/,
-          to: "/pages/brows-tinting.html",
-        },
+      
         {
           from: /^\/services\/brows\/extensions/,
           to: "/pages/brows-extensions.html",
