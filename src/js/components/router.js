@@ -33,7 +33,11 @@ export const routes = {
   "/services/aquanika": "/pages/aquanika-massage.html",
   "/services/massage": "/pages/massage.html",
   "/services/wrapping": "/pages/wrapping.html",
-  "/services/laser": "/pages/laser-epilation.html",
+
+  "/services/epilation": "/pages/epilation.html",
+  "/services/epilation/laser": "/pages/laser-epilation.html",
+  "/services/epilation/sugaring": "/pages/sugaring.html",
+
   "/services/brows": "/pages/brows-and-lashes.html",
   "/services/brows/architecture": "/pages/brows-architecture.html",
   "/services/brows/extensions": "/pages/brows-extensions.html",
@@ -50,9 +54,6 @@ export const routes = {
   "/services/hairdressing/coloring": "/pages/hair-coloring.html",
   "/services/hairdressing/styling": "/pages/hair-styling.html",
   "/services/makeup": "/pages/makeup.html",
-  "/services/makeup/day": "/pages/makeup-day.html",
-  "/services/makeup/evening": "/pages/makeup-evening.html",
-  "/services/makeup/wedding": "/pages/makeup-wedding.html",
   "/services/men": "/pages/men-services.html",
   "/services/men/haircut": "/pages/men-haircut.html",
   "/services/men/massage": "/pages/men-massage.html",
@@ -70,44 +71,44 @@ const pagesWithSideMenu = [
 
 // Заголовки страниц
 const pageTitles = {
-  "/": "Aqvanika – салон красоты премиум-класса",
-  "/about": "О нас – Aqvanika",
-  "/team": "Наша команда – Aqvanika",
-  "/reviews": "Отзывы – Aqvanika",
-  "/vacancies": "Вакансии – Aqvanika",
-  "/gallery": "Галерея – Aqvanika",
-  "/prices": "Цены – Aqvanika",
-  "/promotions": "Акции – Aqvanika",
-  "/contacts": "Контакты – Aqvanika",
-  "/services/spa": "SPA и массаж – Aqvanika",
-  "/services/aquanika": "Подводно-вакуумный массаж 'Акваника' – Aqvanika",
-  "/services/massage": "Массаж – Aqvanika",
-  "/services/wrapping": "Обертывания – Aqvanika",
-  "/services/laser": "Лазерная эпиляция – Aqvanika",
-  "/services/brows": "Брови и ресницы – Aqvanika",
-  "/services/brows/architecture": "Брови — Архитектура – Aqvanika",
-  "/services/brows/extensions": "Ресницы — Наращивание – Aqvanika",
-  "/services/nails": "Маникюр и педикюр – Aqvanika",
-  "/services/nails/manicure": "Маникюр – Aqvanika",
-  "/services/nails/pedicure": "Педикюр – Aqvanika",
-  "/services/nails/extensions": "Наращивание ногтей – Aqvanika",
-  "/services/cosmetology": "Косметология – Aqvanika",
-  "/services/cosmetology/face-care": "Косметология — Уход за лицом – Aqvanika",
-  "/services/cosmetology/injections": "Косметология — Инъекции – Aqvanika",
+  "/": "Aquanika – салон красоты премиум-класса",
+  "/about": "О нас – Aquanika",
+  "/team": "Наша команда – Aquanika",
+  "/reviews": "Отзывы – Aquanika",
+  "/vacancies": "Вакансии – Aquanika",
+  "/gallery": "Галерея – Aquanika",
+  "/prices": "Цены – Aquanika",
+  "/promotions": "Акции – Aquanika",
+  "/contacts": "Контакты – Aquanika",
+  "/services/spa": "SPA и массаж – Aquanika",
+  "/services/aquanika": "Подводно-вакуумный массаж 'Акваника' – Aquanika",
+  "/services/massage": "Массаж – Aquanika",
+  "/services/wrapping": "Обертывания – Aquanika",
+
+  "/services/epilation": "Эпиляция – Aquanika",
+  "/services/epilation/laser": "Лазерная эпиляция – Aquanika",
+  "/services/epilation/sugaring": "Шугаринг – Aquanika",
+  "/services/brows": "Брови и ресницы – Aquanika",
+  "/services/brows/architecture": "Брови — Архитектура – Aquanika",
+  "/services/brows/extensions": "Ресницы — Наращивание – Aquanika",
+  "/services/nails": "Ногтевой сервис – Aquanika",
+  "/services/nails/manicure": "Маникюр – Aquanika",
+  "/services/nails/pedicure": "Педикюр – Aquanika",
+  "/services/nails/extensions": "Наращивание ногтей – Aquanika",
+  "/services/cosmetology": "Косметология – Aquanika",
+  "/services/cosmetology/face-care": "Косметология — Уход за лицом – Aquanika",
+  "/services/cosmetology/injections": "Косметология — Инъекции – Aquanika",
   "/services/cosmetology/tattoo-removal":
-    "Косметология — Выведение татуажа – Aqvanika",
-  "/services/hairdressing": "Парикмахерские услуги – Aqvanika",
-  "/services/hairdressing/haircuts": "Стрижки – Aqvanika",
-  "/services/hairdressing/coloring": "Окрашивание – Aqvanika",
-  "/services/hairdressing/styling": "Укладки – Aqvanika",
-  "/services/makeup": "Макияж – Aqvanika",
-  "/services/makeup/day": "Макияж — Дневной – Aqvanika",
-  "/services/makeup/evening": "Макияж — Вечерний – Aqvanika",
-  "/services/makeup/wedding": "Макияж — Свадебный – Aqvanika",
-  "/services/men": "Услуги для мужчин – Aqvanika",
-  "/services/men/haircut": "Для мужчин — Стрижка – Aqvanika",
-  "/services/men/massage": "Для мужчин — Массаж – Aqvanika",
-  "/services/men/manicure": "Для мужчин — Маникюр – Aqvanika",
+    "Косметология — Выведение татуажа – Aquanika",
+  "/services/hairdressing": "Парикмахерские услуги – Aquanika",
+  "/services/hairdressing/haircuts": "Стрижки – Aquanika",
+  "/services/hairdressing/coloring": "Окрашивание – Aquanika",
+  "/services/hairdressing/styling": "Укладки – Aquanika",
+  "/services/makeup": "Макияж – Aquanika",
+  "/services/men": "Услуги для мужчин – Aquanika",
+  "/services/men/haircut": "Для мужчин — Стрижка – Aquanika",
+  "/services/men/massage": "Для мужчин — Массаж – Aquanika",
+  "/services/men/manicure": "Для мужчин — Маникюр – Aquanika",
 };
 
 // ---------------- helpers ----------------
@@ -159,7 +160,7 @@ export async function loadPage(route) {
   const htmlPath = routes[route] || routes["/"];
   const showSideMenu = pagesWithSideMenu.includes(route);
 
-  document.title = pageTitles[route] || "Aqvanika";
+  document.title = pageTitles[route] || "Aquanika";
 
   try {
     const rawContent = await loadComponent(htmlPath);

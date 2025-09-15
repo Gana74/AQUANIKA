@@ -46,15 +46,15 @@ export default defineConfig({
           "src/pages/brows-architecture.html"
         ),
         browsExtensions: resolve(__dirname, "src/pages/brows-extensions.html"),
+
+        epilation: resolve(__dirname, "src/pages/epilation.html"),
         laser: resolve(__dirname, "src/pages/laser-epilation.html"),
+        sugaring: resolve(__dirname, "src/pages/sugaring.html"),
         hairdressing: resolve(__dirname, "src/pages/hairdressing.html"),
         haircuts: resolve(__dirname, "src/pages/haircuts.html"),
         hairColoring: resolve(__dirname, "src/pages/hair-coloring.html"),
         hairStyling: resolve(__dirname, "src/pages/hair-styling.html"),
         makeup: resolve(__dirname, "src/pages/makeup.html"),
-        makeupDay: resolve(__dirname, "src/pages/makeup-day.html"),
-        makeupEvening: resolve(__dirname, "src/pages/makeup-evening.html"),
-        makeupWedding: resolve(__dirname, "src/pages/makeup-wedding.html"),
         men: resolve(__dirname, "src/pages/men-services.html"),
         menHaircut: resolve(__dirname, "src/pages/men-haircut.html"),
         menMassage: resolve(__dirname, "src/pages/men-massage.html"),
@@ -111,12 +111,20 @@ export default defineConfig({
           from: /^\/services\/brows\/architecture/,
           to: "/pages/brows-architecture.html",
         },
-      
+
         {
           from: /^\/services\/brows\/extensions/,
           to: "/pages/brows-extensions.html",
         },
-        { from: /^\/services\/laser$/, to: "/pages/laser-epilation.html" },
+        { from: /^\/services\/epilation$/, to: "/pages/epilation.html" },
+        {
+          from: /^\/services\/epilation\/laser/,
+          to: "/pages/laser-epilation.html",
+        },
+        {
+          from: /^\/services\/epilation\/sugaring/,
+          to: "/pages/sugaring.html",
+        },
         { from: /^\/services\/hairdressing$/, to: "/pages/hairdressing.html" },
         {
           from: /^\/services\/hairdressing\/haircuts/,
@@ -131,15 +139,6 @@ export default defineConfig({
           to: "/pages/hair-styling.html",
         },
         { from: /^\/services\/makeup$/, to: "/pages/makeup.html" },
-        { from: /^\/services\/makeup\/day/, to: "/pages/makeup-day.html" },
-        {
-          from: /^\/services\/makeup\/evening/,
-          to: "/pages/makeup-evening.html",
-        },
-        {
-          from: /^\/services\/makeup\/wedding/,
-          to: "/pages/makeup-wedding.html",
-        },
         { from: /^\/services\/men$/, to: "/pages/men-services.html" },
         { from: /^\/services\/men\/haircut/, to: "/pages/men-haircut.html" },
         { from: /^\/services\/men\/massage/, to: "/pages/men-massage.html" },

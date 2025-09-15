@@ -5,9 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
       name="description"
-      content="SPA и массаж в салоне красоты Aqvanika - профессиональные услуги массажа и SPA-процедуры"
+      content="SPA и массаж в салоне красоты Aquanika - профессиональные услуги массажа и SPA-процедуры"
     />
-    <title>SPA и массаж - Aqvanika</title>
+    <title>SPA и массаж - Aquanika</title>
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
@@ -16,325 +16,309 @@
   </head>
   <body>
     <main>
-      <div class="spa-page">
-        <!-- Подменю категорий -->
-        <div class="category-submenu">
-          <nav class="submenu">
-            <ul class="submenu__list">
-              <li class="submenu__item">
-                <a href="/AQUANIKA/services/spa" class="submenu__link active"
-                  >SPA-процедуры</a
-                >
-              </li>
-              <li class="submenu__item">
-                <a href="/AQUANIKA/services/aquanika" class="submenu__link"
-                  >Подводно - вакуумный массаж "Акваника"
-                </a>
-              </li>
-              <li class="submenu__item">
-                <a href="/AQUANIKA/services/massage" class="submenu__link"
-                  >Массаж</a
-                >
-              </li>
-              <li class="submenu__item">
-                <a href="/AQUANIKA/services/wrapping" class="submenu__link"
-                  >Обёртывания</a
-                >
-              </li>
-            </ul>
-          </nav>
-        </div>
+      <!-- Подменю категорий -->
+      <div class="category-submenu">
+        <nav class="submenu">
+          <ul class="submenu__list">
+            <li class="submenu__item">
+              <a href="/AQUANIKA/services/spa" class="submenu__link active"
+                >SPA-процедуры</a
+              >
+            </li>
+            <li class="submenu__item">
+              <a href="/AQUANIKA/services/aquanika" class="submenu__link"
+                >Подводно - вакуумный массаж "Акваника"
+              </a>
+            </li>
+            <li class="submenu__item">
+              <a href="/AQUANIKA/services/massage" class="submenu__link"
+                >Массаж</a
+              >
+            </li>
+            <li class="submenu__item">
+              <a href="/AQUANIKA/services/wrapping" class="submenu__link"
+                >Обёртывания</a
+              >
+            </li>
+          </ul>
+        </nav>
+      </div>
 
-        <!-- Основной контент -->
-        <section class="service-description">
-          <div class="container">
-            <div class="container__title">
-              <div class="container__title-left">
-                <h1 class="page-title">SPA и массаж в Челябинске</h1>
-                <!-- Описание услуги -->
-                <div class="service-intro">
-                  <p class="service-intro__text">
-                    Откройте для себя мир релаксации и восстановления с нашими
-                    профессиональными SPA-процедурами и массажными техниками. Мы
-                    предлагаем широкий спектр услуг, направленных на
-                    оздоровление тела и души, снятие стресса и восстановление
-                    жизненной энергии.
-                  </p>
-                  <div class="service-intro__buttons">
-                    <button class="button button--primary">
-                      <a
-                        href="https://n265102.yclients.com/"
-                        target="_blank"
-                        rel="noopener"
-                        >Записаться</a
-                      >
-                    </button>
-                    <button class="button button--outline">
-                      Задать вопрос
-                    </button>
-                  </div>
-                </div>
-              </div>
-              <div class="container__title-right">
-                <picture>
-                  <source
-                    srcset="/assets/images/services/spa&massage1024px.webp"
-                    type="image/webp"
-                    media="(max-width: 1024px)"
-                  />
-                  <source
-                    srcset="/assets/images/services/spa&massage1024px.png"
-                    type="image/png"
-                    media="(max-width: 1024px)"
-                  />
-                  <source
-                    srcset="/assets/images/services/spa&massage.webp"
-                    type="image/webp"
-                  />
-                  <img
-                    src="/assets/images/services/spa&massage.png"
-                    alt="спа и массаж в Челябинске"
-                    loading="lazy"
-                    width="100%"
-                    height="auto"
-                    style="width: 100%; height: auto"
-                  />
-                </picture>
-              </div>
-            </div>
-
-            <!-- Преимущества услуги -->
-            <div class="service-benefits">
-              <h2 class="section-title">Преимущества</h2>
-              <div class="benefits-grid">
-                <div class="benefit-card">
-                  <i class="fas fa-award"></i>
-                  <h3>Профессиональные мастера</h3>
-                  <p>
-                    Сертифицированные специалисты с опытом работы более 5 лет
-                  </p>
-                </div>
-                <div class="benefit-card">
-                  <i class="fas fa-spa"></i>
-                  <h3>Премиальная косметика</h3>
-                  <p>Используем только качественные материалы и средства</p>
-                </div>
-                <div class="benefit-card">
-                  <i class="fas fa-user-shield"></i>
-                  <h3>Индивидуальный подход</h3>
-                  <p>
-                    Программа процедур составляется с учетом ваших пожеланий
-                  </p>
-                </div>
-              </div>
-            </div>
-
-            <!-- Прайс-лист -->
-            <div class="service-prices">
-              <h2 class="section-title">Прайс-лист</h2>
-              <div class="price-tables">
-                <!-- SPA процедуры -->
-                <div class="price-table">
-                  <table>
-                    <thead>
-                      <tr>
-                        <th>Услуга</th>
-                        <th>Цена</th>
-                      </tr>
-                    </thead>
-                    <tbody class="price-table__bg">
-                      <tr>
-                        <td>
-                          <strong>Подводно-вакуумный массаж "Акваника"</strong>
-                        </td>
-                        <td>
-                          <a
-                            class="price-table__all"
-                            href="/AQUANIKA/services/aquanika#aquanikaTables"
-                            >смотреть все цены</a
-                          >
-                        </td>
-                      </tr>
-                      <tr>
-                        <td>Пробное посещение</td>
-                        <td>1 300 ₽</td>
-                      </tr>
-                      <tr>
-                        <td>ПВМ "Акваника"</td>
-                        <td>2 000 ₽</td>
-                      </tr>
-                      <tr>
-                        <td>Абонемент 5 сеансов ПВМ "Акваника"</td>
-                        <td>7 000 ₽</td>
-                      </tr>
-                      <tr>
-                        <td>
-                          <strong>Массаж</strong>
-                        </td>
-                        <td>
-                          <a
-                            class="price-table__all"
-                            href="/AQUANIKA/services/massage#massageTables"
-                            >смотреть все цены</a
-                          >
-                        </td>
-                      </tr>
-                      <tr>
-                        <td>Пробное посещение: классический массаж</td>
-                        <td>1 300 ₽</td>
-                      </tr>
-                      <tr>
-                        <td>Массаж шейно-воротниковой зоны</td>
-                        <td>700 ₽</td>
-                      </tr>
-                      <tr>
-                        <td>Массаж ног</td>
-                        <td>1 000 ₽</td>
-                      </tr>
-                      <tr>
-                        <td>Общий массаж спины</td>
-                        <td>1 500 ₽</td>
-                      </tr>
-                      <tr>
-                        <td>Антицеллюлитный массаж + обёртывание</td>
-                        <td>3 000 ₽</td>
-                      </tr>
-                      <tr>
-                        <td>
-                          <strong>Обертывание</strong>
-                        </td>
-                        <td>
-                          <a
-                            class="price-table__all"
-                            href="/AQUANIKA/services/wrapping#wrappingTables"
-                            >смотреть все цены</a
-                          >
-                        </td>
-                      </tr>
-                      <tr>
-                        <td>Обертывание: антицеллюлитный уход</td>
-                        <td>500 ₽</td>
-                      </tr>
-                      <tr>
-                        <td>Шоколадное обертывание</td>
-                        <td>1 400 ₽</td>
-                      </tr>
-                      <tr>
-                        <td>Обертывание водоросли</td>
-                        <td>1 200 ₽</td>
-                      </tr>
-                    </tbody>
-                  </table>
-                </div>
-              </div>
-            </div>
-
-            <!-- Галерея -->
-            <div class="service-gallery">
-              <h2 class="section-title">Галерея</h2>
-              <div class="gallery-grid">
-                <div class="gallery-item">
-                  <img
-                    src="/assets/images/spa/aqu.webp"
-                    alt="Процедура принятия гидромассажной вынны"
-                  />
-                </div>
-                <div class="gallery-item">
-                  <img
-                    src="/assets/images/spa/aqua.webp"
-                    alt="Процедура принятия гидромассажной вынны"
-                  />
-                </div>
-                <div class="gallery-item">
-                  <img src="/assets/images/spa/mas.webp" alt="Массаж спины" />
-                </div>
-                <div class="gallery-item">
-                  <img
-                    src="/assets/images/spa/mass.webp"
-                    alt="Массаж камнями"
-                  />
-                </div>
-              </div>
-            </div>
-
-            <!-- Подробное описание услуг -->
-            <div class="service-details">
-              <h2 class="section-title">Подробное описание услуг</h2>
-
-              <!-- Подводно-вакуумный массаж -->
-              <div class="service-details__section">
-                <h3>Подводно-вакуумный массаж</h3>
-                <p>
-                  Подводно-вакуумный массаж — это высокоэффективная процедура,
-                  объединяющая мягкое подводное обтекание и точечное вакуумное
-                  воздействие. В тёплой воде тело становится практически
-                  невесомым, что позволяет вакуумным насадкам глубоко
-                  проработать подкожно-жировую клетчатку без боли и синяков.
+      <!-- Основной контент -->
+      <section class="service-description">
+        <div class="container">
+          <div class="container__title">
+            <div class="container__title-left">
+              <h1 class="page-title">SPA и массаж в Челябинске</h1>
+              <!-- Описание услуги -->
+              <div class="service-intro">
+                <p class="service-intro__text">
+                  Откройте для себя мир релаксации и восстановления с нашими
+                  профессиональными SPA-процедурами и массажными техниками. Мы
+                  предлагаем широкий спектр услуг, направленных на оздоровление
+                  тела и души, снятие стресса и восстановление жизненной
+                  энергии.
                 </p>
-                <ul class="service-details__list">
-                  <li>
-                    Мгновенный лимфодренаж и сияющая кожа уже после первого
-                    сеанса
-                  </li>
-                  <li>Уменьшение объёмов до 2 см за одну процедуру</li>
-                  <li>
-                    Выраженный антицеллюлитный эффект и повышение упругости кожи
-                  </li>
-                </ul>
+                <div class="service-intro__buttons">
+                  <button class="button button--primary">
+                    <a
+                      href="https://n265102.yclients.com/"
+                      target="_blank"
+                      rel="noopener"
+                      >Записаться</a
+                    >
+                  </button>
+                  <button class="button button--outline">Задать вопрос</button>
+                </div>
               </div>
+            </div>
+            <div class="container__title-right">
+              <picture>
+                <source
+                  srcset="/assets/images/services/spa&massage1024px.webp"
+                  type="image/webp"
+                  media="(max-width: 1024px)"
+                />
+                <source
+                  srcset="/assets/images/services/spa&massage1024px.png"
+                  type="image/png"
+                  media="(max-width: 1024px)"
+                />
+                <source
+                  srcset="/assets/images/services/spa&massage.webp"
+                  type="image/webp"
+                />
+                <img
+                  src="/assets/images/services/spa&massage.png"
+                  alt="спа и массаж в Челябинске"
+                  loading="lazy"
+                  width="100%"
+                  height="auto"
+                  style="width: 100%; height: auto"
+                />
+              </picture>
+            </div>
+          </div>
 
-              <div class="service-details__section">
-                <h3>Массаж</h3>
-                <p>
-                  Массаж - это не просто процедура, это искусство прикосновений,
-                  которым в совершенстве владеют наши специалисты. Мы предлагаем
-                  различные виды массажа, каждый из которых направлен на решение
-                  определенных задач.
-                </p>
-                <ul class="service-details__list">
-                  <li>
-                    Классический массаж: снимает мышечное напряжение, улучшает
-                    кровообращение
-                  </li>
-                  <li>
-                    Спортивный массаж: помогает в восстановлении после
-                    тренировок
-                  </li>
-                  <li>
-                    Антицеллюлитный массаж: борьба с проявлениями целлюлита
-                  </li>
-                </ul>
+          <!-- Преимущества услуги -->
+          <div class="service-benefits">
+            <h2 class="section-title">Преимущества</h2>
+            <div class="benefits-grid">
+              <div class="benefit-card">
+                <i class="fas fa-award"></i>
+                <h3>Профессиональные мастера</h3>
+                <p>Сертифицированные специалисты с опытом работы более 5 лет</p>
               </div>
-
-              <!-- Обертывания -->
-              <div class="service-details__section">
-                <h3>Обертывания</h3>
-                <p>
-                  Наши обёртывания — это интенсивный уход и мгновенное
-                  преображение. На очищенную кожу наносится активная маска на
-                  основе водорослей, грязей Мертвого моря или шоколада, после
-                  чего тело укутывается в термопленку для усиления проникновения
-                  полезных веществ.
-                </p>
-                <ul class="service-details__list">
-                  <li>
-                    Антицеллюлитное: активизирует липолиз и разглаживает
-                    «апельсиновую корку»
-                  </li>
-                  <li>
-                    Детокс: выводит токсины и лишнюю жидкость, возвращает
-                    лёгкость
-                  </li>
-                  <li>
-                    Увлажняющее: насыщает кожу витаминами и восстанавливает
-                    упругость
-                  </li>
-                </ul>
+              <div class="benefit-card">
+                <i class="fas fa-spa"></i>
+                <h3>Премиальная косметика</h3>
+                <p>Используем только качественные материалы и средства</p>
+              </div>
+              <div class="benefit-card">
+                <i class="fas fa-user-shield"></i>
+                <h3>Индивидуальный подход</h3>
+                <p>Программа процедур составляется с учетом ваших пожеланий</p>
               </div>
             </div>
           </div>
-        </section>
-      </div>
+
+          <!-- Прайс-лист -->
+          <div class="service-prices">
+            <h2 class="section-title">Прайс-лист</h2>
+            <div class="price-tables">
+              <!-- SPA процедуры -->
+              <div class="price-table">
+                <table>
+                  <thead>
+                    <tr>
+                      <th>Услуга</th>
+                      <th>Цена</th>
+                    </tr>
+                  </thead>
+                  <tbody class="price-table__bg">
+                    <tr>
+                      <td>
+                        <strong>Подводно-вакуумный массаж "Акваника"</strong>
+                      </td>
+                      <td>
+                        <a
+                          class="price-table__all"
+                          href="/AQUANIKA/services/aquanika#aquanikaTables"
+                          >смотреть все цены</a
+                        >
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>Пробное посещение</td>
+                      <td>1 300 ₽</td>
+                    </tr>
+                    <tr>
+                      <td>ПВМ "Акваника"</td>
+                      <td>2 000 ₽</td>
+                    </tr>
+                    <tr>
+                      <td>Абонемент 5 сеансов ПВМ "Акваника"</td>
+                      <td>7 000 ₽</td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <strong>Массаж</strong>
+                      </td>
+                      <td>
+                        <a
+                          class="price-table__all"
+                          href="/AQUANIKA/services/massage#massageTables"
+                          >смотреть все цены</a
+                        >
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>Пробное посещение: классический массаж</td>
+                      <td>1 300 ₽</td>
+                    </tr>
+                    <tr>
+                      <td>Массаж шейно-воротниковой зоны</td>
+                      <td>700 ₽</td>
+                    </tr>
+                    <tr>
+                      <td>Массаж ног</td>
+                      <td>1 000 ₽</td>
+                    </tr>
+                    <tr>
+                      <td>Общий массаж спины</td>
+                      <td>1 500 ₽</td>
+                    </tr>
+                    <tr>
+                      <td>Антицеллюлитный массаж + обёртывание</td>
+                      <td>3 000 ₽</td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <strong>Обертывание</strong>
+                      </td>
+                      <td>
+                        <a
+                          class="price-table__all"
+                          href="/AQUANIKA/services/wrapping#wrappingTables"
+                          >смотреть все цены</a
+                        >
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>Обертывание: антицеллюлитный уход</td>
+                      <td>500 ₽</td>
+                    </tr>
+                    <tr>
+                      <td>Шоколадное обертывание</td>
+                      <td>1 400 ₽</td>
+                    </tr>
+                    <tr>
+                      <td>Обертывание водоросли</td>
+                      <td>1 200 ₽</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+
+          <!-- Галерея -->
+          <div class="service-gallery">
+            <h2 class="section-title">Галерея</h2>
+            <div class="gallery-grid">
+              <div class="gallery-item">
+                <img
+                  src="/assets/images/spa/aqu.webp"
+                  alt="Процедура принятия гидромассажной вынны"
+                />
+              </div>
+              <div class="gallery-item">
+                <img
+                  src="/assets/images/spa/aqua.webp"
+                  alt="Процедура принятия гидромассажной вынны"
+                />
+              </div>
+              <div class="gallery-item">
+                <img src="/assets/images/spa/mas.webp" alt="Массаж спины" />
+              </div>
+              <div class="gallery-item">
+                <img src="/assets/images/spa/mass.webp" alt="Массаж камнями" />
+              </div>
+            </div>
+          </div>
+
+          <!-- Подробное описание услуг -->
+          <div class="service-details">
+            <h2 class="section-title">Подробное описание процедур</h2>
+
+            <!-- Подводно-вакуумный массаж -->
+            <div class="service-details__section">
+              <h3>Подводно-вакуумный массаж</h3>
+              <p>
+                Подводно-вакуумный массаж в Челябинске — это высокоэффективная
+                процедура, объединяющая мягкое подводное обтекание и точечное
+                вакуумное воздействие. В тёплой воде тело становится практически
+                невесомым, что позволяет вакуумным насадкам глубоко проработать
+                подкожно-жировую клетчатку без боли и синяков.
+              </p>
+              <ul class="service-details__list">
+                <li>
+                  Мгновенный лимфодренаж и сияющая кожа уже после первого сеанса
+                </li>
+                <li>Уменьшение объёмов до 2 см за одну процедуру</li>
+                <li>
+                  Выраженный антицеллюлитный эффект и повышение упругости кожи
+                </li>
+              </ul>
+            </div>
+
+            <div class="service-details__section">
+              <h3>Массаж</h3>
+              <p>
+                Массаж в Челябинске - это не просто процедура, это искусство
+                прикосновений, которым в совершенстве владеют наши специалисты.
+                Мы предлагаем различные виды массажа, каждый из которых
+                направлен на решение определенных задач.
+              </p>
+              <ul class="service-details__list">
+                <li>
+                  Классический массаж: снимает мышечное напряжение, улучшает
+                  кровообращение
+                </li>
+                <li>
+                  Спортивный массаж: помогает в восстановлении после тренировок
+                </li>
+                <li>Антицеллюлитный массаж: борьба с проявлениями целлюлита</li>
+              </ul>
+            </div>
+
+            <!-- Обертывания -->
+            <div class="service-details__section">
+              <h3>Обертывания</h3>
+              <p>
+                Наши обёртывания в Челябинске — это интенсивный уход и
+                мгновенное преображение. На очищенную кожу наносится активная
+                маска на основе водорослей, грязей Мертвого моря или шоколада,
+                после чего тело укутывается в термопленку для усиления
+                проникновения полезных веществ.
+              </p>
+              <ul class="service-details__list">
+                <li>
+                  Антицеллюлитное: активизирует липолиз и разглаживает
+                  «апельсиновую корку»
+                </li>
+                <li>
+                  Детокс: выводит токсины и лишнюю жидкость, возвращает лёгкость
+                </li>
+                <li>
+                  Увлажняющее: насыщает кожу витаминами и восстанавливает
+                  упругость
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
     </main>
   </body>
 </html>
