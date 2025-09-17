@@ -56,7 +56,7 @@ export const routes = {
   "/services/makeup": "/pages/makeup.html",
   "/services/men": "/pages/men-services.html",
   "/services/men/haircut": "/pages/men-haircut.html",
-  "/services/men/massage": "/pages/men-massage.html",
+  "/services/men/epilation": "/pages/men-epilation.html",
   "/services/men/manicure": "/pages/men-manicure.html",
 };
 
@@ -107,7 +107,7 @@ const pageTitles = {
   "/services/makeup": "Макияж – Aquanika",
   "/services/men": "Услуги для мужчин – Aquanika",
   "/services/men/haircut": "Для мужчин — Стрижка – Aquanika",
-  "/services/men/massage": "Для мужчин — Массаж – Aquanika",
+  "/services/men/epilation": "Для мужчин — Эпиляция – Aquanika",
   "/services/men/manicure": "Для мужчин — Маникюр – Aquanika",
 };
 

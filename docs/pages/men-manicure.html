@@ -3,8 +3,8 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Мужской маникюр в Aquanika" />
-    <title>Для мужчин — Маникюр | Aquanika</title>
+    <meta name="description" content="Мужской маникюр и педикюр в Aquanika" />
+    <title>Мужской маникюр и педикюр | Aquanika</title>
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
@@ -17,7 +17,9 @@
         <nav class="submenu">
           <ul class="submenu__list">
             <li class="submenu__item">
-              <a href="/AQUANIKA/services/men" class="submenu__link">Общее</a>
+              <a href="/AQUANIKA/services/men" class="submenu__link"
+                >Для мужчин</a
+              >
             </li>
             <li class="submenu__item">
               <a href="/AQUANIKA/services/men/haircut" class="submenu__link"
@@ -25,8 +27,8 @@
               >
             </li>
             <li class="submenu__item">
-              <a href="/AQUANIKA/services/men/massage" class="submenu__link"
-                >Массаж</a
+              <a href="/AQUANIKA/services/men/epilation" class="submenu__link"
+                >Эпиляция</a
               >
             </li>
             <li class="submenu__item">
@@ -42,46 +44,175 @@
 
       <section class="service-description">
         <div class="container">
-          <h1 class="page-title">Мужской маникюр</h1>
+          <div class="container__title">
+            <div class="container__title-left">
+              <h1 class="page-title">Мужской маникюр и педикюр в Челябинске</h1>
 
-          <div class="service-intro">
-            <div class="service-intro__content">
-              <p class="service-intro__text">
-                Аккуратный уход за руками, гигиена и эстетика без лишнего
-                блеска.
-              </p>
-              <div class="service-intro__buttons">
-                <button class="btn btn--primary">Записаться</button>
-                <button class="btn btn--secondary">Задать вопрос</button>
+              <div class="service-intro">
+                <p class="service-intro__text">
+                  Профессиональный уход за руками и ногами для мужчин от
+                  мастеров салона Aquanika&nbsp;&mdash; это сочетание
+                  безупречного качества, гигиены и эстетики. Мы предлагаем
+                  специализированные услуги, разработанные с учетом особенностей
+                  мужской кожи и ногтей. Наши мастера используют качественные
+                  материалы и современные технологии, чтобы обеспечить ухоженный
+                  вид и здоровье ваших рук и стоп.
+                </p>
+
+                <div class="service-intro__buttons">
+                  <button class="button button--primary">
+                    <a
+                      href="https://n265102.yclients.com/"
+                      target="_blank"
+                      rel="noopener"
+                      >Записаться</a
+                    >
+                  </button>
+                  <button class="button button--outline">Задать вопрос</button>
+                </div>
               </div>
             </div>
-            <div class="service-intro__image">
-              <img
-                src="/AQUANIKA/assets/men-DcddwxIG.jpg"
-                alt="Мужской маникюр"
-              />
+            <div class="container__title-right">
+              <picture>
+                <source
+                  srcset="/AQUANIKA/assets/manicureman1024px-C72f2swa.webp"
+                  type="image/webp"
+                  media="(max-width: 1024px)"
+                />
+                <source
+                  srcset="/AQUANIKA/assets/manicureman1024px-pJ-5vAsB.png"
+                  type="image/png"
+                  media="(max-width: 1024px)"
+                />
+                <source
+                  srcset="/AQUANIKA/assets/manicureman-DVQRrCzS.webp"
+                  type="image/webp"
+                />
+                <img
+                  src="/AQUANIKA/assets/manicureman-COcFB016.png"
+                  alt="Мужской маникюр и педикюр в Aquanika"
+                  loading="lazy"
+                  width="100%"
+                  height="auto"
+                  style="width: 100%; height: auto"
+                />
+              </picture>
             </div>
           </div>
 
+          <div class="service-benefits">
+            <h2 class="section-title">Преимущества</h2>
+            <div class="benefits-grid">
+              <div class="benefit-card">
+                <i class="fas fa-hands"></i>
+                <h3>Аккуратность</h3>
+                <p>Тщательный уход за каждой зоной и идеальный результат</p>
+              </div>
+              <div class="benefit-card">
+                <i class="fas fa-spray-can"></i>
+                <h3>Гигиена</h3>
+                <p>
+                  Стерильные инструменты и одноразовые средства для обработки
+                </p>
+              </div>
+              <div class="benefit-card">
+                <i class="fas fa-spa"></i>
+                <h3>Уход</h3>
+                <p>Специализированные средства для мужской кожи</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Прайс -->
           <div class="service-prices">
-            <h2 class="section-title">Прайс</h2>
-            <div class="price-table">
-              <table>
-                <thead>
-                  <tr>
-                    <th>Услуга</th>
-                    <th>Длительность</th>
-                    <th>Цена</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td>Мужской маникюр</td>
-                    <td>45 мин</td>
-                    <td>1300 ₽</td>
-                  </tr>
-                </tbody>
-              </table>
+            <h2 id="nailsTables" class="section-title">
+              Прайс-лист на мужской маникюр и педикюр
+            </h2>
+            <div class="price-tables">
+              <div id="manicurePedicureTables" class="price-table">
+                <table>
+                  <thead>
+                    <tr>
+                      <th>Услуга</th>
+                      <th>Цена</th>
+                    </tr>
+                  </thead>
+                  <tbody class="price-table__bg">
+                    <tr>
+                      <td>Men's маникюр / Топ мастер</td>
+                      <td>1 300 ₽</td>
+                    </tr>
+                    <tr>
+                      <td>Men's педикюр: кутикула + пальчики / Топ мастер</td>
+                      <td>1 900 ₽</td>
+                    </tr>
+                    <tr>
+                      <td>
+                        Men's smart педикюр: стопа + пальчики + кутикула / Топ
+                        мастер
+                      </td>
+                      <td>2 600 ₽</td>
+                    </tr>
+                    <tr>
+                      <td>Men's маникюр + smart педикюр</td>
+                      <td>3 000 ₽</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+
+          <!-- Подробное описание услуг -->
+          <div class="service-details">
+            <h2 class="section-title">Подробное описание услуги</h2>
+
+            <div class="service-details__section">
+              <h3>Что такое мужской маникюр и педикюр в салоне AQUANIKA?</h3>
+              <p>
+                Мужской маникюр и педикюр в Челябинске — это профессиональные
+                процедуры ухода за руками и ногами, разработанные с учетом
+                особенностей мужской кожи и ногтей. Мы предлагаем комплексный
+                подход, включающий очищение, обработку кутикулы, придание формы
+                ногтям и питательный уход.
+              </p>
+              <ul class="service-details__list">
+                <li>Специализированная обработка мужских ногтей</li>
+                <li>Индивидуальный подход к состоянию кожи и ногтей</li>
+                <li>Использование профессиональных средств для мужчин</li>
+                <li>Гигиеничная и аккуратная обработка</li>
+              </ul>
+            </div>
+
+            <div class="service-details__section">
+              <h3>Преимущества процедуры</h3>
+              <p>
+                Мужской маникюр и педикюр в салоне AQUANIKA обеспечивает не
+                только ухоженный внешний вид, но и здоровье ваших рук и ног. Мы
+                используем сертифицированные материалы и эффективные техники для
+                максимального комфорта и долговременного результата.
+              </p>
+              <ul class="service-details__list">
+                <li>Профессиональная обработка уплотненных ногтей</li>
+                <li>Уход за огрубевшей кожей стоп и рук</li>
+                <li>Аккуратный и естественный внешний вид</li>
+                <li>Профилактика вросших ногтей и мозолей</li>
+                <li>Расслабляющий и гигиеничный уход</li>
+              </ul>
+            </div>
+
+            <div class="service-details__section">
+              <h3>Для кого предназначены услуги</h3>
+              <p>
+                Мужской маникюр и педикюр рекомендованы в следующих случаях:
+              </p>
+              <ul class="service-details__list">
+                <li>Для деловых мужчин, следящих за своим внешним видом</li>
+                <li>При активном образе жизни и занятиях спортом</li>
+                <li>Для профилактики проблем с кожей стоп и ногтями</li>
+                <li>При наличии огрубевшей кожи и уплотненных ногтей</li>
+                <li>Для поддержания идеальной гигиены рук и ног</li>
+              </ul>
             </div>
           </div>
         </div>
