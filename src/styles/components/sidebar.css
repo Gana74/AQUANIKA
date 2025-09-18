@@ -1,3 +1,5 @@
+/* меню с боку из 3 кнопок */
+
 .sidebar {
   position: fixed;
   right: 0;
@@ -41,7 +43,7 @@
   color: var(--color-secondary);
 }
 
-/* Цвет иконок боковых кнопок (#a78b3d) */
+
 .sidebar__button::before {
   content: "";
   display: block;
@@ -52,10 +54,7 @@
   background-position: center;
   filter: brightness(0) saturate(100%) invert(48%) sepia(32%) saturate(1100%)
     hue-rotate(18deg) brightness(95%) contrast(90%);
-  /*
-    Фильтр подбирался для цвета #a78b3d. Если потребуется точная подгонка — можно скорректировать.
-    Альтернатива: заменить fill в SVG на #a78b3d напрямую.
-  */
+
 }
 
 .sidebar__button[data-action="callback"]::before {

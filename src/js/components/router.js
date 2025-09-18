@@ -41,19 +41,24 @@ export const routes = {
   "/services/brows": "/pages/brows-and-lashes.html",
   "/services/brows/architecture": "/pages/brows-architecture.html",
   "/services/brows/extensions": "/pages/brows-extensions.html",
+
   "/services/nails": "/pages/manicure-pedicure.html",
   "/services/nails/manicure": "/pages/manicure.html",
   "/services/nails/pedicure": "/pages/pedicure.html",
   "/services/nails/extensions": "/pages/nails-extensions.html",
+
   "/services/cosmetology": "/pages/cosmetology.html",
   "/services/cosmetology/face-care": "/pages/face-care.html",
   "/services/cosmetology/injections": "/pages/injections.html",
   "/services/cosmetology/tattoo-removal": "/pages/tattoo-removal.html",
+
   "/services/hairdressing": "/pages/hairdressing.html",
   "/services/hairdressing/haircuts": "/pages/haircuts.html",
   "/services/hairdressing/coloring": "/pages/hair-coloring.html",
   "/services/hairdressing/styling": "/pages/hair-styling.html",
+
   "/services/makeup": "/pages/makeup.html",
+  
   "/services/men": "/pages/men-services.html",
   "/services/men/haircut": "/pages/men-haircut.html",
   "/services/men/epilation": "/pages/men-epilation.html",

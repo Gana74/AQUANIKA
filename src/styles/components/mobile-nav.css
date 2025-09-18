@@ -4,7 +4,7 @@
 }
 
 /* Показываем мобильное меню на экранах <= 768px */
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
   .mobile-nav {
     display: block;
   }
@@ -65,7 +65,7 @@
   position: fixed;
   top: 0;
   left: 0;
-  width: 50%;
+  width: 70%;
   height: 100vh;
   background-color: #fff;
   transform: translateX(-100%);
@@ -94,6 +94,7 @@
   height: 100%;
   overflow-y: auto;
   flex-shrink: 0;
+  text-transform: uppercase;
 }
 
 .mobile-nav__slide-submenu {
@@ -235,6 +236,7 @@
   font-size: 14px;
   cursor: pointer;
   color: var(--color-text);
+  text-transform: uppercase;
   transition: all 0.2s ease;
 }
 
@@ -251,6 +253,7 @@
 .mobile-nav__subsubmenu {
   display: none;
   padding-left: 16px;
+  text-transform: uppercase;
 }
 
 .mobile-nav__subsubmenu.is-active {
@@ -326,48 +329,6 @@
   color: var(--color-secondary);
 }
 
-/* Информация */
-.mobile-nav__info {
-  margin-top: auto;
-  padding-top: 24px;
-  border-top: 1px solid var(--color-border-light);
-}
-
-.mobile-nav__address,
-.mobile-nav__hours,
-.mobile-nav__email {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  margin-bottom: 16px;
-  font-size: 14px;
-}
-
-.mobile-nav__address i,
-.mobile-nav__hours i,
-.mobile-nav__email i {
-  color: var(--color-primary);
-  font-size: 16px;
-}
-
-.mobile-nav__address a,
-.mobile-nav__email a {
-  color: var(--color-text);
-  text-decoration: none;
-  transition: color 0.2s ease;
-}
-
-.mobile-nav__address a:hover,
-.mobile-nav__email a:hover {
-  color: var(--color-primary);
-}
-
-.mobile-nav__address a:active,
-.mobile-nav__email a:active {
-  color: var(--color-primary);
-  opacity: 0.8;
-}
-
 /* Кнопка действия */
 .mobile-nav__action-btn {
   width: 100%;
@@ -415,22 +376,4 @@
 
 .mobile-nav__social .social-link:active {
   color: var(--color-secondary);
-}
-
-/* Медиа-запросы */
-@media (max-width: 768px) {
-  .header__top,
-  .header__bottom {
-    display: none;
-  }
-
-  .header__middle {
-    padding: var(--spacing-md) 0;
-  }
-
-  .header__middle .header__contact,
-  .header__middle .header__hours,
-  .header__middle .header__address {
-    display: none;
-  }
 }

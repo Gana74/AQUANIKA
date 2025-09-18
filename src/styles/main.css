@@ -16,8 +16,6 @@
 @import "./components/carousel.css";
 @import "./components/sidebar.css";
 @import "./components/mobile-nav.css";
-@import "./components/about.css";
-@import "./components/page-with-sidebar.css";
 
 /* Pages */
 @import "./pages/home.css";

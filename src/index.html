@@ -81,8 +81,12 @@
                     </button>
                   </li>
                   <li>
-                    <button class="mobile-nav__subcategory-btn">
-                      <a href="/services/laser">Лазерная эпиляция</a>
+                    <button
+                      class="mobile-nav__subcategory-btn"
+                      data-category="epilation"
+                    >
+                      <span>Эпиляция</span>
+                      <i class="fas fa-chevron-right"></i>
                     </button>
                   </li>
                   <li>
@@ -90,7 +94,7 @@
                       class="mobile-nav__subcategory-btn"
                       data-category="brows"
                     >
-                      <span>Брови и ресницы</span>
+                      <span>Брови/Ресницы</span>
                       <i class="fas fa-chevron-right"></i>
                     </button>
                   </li>
@@ -108,7 +112,7 @@
                       class="mobile-nav__subcategory-btn"
                       data-category="cosmetology"
                     >
-                      <span>Косметология</span>
+                      <span>Уход за кожей</span>
                       <i class="fas fa-chevron-right"></i>
                     </button>
                   </li>
@@ -122,12 +126,8 @@
                     </button>
                   </li>
                   <li>
-                    <button
-                      class="mobile-nav__subcategory-btn"
-                      data-category="makeup"
-                    >
+                    <button class="mobile-nav__subcategory-btn">
                       <span>Макияж</span>
-                      <i class="fas fa-chevron-right"></i>
                     </button>
                   </li>
                   <li>
@@ -154,20 +154,24 @@
               </ul>
 
               <!-- Информация -->
-              <div class="mobile-nav__info">
-                <div class="mobile-nav__address">
+
+              <div class="info">
+                <div class="address">
                   <i class="fas fa-location-dot"></i>
-                  <a href="https://yandex.ru/maps/-/CHsIBZZ2" target="_blank">
-                    ул. Пушкина 56
-                  </a>
+                  <p>
+                    <a
+                      href="https://yandex.ru/maps/-/CHsIBZZ2"
+                      class="address__link"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      Братьев Кашириных, 131
+                    </a>
+                  </p>
                 </div>
-                <div class="mobile-nav__hours">
+                <div class="hours">
                   <i class="far fa-clock"></i>
-                  <span>с 9:00 до 21:00</span>
-                </div>
-                <div class="mobile-nav__email">
-                  <i class="far fa-envelope"></i>
-                  <a href="mailto:saxarclbsk@gmail.com">saxarclbsk@gmail.com</a>
+                  <span>с 10:00 до 21:00</span>
                 </div>
               </div>
 
@@ -176,14 +180,28 @@
 
               <!-- Социальные сети -->
               <div class="mobile-nav__social">
-                <a href="#" class="social-link"><i class="fab fa-vk"></i></a>
-                <a href="#" class="social-link"
+                <a
+                  href="https://vk.com/aqvanikachelybinsk"
+                  target="_blank"
+                  class="social-link"
+                  ><i class="fab fa-vk"></i
+                ></a>
+                <a
+                  href="https://t.me/+79227445287"
+                  target="_blank"
+                  class="social-link"
                   ><i class="fab fa-telegram"></i
                 ></a>
-                <a href="#" class="social-link"
+                <a
+                  href="https://wa.me/79227445287"
+                  target="_blank"
+                  class="social-link"
                   ><i class="fab fa-whatsapp"></i
                 ></a>
-                <a href="#" class="social-link"
+                <a
+                  href="https://instagram.com/aqva"
+                  target="_blank"
+                  class="social-link"
                   ><i class="fab fa-instagram"></i
                 ></a>
               </div>
@@ -205,52 +223,63 @@
             <div class="mobile-nav__sidebar-content">
               <!-- Подкатегории для SPA и массаж -->
               <ul class="mobile-nav__subsubmenu" data-category="spa">
-                <li><a href="/services/spa">SPA и массаж"</a></li>
-                <li><a href="#">ПВМ "Акваника"</a></li>
-                <li><a href="#">Массаж</a></li>
-                <li><a href="#">Обертывание</a></li>
+                <li><a href="/services/aquanika">ПВМ "Акваника"</a></li>
+                <li><a href="/services/massage">Массаж</a></li>
+                <li><a href="/services/wrapping">Обертывание</a></li>
+              </ul>
+
+              <!-- Подкатегории для Эпиляция " -->
+              <ul class="mobile-nav__subsubmenu" data-category="epilation">
+                <li>
+                  <a href="/services/epilation/laser">Лазерная эпиляция</a>
+                </li>
+                <li><a href="/services/epilation/sugaring">Шугаринг</a></li>
               </ul>
 
               <!-- Подкатегории для Брови и ресницы -->
               <ul class="mobile-nav__subsubmenu" data-category="brows">
-                <li><a href="#">Архитектура бровей</a></li>
-                <li><a href="#">Окрашивание бровей</a></li>
-                <li><a href="#">Наращивание ресниц</a></li>
+                <li>
+                  <a href="/services/brows/architecture">Архетиктура бровей</a>
+                </li>
+                <li>
+                  <a href="/services/brows/extensions">Наращивание ресниц</a>
+                </li>
               </ul>
 
               <!-- Подкатегории для Маникюр/Педикюр -->
               <ul class="mobile-nav__subsubmenu" data-category="nails">
-                <li><a href="#">Маникюр</a></li>
-                <li><a href="#">Педикюр</a></li>
-                <li><a href="#">Наращивание</a></li>
+                <li><a href="/services/nails/manicure">Маникюр</a></li>
+                <li><a href="/services/nails/pedicure">Педикюр</a></li>
+                <li><a href="/services/nails/extensions">Наращивание</a></li>
               </ul>
 
               <!-- Подкатегории для Косметология -->
               <ul class="mobile-nav__subsubmenu" data-category="cosmetology">
-                <li><a href="#">Уход за лицом</a></li>
-                <li><a href="#">Инъекции</a></li>
-                <li><a href="#">Выведение татуажа</a></li>
+                <li>
+                  <a href="/services/cosmetology/face-care">Косметология</a>
+                </li>
+                <li><a href="/services/cosmetology/injections">Инъекции</a></li>
+                <li>
+                  <a href="/services/cosmetology/tattoo-removal"
+                    >Выведение татуажа</a
+                  >
+                </li>
               </ul>
 
               <!-- Подкатегории для Парикмахерские услуги -->
               <ul class="mobile-nav__subsubmenu" data-category="hairdressing">
-                <li><a href="#">Стрижки</a></li>
-                <li><a href="#">Окрашивание</a></li>
-                <li><a href="#">Укладки</a></li>
-              </ul>
-
-              <!-- Подкатегории для Макияж -->
-              <ul class="mobile-nav__subsubmenu" data-category="makeup">
-                <li><a href="#">Дневной</a></li>
-                <li><a href="#">Вечерний</a></li>
-                <li><a href="#">Свадебный</a></li>
+                <li><a href="/services/hairdressing/haircuts">Стрижки</a></li>
+                <li>
+                  <a href="/services/hairdressing/coloring">Окрашивание</a>
+                </li>
+                <li><a href="/services/hairdressing/styling">Укладки</a></li>
               </ul>
 
               <!-- Подкатегории для Мужчин  -->
               <ul class="mobile-nav__subsubmenu" data-category="men">
-                <li><a href="#">Дневной</a></li>
-                <li><a href="#">Вечерний</a></li>
-                <li><a href="#">Свадебный</a></li>
+                <li><a href="/services/men/haircut">Мужская стрижка</a></li>
+                <li><a href="/services/men/epilation">Мужская эпиляция</a></li>
+                <li><a href="/services/men/manicure">Мужской маникюр</a></li>
               </ul>
             </div>
           </div>
@@ -284,9 +313,10 @@
 
     <main></main>
 
+    <!-- боковое меню из 3 кнопок -->
+
     <aside class="sidebar">
       <div class="sidebar__buttons">
-        <!-- Кнопки теперь только с иконками, текст убран по требованию -->
         <button
           class="sidebar__button"
           data-action="callback"

@@ -49,11 +49,10 @@
             <div class="header__logo">
               <a href="/" class="logo"></a>
             </div>
-            <div class="header__info">
-              <div class="header__address">
+            <div class="info">
+              <div class="address">
                 <i class="fas fa-location-dot"></i>
-                <p class="address">
-                  <span class="address__label"></span>
+                <p>
                   <a
                     href="https://yandex.ru/maps/-/CHsIBZZ2"
                     class="address__link"
@@ -64,32 +63,35 @@
                   </a>
                 </p>
               </div>
-              <div class="header__hours">
+              <div class="hours">
                 <i class="far fa-clock"></i>
-                <span>с 10:00 до 22:00</span>
+                <span>с 10:00 до 21:00</span>
               </div>
             </div>
-            <div class="header__search">
-              <form class="search-form">
-                <input
-                  type="search"
-                  placeholder="Поиск услуг..."
-                  class="search-input"
-                />
-                <button type="submit" class="search-button">
-                  <i class="fas fa-search"></i>
-                </button>
-              </form>
-            </div>
+
             <div class="header__social">
-              <a href="#" class="social-link"><i class="fab fa-vk"></i></a>
-              <a href="#" class="social-link"
+              <a
+                href="https://vk.com/aqvanikachelybinsk"
+                target="_blank"
+                class="social-link"
+                ><i class="fab fa-vk"></i
+              ></a>
+              <a
+                href="https://t.me/+79227445287"
+                target="_blank"
+                class="social-link"
                 ><i class="fab fa-telegram"></i
               ></a>
-              <a href="#" class="social-link"
+              <a
+                href="https://wa.me/79227445287"
+                target="_blank"
+                class="social-link"
                 ><i class="fab fa-whatsapp"></i
               ></a>
-              <a href="#" class="social-link"
+              <a
+                href="https://instagram.com/aqva"
+                target="_blank"
+                class="social-link"
                 ><i class="fab fa-instagram"></i
               ></a>
             </div>
@@ -106,28 +108,20 @@
                 <a href="/services/spa" class="services-nav__link uppercase"
                   >SPA-процедуры</a
                 >
-                <div class="services-submenu services-submenu--wide">
-                  <div class="submenu__grid">
-                    <div class="submenu__column">
-                      <ul class="submenu__list-header">
-                        <li>
-                          <a href="/services/aquanika"
-                            >Подводно-вакуумный массаж "Акваника"</a
-                          >
-                        </li>
-                      </ul>
-                    </div>
-                    <div class="submenu__column">
-                      <ul class="submenu__list-header">
-                        <li><a href="/services/massage">Массаж</a></li>
-                      </ul>
-                    </div>
-                    <div class="submenu__column">
-                      <ul class="submenu__list-header">
-                        <li><a href="/services/wrapping">Обертывание</a></li>
-                      </ul>
-                    </div>
-                  </div>
+                <div class="services-submenu">
+                  <ul class="submenu__list-header">
+                    <li>
+                      <a href="/services/aquanika"
+                        >Подводно-вакуумный массаж "Акваника"</a
+                      >
+                    </li>
+                  </ul>
+                  <ul class="submenu__list-header">
+                    <li><a href="/services/massage">Массаж</a></li>
+                  </ul>
+                  <ul class="submenu__list-header">
+                    <li><a href="/services/wrapping">Обертывание</a></li>
+                  </ul>
                 </div>
               </li>
               <li class="services-nav__item">
@@ -235,7 +229,7 @@
                 <a href="/services/men" class="services-nav__link uppercase"
                   >Для Мужчин</a
                 >
-                <div class="services-submenu">
+                <div class="services-submenu services-submenu--last">
                   <ul class="submenu__list-header">
                     <li><a href="/services/men/haircut">Стрижка</a></li>
                     <li><a href="/services/men/epilation">Эпиляция</a></li>
