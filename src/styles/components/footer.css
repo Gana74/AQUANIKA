@@ -9,12 +9,6 @@
   gap: var(--spacing-xl);
 }
 
-.footer__social {
-  display: flex;
-  justify-content: center;
-  gap: var(--spacing-md);
-}
-
 @media (max-width: 1024px) {
   .footer__container {
     grid-template-columns: repeat(2, 1fr);

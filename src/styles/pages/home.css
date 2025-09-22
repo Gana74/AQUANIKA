@@ -1,7 +1,11 @@
+/* Стили для секции "Услуги" */
+.services {
+  padding-top: 6rem;
+}
+
 /* Стили для секции "О нас" */
 .about {
-  padding: 80px 0;
-  background-color: #fff;
+  padding-top: 6rem;
 }
 
 .about__content {
@@ -90,6 +94,12 @@
 
 .play-button i {
   font-size: 1.5rem;
+}
+
+/* Стили для секции "наши специалисты" */
+
+.team {
+  padding-top: 6rem;
 }
 
 /* Модальное окно */
@@ -213,8 +223,10 @@
 }
 
 @media (max-width: 576px) {
-  .about {
-    padding: 40px 0;
+  .services,
+  .about,
+  .team {
+    padding-top: 3rem;
   }
 
   .about__philosophy-title {
