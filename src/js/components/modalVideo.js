@@ -19,32 +19,56 @@ export function initVideoModal() {
         if (homeVideoUrl) {
             video.src = homeVideoUrl;
             video.setAttribute('preload', 'none');
-            video.setAttribute('playsinline', '');
+            // ВАЖНО: не ставим playsinline, чтоб на iOS позволить полноэкран
         }
     } catch (e) {
         console.warn("Не удалось назначить src для видео:", e);
     }
+
     // Функция открытия модального окна
-    function openVideoModal() {
+    async function openVideoModal() {
         modal.style.display = "block";
         document.body.style.overflow = "hidden";
         document.body.style.paddingRight = getScrollbarWidth() + 'px';
-        
-        // Автовоспроизведение при открытии модального окна (в рамках жеста пользователя)
-        const playPromise = video.play();
-        if (playPromise && typeof playPromise.catch === "function") {
-            playPromise.catch(e => {
-                console.log("Автовоспроизведение не разрешено: ", e);
-            });
+
+        // Пытаемся активировать полноэкранный режим (контейнер модалки или сам элемент видео)
+        const container = modal.querySelector('.video-container') || video;
+        try {
+            if (container.requestFullscreen) {
+                await container.requestFullscreen();
+            } else if (container.webkitRequestFullscreen) { // Safari desktop
+                container.webkitRequestFullscreen();
+            } else if (video.webkitEnterFullscreen) { // iOS Safari только для видео
+                video.webkitEnterFullscreen();
+            }
+        } catch (e) {
+            console.warn('Fullscreen error:', e);
+        }
+
+        // Автовоспроизведение
+        try {
+            await video.play();
+        } catch (e) {
+            console.log("Автовоспроизведение не разрешено:", e);
         }
     }
     
     // Функция закрытия модального окна
-    function closeVideoModal() {
-        video.pause();
+    async function closeVideoModal() {
+        try { video.pause(); } catch(_) {}
         modal.style.display = "none";
         document.body.style.overflow = "auto";
         document.body.style.paddingRight = '';
+        // Выходим из полноэкранного режима, если он активен
+        try {
+            if (document.fullscreenElement && document.exitFullscreen) {
+                await document.exitFullscreen();
+            } else if (document.webkitFullscreenElement && document.webkitExitFullscreen) {
+                document.webkitExitFullscreen();
+            }
+        } catch (e) {
+            console.warn('Exit fullscreen error:', e);
+        }
     }
     
     // Функция для расчета ширины scrollbar
@@ -52,7 +76,7 @@ export function initVideoModal() {
         return window.innerWidth - document.documentElement.clientWidth;
     }
     
-    // Обработчик для клика по блоку видео
+    // Обработчик дл�� клика по блоку видео
     videoBlock.addEventListener('click', function(e) {
         // Предотвращаем срабатывание, если кликнули на кнопку (чтобы не дублировать)
         if (e.target !== playButton && !playButton.contains(e.target)) {

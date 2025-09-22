@@ -402,20 +402,37 @@
 }
 
 @media (max-width: 576px) {
-  .address {
-    display: none;
-  }
-
-  .hours {
-    display: none;
-  }
-
-  .social {
-    display: none;
-  }
-
+  /* footer  &  header */
+  .address,
+  .hours,
+  .social,
   .phone {
     display: none;
+  }
+
+  /* page */
+
+  .category-submenu {
+    display: none;
+  }
+
+  .container__title {
+    flex-direction: column;
+    max-height: max-content;
+    gap: 0;
+  }
+
+  .container__title-left {
+    padding: 0 5px 10px 5px;
+    margin-top: -0.5rem;
+  }
+
+  .container__title-right {
+    order: -1;
+  }
+
+  .page-title {
+    text-align: center;
   }
 
   .section-title {
