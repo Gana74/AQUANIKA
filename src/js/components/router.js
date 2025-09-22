@@ -17,7 +17,7 @@ export const basePath = (() => {
 export const isGitHubPages = window.location.hostname.includes("github.io");
 export const isLocal = window.location.hostname === "localhost";
 
-// Маршруты: ключ — «чистый» pathname, значение — файл страницы
+// Маршруты: ключ — «чистый» pathname, значение — файл страницы.
 export const routes = {
   "/": "/pages/home.html",
   "/about": "/pages/about.html",
@@ -25,7 +25,7 @@ export const routes = {
   "/reviews": "/pages/reviews.html",
   "/vacancies": "/pages/vacancies.html",
   "/gallery": "/pages/gallery.html",
-  "/prices": "/pages/price.html",
+  "/price": "/pages/price.html",
   "/promotions": "/pages/promotions.html",
   "/contacts": "/pages/contacts.html",
 
