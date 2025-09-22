@@ -424,11 +424,33 @@
 
   .container__title-left {
     padding: 0 5px 10px 5px;
-    margin-top: -0.5rem;
+    margin-top: 1rem;
   }
 
   .container__title-right {
     order: -1;
+    border-radius: 0;
+  }
+
+  .container__title-right {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .container__title-right::after {
+    content: "";
+    position: absolute;
+    bottom: 0px;
+    left: 0;
+    right: 0;
+    height: 30%; /* Высота эффекта */
+    background: linear-gradient(
+      to top,
+      #fff5f3 0%,
+      /* Цвет #fff5f3 внизу */ rgba(255, 245, 243, 0.7) 50%,
+      /* Полупрозрачный */ rgba(255, 245, 243, 0) 100% /* Прозрачный сверху */
+    );
+    pointer-events: none;
   }
 
   .page-title {
