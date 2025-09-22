@@ -25,7 +25,7 @@ export const routes = {
   "/reviews": "/pages/reviews.html",
   "/vacancies": "/pages/vacancies.html",
   "/gallery": "/pages/gallery.html",
-  "/prices": "/pages/prices.html",
+  "/prices": "/pages/price.html",
   "/promotions": "/pages/promotions.html",
   "/contacts": "/pages/contacts.html",
 
@@ -58,11 +58,13 @@ export const routes = {
   "/services/hairdressing/styling": "/pages/hair-styling.html",
 
   "/services/makeup": "/pages/makeup.html",
-  
+
   "/services/men": "/pages/men-services.html",
   "/services/men/haircut": "/pages/men-haircut.html",
   "/services/men/epilation": "/pages/men-epilation.html",
   "/services/men/manicure": "/pages/men-manicure.html",
+
+  "/services/price": "/pages/price.html",
 };
 
 // Страницы, где нужно показывать боковое меню
@@ -114,6 +116,8 @@ const pageTitles = {
   "/services/men/haircut": "Для мужчин — Стрижка – Aquanika",
   "/services/men/epilation": "Для мужчин — Эпиляция – Aquanika",
   "/services/men/manicure": "Для мужчин — Маникюр – Aquanika",
+
+  "/services/price": "Прайс-лист",
 };
 
 // ---------------- helpers ----------------
