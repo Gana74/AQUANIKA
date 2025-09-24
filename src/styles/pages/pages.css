@@ -410,6 +410,10 @@
     display: none;
   }
 
+  .info {
+    display: none;
+  }
+
   /* page */
 
   .category-submenu {
