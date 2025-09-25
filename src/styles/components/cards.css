@@ -12,7 +12,7 @@
   height: 100%;
   min-height: 470px;
   background: var(--color-white);
-  border-radius: 1rem;
+  border-radius: var(--border-radius-xl);
   overflow: hidden;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s ease, box-shadow 0.3s ease;

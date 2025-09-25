@@ -20,6 +20,7 @@ export default defineConfig({
       input: {
         main: resolve(__dirname, "src/index.html"),
         home: resolve(__dirname, "src/pages/home.html"),
+          promotions: resolve(__dirname, "src/pages/promotions.html"),
         about: resolve(__dirname, "src/pages/about.html"),
         team: resolve(__dirname, "src/pages/team.html"),
         reviews: resolve(__dirname, "src/pages/reviews.html"),

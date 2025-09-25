@@ -19,15 +19,134 @@
     <main>
       <section class="hero">
         <div class="container promo__container">
-          <div class="promo-carousel">
+          <div class="promo-carousel" id="homePromotions">
             <div class="promo-carousel__container">
               <div class="promo-carousel__slide">
-                <!-- Здесь будет контент слайда -->
+                <picture>
+                  <source
+                    srcset="/assets/images/carusel/botoxMin.webp"
+                    type="image/webp"
+                    media="(max-width: 1024px)"
+                  />
+                  <source
+                    srcset="/assets/images/carusel/botoxMin.png"
+                    type="image/png"
+                    media="(max-width: 1024px)"
+                  />
+                  <source
+                    srcset="/assets/images/carusel/botox.webp"
+                    type="image/webp"
+                  />
+                  <img
+                    src="/assets/images/carusel/botox.png"
+                    alt="Скидка 40% на ботокс"
+                    loading="lazy"
+                    width="100%"
+                    height="auto"
+                    style="width: 100%; height: auto"
+                  />
+                </picture>
+                <div class="promo-carousel__content">
+                  <h2 class="promo-carousel__title">Скидка 40% на ботокс</h2>
+                  <p class="promo-carousel__description">
+                    Верхняя треть лица: лоб, межбровье, глаза — всего 7000 ₽.
+                    Пространство Beauty & massage "Aquanika" дарит выгоду.
+                  </p>
+                  <div class="promo-carousel__actions">
+                    <a
+                      class="button button--primary"
+                      href="https://n265102.yclients.com/"
+                      target="_blank"
+                      rel="noopener"
+                      >Записаться</a
+                    >
+                  </div>
+                </div>
+              </div>
+              <div class="promo-carousel__slide">
+                <picture>
+                  <source
+                    srcset="/assets/images/carusel/manPedMin.webp"
+                    type="image/webp"
+                    media="(max-width: 1024px)"
+                  />
+                  <source
+                    srcset="/assets/images/carusel/manPedMin.png"
+                    type="image/png"
+                    media="(max-width: 1024px)"
+                  />
+                  <source
+                    srcset="/assets/images/carusel/manped.webp"
+                    type="image/webp"
+                  />
+                  <img
+                    src="/assets/images/carusel/manped.png"
+                    alt="Маникюр + педикюр 3000 ₽"
+                    loading="lazy"
+                    width="100%"
+                    height="auto"
+                    style="width: 100%; height: auto"
+                  />
+                </picture>
+                <div class="promo-carousel__content">
+                  <h2 class="promo-carousel__title">
+                    Маникюр + педикюр с гель-лаком — 3000 ₽
+                  </h2>
+                  <p class="promo-carousel__description">
+                    Комплекс по выгодной цене от Aquanika. Будь на высоте в
+                    любой ситуации!
+                  </p>
+                  <div class="promo-carousel__actions">
+                    <a
+                      class="button button--primary"
+                      href="https://n265102.yclients.com/"
+                      target="_blank"
+                      rel="noopener"
+                      >Записаться</a
+                    >
+                  </div>
+                </div>
+              </div>
+              <div class="promo-carousel__slide">
+                <picture>
+                
+                  <source
+                    srcset="/assets/images/carusel/dis.webp"
+                    type="image/webp"
+                  />
+                  <img
+                    src="/assets/images/carusel/dis.png"
+                    alt="все скидки месяца"
+                    loading="lazy"
+                    width="100%"
+                    height="auto"
+                    style="width: 100%; height: auto"
+                  />
+                </picture>
+                <div class="promo-carousel__content">
+                  <h2 class="promo-carousel__title">Акции и скидки сентября</h2>
+                  <p class="promo-carousel__description">
+                    RF-лифтинг 2000 ₽ + маска в подарок, скульптурный массаж
+                    лица 1200 ₽ и другие предложения.
+                  </p>
+                  <div class="promo-carousel__actions">
+                    <a
+                      class="button button--primary"
+                      href="https://n265102.yclients.com/"
+                      target="_blank"
+                      rel="noopener"
+                      >Записаться</a
+                    >
+                    <a
+                      class="button button--outline"
+                      href="/promotions#september"
+                      >Все акции</a
+                    >
+                  </div>
+                </div>
               </div>
             </div>
-            <div class="promo-carousel__controls">
-              <!-- Здесь будут элементы управления -->
-            </div>
+            <div class="promo-carousel__controls"></div>
           </div>
         </div>
       </section>
@@ -57,7 +176,8 @@
                     href="https://n265102.yclients.com/"
                     target="_blank"
                     rel="noopener"
-                    >Записаться</a>
+                    >Записаться</a
+                  >
                   <a class="button button--outline" href="/services/spa#spa"
                     >Подробнее</a
                   >
@@ -86,7 +206,8 @@
                     href="https://n265102.yclients.com/"
                     target="_blank"
                     rel="noopener"
-                    >Записаться</a>
+                    >Записаться</a
+                  >
                   <a
                     class="button button--outline"
                     href="/services/epilation#epilation"
@@ -117,7 +238,8 @@
                     href="https://n265102.yclients.com/"
                     target="_blank"
                     rel="noopener"
-                    >Записаться</a>
+                    >Записаться</a
+                  >
                   <a class="button button--outline" href="/services/brows#brows"
                     >Подробнее</a
                   >
@@ -146,7 +268,8 @@
                     href="https://n265102.yclients.com/"
                     target="_blank"
                     rel="noopener"
-                    >Записаться</a>
+                    >Записаться</a
+                  >
                   <a class="button button--outline" href="/services/nails#nails"
                     >Подробнее</a
                   >
@@ -175,7 +298,8 @@
                     href="https://n265102.yclients.com/"
                     target="_blank"
                     rel="noopener"
-                    >Записаться</a>
+                    >Записаться</a
+                  >
                   <a
                     class="button button--outline"
                     href="/services/cosmetology#cosmetology"
@@ -206,8 +330,11 @@
                     href="https://n265102.yclients.com/"
                     target="_blank"
                     rel="noopener"
-                    >Записаться</a>
-                  <a class="button button--outline" href="/services/hairdressing#hair"
+                    >Записаться</a
+                  >
+                  <a
+                    class="button button--outline"
+                    href="/services/hairdressing#hair"
                     >Подробнее</a
                   >
                 </div>
@@ -235,8 +362,11 @@
                     href="https://n265102.yclients.com/"
                     target="_blank"
                     rel="noopener"
-                    >Записаться</a>
-                  <a class="button button--outline" href="/services/makeup#makeup"
+                    >Записаться</a
+                  >
+                  <a
+                    class="button button--outline"
+                    href="/services/makeup#makeup"
                     >Подробнее</a
                   >
                 </div>
@@ -264,7 +394,8 @@
                     href="https://n265102.yclients.com/"
                     target="_blank"
                     rel="noopener"
-                    >Записаться</a>
+                    >Записаться</a
+                  >
                   <a class="button button--outline" href="/services/men#forMan"
                     >Подробнее</a
                   >

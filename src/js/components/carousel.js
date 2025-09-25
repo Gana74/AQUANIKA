@@ -18,24 +18,26 @@ export class Carousel {
     // Создаем точки навигации
     slides.forEach((_, index) => {
       const dot = document.createElement("button");
-      dot.className = `promo-carousel__dot ${index === 0 ? "promo-carousel__dot--active" : ""}`;
+      dot.className = `promo-carousel__dot ${
+        index === 0 ? "promo-carousel__dot--active" : ""
+      }`;
       dot.addEventListener("click", () => this.goToSlide(index));
       controls.appendChild(dot);
     });
 
     // Создаем кнопки навигации
-    const prevButton = document.createElement("button");
-    prevButton.className = "promo-carousel__arrow promo-carousel__arrow--prev";
-    prevButton.innerHTML = "←";
-    prevButton.addEventListener("click", () => this.prev());
+    // const prevButton = document.createElement("button");
+    // prevButton.className = "promo-carousel__arrow promo-carousel__arrow--prev";
+    // prevButton.innerHTML = "←";
+    // prevButton.addEventListener("click", () => this.prev());
 
-    const nextButton = document.createElement("button");
-    nextButton.className = "promo-carousel__arrow promo-carousel__arrow--next";
-    nextButton.innerHTML = "→";
-    nextButton.addEventListener("click", () => this.next());
+    // const nextButton = document.createElement("button");
+    // nextButton.className = "promo-carousel__arrow promo-carousel__arrow--next";
+    // nextButton.innerHTML = "→";
+    // nextButton.addEventListener("click", () => this.next());
 
-    this.element.appendChild(prevButton);
-    this.element.appendChild(nextButton);
+    // this.element.appendChild(prevButton);
+    // this.element.appendChild(nextButton);
 
     // Функция перехода к слайду
     this.goToSlide = function (index) {
@@ -72,7 +74,7 @@ export class Carousel {
 
     // Автопереключение слайдов
     this.startAutoplay = function () {
-      autoplayInterval = setInterval(() => this.next(), 5000);
+      autoplayInterval = setInterval(() => this.next(), 10000);
     };
 
     this.stopAutoplay = function () {

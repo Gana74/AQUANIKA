@@ -1,11 +1,18 @@
+
 .container {
-  width: 100%;
-  max-width: var(--container-max-width);
-  margin-left: auto;
-  margin-right: auto;
-  padding-left: var(--container-padding);
-  padding-right: var(--container-padding);
+  max-width: var(--container-max-width-xl);
+  margin: auto;
+  padding-left: var(--spacing-xl);
+  padding-right: var(--spacing-xl);
 }
+
+.container--content {
+  max-width: var(
+    --container-max-width
+  ); /* Для контентных блоков сохраняем стандартную ширину */
+}
+
+
 
 
 
@@ -51,30 +58,30 @@
 }
 
 /* Responsive container */
-@media (max-width: 640px) {
+
+
+@media (max-width: 1720px) {
+  
   .container {
-    padding-left: var(--spacing-sm);
-    padding-right: var(--spacing-sm);
+    width: 100%;
+    max-width: var(--container-max-width);
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: var(--container-padding);
+    padding-right: var(--container-padding);
   }
 }
 
-@media (min-width: 641px) and (max-width: 1024px) {
+@media  (max-width: 1024px) {
   .container {
     padding-left: var(--spacing-md);
     padding-right: var(--spacing-md);
   }
 }
 
-@media (min-width: 1720px) {
+@media (max-width: 640px) {
   .container {
-    max-width: var(--container-max-width-xl);
-    padding-left: var(--spacing-xl);
-    padding-right: var(--spacing-xl);
-  }
-
-  .container--content {
-    max-width: var(
-      --container-max-width
-    ); /* Для контентных блоков сохраняем стандартную ширину */
+    padding-left: var(--spacing-sm);
+    padding-right: var(--spacing-sm);
   }
 }

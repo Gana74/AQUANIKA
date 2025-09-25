@@ -11,8 +11,7 @@
 
   /* фон  */
   --color-cream: #fff5f3; /* Розоватый кремовый  фон */
-  --color-dark: #333333; /* Глубокий серый для текста */
-  --color-dark-alt: #2d2d2d; /* Альтернативный темный */
+  
   --color-background: #fff;
   --color-background-alt: #f2f2f2;
 
@@ -22,6 +21,8 @@
 
   /* Текст */
   --color-white: #ffff;
+  --color-dark: #333333; /* Глубокий серый для текста */
+  --color-dark-alt: #2d2d2d; /* Альтернативный темный */
   --color-gray: #b8a9a7;
   --color-text: var(--color-dark);
   --color-gray-dark: #4a3f3e;

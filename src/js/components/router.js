@@ -289,6 +289,22 @@ function initPageComponents() {
   if (typeof window.initVideoModal === "function") {
     window.initVideoModal();
   }
+
+  // Инициализация промо-карусели на главной
+  try {
+    const promoEl = document.getElementById("homePromotions");
+    if (promoEl && !promoEl.dataset.inited) {
+      import("./carousel.js").then((m) => {
+        const init = m.initCarousel || (m.default && m.default.initCarousel);
+        if (init) {
+          init(promoEl);
+          promoEl.dataset.inited = "true";
+        }
+      });
+    }
+  } catch (e) {
+    console.warn("Carousel init failed", e);
+  }
 }
 
 // ---------------- init ----------------
