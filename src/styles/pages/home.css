@@ -22,14 +22,14 @@
 .about__philosophy-title {
   font-size: 24px;
   color: #a78b3d;
-  margin-bottom: 20px;
+  margin-bottom: 1.5rem;
 }
 
 .about__philosophy-text {
   font-size: 18px;
   line-height: 1.6;
   color: #333;
-  margin-bottom: 30px;
+  margin-bottom: 2rem;
   font-style: italic;
 }
 

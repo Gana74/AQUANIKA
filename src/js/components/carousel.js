@@ -6,7 +6,7 @@ export class Carousel {
   }
 
   init() {
-    console.log("Инициализация карусели");
+    // Получаем элементы контейнера, слайдов и кнопок управления
     const container = this.element.querySelector(".promo-carousel__container");
     const slides = this.element.querySelectorAll(".promo-carousel__slide");
     const controls = this.element.querySelector(".promo-carousel__controls");
@@ -117,6 +117,5 @@ export class Carousel {
 
 // Функция инициализации
 export function initCarousel(element) {
-  console.log("Запуск инициализации карусели");
   return new Carousel(element);
 }
