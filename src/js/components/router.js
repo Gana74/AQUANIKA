@@ -180,7 +180,7 @@ export async function loadPage(route) {
         "/components/partials/side-menu.html"
       );
       document.querySelector("main").innerHTML = `
-        <div class="page-with-sidebar">
+        <div class="page-with-sidebar container">
           ${sideMenu}
           <div class="page-content">${pageContent}</div>
         </div>`;

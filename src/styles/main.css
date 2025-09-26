@@ -16,9 +16,11 @@
 @import "./components/carousel.css";
 @import "./components/sidebar.css";
 @import "./components/mobile-nav.css";
+@import "./components/side-menu.css";
 
 /* Pages */
-@import "./pages/promotions.css";
 @import "./pages/home.css";
 @import "./pages/pages.css";
 @import "./pages/price.css";
+@import "./pages/promotions.css";
+@import "./pages/about.css";

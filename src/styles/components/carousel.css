@@ -73,13 +73,14 @@
   width: 0.75rem;
   height: 0.75rem;
   border-radius: 50%;
-  background-color: rgba(255, 255, 255, 0.5);
+  border: none;
+  background-color: var(--color-background-alt);
   cursor: pointer;
   transition: background-color var(--transition-normal);
 }
 
 .promo-carousel__dot--active {
-  background-color: white;
+  background-color: var(--color-accent);
 }
 
 .promo-carousel__actions {

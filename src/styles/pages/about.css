@@ -1,0 +1,4 @@
+.about-page__text,
+.about-page__values {
+  font-family: var(--font-secondary);
+}

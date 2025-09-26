@@ -74,6 +74,7 @@
   text-decoration: none;
   transition: color var(--transition-normal);
   position: relative;
+  font-size: var(--font-size-2xl);
 }
 
 .phone__link::after {
@@ -160,6 +161,8 @@
 }
 
 /* Основной контент */
+
+
 .container__title {
   display: flex;
   flex-direction: row;
@@ -183,7 +186,7 @@
   overflow: hidden;
 }
 
-.page-title {
+.service-title {
   color: var(--color-secondary);
   text-transform: uppercase;
 }
@@ -360,6 +363,10 @@
   color: var(--color-primary);
 }
 
+.service-details__section {
+  font-family: var(--font-secondary);
+}
+
 /* Адаптивность */
 
 @media (max-width: 1024px) {
@@ -457,7 +464,7 @@
     pointer-events: none;
   }
 
-  .page-title {
+  .service-title {
     text-align: center;
   }
 

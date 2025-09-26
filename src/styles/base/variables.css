@@ -11,7 +11,6 @@
 
   /* фон  */
   --color-cream: #fff5f3; /* Розоватый кремовый  фон */
-  
   --color-background: #fff;
   --color-background-alt: #f2f2f2;
 
@@ -41,8 +40,8 @@
   --color-info: var(--color-primary-light);
 
   /* Typography */
-  --font-primary: "Montserrat", sans-serif;
-  --font-secondary: "Open Sans", sans-serif;
+  --font-primary: "Georgia", serif;
+  --font-secondary: "Montserrat", sans-serif;
 
   --font-size-xs: 0.75rem; /* 12px */
   --font-size-sm: 0.875rem; /* 14px */
@@ -85,10 +84,6 @@
   --transition-normal: 0.3s ease;
   --transition-slow: 0.5s ease;
 
-  /* Container */
-  --container-padding: var(--spacing-md);
-  --container-max-width: 1200px;
-
   /* Overlay Colors */
   --color-overlay-light: rgba(255, 255, 255, 0.9);
   --color-overlay-dark: rgba(45, 45, 45, 0.8);
@@ -116,7 +111,7 @@
   --breakpoint-xl: 1720px;
 
   /* Container */
-  --container-padding: var(--spacing-md);
+  /* --container-padding: var(--spacing-md); */
   --container-max-width: 1200px;
   --container-max-width-xl: 1680px;
 

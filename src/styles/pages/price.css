@@ -1,15 +1,4 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
 
-body {
-  font-family: "Georgia", serif;
-  line-height: 1.4;
-  color: #2c2c2c;
-  background: #fefefe;
-}
 
 .price-container {
   max-width: 800px;

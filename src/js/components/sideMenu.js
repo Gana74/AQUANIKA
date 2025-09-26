@@ -68,7 +68,7 @@ function handleSideMenuClick(e) {
   // Загружаем новый контент через роутер
   if (routes[href]) {
     // Используем глобальную функцию navigateTo
-    if (typeof window.navigateTo === 'function') {
+    if (typeof window.navigateTo === "function") {
       window.navigateTo(href);
     } else {
       // Fallback: перезагружаем страницу
