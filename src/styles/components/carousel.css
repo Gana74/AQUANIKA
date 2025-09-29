@@ -14,11 +14,138 @@
   transition: transform var(--transition-normal);
 }
 
+/* Модификатор карусели для отзывов */
+.promo-carousel--reviews .promo-carousel__container {
+  min-height: initial;
+}
+.promo-carousel--reviews .promo-carousel__slide {
+  min-height: initial;
+  padding-bottom: 42px; /* место под точки */
+}
+.promo-carousel--reviews .promo-carousel__controls {
+  position: static;
+  transform: none;
+  justify-content: center;
+  margin-top: var(--spacing-md);
+}
+
+/* Сетка карточек внутри слайда отзывов (резерв на случай удаления inline-стилей) */
+.promo-carousel--reviews .reviews-carousel__grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--spacing-lg);
+}
+@media (max-width: 768px) {
+  .promo-carousel--reviews .reviews-carousel__grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Компактный вариант карусели (для галереи на главной) */
+.promo-carousel--compact {
+  mask-image: linear-gradient(
+    to right,
+    transparent 0%,
+    white 30%,
+    white 70%,
+    transparent 100%
+  );
+  -webkit-mask-image: linear-gradient(
+    to right,
+    transparent 0%,
+    white 30%,
+    white 70%,
+    transparent 100%
+  );
+}
+.promo-carousel--compact .promo-carousel__container {
+  min-height: initial;
+}
+.promo-carousel--compact .promo-carousel__slide {
+  min-height: initial;
+}
+.promo-carousel--compact .promo-carousel__slide-content {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem;
+}
+.promo-carousel--compact .promo-carousel__slide picture {
+  position: static;
+  width: 100%;
+  max-width: 100%;
+}
+.promo-carousel--compact .promo-carousel__slide img {
+  width: 100%;
+  height: 400px;
+  object-fit: cover;
+  border-radius: var(--border-radius-xl);
+}
+.promo-carousel--compact .promo-carousel__controls {
+  position: static;
+  transform: none;
+  justify-content: center;
+  margin-top: var(--spacing-sm);
+}
+
+@media (max-width: 1200px) {
+  .promo-carousel--compact .promo-carousel__slide-content {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .promo-carousel--compact .promo-carousel__slide-content {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .promo-carousel--compact .promo-carousel__slide img {
+    height: 180px;
+  }
+}
+@media (max-width: 480px) {
+  .promo-carousel--compact .promo-carousel__slide-content {
+    grid-template-columns: 1fr;
+  }
+  .promo-carousel--compact .promo-carousel__slide img {
+    height: 200px;
+  }
+}
+
 .promo-carousel__slide {
   flex: 0 0 100%;
   position: relative;
   overflow: hidden;
   min-height: 300px;
+}
+
+/* В компактной галерее показываем 4 слайда одновременно, шаг 1 */
+.promo-carousel--compact .promo-carousel__container {
+  display: flex;
+  gap: 2rem;
+}
+.promo-carousel--compact .promo-carousel__slide {
+  flex: 0 0 calc(25%); /* 4 видимых */
+  min-height: initial;
+}
+.promo-carousel--compact .promo-carousel__slide img {
+  width: 100%;
+  height: 400px;
+  object-fit: cover;
+}
+
+@media (max-width: 1200px) {
+  .promo-carousel--compact .promo-carousel__slide {
+    flex-basis: calc(33.3333%);
+  }
+}
+@media (max-width: 768px) {
+  .promo-carousel--compact .promo-carousel__slide {
+    flex-basis: 50%;
+  }
+}
+@media (max-width: 480px) {
+  .promo-carousel--compact .promo-carousel__slide {
+    flex-basis: 100%;
+  }
 }
 
 .promo-carousel__slide picture {
@@ -67,6 +194,62 @@
   transform: translateX(-50%);
   display: flex;
   gap: var(--spacing-sm);
+}
+
+/* Стрелки (минималистичные): крупные, без фона, полупрозрачные */
+.promo-carousel__arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: transparent;
+  color: rgba(255, 255, 255, 0.35);
+  border: none;
+  width: 64px;
+  height: 64px;
+  border-radius: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: transform 0.2s ease, color 0.2s ease, opacity 0.2s ease;
+  box-shadow: none;
+  z-index: var(--z-index-sticky);
+  font-size: 82px;
+  line-height: 1;
+  opacity: 0.8;
+}
+.promo-carousel__arrow:hover {
+  transform: translateY(-50%) scale(1.08);
+  color: rgba(255, 255, 255, 0.65);
+  opacity: 1;
+}
+.promo-carousel__arrow--prev {
+  left: 2px;
+}
+.promo-carousel__arrow--next {
+  right: 2px;
+}
+
+@media (max-width: 640px) {
+  .promo-carousel__arrow {
+    width: 44px;
+    height: 44px;
+    font-size: 28px;
+    opacity: 0.7;
+  }
+}
+
+/* Hover-отклик миниатюр в компактной галерее */
+.promo-carousel--compact .promo-carousel__slide picture {
+  overflow: hidden;
+  border-radius: var(--border-radius-xl);
+}
+.promo-carousel--compact .promo-carousel__slide img {
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+.promo-carousel--compact .promo-carousel__slide img:hover {
+  transform: scale(1.03);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
 }
 
 .promo-carousel__dot {

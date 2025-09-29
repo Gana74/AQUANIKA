@@ -1,0 +1,199 @@
+/* ================= Gallery Page (masonry grid) ================= */
+
+/* Контейнер страницы */
+.gallery-page .container--content,
+.page-content .gallery-page .container--content,
+.page-with-sidebar .page-content .gallery-page .container--content {
+  padding-top: 8px;
+}
+
+/* Фильтры */
+.gallery-filter {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin: 12px 0 20px;
+}
+
+.gallery-filter .filter-button {
+  appearance: none;
+  border: 1px solid var(--color-border, #e5e7eb);
+  background: var(--color-surface, #fff);
+  color: var(--color-text, #111827);
+  padding: 8px 14px;
+  border-radius: 9999px;
+  font-size: 14px;
+  line-height: 1;
+  cursor: pointer;
+  transition: background .2s ease, color .2s ease, border-color .2s ease, box-shadow .2s ease;
+}
+
+.gallery-filter .filter-button:hover {
+  background: var(--color-muted, #f3f4f6);
+}
+
+.gallery-filter .filter-button.active {
+  background: var(--color-primary, #2563eb);
+  color: #fff;
+  border-color: var(--color-primary, #2563eb);
+  box-shadow: 0 1px 2px rgba(0,0,0,.06), 0 1px 1px rgba(0,0,0,.04);
+}
+
+/* Мозаичная сетка — CSS columns */
+.gallery-masonry,
+.gallery-grid { /* поддержка старого класса на случай, если он уже используется */
+  column-gap: 16px;
+  column-fill: balance;
+}
+
+/* Кол-во колонок по брейкпоинтам */
+@media (max-width: 479px) {
+  .gallery-masonry, .gallery-grid { column-count: 1; }
+}
+@media (min-width: 480px) and (max-width: 767px) {
+  .gallery-masonry, .gallery-grid { column-count: 2; }
+}
+@media (min-width: 768px) and (max-width: 1199px) {
+  .gallery-masonry, .gallery-grid { column-count: 3; }
+}
+@media (min-width: 1200px) {
+  .gallery-masonry, .gallery-grid { column-count: 4; }
+}
+
+/* Элементы сетки */
+.gallery-item {
+  break-inside: avoid;
+  -webkit-column-break-inside: avoid;
+  -moz-column-break-inside: avoid;
+  margin: 0 0 16px;
+  position: relative;
+  overflow: hidden;
+  border-radius: 12px;
+  background: #f8fafc;
+}
+
+.gallery-item img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+  transition: transform .35s ease;
+}
+
+.gallery-item:hover img {
+  transform: scale(1.02);
+}
+
+/* Подпись/оверлей */
+.gallery-item figcaption {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: flex-end;
+  padding: 12px;
+  background: linear-gradient(180deg, rgba(0,0,0,0) 50%, rgba(0,0,0,0.55) 100%);
+  color: #fff;
+  opacity: 0;
+  transition: opacity .25s ease;
+}
+
+.gallery-item:hover figcaption {
+  opacity: 1;
+}
+
+.gallery-item figcaption .title {
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.gallery-item figcaption .meta {
+  font-size: 12px;
+  opacity: .9;
+}
+
+/* Пагинация — скрыта по умолчанию, так как используется «бесконечная» мозаика */
+.gallery-pagination { display: none; }
+
+/* CTA-блок под галереей: легкие отступы */
+.gallery-cta {
+  margin-top: 28px;
+  text-align: center;
+}
+
+.gallery-cta .social-links { display: inline-flex; gap: 12px; }
+
+/* Модалка галереи */
+.gallery-modal {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,.8);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.gallery-modal.is-open { display: flex; }
+
+.gallery-modal__content {
+  position: relative;
+  max-width: 92vw;
+  max-height: 92vh;
+}
+
+.gallery-modal__image {
+  max-width: 92vw;
+  max-height: 92vh;
+  width: auto;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 10px 30px rgba(0,0,0,.35);
+}
+
+.gallery-modal__caption {
+  margin-top: 8px;
+  color: #fff;
+  text-align: center;
+  font-size: 14px;
+}
+
+.gallery-modal__close {
+  position: absolute;
+  top: -10px;
+  right: -10px;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: none;
+  background: rgba(17,24,39,.85);
+  color: #fff;
+  font-size: 22px;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.gallery-modal__prev,
+.gallery-modal__next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: none;
+  background: rgba(17,24,39,.85);
+  color: #fff;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.gallery-modal__prev { left: -56px; }
+.gallery-modal__next { right: -56px; }
+
+@media (max-width: 640px) {
+  .gallery-modal__prev { left: 8px; }
+  .gallery-modal__next { right: 8px; }
+  .gallery-modal__close { top: 8px; right: 8px; }
+}

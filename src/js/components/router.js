@@ -205,6 +205,31 @@ export async function loadPage(route) {
 
     // Инициализация компонентов после загрузки страницы
     initPageComponents();
+
+    // Скроллинг: если есть hash — прокрутить к якорю, иначе — в начало страницы
+    const { hash } = window.location;
+    if (hash) {
+      const tryScrollToHash = () => {
+        const id = hash.slice(1);
+        const target =
+          document.getElementById(id) || document.querySelector(hash);
+        if (target) {
+          target.scrollIntoView({ behavior: "smooth", block: "start" });
+          return true;
+        }
+        return false;
+      };
+      // Несколько попыток, чтобы подождать вставку DOM/инициализацию
+      if (!tryScrollToHash()) {
+        requestAnimationFrame(() => {
+          if (!tryScrollToHash()) {
+            setTimeout(tryScrollToHash, 50);
+          }
+        });
+      }
+    } else {
+      window.scrollTo(0, 0);
+    }
   } catch (error) {
     console.error("Ошибка загрузки страницы:", error);
     // Fallback на главную страницу
@@ -216,8 +241,11 @@ export async function loadPage(route) {
 
 // Функция для программного перехода
 export function navigateTo(path) {
-  const cleanPath = path.startsWith("/") ? path : "/" + path;
-  const fullPath = basePath + cleanPath;
+  const raw = path.startsWith("/") ? path : "/" + path;
+  const hashIndex = raw.indexOf("#");
+  const pathnameOnly = hashIndex >= 0 ? raw.slice(0, hashIndex) : raw;
+  const hash = hashIndex >= 0 ? raw.slice(hashIndex) : "";
+  const fullPath = basePath + pathnameOnly + hash;
   window.history.pushState({}, "", fullPath);
   handleLocation();
 }
@@ -239,8 +267,26 @@ function handleNavigation(e) {
   if (url.origin !== window.location.origin || link.closest(".side-menu"))
     return;
 
+  // Если ссылка ведёт на тот же путь и содержит хеш — прокручиваем к якорю
+  const currentPath = window.location.pathname;
+  const linkPath = url.pathname;
+  if (link.hash && linkPath === currentPath) {
+    e.preventDefault();
+    const id = link.hash.slice(1);
+    const target =
+      document.getElementById(id) || document.querySelector(link.hash);
+    if (target) {
+      target.scrollIntoView({ behavior: "smooth", block: "start" });
+    } else {
+      // если якорь появится позже (SPA-контент), обновим hash, а обработка произойдёт в loadPage
+      window.location.hash = link.hash;
+    }
+    return;
+  }
+
   e.preventDefault();
-  navigateTo(url.pathname.replace(basePath, "") || "/");
+  const relativePath = linkPath.replace(basePath, "") || "/";
+  navigateTo(relativePath + (url.hash || ""));
 }
 
 // Функция для обработки редиректов
@@ -290,20 +336,108 @@ function initPageComponents() {
     window.initVideoModal();
   }
 
-  // Инициализация промо-карусели на главной
+  // Инициализация всех каруселей на странице (включая промо на главной)
   try {
-    const promoEl = document.getElementById("homePromotions");
-    if (promoEl && !promoEl.dataset.inited) {
+    const initAllCarousels = () => {
+      const carousels = document.querySelectorAll(".promo-carousel");
+      if (!carousels.length) return;
+
       import("./carousel.js").then((m) => {
         const init = m.initCarousel || (m.default && m.default.initCarousel);
-        if (init) {
-          init(promoEl);
-          promoEl.dataset.inited = "true";
-        }
+        if (!init) return;
+        carousels.forEach((el) => {
+          if (!el.dataset.inited) {
+            init(el);
+            el.dataset.inited = "true";
+          }
+        });
       });
-    }
+    };
+
+    initAllCarousels();
   } catch (e) {
     console.warn("Carousel init failed", e);
+  }
+
+  // Инициализация галереи (мозаика, фильтр, модалка), если присутствует на странице
+  try {
+    const container = document.getElementById("galleryMasonry");
+    if (container) {
+      // Фильтры
+      const filterButtons = document.querySelectorAll(
+        ".gallery-filter .filter-button"
+      );
+      filterButtons.forEach((btn) => {
+        btn.addEventListener("click", () => {
+          filterButtons.forEach((b) => b.classList.remove("active"));
+          btn.classList.add("active");
+          const filter = btn.getAttribute("data-filter");
+          const items = container.querySelectorAll(".gallery-item");
+          items.forEach((item) => {
+            const cat = item.getAttribute("data-category");
+            const show = filter === "all" || cat === filter;
+            item.style.display = show ? "" : "none";
+          });
+        });
+      });
+
+      // Модальное окно
+      const modal = document.getElementById("galleryModal");
+      if (modal) {
+        const modalImg = modal.querySelector(".gallery-modal__image");
+        const caption = modal.querySelector(".gallery-modal__caption");
+        const btnClose = modal.querySelector(".gallery-modal__close");
+        const btnPrev = modal.querySelector(".gallery-modal__prev");
+        const btnNext = modal.querySelector(".gallery-modal__next");
+
+        let currentIndex = -1;
+        const getVisibleItems = () =>
+          Array.from(container.querySelectorAll(".gallery-item")).filter(
+            (it) => it.style.display !== "none"
+          );
+
+        function openAt(index) {
+          const items = getVisibleItems();
+          if (!items.length) return;
+          currentIndex = (index + items.length) % items.length;
+          const img = items[currentIndex].querySelector("img");
+          modalImg.src = img.src;
+          modalImg.alt = img.alt || "";
+          caption.textContent = img.alt || "";
+          modal.classList.add("is-open");
+        }
+
+        container.addEventListener("click", (e) => {
+          const img = e.target.closest(".gallery-item img");
+          if (!img) return;
+          const items = getVisibleItems();
+          const figure = img.closest(".gallery-item");
+          const index = items.indexOf(figure);
+          openAt(index);
+        });
+
+        btnClose &&
+          btnClose.addEventListener("click", () =>
+            modal.classList.remove("is-open")
+          );
+        modal.addEventListener("click", (e) => {
+          if (e.target === modal) modal.classList.remove("is-open");
+        });
+
+        btnPrev &&
+          btnPrev.addEventListener("click", () => openAt(currentIndex - 1));
+        btnNext &&
+          btnNext.addEventListener("click", () => openAt(currentIndex + 1));
+        window.addEventListener("keydown", (e) => {
+          if (!modal.classList.contains("is-open")) return;
+          if (e.key === "Escape") modal.classList.remove("is-open");
+          if (e.key === "ArrowLeft") openAt(currentIndex - 1);
+          if (e.key === "ArrowRight") openAt(currentIndex + 1);
+        });
+      }
+    }
+  } catch (e) {
+    console.warn("Gallery init failed", e);
   }
 }
 

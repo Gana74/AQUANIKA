@@ -12,8 +12,8 @@
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
-    />
-    <link rel="stylesheet" crossorigin href="/AQUANIKA/assets/main-CT8-xTfQ.css">
+    />
+    <link rel="stylesheet" crossorigin href="/AQUANIKA/assets/main-CaDLZTNY.css">
   </head>
   <body>
     <main>
@@ -36,88 +36,139 @@
             </button>
           </div>
 
-          <div class="gallery-grid">
-            <!-- Карточка работы 1 -->
-            <div class="gallery-card" data-category="hair">
-              <div class="gallery-card__image">
-                <img
-                  src="/assets/images/gallery/hair1.jpg"
-                  alt="Окрашивание волос"
-                />
-                <div class="gallery-card__overlay">
-                  <div class="gallery-card__info">
-                    <h3>Окрашивание волос</h3>
-                    <p>Мастер: Елена</p>
-                  </div>
-                </div>
-              </div>
-            </div>
+          <div class="gallery-masonry" id="galleryMasonry">
+            <!-- Мозаичная сетка: используем реальные изображения из проекта -->
 
-            <!-- Карточка работы 2 -->
-            <div class="gallery-card" data-category="makeup">
-              <div class="gallery-card__image">
-                <img
-                  src="/assets/images/gallery/makeup1.jpg"
-                  alt="Вечерний макияж"
-                />
-                <div class="gallery-card__overlay">
-                  <div class="gallery-card__info">
-                    <h3>Вечерний макияж</h3>
-                    <p>Мастер: Ольга</p>
-                  </div>
+            <!-- Men / Haircuts -->
+            <figure class="gallery-item" data-category="hair">
+              <img src="/AQUANIKA/assets/man-OIxxgztK.webp" alt="Мужская стрижка — работа мастера" loading="lazy" decoding="async" />
+              <figcaption>
+                <div>
+                  <div class="title">Стрижка</div>
+                  <div class="meta">Мастер: Алексей</div>
                 </div>
-              </div>
-            </div>
+              </figcaption>
+            </figure>
+            <figure class="gallery-item" data-category="hair">
+              <img src="/AQUANIKA/assets/man1-BfGAUgf-.webp" alt="Стрижка и укладка" loading="lazy" decoding="async" />
+              <figcaption><div><div class="title">Стрижка и укладка</div><div class="meta">Мастер: Дмитрий</div></div></figcaption>
+            </figure>
+            <figure class="gallery-item" data-category="hair">
+              <img src="/AQUANIKA/assets/man2-DRKJe3d1.webp" alt="Классическая стрижка" loading="lazy" decoding="async" />
+              <figcaption><div><div class="title">Классическая стрижка</div><div class="meta">Мастер: Сергей</div></div></figcaption>
+            </figure>
+            <figure class="gallery-item" data-category="hair">
+              <img src="/AQUANIKA/assets/man3-UyZpeNC5.webp" alt="Модельная стрижка" loading="lazy" decoding="async" />
+              <figcaption><div><div class="title">Модельная стрижка</div><div class="meta">Мастер: Игорь</div></div></figcaption>
+            </figure>
 
-            <!-- Карточка работы 3 -->
-            <div class="gallery-card" data-category="nails">
-              <div class="gallery-card__image">
-                <img
-                  src="/assets/images/gallery/nails1.jpg"
-                  alt="Дизайн ногтей"
-                />
-                <div class="gallery-card__overlay">
-                  <div class="gallery-card__info">
-                    <h3>Дизайн ногтей</h3>
-                    <p>Мастер: Ирина</p>
-                  </div>
-                </div>
-              </div>
-            </div>
+            <!-- Nails -->
+            <figure class="gallery-item" data-category="nails">
+              <img src="/AQUANIKA/assets/nails-CvH0hnZO.webp" alt="Маникюр — классика" loading="lazy" decoding="async" />
+              <figcaption><div><div class="title">Маникюр</div><div class="meta">Мастер: Ирина</div></div></figcaption>
+            </figure>
+            <figure class="gallery-item" data-category="nails">
+              <img src="/AQUANIKA/assets/nails2-DIDEyTYl.webp" alt="Маникюр с дизайном" loading="lazy" decoding="async" />
+              <figcaption><div><div class="title">Маникюр с дизайном</div><div class="meta">Мастер: Ольга</div></div></figcaption>
+            </figure>
+            <figure class="gallery-item" data-category="nails">
+              <img src="/AQUANIKA/assets/nails3-2g9Umx55.webp" alt="Френч" loading="lazy" decoding="async" />
+              <figcaption><div><div class="title">Френч</div><div class="meta">Мастер: Анна</div></div></figcaption>
+            </figure>
+            <figure class="gallery-item" data-category="nails">
+              <img src="/AQUANIKA/assets/nails4-Da0z2tDV.webp" alt="Педикюр" loading="lazy" decoding="async" />
+              <figcaption><div><div class="title">Педикюр</div><div class="meta">Мастер: Светлана</div></div></figcaption>
+            </figure>
 
-            <!-- Карточка работы 4 -->
-            <div class="gallery-card" data-category="cosmetology">
-              <div class="gallery-card__image">
-                <img
-                  src="/assets/images/gallery/cosmetology1.jpg"
-                  alt="Результат процедуры"
-                />
-                <div class="gallery-card__overlay">
-                  <div class="gallery-card__info">
-                    <h3>Чистка лица</h3>
-                    <p>Мастер: Анна</p>
-                  </div>
-                </div>
-              </div>
-            </div>
+            <!-- Makeup -->
+            <figure class="gallery-item" data-category="makeup">
+              <img src="/AQUANIKA/assets/mak-CSn5IR4O.webp" alt="Макияж дневной" loading="lazy" decoding="async" />
+              <figcaption><div><div class="title">Макияж дневной</div><div class="meta">Мастер: Ольга</div></div></figcaption>
+            </figure>
+            <figure class="gallery-item" data-category="makeup">
+              <img src="/AQUANIKA/assets/mak1-B-EhteoN.webp" alt="Макияж вечерний" loading="lazy" decoding="async" />
+              <figcaption><div><div class="title">Макияж вечерний</div><div class="meta">Мастер: Ольга</div></div></figcaption>
+            </figure>
+            <figure class="gallery-item" data-category="makeup">
+              <img src="/AQUANIKA/assets/mak2-BoyHEFpj.webp" alt="Свадебный макияж" loading="lazy" decoding="async" />
+              <figcaption><div><div class="title">Свадебный макияж</div><div class="meta">Мастер: Кристина</div></div></figcaption>
+            </figure>
+            <figure class="gallery-item" data-category="makeup">
+              <img src="/AQUANIKA/assets/mak3-B-ZnuWTB.webp" alt="Образ для фотосессии" loading="lazy" decoding="async" />
+              <figcaption><div><div class="title">Образ для фотосессии</div><div class="meta">Мастер: Дарья</div></div></figcaption>
+            </figure>
 
-            <!-- Карточка работы 5 -->
-            <div class="gallery-card" data-category="interior">
-              <div class="gallery-card__image">
-                <img
-                  src="/assets/images/gallery/interior1.jpg"
-                  alt="Интерьер салона"
-                />
-                <div class="gallery-card__overlay">
-                  <div class="gallery-card__info">
-                    <h3>Зона ресепшн</h3>
-                    <p>Современный дизайн</p>
-                  </div>
-                </div>
-              </div>
-            </div>
+            <!-- Cosmetology -->
+            <figure class="gallery-item" data-category="cosmetology">
+              <img src="/AQUANIKA/assets/cosm-CSHKTI7R.webp" alt="Косметология — уход" loading="lazy" decoding="async" />
+              <figcaption><div><div class="title">Уход за кожей</div><div class="meta">Мастер: Юлия</div></div></figcaption>
+            </figure>
+            <figure class="gallery-item" data-category="cosmetology">
+              <img src="/AQUANIKA/assets/cosm1-C1H7WbD-.webp" alt="Косметология — процедуры" loading="lazy" decoding="async" />
+              <figcaption><div><div class="title">SPA для лица</div><div class="meta">Мастер: Ксения</div></div></figcaption>
+            </figure>
+            <figure class="gallery-item" data-category="cosmetology">
+              <img src="/AQUANIKA/assets/inj-CIdxmvz8.webp" alt="Инъекционные процедуры" loading="lazy" decoding="async" />
+              <figcaption><div><div class="title">Инъекции</div><div class="meta">Врач-косметолог</div></div></figcaption>
+            </figure>
+            <figure class="gallery-item" data-category="cosmetology">
+              <img src="/AQUANIKA/assets/mask-DENl9Q-D.webp" alt="Маски и уход" loading="lazy" decoding="async" />
+              <figcaption><div><div class="title">Маска и уход</div><div class="meta">Процедура</div></div></figcaption>
+            </figure>
 
-            <!-- Дополнительные карточки -->
+            <!-- SPA -->
+            <figure class="gallery-item" data-category="spa">
+              <img src="/AQUANIKA/assets/aqu-CP_-74zv.webp" alt="SPA — процедуры" loading="lazy" decoding="async" />
+              <figcaption><div><div class="title">SPA</div><div class="meta">Расслабление</div></div></figcaption>
+            </figure>
+            <figure class="gallery-item" data-category="spa">
+              <img src="/AQUANIKA/assets/aqua-Dl1V3w-B.webp" alt="Капсулы и уход" loading="lazy" decoding="async" />
+              <figcaption><div><div class="title">Капсулы</div><div class="meta">SPA-комплекс</div></div></figcaption>
+            </figure>
+            <figure class="gallery-item" data-category="spa">
+              <img src="/AQUANIKA/assets/mas-FTztm7ek.webp" alt="Массаж тела" loading="lazy" decoding="async" />
+              <figcaption><div><div class="title">Массаж</div><div class="meta">Расслабляющий</div></div></figcaption>
+            </figure>
+            <figure class="gallery-item" data-category="spa">
+              <img src="/AQUANIKA/assets/mass-B7-Hg7NR.webp" alt="Массаж спины" loading="lazy" decoding="async" />
+              <figcaption><div><div class="title">Массаж спины</div><div class="meta">Классический</div></div></figcaption>
+            </figure>
+
+            <!-- Hair coloring/styling (cut folder) -->
+            <figure class="gallery-item" data-category="hair">
+              <img src="/AQUANIKA/assets/cut-CvXghr21.webp" alt="Женская стрижка" loading="lazy" decoding="async" />
+              <figcaption><div><div class="title">Стрижка женская</div><div class="meta">Мастер: Елена</div></div></figcaption>
+            </figure>
+            <figure class="gallery-item" data-category="hair">
+              <img src="/AQUANIKA/assets/cut1-CwcOXpzx.webp" alt="Стрижка — каскад" loading="lazy" decoding="async" />
+              <figcaption><div><div class="title">Каскад</div><div class="meta">Мастер: Мария</div></div></figcaption>
+            </figure>
+            <figure class="gallery-item" data-category="hair">
+              <img src="/AQUANIKA/assets/cut3-DqXiVkCj.webp" alt="Укладка локоны" loading="lazy" decoding="async" />
+              <figcaption><div><div class="title">Локоны</div><div class="meta">Укладка</div></div></figcaption>
+            </figure>
+            <figure class="gallery-item" data-category="hair">
+              <img src="/AQUANIKA/assets/cut4-BxFvpopu.webp" alt="Окрашивание" loading="lazy" decoding="async" />
+              <figcaption><div><div class="title">Окрашивание</div><div class="meta">Техники</div></div></figcaption>
+            </figure>
+
+            <!-- Laser/Equipment -->
+            <figure class="gallery-item" data-category="laser">
+              <img src="/AQUANIKA/assets/laser1-DNGwcPNB.webp" alt="Лазерная эпиляция — оборудование" loading="lazy" decoding="async" />
+              <figcaption><div><div class="title">Лазерная эпиляция</div><div class="meta">Оборудование</div></div></figcaption>
+            </figure>
+            <figure class="gallery-item" data-category="laser">
+              <img src="/AQUANIKA/assets/laser2-0_ZIYqZb.webp" alt="Лазер — кабинет" loading="lazy" decoding="async" />
+              <figcaption><div><div class="title">Кабинет лазера</div><div class="meta">Интерьер</div></div></figcaption>
+            </figure>
+            <figure class="gallery-item" data-category="laser">
+              <img src="/AQUANIKA/assets/laser3-BauLFPEm.webp" alt="Лазер — процедуры" loading="lazy" decoding="async" />
+              <figcaption><div><div class="title">Процедура лазера</div><div class="meta">Процесс</div></div></figcaption>
+            </figure>
+            <figure class="gallery-item" data-category="laser">
+              <img src="/AQUANIKA/assets/laser4-CeQ1j3W1.webp" alt="Лазер — результат" loading="lazy" decoding="async" />
+              <figcaption><div><div class="title">Результат</div><div class="meta">До/После</div></div></figcaption>
+            </figure>
           </div>
 
           <div class="gallery-pagination">
@@ -162,5 +213,75 @@
         </div>
       </div>
     </main>
+
+    <script>
+      // Инициализация фильтра и модалки для галереи
+      (function () {
+        const root = document;
+        const container = root.getElementById('galleryMasonry');
+        if (!container) return;
+
+        // Фильтрация по категориям
+        const filterButtons = root.querySelectorAll('.gallery-filter .filter-button');
+        filterButtons.forEach(btn => {
+          btn.addEventListener('click', () => {
+            filterButtons.forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+            const filter = btn.getAttribute('data-filter');
+            const items = container.querySelectorAll('.gallery-item');
+            items.forEach(item => {
+              const cat = item.getAttribute('data-category');
+              const show = filter === 'all' || cat === filter;
+              item.style.display = show ? '' : 'none';
+            });
+          });
+        });
+
+        // Модальное ��кно
+        const modal = root.getElementById('galleryModal');
+        const modalImg = modal.querySelector('.gallery-modal__image');
+        const caption = modal.querySelector('.gallery-modal__caption');
+        const btnClose = modal.querySelector('.gallery-modal__close');
+        const btnPrev = modal.querySelector('.gallery-modal__prev');
+        const btnNext = modal.querySelector('.gallery-modal__next');
+
+        let currentIndex = -1;
+        const getVisibleItems = () => Array.from(container.querySelectorAll('.gallery-item')).filter(it => it.style.display !== 'none');
+
+        function openAt(index) {
+          const items = getVisibleItems();
+          if (!items.length) return;
+          currentIndex = (index + items.length) % items.length;
+          const img = items[currentIndex].querySelector('img');
+          modalImg.src = img.src;
+          modalImg.alt = img.alt || '';
+          caption.textContent = img.alt || '';
+          modal.classList.add('is-open');
+        }
+
+        container.addEventListener('click', (e) => {
+          const img = e.target.closest('.gallery-item img');
+          if (!img) return;
+          const items = getVisibleItems();
+          const figure = img.closest('.gallery-item');
+          const index = items.indexOf(figure);
+          openAt(index);
+        });
+
+        btnClose.addEventListener('click', () => modal.classList.remove('is-open'));
+        modal.addEventListener('click', (e) => {
+          if (e.target === modal) modal.classList.remove('is-open');
+        });
+
+        btnPrev.addEventListener('click', () => openAt(currentIndex - 1));
+        btnNext.addEventListener('click', () => openAt(currentIndex + 1));
+        window.addEventListener('keydown', (e) => {
+          if (!modal.classList.contains('is-open')) return;
+          if (e.key === 'Escape') modal.classList.remove('is-open');
+          if (e.key === 'ArrowLeft') openAt(currentIndex - 1);
+          if (e.key === 'ArrowRight') openAt(currentIndex + 1);
+        });
+      })();
+    </script>
   </body>
 </html>

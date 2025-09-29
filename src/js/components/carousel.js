@@ -1,4 +1,4 @@
-// Карусель
+// Карусель с бесшовным циклом
 export class Carousel {
   constructor(element) {
     this.element = element;
@@ -6,88 +6,224 @@ export class Carousel {
   }
 
   init() {
-    // Получаем элементы контейнера, слайдов и кнопок управления
     const container = this.element.querySelector(".promo-carousel__container");
-    const slides = this.element.querySelectorAll(".promo-carousel__slide");
+    const realSlides = Array.from(
+      this.element.querySelectorAll(".promo-carousel__slide")
+    );
     const controls = this.element.querySelector(".promo-carousel__controls");
 
-    let currentSlide = 0;
+    if (!container || !realSlides.length) return;
+
+    let realCount = realSlides.length;
+    const isCompact = this.element.classList.contains(
+      "promo-carousel--compact"
+    );
+
+    const getSlidesPerView = () => {
+      if (!isCompact) return 1;
+      const w = window.innerWidth || 1920;
+      if (w <= 480) return 1;
+      if (w <= 768) return 2;
+      if (w <= 1200) return 3;
+      return 4;
+    };
+
+    let slidesPerView = getSlidesPerView();
+    let unitWidthPercent = 100 / slidesPerView; // ширина одного шага
+
+    // Количество клонов до/после для бесшовного цикла
+    let clonesBefore = Math.min(slidesPerView, realCount);
+    let clonesAfter = Math.min(slidesPerView, realCount);
+
+    // виртуальный индекс (с учётом клонов)
+    let currentIndex = realCount > 1 ? clonesBefore : 0;
     let isTransitioning = false;
     let autoplayInterval;
 
-    // Создаем точки навигации
-    slides.forEach((_, index) => {
-      const dot = document.createElement("button");
-      dot.className = `promo-carousel__dot ${
-        index === 0 ? "promo-carousel__dot--active" : ""
-      }`;
-      dot.addEventListener("click", () => this.goToSlide(index));
-      controls.appendChild(dot);
+    // Создаем точки навигации (по реальным слайдам)
+    const dots = [];
+    if (controls) {
+      controls.innerHTML = "";
+      for (let i = 0; i < realCount; i++) {
+        const dot = document.createElement("button");
+        dot.className = `promo-carousel__dot ${
+          i === 0 ? "promo-carousel__dot--active" : ""
+        }`;
+        dot.addEventListener("click", () => this.goToSlide(i));
+        controls.appendChild(dot);
+        dots.push(dot);
+      }
+    }
+
+    // Создаем кнопки навигации (стрелки)
+    const prevButton = document.createElement("button");
+    prevButton.className = "promo-carousel__arrow promo-carousel__arrow--prev";
+    prevButton.setAttribute("aria-label", "Предыдущие фото");
+    prevButton.innerHTML = "&#10094;";
+    prevButton.addEventListener("click", (e) => {
+      e.stopPropagation();
+      this.prev();
     });
 
-    // Создаем кнопки навигации
-    // const prevButton = document.createElement("button");
-    // prevButton.className = "promo-carousel__arrow promo-carousel__arrow--prev";
-    // prevButton.innerHTML = "←";
-    // prevButton.addEventListener("click", () => this.prev());
+    const nextButton = document.createElement("button");
+    nextButton.className = "promo-carousel__arrow promo-carousel__arrow--next";
+    nextButton.setAttribute("aria-label", "Следующие фото");
+    nextButton.innerHTML = "&#10095;";
+    nextButton.addEventListener("click", (e) => {
+      e.stopPropagation();
+      this.next();
+    });
 
-    // const nextButton = document.createElement("button");
-    // nextButton.className = "promo-carousel__arrow promo-carousel__arrow--next";
-    // nextButton.innerHTML = "→";
-    // nextButton.addEventListener("click", () => this.next());
+    this.element.appendChild(prevButton);
+    this.element.appendChild(nextButton);
 
-    // this.element.appendChild(prevButton);
-    // this.element.appendChild(nextButton);
+    // Помощники
+    const updateDots = () => {
+      if (!dots.length) return;
+      const activeRealIndex =
+        realCount > 1 ? (currentIndex - 1 + realCount) % realCount : 0;
+      dots.forEach((d, idx) => {
+        d.classList.toggle(
+          "promo-carousel__dot--active",
+          idx === activeRealIndex
+        );
+      });
+    };
 
-    // Функция перехода к слайду
-    this.goToSlide = function (index) {
-      if (isTransitioning || index === currentSlide) return;
+    const updatePosition = (smooth = true) => {
+      if (!smooth) {
+        const prevTransition = container.style.transition;
+        container.style.transition = "none";
+        container.style.transform = `translateX(-${
+          currentIndex * unitWidthPercent
+        }%)`;
+        // форсируем reflow
+        void container.offsetWidth;
+        container.style.transition = prevTransition || "";
+      } else {
+        container.style.transform = `translateX(-${
+          currentIndex * unitWidthPercent
+        }%)`;
+      }
+    };
 
-      isTransitioning = true;
-      const dots = controls.querySelectorAll(".promo-carousel__dot");
+    // Инициализация бесшовного цикла: клоны
+    if (realCount > 1) {
+      // Создаем необходимое количество клонов для бесшовного режима
+      // Сначала клоны конца в начало
+      for (let i = 0; i < clonesBefore; i++) {
+        const idxFromEnd = realCount - 1 - i;
+        const clone = realSlides[idxFromEnd].cloneNode(true);
+        container.insertBefore(clone, container.firstChild);
+      }
+      // Затем клоны начала в конец
+      for (let i = 0; i < clonesAfter; i++) {
+        const clone = realSlides[i].cloneNode(true);
+        container.appendChild(clone);
+      }
 
-      // Обновляем активную точку
-      dots[currentSlide].classList.remove("promo-carousel__dot--active");
-      dots[index].classList.add("promo-carousel__dot--active");
+      // Стартуем с первого реального слайда (виртуальный индекс = clonesBefore)
+      updatePosition(false);
 
-      // Анимируем переход
-      container.style.transform = `translateX(-${index * 100}%)`;
-      currentSlide = index;
-
-      // Сбрасываем флаг анимации
-      setTimeout(() => {
+      // Перехват конца анимации для "перескока" с клонов на реальные
+      container.addEventListener("transitionend", () => {
         isTransitioning = false;
-      }, 300);
+        const leftBoundary = clonesBefore;
+        const rightBoundary = clonesBefore + realCount;
+        if (currentIndex < leftBoundary) {
+          // ушли в левые клоны — переносим вправо на realCount позиций
+          currentIndex += realCount;
+          updatePosition(false);
+        } else if (currentIndex >= rightBoundary) {
+          // ушли в правые клоны — переносим влево на realCount позиций
+          currentIndex -= realCount;
+          updatePosition(false);
+        }
+        updateDots();
+      });
+    } else {
+      // Один слайд — позиция нулевая
+      updatePosition(false);
+    }
+
+    // Методы API
+    this.goToSlide = (realIndex) => {
+      if (isTransitioning) return;
+      if (realCount <= 1) return;
+      const targetIndex = realIndex + clonesBefore; // c учётом клонов
+      if (targetIndex === currentIndex) return;
+      isTransitioning = true;
+      currentIndex = targetIndex;
+      updatePosition(true);
+      updateDots();
     };
 
-    // Функция перехода к предыдущему слайду
-    this.prev = function () {
-      const index = currentSlide === 0 ? slides.length - 1 : currentSlide - 1;
-      this.goToSlide(index);
+    this.prev = () => {
+      if (isTransitioning) return;
+      if (realCount <= 1) return;
+      isTransitioning = true;
+      currentIndex -= 1; // шаг 1
+      updatePosition(true);
+      updateDots();
     };
 
-    // Функция перехода к следующему слайду
-    this.next = function () {
-      const index = currentSlide === slides.length - 1 ? 0 : currentSlide + 1;
-      this.goToSlide(index);
+    this.next = () => {
+      if (isTransitioning) return;
+      if (realCount <= 1) return;
+      isTransitioning = true;
+      currentIndex += 1; // шаг 1
+      updatePosition(true);
+      updateDots();
     };
 
     // Автопереключение слайдов
     this.startAutoplay = function () {
-      autoplayInterval = setInterval(() => this.next(), 10000);
+      if (realCount <= 1) return;
+      autoplayInterval = setInterval(() => this.next(), 8000);
     };
 
     this.stopAutoplay = function () {
       clearInterval(autoplayInterval);
     };
 
-    // Обработчики событий для остановки автопереключения при взаимодействии
+    // Остановка автоплей при взаимодействии
     this.element.addEventListener("mouseenter", () => this.stopAutoplay());
     this.element.addEventListener("mouseleave", () => this.startAutoplay());
     this.element.addEventListener("touchstart", () => this.stopAutoplay());
     this.element.addEventListener("touchend", () => this.startAutoplay());
 
-    // Запускаем автопереключение
+    // Клик по миниатюре в компактной галерее ведет на страницу галереи
+    if (this.element.classList.contains("promo-carousel--compact")) {
+      this.element.addEventListener("click", (e) => {
+        // Игнорируем клики по стрелкам и точкам
+        if (
+          e.target.closest(".promo-carousel__arrow") ||
+          e.target.closest(".promo-carousel__controls")
+        )
+          return;
+        if (e.target.closest("picture") || e.target.closest("img")) {
+          if (typeof window.navigateTo === "function") {
+            window.navigateTo("/gallery");
+          } else {
+            window.location.href = "/gallery";
+          }
+        }
+      });
+    }
+
+    // Обработка ресайза для пересчёта slidesPerView и ширины шага
+    const handleResize = () => {
+      const newSpv = getSlidesPerView();
+      if (newSpv !== slidesPerView) {
+        slidesPerView = newSpv;
+        unitWidthPercent = 100 / slidesPerView;
+        // При смене режима, чтобы не "прыгало" — обновим позицию без анимации
+        updatePosition(false);
+      }
+    };
+    window.addEventListener("resize", handleResize);
+
+    // Запуск
     this.startAutoplay();
 
     // Обработка свайпов на мобильных устройствах
