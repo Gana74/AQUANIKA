@@ -1,4 +1,7 @@
-.about-page__text,
 .about-page__values {
-  font-family: var(--font-secondary);
+  padding: 0.8em;
+}
+
+.about-page__image {
+  max-width: 400px;
 }

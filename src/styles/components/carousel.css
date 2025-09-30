@@ -76,8 +76,8 @@
   transform: translateY(-50%);
   background: transparent;
   border: none;
-  width: 200px;
-  height: 300px;
+  width: 60px;
+  height: 60px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -141,6 +141,11 @@
     white 80%,
     transparent
   );
+}
+
+.promo-carousel--compact .promo-carousel__arrow {
+  width: 200px;
+  height: 300px;
 }
 
 .promo-carousel--compact .promo-carousel__container {
@@ -220,13 +225,18 @@
 }
 
 /* ------------------------------------------------------------------Модификатор карусели для отзывов */
+.promo-carousel--reviews {
+  padding: 3px;
+}
+
 .promo-carousel--reviews .promo-carousel__container {
   min-height: initial;
 }
 
 .promo-carousel--reviews .promo-carousel__slide {
-  min-height: initial;
-  padding-bottom: 42px;
+  /* padding-bottom: 42px; */
+  padding: var(--spacing-sm);
+  overflow: visible;
 }
 
 .promo-carousel--reviews .promo-carousel__controls {

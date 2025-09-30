@@ -77,6 +77,10 @@
   border-radius: 0 0 1rem 1rem;
 }
 
+.services-nav {
+  font-family: var(--font-secondary);
+}
+
 .services-nav__list {
   display: flex;
   justify-content: space-between;

@@ -75,6 +75,7 @@
   transition: color var(--transition-normal);
   position: relative;
   font-size: var(--font-size-2xl);
+  font-family: var(--font-secondary);
 }
 
 .phone__link::after {
@@ -162,7 +163,6 @@
 
 /* Основной контент */
 
-
 .container__title {
   display: flex;
   flex-direction: row;
@@ -184,6 +184,10 @@
   flex: none;
   border-radius: 0 var(--border-radius-xl) var(--border-radius-xl) 0;
   overflow: hidden;
+}
+
+.service-gallery {
+  margin-bottom: 3rem;
 }
 
 .service-title {
@@ -243,12 +247,13 @@
   background-color: var(--color-cream);
   border-radius: var(--border-radius-xl);
   box-shadow: var(--shadow-md);
-  transition: all 0.3s ease;
+  transition: all 0.5s ease;
   cursor: default;
 }
 
 .benefit-card:hover {
-  transform: scale(1.05);
+  transform: translateY(-4px);
+  box-shadow: 0 13px 23px rgba(0, 0, 0, 0.12);
 }
 
 .benefit-card i {
@@ -327,7 +332,6 @@
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 1rem;
-  margin-bottom: 3.5rem;
 }
 
 /* Модификаторы для домашней галереи с мозаикой */
@@ -341,14 +345,17 @@
 .home-gallery .gallery-item,
 .home-gallery .gallery-item--tall,
 .home-gallery .gallery-item--wide,
-.home-gallery .gallery-item--big { grid-column: auto; grid-row: auto; }
+.home-gallery .gallery-item--big {
+  grid-column: auto;
+  grid-row: auto;
+}
 
 .gallery-item img {
   width: 100%;
   height: 250px;
   object-fit: cover;
   border-radius: var(--border-radius-xl);
-  transition: transform 0.7s ease;
+  transition: transform 0.5s ease;
 }
 
 /* Домашняя галерея — компактная высота карточек */
@@ -356,7 +363,7 @@
   height: 220px;
 }
 
-.gallery-item img:hover {
+.home-gallery .gallery-item img:hover {
   transform: scale(1.05);
 }
 
@@ -407,11 +414,16 @@
   }
 
   /* Сбрасываем мозаичные спаны для стабильной сетки на планшетах */
-  .home-gallery { grid-auto-rows: initial; }
+  .home-gallery {
+    grid-auto-rows: initial;
+  }
   .home-gallery .gallery-item,
   .home-gallery .gallery-item--tall,
   .home-gallery .gallery-item--wide,
-  .home-gallery .gallery-item--big { grid-column: auto; grid-row: auto; }
+  .home-gallery .gallery-item--big {
+    grid-column: auto;
+    grid-row: auto;
+  }
 }
 
 @media (max-width: 768px) {
@@ -508,9 +520,14 @@
   }
 
   /* На мобильных полностью отключаем спаны */
-  .home-gallery { grid-auto-rows: initial; }
+  .home-gallery {
+    grid-auto-rows: initial;
+  }
   .home-gallery .gallery-item,
   .home-gallery .gallery-item--tall,
   .home-gallery .gallery-item--wide,
-  .home-gallery .gallery-item--big { grid-column: auto; grid-row: auto; }
+  .home-gallery .gallery-item--big {
+    grid-column: auto;
+    grid-row: auto;
+  }
 }

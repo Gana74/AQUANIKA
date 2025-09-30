@@ -1,15 +1,4 @@
 /* ===================== Reviews (Главная) ===================== */
-.reviews {
-  padding-top: 6rem;
-}
-
-.reviews__header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: var(--spacing-md);
-  margin-bottom: var(--spacing-md);
-}
 
 .reviews__all {
   white-space: nowrap;
@@ -52,16 +41,14 @@
   scroll-snap-align: start;
   background: rgba(255, 255, 255, 0.75);
   backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
   border: 1px solid rgba(212, 175, 55, 0.25);
   border-radius: var(--border-radius-xxl);
   padding: 1.25rem 1.25rem;
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08);
   transition: transform 0.25s ease, box-shadow 0.25s ease;
   isolation: isolate;
 }
 
-.review-card::before {
+/* .review-card::before {
   content: "";
   position: absolute;
   inset: 0;
@@ -76,11 +63,11 @@
   -webkit-mask-composite: xor;
   mask-composite: exclude;
   pointer-events: none;
-}
+} */
 
 .review-card:hover {
   transform: translateY(-4px);
-  box-shadow: 0 16px 28px rgba(0, 0, 0, 0.12);
+  box-shadow: 0 13px 23px rgba(0, 0, 0, 0.12);
 }
 
 .review-card__link {
@@ -150,23 +137,22 @@
 }
 
 @media (max-width: 576px) {
-  .reviews__header {
-    align-items: flex-start;
-    flex-direction: column;
-  }
   .reviews__scroller {
     grid-auto-columns: 85%;
     gap: var(--spacing-md);
   }
+
   .review-card {
     padding: 1rem;
     border-radius: var(--border-radius-xl);
   }
+
   .review-card__avatar {
     width: 40px;
     height: 40px;
     font-size: 0.875rem;
   }
+
   .review-card__rating {
     font-size: 0.9rem;
     letter-spacing: 1px;

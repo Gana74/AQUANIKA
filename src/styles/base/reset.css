@@ -41,9 +41,6 @@ html:focus-within {
 }
 
 body {
-  font-family: "Georgia", serif;
-}
-body {
   min-height: 100vh;
   text-rendering: optimizeSpeed;
   line-height: 1.5;
