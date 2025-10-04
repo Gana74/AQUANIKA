@@ -2,11 +2,13 @@
 import "lazysizes";
 import "./components/toTopButton.js";
 import { initVideoModal } from "./components/modalVideo.js";
+import { initGalleryModal } from "./components/modalGallery.js";
 
 import { loadComponent } from "./components/loadComponents.js";
 import { MobileMenu } from "./components/mobileMenu.js";
-import { initRouter, basePath } from "./components/router.js";
+import { initRouter } from "./components/router.js";
 window.initVideoModal = initVideoModal;
+window.initGalleryModal = initGalleryModal;
 
 // Умная загрузка компонентов header/footer
 async function loadLayoutComponents() {

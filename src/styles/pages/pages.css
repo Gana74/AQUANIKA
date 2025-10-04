@@ -229,8 +229,6 @@
   background: url("/assets/images/services/gold-brush.png") center/contain
     no-repeat;
   background-size: 90% 90%;
-  color: var(--color-dark);
-  font-size: var(--font-size-4xl);
   min-height: 1.8em;
   line-height: 1.3;
 }
@@ -243,7 +241,7 @@
 
 .benefit-card {
   text-align: center;
-  padding: 2rem;
+  padding: 1rem;
   background-color: var(--color-cream);
   border-radius: var(--border-radius-xl);
   box-shadow: var(--shadow-md);
@@ -260,6 +258,14 @@
   font-size: 2.5rem;
   color: var(--color-primary);
   margin-bottom: 1rem;
+}
+
+.benefit-card p {
+  color: var(--color-text-light);
+}
+
+.benefit-card li {
+  color: var(--color-text-light);
 }
 
 /* Прайс-лист */

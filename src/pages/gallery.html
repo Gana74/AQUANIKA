@@ -19,7 +19,7 @@
     <main>
       <section class="gallery-page">
         <div class="container--content">
-          <h1 class="page-title">Галерея работ</h1>
+          <h2 class="section-title gallery-page__title">Галерея работ</h2>
 
           <div class="gallery-filter">
             <button class="filter-button active" data-filter="all">
@@ -28,11 +28,12 @@
             <button class="filter-button" data-filter="hair">Прически</button>
             <button class="filter-button" data-filter="makeup">Макияж</button>
             <button class="filter-button" data-filter="nails">Маникюр</button>
+            <button class="filter-button" data-filter="spa">
+              Спа-процедуры
+            </button>
+            <button class="filter-button" data-filter="laser">Эпиляция</button>
             <button class="filter-button" data-filter="cosmetology">
               Косметология
-            </button>
-            <button class="filter-button" data-filter="interior">
-              Интерьер салона
             </button>
           </div>
 
@@ -41,7 +42,12 @@
 
             <!-- Men / Haircuts -->
             <figure class="gallery-item" data-category="hair">
-              <img src="/assets/images/man/man.webp" alt="Мужская стрижка — работа мастера" loading="lazy" decoding="async" />
+              <img
+                src="/assets/images/man/man.webp"
+                alt="Мужская стрижка — работа мастера"
+                loading="lazy"
+                decoding="async"
+              />
               <figcaption>
                 <div>
                   <div class="title">Стрижка</div>
@@ -50,126 +56,399 @@
               </figcaption>
             </figure>
             <figure class="gallery-item" data-category="hair">
-              <img src="/assets/images/man/man1.webp" alt="Стрижка и укладка" loading="lazy" decoding="async" />
-              <figcaption><div><div class="title">Стрижка и укладка</div><div class="meta">Мастер: Дмитрий</div></div></figcaption>
+              <img
+                src="/assets/images/man/man1.webp"
+                alt="Стрижка и укладка"
+                loading="lazy"
+                decoding="async"
+              />
+              <figcaption>
+                <div>
+                  <div class="title">Стрижка и укладка</div>
+                  <div class="meta">Мастер: Дмитрий</div>
+                </div>
+              </figcaption>
             </figure>
             <figure class="gallery-item" data-category="hair">
-              <img src="/assets/images/man/man2.webp" alt="Классическая стрижка" loading="lazy" decoding="async" />
-              <figcaption><div><div class="title">Классическая стрижка</div><div class="meta">Мастер: Сергей</div></div></figcaption>
+              <img
+                src="/assets/images/man/man2.webp"
+                alt="Стрижка Quiff"
+                loading="lazy"
+                decoding="async"
+              />
+              <figcaption>
+                <div>
+                  <div class="title">Стрижка Quiff</div>
+                  <div class="meta">Мастер: Сергей</div>
+                </div>
+              </figcaption>
             </figure>
             <figure class="gallery-item" data-category="hair">
-              <img src="/assets/images/man/man3.webp" alt="Модельная стрижка" loading="lazy" decoding="async" />
-              <figcaption><div><div class="title">Модельная стрижка</div><div class="meta">Мастер: Игорь</div></div></figcaption>
-            </figure>
-
-            <!-- Nails -->
-            <figure class="gallery-item" data-category="nails">
-              <img src="/assets/images/nails/nails.webp" alt="Маникюр — классика" loading="lazy" decoding="async" />
-              <figcaption><div><div class="title">Маникюр</div><div class="meta">Мастер: Ирина</div></div></figcaption>
-            </figure>
-            <figure class="gallery-item" data-category="nails">
-              <img src="/assets/images/nails/nails2.webp" alt="Маникюр с дизайном" loading="lazy" decoding="async" />
-              <figcaption><div><div class="title">Маникюр с дизайном</div><div class="meta">Мастер: Ольга</div></div></figcaption>
-            </figure>
-            <figure class="gallery-item" data-category="nails">
-              <img src="/assets/images/nails/nails3.webp" alt="Френч" loading="lazy" decoding="async" />
-              <figcaption><div><div class="title">Френч</div><div class="meta">Мастер: Анна</div></div></figcaption>
-            </figure>
-            <figure class="gallery-item" data-category="nails">
-              <img src="/assets/images/nails/nails4.webp" alt="Педикюр" loading="lazy" decoding="async" />
-              <figcaption><div><div class="title">Педикюр</div><div class="meta">Мастер: Светлана</div></div></figcaption>
-            </figure>
-
-            <!-- Makeup -->
-            <figure class="gallery-item" data-category="makeup">
-              <img src="/assets/images/makeup/mak.webp" alt="Макияж дневной" loading="lazy" decoding="async" />
-              <figcaption><div><div class="title">Макияж дневной</div><div class="meta">Мастер: Ольга</div></div></figcaption>
-            </figure>
-            <figure class="gallery-item" data-category="makeup">
-              <img src="/assets/images/makeup/mak1.webp" alt="Макияж вечерний" loading="lazy" decoding="async" />
-              <figcaption><div><div class="title">Макияж вечерний</div><div class="meta">Мастер: Ольга</div></div></figcaption>
-            </figure>
-            <figure class="gallery-item" data-category="makeup">
-              <img src="/assets/images/makeup/mak2.webp" alt="Свадебный макияж" loading="lazy" decoding="async" />
-              <figcaption><div><div class="title">Свадебный макияж</div><div class="meta">Мастер: Кристина</div></div></figcaption>
-            </figure>
-            <figure class="gallery-item" data-category="makeup">
-              <img src="/assets/images/makeup/mak3.webp" alt="Образ для фотосессии" loading="lazy" decoding="async" />
-              <figcaption><div><div class="title">Образ для фотосессии</div><div class="meta">Мастер: Дарья</div></div></figcaption>
-            </figure>
-
-            <!-- Cosmetology -->
-            <figure class="gallery-item" data-category="cosmetology">
-              <img src="/assets/images/cosmet/cosm.webp" alt="Косметология — уход" loading="lazy" decoding="async" />
-              <figcaption><div><div class="title">Уход за кожей</div><div class="meta">Мастер: Юлия</div></div></figcaption>
-            </figure>
-            <figure class="gallery-item" data-category="cosmetology">
-              <img src="/assets/images/cosmet/cosm1.webp" alt="Косметология — процедуры" loading="lazy" decoding="async" />
-              <figcaption><div><div class="title">SPA для лица</div><div class="meta">Мастер: Ксения</div></div></figcaption>
-            </figure>
-            <figure class="gallery-item" data-category="cosmetology">
-              <img src="/assets/images/cosmet/inj.webp" alt="Инъекционные процедуры" loading="lazy" decoding="async" />
-              <figcaption><div><div class="title">Инъекции</div><div class="meta">Врач-косметолог</div></div></figcaption>
-            </figure>
-            <figure class="gallery-item" data-category="cosmetology">
-              <img src="/assets/images/cosmet/mask.webp" alt="Маски и уход" loading="lazy" decoding="async" />
-              <figcaption><div><div class="title">Маска и уход</div><div class="meta">Процедура</div></div></figcaption>
-            </figure>
-
-            <!-- SPA -->
-            <figure class="gallery-item" data-category="spa">
-              <img src="/assets/images/spa/aqu.webp" alt="SPA — процедуры" loading="lazy" decoding="async" />
-              <figcaption><div><div class="title">SPA</div><div class="meta">Расслабление</div></div></figcaption>
-            </figure>
-            <figure class="gallery-item" data-category="spa">
-              <img src="/assets/images/spa/aqua.webp" alt="Капсулы и уход" loading="lazy" decoding="async" />
-              <figcaption><div><div class="title">Капсулы</div><div class="meta">SPA-комплекс</div></div></figcaption>
-            </figure>
-            <figure class="gallery-item" data-category="spa">
-              <img src="/assets/images/spa/mas.webp" alt="Массаж тела" loading="lazy" decoding="async" />
-              <figcaption><div><div class="title">Массаж</div><div class="meta">Расслабляющий</div></div></figcaption>
-            </figure>
-            <figure class="gallery-item" data-category="spa">
-              <img src="/assets/images/spa/mass.webp" alt="Массаж спины" loading="lazy" decoding="async" />
-              <figcaption><div><div class="title">Массаж спины</div><div class="meta">Классический</div></div></figcaption>
+              <img
+                src="/assets/images/man/man3.webp"
+                alt="Стрижка Crop"
+                loading="lazy"
+                decoding="async"
+              />
+              <figcaption>
+                <div>
+                  <div class="title">Стрижка Crop</div>
+                  <div class="meta">Мастер: Игорь</div>
+                </div>
+              </figcaption>
             </figure>
 
             <!-- Hair coloring/styling (cut folder) -->
             <figure class="gallery-item" data-category="hair">
-              <img src="/assets/images/cut/cut.webp" alt="Женская стрижка" loading="lazy" decoding="async" />
-              <figcaption><div><div class="title">Стрижка женская</div><div class="meta">Мастер: Елена</div></div></figcaption>
+              <img
+                src="/assets/images/cut/cut.webp"
+                alt="Женская стрижка"
+                loading="lazy"
+                decoding="async"
+              />
+              <figcaption>
+                <div>
+                  <div class="title">Стрижка женская</div>
+                  <div class="meta">Мастер: Елена</div>
+                </div>
+              </figcaption>
             </figure>
             <figure class="gallery-item" data-category="hair">
-              <img src="/assets/images/cut/cut1.webp" alt="Стрижка — каскад" loading="lazy" decoding="async" />
-              <figcaption><div><div class="title">Каскад</div><div class="meta">Мастер: Мария</div></div></figcaption>
+              <img
+                src="/assets/images/cut/cut1.webp"
+                alt="Укладка - голивудская волна"
+                loading="lazy"
+                decoding="async"
+              />
+              <figcaption>
+                <div>
+                  <div class="title">Укладка</div>
+                  <div class="meta">Мастер: Мария</div>
+                </div>
+              </figcaption>
             </figure>
             <figure class="gallery-item" data-category="hair">
-              <img src="/assets/images/cut/cut3.webp" alt="Укладка локоны" loading="lazy" decoding="async" />
-              <figcaption><div><div class="title">Локоны</div><div class="meta">Укладка</div></div></figcaption>
+              <img
+                src="/assets/images/cut/cut3.webp"
+                alt="Прическа женская"
+                loading="lazy"
+                decoding="async"
+              />
+              <figcaption>
+                <div>
+                  <div class="title">Прическа женская</div>
+                  <div class="meta">Укладка</div>
+                </div>
+              </figcaption>
             </figure>
             <figure class="gallery-item" data-category="hair">
-              <img src="/assets/images/cut/cut4.webp" alt="Окрашивание" loading="lazy" decoding="async" />
-              <figcaption><div><div class="title">Окрашивание</div><div class="meta">Техники</div></div></figcaption>
+              <img
+                src="/assets/images/cut/cut4.webp"
+                alt="Прическа детская"
+                loading="lazy"
+                decoding="async"
+              />
+              <figcaption>
+                <div>
+                  <div class="title">Прическа детская</div>
+                  <div class="meta">Техники</div>
+                </div>
+              </figcaption>
+            </figure>
+
+            <!-- Nails -->
+            <figure class="gallery-item" data-category="nails">
+              <img
+                src="/assets/images/nails/nails.webp"
+                alt="Маникюр — классика"
+                loading="lazy"
+                decoding="async"
+              />
+              <figcaption>
+                <div>
+                  <div class="title">Маникюр</div>
+                  <div class="meta">Мастер: Ирина</div>
+                </div>
+              </figcaption>
+            </figure>
+            <figure class="gallery-item" data-category="nails">
+              <img
+                src="/assets/images/gallery/nails1.webp"
+                alt="Педикюр"
+                loading="lazy"
+                decoding="async"
+              />
+              <figcaption>
+                <div>
+                  <div class="title">Педикюр</div>
+                  <div class="meta">Мастер: Ольга</div>
+                </div>
+              </figcaption>
+            </figure>
+            <figure class="gallery-item" data-category="nails">
+              <img
+                src="/assets/images/gallery/nails.webp"
+                alt="Маникюр"
+                loading="lazy"
+                decoding="async"
+              />
+              <figcaption>
+                <div>
+                  <div class="title">Маникюр</div>
+                  <div class="meta">Мастер: Анна</div>
+                </div>
+              </figcaption>
+            </figure>
+            <figure class="gallery-item" data-category="nails">
+              <img
+                src="/assets/images/nails/nails4.webp"
+                alt="Маникюр"
+                loading="lazy"
+                decoding="async"
+              />
+              <figcaption>
+                <div>
+                  <div class="title">Маникюр</div>
+                  <div class="meta">Мастер: Светлана</div>
+                </div>
+              </figcaption>
+            </figure>
+
+            <!-- Makeup -->
+            <figure class="gallery-item" data-category="makeup">
+              <img
+                src="/assets/images/makeup/mak.webp"
+                alt="Макияж дневной"
+                loading="lazy"
+                decoding="async"
+              />
+              <figcaption>
+                <div>
+                  <div class="title">Макияж дневной</div>
+                  <div class="meta">Мастер: Ольга</div>
+                </div>
+              </figcaption>
+            </figure>
+            <figure class="gallery-item" data-category="makeup">
+              <img
+                src="/assets/images/makeup/mak1.webp"
+                alt="Макияж вечерний"
+                loading="lazy"
+                decoding="async"
+              />
+              <figcaption>
+                <div>
+                  <div class="title">Макияж вечерний</div>
+                  <div class="meta">Мастер: Ольга</div>
+                </div>
+              </figcaption>
+            </figure>
+            <figure class="gallery-item" data-category="makeup">
+              <img
+                src="/assets/images/makeup/mak2.webp"
+                alt="Свадебный макияж"
+                loading="lazy"
+                decoding="async"
+              />
+              <figcaption>
+                <div>
+                  <div class="title">Свадебный макияж</div>
+                  <div class="meta">Мастер: Кристина</div>
+                </div>
+              </figcaption>
+            </figure>
+            <figure class="gallery-item" data-category="makeup">
+              <img
+                src="/assets/images/makeup/mak3.webp"
+                alt="Образ для фотосессии"
+                loading="lazy"
+                decoding="async"
+              />
+              <figcaption>
+                <div>
+                  <div class="title">Образ для фотосессии</div>
+                  <div class="meta">Мастер: Дарья</div>
+                </div>
+              </figcaption>
+            </figure>
+
+            <!-- Cosmetology -->
+            <figure class="gallery-item" data-category="cosmetology">
+              <img
+                src="/assets/images/cosmet/cosm.webp"
+                alt="Косметология — уход"
+                loading="lazy"
+                decoding="async"
+              />
+              <figcaption>
+                <div>
+                  <div class="title">Уход за кожей</div>
+                  <div class="meta">Мастер: Юлия</div>
+                </div>
+              </figcaption>
+            </figure>
+            <figure class="gallery-item" data-category="cosmetology">
+              <img
+                src="/assets/images/cosmet/cosm1.webp"
+                alt="Косметология — процедуры"
+                loading="lazy"
+                decoding="async"
+              />
+              <figcaption>
+                <div>
+                  <div class="title">SPA для лица</div>
+                  <div class="meta">Мастер: Ксения</div>
+                </div>
+              </figcaption>
+            </figure>
+            <figure class="gallery-item" data-category="cosmetology">
+              <img
+                src="/assets/images/cosmet/inj.webp"
+                alt="Инъекционные процедуры"
+                loading="lazy"
+                decoding="async"
+              />
+              <figcaption>
+                <div>
+                  <div class="title">Инъекции</div>
+                  <div class="meta">Врач-косметолог</div>
+                </div>
+              </figcaption>
+            </figure>
+            <figure class="gallery-item" data-category="cosmetology">
+              <img
+                src="/assets/images/cosmet/mask.webp"
+                alt="Маски и уход"
+                loading="lazy"
+                decoding="async"
+              />
+              <figcaption>
+                <div>
+                  <div class="title">Маска и уход</div>
+                  <div class="meta">Процедура</div>
+                </div>
+              </figcaption>
+            </figure>
+
+            <!-- SPA -->
+            <figure class="gallery-item" data-category="spa">
+              <img
+                src="/assets/images/spa/aqu.webp"
+                alt="Подводно вакумный массаж — процедуры"
+                loading="lazy"
+                decoding="async"
+              />
+              <figcaption>
+                <div>
+                  <div class="title">Подводно вакумный массаж</div>
+                  <div class="meta">Расслабление</div>
+                </div>
+              </figcaption>
+            </figure>
+            <figure class="gallery-item" data-category="spa">
+              <img
+                src="/assets/images/spa/aqua.webp"
+                alt="SPA-комплекс"
+                loading="lazy"
+                decoding="async"
+              />
+              <figcaption>
+                <div>
+                  <div class="title">SPA-комплекс</div>
+                  <div class="meta">SPA-комплекс</div>
+                </div>
+              </figcaption>
+            </figure>
+            <figure class="gallery-item" data-category="spa">
+              <img
+                src="/assets/images/spa/mas.webp"
+                alt="Массаж тела"
+                loading="lazy"
+                decoding="async"
+              />
+              <figcaption>
+                <div>
+                  <div class="title">Массаж</div>
+                  <div class="meta">Классический</div>
+                </div>
+              </figcaption>
+            </figure>
+            <figure class="gallery-item" data-category="spa">
+              <img
+                src="/assets/images/spa/mass.webp"
+                alt="Массаж спины"
+                loading="lazy"
+                decoding="async"
+              />
+              <figcaption>
+                <div>
+                  <div class="title">Массаж спины</div>
+                  <div class="meta">Расслабляющий</div>
+                </div>
+              </figcaption>
             </figure>
 
             <!-- Laser/Equipment -->
             <figure class="gallery-item" data-category="laser">
-              <img src="/assets/images/laser/laser1.webp" alt="Лазерная эпиляция — оборудование" loading="lazy" decoding="async" />
-              <figcaption><div><div class="title">Лазерная эпиляция</div><div class="meta">Оборудование</div></div></figcaption>
+              <img
+                src="/assets/images/laser/laser4.webp"
+                alt="Лазерная эпиляция — оборудование"
+                loading="lazy"
+                decoding="async"
+              />
+              <figcaption>
+                <div>
+                  <div class="title">Лазерная эпиляция</div>
+                  <div class="meta">Оборудование</div>
+                </div>
+              </figcaption>
             </figure>
             <figure class="gallery-item" data-category="laser">
-              <img src="/assets/images/laser/laser2.webp" alt="Лазер — кабинет" loading="lazy" decoding="async" />
-              <figcaption><div><div class="title">Кабинет лазера</div><div class="meta">Интерьер</div></div></figcaption>
+              <img
+                src="/assets/images/laser/laser1.webp"
+                alt="Эпиляция процесс"
+                loading="lazy"
+                decoding="async"
+              />
+              <figcaption>
+                <div>
+                  <div class="title">Эпиляция</div>
+                  <div class="meta">Процесс</div>
+                </div>
+              </figcaption>
             </figure>
             <figure class="gallery-item" data-category="laser">
-              <img src="/assets/images/laser/laser3.webp" alt="Лазер — процедуры" loading="lazy" decoding="async" />
-              <figcaption><div><div class="title">Процедура лазера</div><div class="meta">Процесс</div></div></figcaption>
+              <img
+                src="/assets/images/laser/laser3.webp"
+                alt="Лазер — процедуры"
+                loading="lazy"
+                decoding="async"
+              />
+              <figcaption>
+                <div>
+                  <div class="title">Процедура лазера</div>
+                  <div class="meta">Процесс</div>
+                </div>
+              </figcaption>
             </figure>
             <figure class="gallery-item" data-category="laser">
-              <img src="/assets/images/laser/laser4.webp" alt="Лазер — результат" loading="lazy" decoding="async" />
-              <figcaption><div><div class="title">Результат</div><div class="meta">До/После</div></div></figcaption>
+              <img
+                src="/assets/images/laser/laser2.webp"
+                alt="Лазер — результат"
+                loading="lazy"
+                decoding="async"
+              />
+              <figcaption>
+                <div>
+                  <div class="title">Результат</div>
+                  <div class="meta">До/После</div>
+                </div>
+              </figcaption>
             </figure>
           </div>
+
+          <!-- Pagination -->
+           
 
           <div class="gallery-pagination">
             <button class="pagination-button" data-page="1">1</button>
@@ -180,8 +459,10 @@
           </div>
 
           <div class="gallery-cta">
-            <h2>Хотите увидеть больше?</h2>
-            <p>
+            <h2 class="section-title gallery-cta__title">
+              Хотите увидеть больше?
+            </h2>
+            <p class="gallery-cta__desc">
               Подписывайтесь на наши социальные сети, где мы регулярно публикуем
               новые работы
             </p>
@@ -213,75 +494,5 @@
         </div>
       </div>
     </main>
-
-    <script>
-      // Инициализация фильтра и модалки для галереи
-      (function () {
-        const root = document;
-        const container = root.getElementById('galleryMasonry');
-        if (!container) return;
-
-        // Фильтрация по категориям
-        const filterButtons = root.querySelectorAll('.gallery-filter .filter-button');
-        filterButtons.forEach(btn => {
-          btn.addEventListener('click', () => {
-            filterButtons.forEach(b => b.classList.remove('active'));
-            btn.classList.add('active');
-            const filter = btn.getAttribute('data-filter');
-            const items = container.querySelectorAll('.gallery-item');
-            items.forEach(item => {
-              const cat = item.getAttribute('data-category');
-              const show = filter === 'all' || cat === filter;
-              item.style.display = show ? '' : 'none';
-            });
-          });
-        });
-
-        // Модальное ��кно
-        const modal = root.getElementById('galleryModal');
-        const modalImg = modal.querySelector('.gallery-modal__image');
-        const caption = modal.querySelector('.gallery-modal__caption');
-        const btnClose = modal.querySelector('.gallery-modal__close');
-        const btnPrev = modal.querySelector('.gallery-modal__prev');
-        const btnNext = modal.querySelector('.gallery-modal__next');
-
-        let currentIndex = -1;
-        const getVisibleItems = () => Array.from(container.querySelectorAll('.gallery-item')).filter(it => it.style.display !== 'none');
-
-        function openAt(index) {
-          const items = getVisibleItems();
-          if (!items.length) return;
-          currentIndex = (index + items.length) % items.length;
-          const img = items[currentIndex].querySelector('img');
-          modalImg.src = img.src;
-          modalImg.alt = img.alt || '';
-          caption.textContent = img.alt || '';
-          modal.classList.add('is-open');
-        }
-
-        container.addEventListener('click', (e) => {
-          const img = e.target.closest('.gallery-item img');
-          if (!img) return;
-          const items = getVisibleItems();
-          const figure = img.closest('.gallery-item');
-          const index = items.indexOf(figure);
-          openAt(index);
-        });
-
-        btnClose.addEventListener('click', () => modal.classList.remove('is-open'));
-        modal.addEventListener('click', (e) => {
-          if (e.target === modal) modal.classList.remove('is-open');
-        });
-
-        btnPrev.addEventListener('click', () => openAt(currentIndex - 1));
-        btnNext.addEventListener('click', () => openAt(currentIndex + 1));
-        window.addEventListener('keydown', (e) => {
-          if (!modal.classList.contains('is-open')) return;
-          if (e.key === 'Escape') modal.classList.remove('is-open');
-          if (e.key === 'ArrowLeft') openAt(currentIndex - 1);
-          if (e.key === 'ArrowRight') openAt(currentIndex + 1);
-        });
-      })();
-    </script>
   </body>
 </html>

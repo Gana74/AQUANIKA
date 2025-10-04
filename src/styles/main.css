@@ -5,7 +5,6 @@
 
 /* Layouts */
 @import "./layouts/container.css";
-@import "./layouts/grid.css";
 
 /* Components */
 @import "./components/buttons.css";
@@ -26,3 +25,5 @@
 @import "./pages/about.css";
 @import "./pages/gallery.css";
 @import "./pages/reviews.css";
+@import "./pages/team.css";
+@import "./pages/vacancies.css";

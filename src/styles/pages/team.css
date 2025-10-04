@@ -1,0 +1,8 @@
+.team-page__title {
+  margin-bottom: 0;
+}
+
+.team-page__description {
+  padding-bottom: 0.8em;
+  font-size: var(--font-size-lg);
+}

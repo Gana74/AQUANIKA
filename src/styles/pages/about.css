@@ -1,7 +1,36 @@
-.about-page__values {
-  padding: 0.8em;
+.about-hero {
+  margin-bottom: 3rem;
 }
 
 .about-page__image {
-  max-width: 400px;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 60px;
+}
+
+.about-page__image img {
+  border-radius: var(--border-radius-xl);
+}
+
+.about-page__philosophy {
+  padding-bottom: 0.8em;
+  font-size: var(--font-size-2xl);
+  font-style: italic;
+}
+
+.about-page__history {
+  padding-bottom: 0.8em;
+  font-size: var(--font-size-lg);
+}
+
+.about-cta__title {
+  margin-bottom: 0;
+}
+
+.about-cta__content p {
+  padding-bottom: 0.8em;
+  font-size: var(--font-size-lg);
+}
+.about-cta__content a {
+  margin-left: 20px;
 }

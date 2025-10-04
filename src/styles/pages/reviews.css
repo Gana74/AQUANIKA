@@ -127,6 +127,24 @@
   overflow: hidden;
 }
 
+/* ===================== Reviews===================== */
+
+.review-page__title {
+  margin-bottom: 0;
+}
+
+.stats-item__number,
+.stats-item__text {
+  padding-bottom: 0.5em;
+  font-size: var(--font-size-xl);
+  font-weight: 600;
+}
+
+.fa-star-half-alt,
+.fa-star {
+  color: var(--color-primary);
+}
+
 @media (max-width: 992px) {
   .reviews {
     padding-top: 4rem;

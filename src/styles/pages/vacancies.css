@@ -1,0 +1,18 @@
+.vacancies-page__intro {
+  padding-bottom: 4em;
+  font-size: var(--font-size-lg);
+}
+
+.vacancies-page__phone {
+  display: flex;
+  justify-content: center;
+}
+
+.vacancies-page__title {
+  margin-bottom: 0;
+}
+
+.vacancies-page__desc {
+  padding-bottom: 0.8em;
+  font-size: var(--font-size-lg);
+}

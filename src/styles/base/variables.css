@@ -13,6 +13,9 @@
   --color-cream: #fff5f3; /* Розоватый кремовый  фон */
   --color-background: #fff;
   --color-background-alt: #f2f2f2;
+  --color-gray-dark: #4a3f3e;
+  --color-gray-light: #f0e6e4;
+  --color-gray: #b8a9a7;
 
   /* Дополнительные акценты */
   --color-accent: #d9b38c; /* Теплый персиково-золотой */
@@ -22,10 +25,6 @@
   --color-white: #ffff;
   --color-dark: #333333; /* Глубокий серый для текста */
   --color-dark-alt: #2d2d2d; /* Альтернативный темный */
-  --color-gray: #b8a9a7;
-  --color-text: var(--color-dark);
-  --color-gray-dark: #4a3f3e;
-  --color-gray-light: #f0e6e4;
   --color-text-light: #666666;
 
   /* Границы */
@@ -119,12 +118,4 @@
   --grid-gap: 1.5rem;
   --grid-gap-xl: 2rem;
   --grid-columns: 12;
-
-  /* Spacing для широких экранов */
-  --spacing-3xl: 4rem; /* 64px */
-  --spacing-4xl: 5rem; /* 80px */
-
-  /* Font sizes для широких экранов */
-  --font-size-5xl: 3rem; /* 48px */
-  --font-size-6xl: 3.75rem; /* 60px */
 }

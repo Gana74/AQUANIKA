@@ -228,7 +228,24 @@ export async function loadPage(route) {
         });
       }
     } else {
-      window.scrollTo(0, 0);
+         // Плавный скроллинг для страниц с боковым меню к началу контента, обычный для остальных
+         if (showSideMenu) {
+          // Скроллим к началу контентного блока вместо самого верха страницы
+        const pageContentContainer = document.querySelector(".page-content");
+        if (pageContentContainer) {
+          setTimeout(() => {
+            pageContentContainer.scrollIntoView({ 
+              behavior: "smooth", 
+              block: "start",
+              inline: "nearest"
+            });
+          }, 50); // Небольшая задержка для завершения DOM операций
+        } else {
+          window.scrollTo({ top: 0, behavior: "smooth" });
+        }
+        } else {
+          window.scrollTo(0, 0);
+        }
     }
   } catch (error) {
     console.error("Ошибка загрузки страницы:", error);
@@ -336,6 +353,11 @@ function initPageComponents() {
     window.initVideoModal();
   }
 
+  // Инициализация галереи-модалки после вставки контента страницы
+  if (typeof window.initGalleryModal === "function") {
+    window.initGalleryModal();
+  }
+
   // Инициализация всех каруселей на странице (включая промо на главной)
   try {
     const initAllCarousels = () => {
@@ -359,86 +381,7 @@ function initPageComponents() {
     console.warn("Carousel init failed", e);
   }
 
-  // Инициализация галереи (мозаика, фильтр, модалка), если присутствует на странице
-  try {
-    const container = document.getElementById("galleryMasonry");
-    if (container) {
-      // Фильтры
-      const filterButtons = document.querySelectorAll(
-        ".gallery-filter .filter-button"
-      );
-      filterButtons.forEach((btn) => {
-        btn.addEventListener("click", () => {
-          filterButtons.forEach((b) => b.classList.remove("active"));
-          btn.classList.add("active");
-          const filter = btn.getAttribute("data-filter");
-          const items = container.querySelectorAll(".gallery-item");
-          items.forEach((item) => {
-            const cat = item.getAttribute("data-category");
-            const show = filter === "all" || cat === filter;
-            item.style.display = show ? "" : "none";
-          });
-        });
-      });
-
-      // Модальное окно
-      const modal = document.getElementById("galleryModal");
-      if (modal) {
-        const modalImg = modal.querySelector(".gallery-modal__image");
-        const caption = modal.querySelector(".gallery-modal__caption");
-        const btnClose = modal.querySelector(".gallery-modal__close");
-        const btnPrev = modal.querySelector(".gallery-modal__prev");
-        const btnNext = modal.querySelector(".gallery-modal__next");
-
-        let currentIndex = -1;
-        const getVisibleItems = () =>
-          Array.from(container.querySelectorAll(".gallery-item")).filter(
-            (it) => it.style.display !== "none"
-          );
-
-        function openAt(index) {
-          const items = getVisibleItems();
-          if (!items.length) return;
-          currentIndex = (index + items.length) % items.length;
-          const img = items[currentIndex].querySelector("img");
-          modalImg.src = img.src;
-          modalImg.alt = img.alt || "";
-          caption.textContent = img.alt || "";
-          modal.classList.add("is-open");
-        }
-
-        container.addEventListener("click", (e) => {
-          const img = e.target.closest(".gallery-item img");
-          if (!img) return;
-          const items = getVisibleItems();
-          const figure = img.closest(".gallery-item");
-          const index = items.indexOf(figure);
-          openAt(index);
-        });
-
-        btnClose &&
-          btnClose.addEventListener("click", () =>
-            modal.classList.remove("is-open")
-          );
-        modal.addEventListener("click", (e) => {
-          if (e.target === modal) modal.classList.remove("is-open");
-        });
-
-        btnPrev &&
-          btnPrev.addEventListener("click", () => openAt(currentIndex - 1));
-        btnNext &&
-          btnNext.addEventListener("click", () => openAt(currentIndex + 1));
-        window.addEventListener("keydown", (e) => {
-          if (!modal.classList.contains("is-open")) return;
-          if (e.key === "Escape") modal.classList.remove("is-open");
-          if (e.key === "ArrowLeft") openAt(currentIndex - 1);
-          if (e.key === "ArrowRight") openAt(currentIndex + 1);
-        });
-      }
-    }
-  } catch (e) {
-    console.warn("Gallery init failed", e);
-  }
+  // Инициализация галереи теперь происходит через initGalleryModal()
 }
 
 // ---------------- init ----------------
