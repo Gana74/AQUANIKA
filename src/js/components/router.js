@@ -26,8 +26,9 @@ export const routes = {
   "/vacancies": "/pages/vacancies.html",
   "/gallery": "/pages/gallery.html",
   "/price": "/pages/price.html",
-  "/promotions": "/pages/promotions.html",
   "/contacts": "/pages/contacts.html",
+  "/price": "/pages/price.html",
+  "/privacy": "/pages/privacy.html",
 
   "/services/spa": "/pages/spa-and-massage.html",
   "/services/aquanika": "/pages/aquanika-massage.html",
@@ -63,8 +64,6 @@ export const routes = {
   "/services/men/haircut": "/pages/men-haircut.html",
   "/services/men/epilation": "/pages/men-epilation.html",
   "/services/men/manicure": "/pages/men-manicure.html",
-
-  "/services/price": "/pages/price.html",
 };
 
 // Страницы, где нужно показывать боковое меню
@@ -85,13 +84,14 @@ const pageTitles = {
   "/vacancies": "Вакансии – Aquanika",
   "/gallery": "Галерея – Aquanika",
   "/prices": "Цены – Aquanika",
-  "/promotions": "Акции – Aquanika",
   "/contacts": "Контакты – Aquanika",
+  "/price": "Прайс-лист",
+  "/privacy": "Политика конфиденциальности",
+
   "/services/spa": "SPA и массаж – Aquanika",
   "/services/aquanika": "Подводно-вакуумный массаж 'Акваника' – Aquanika",
   "/services/massage": "Массаж – Aquanika",
   "/services/wrapping": "Обертывания – Aquanika",
-
   "/services/epilation": "Эпиляция – Aquanika",
   "/services/epilation/laser": "Лазерная эпиляция – Aquanika",
   "/services/epilation/sugaring": "Шугаринг – Aquanika",
@@ -116,12 +116,60 @@ const pageTitles = {
   "/services/men/haircut": "Для мужчин — Стрижка – Aquanika",
   "/services/men/epilation": "Для мужчин — Эпиляция – Aquanika",
   "/services/men/manicure": "Для мужчин — Маникюр – Aquanika",
-
-  "/services/price": "Прайс-лист",
 };
 
 // ---------------- helpers ----------------
 // Умная загрузка компонентов для всех окружений
+// Простая санитизация HTML перед вставкой в DOM
+function sanitizeHTML(html) {
+  try {
+    const template = document.createElement("template");
+    template.innerHTML = html;
+
+    // Удаляем опасные теги
+    const unsafeTags = ["script", "iframe", "object", "embed"];
+    template.content
+      .querySelectorAll(unsafeTags.join(","))
+      .forEach((el) => el.remove());
+
+    // Чистим опасные атрибуты и javascript: URI
+    const all = template.content.querySelectorAll("*");
+    all.forEach((el) => {
+      Array.from(el.attributes).forEach((attr) => {
+        const name = attr.name;
+        const value = attr.value || "";
+        if (/^on/i.test(name)) {
+          el.removeAttribute(name);
+          return;
+        }
+        if (["href", "src", "xlink:href"].includes(name)) {
+          if (/^\s*javascript:/i.test(value)) {
+            el.setAttribute(name, "#");
+          }
+        }
+      });
+    });
+
+    return template.innerHTML;
+  } catch (e) {
+    console.warn("sanitizeHTML failed, returning original", e);
+    return html;
+  }
+}
+
+// Усиление безопасности внешних ссылок (target="_blank")
+function secureExternalLinks(root = document) {
+  const links = root.querySelectorAll('a[target="_blank"]');
+  links.forEach((a) => {
+    const rel = (a.getAttribute("rel") || "").split(/\s+/).filter(Boolean);
+    if (!rel.includes("noopener")) rel.push("noopener");
+    if (!rel.includes("noreferrer")) rel.push("noreferrer");
+    a.setAttribute("rel", rel.join(" "));
+  });
+}
+window.secureExternalLinks = secureExternalLinks;
+window.sanitizeHTML = sanitizeHTML;
+
 async function loadComponent(path) {
   // Всегда добавляем basePath для абсолютных путей
   let url = path;
@@ -174,16 +222,40 @@ export async function loadPage(route) {
   try {
     const rawContent = await loadComponent(htmlPath);
     const pageContent = extractPageContent(rawContent);
+    const safeContent = sanitizeHTML(pageContent);
 
     if (showSideMenu) {
       const sideMenu = await loadComponent(
         "/components/partials/side-menu.html"
       );
-      document.querySelector("main").innerHTML = `
-        <div class="page-with-sidebar container">
-          ${sideMenu}
-          <div class="page-content">${pageContent}</div>
-        </div>`;
+      const safeSideMenu = sanitizeHTML(sideMenu);
+      {
+        const mainEl = document.querySelector("main");
+        if (mainEl) {
+          mainEl.replaceChildren();
+          const wrapper = document.createElement("div");
+          wrapper.className = "page-with-sidebar container";
+
+          // Вставляем side-menu фрагмент
+          try {
+            const tplSide = document.createElement("template");
+            tplSide.innerHTML = safeSideMenu;
+            wrapper.append(tplSide.content.cloneNode(true));
+          } catch (_) {}
+
+          // Вставляем контент страницы
+          const pageContentDiv = document.createElement("div");
+          pageContentDiv.className = "page-content";
+          try {
+            const tplPage = document.createElement("template");
+            tplPage.innerHTML = safeContent;
+            pageContentDiv.append(tplPage.content.cloneNode(true));
+          } catch (_) {}
+
+          wrapper.append(pageContentDiv);
+          mainEl.append(wrapper);
+        }
+      }
 
       // Динамический импорт sideMenu.js
       try {
@@ -200,7 +272,17 @@ export async function loadPage(route) {
         console.warn("sideMenu.js not available:", err);
       }
     } else {
-      document.querySelector("main").innerHTML = pageContent;
+      {
+        const mainEl = document.querySelector("main");
+        if (mainEl) {
+          mainEl.replaceChildren();
+          try {
+            const tpl = document.createElement("template");
+            tpl.innerHTML = safeContent;
+            mainEl.append(tpl.content.cloneNode(true));
+          } catch (_) {}
+        }
+      }
     }
 
     // Инициализация компонентов после загрузки страницы
@@ -228,24 +310,24 @@ export async function loadPage(route) {
         });
       }
     } else {
-         // Плавный скроллинг для страниц с боковым меню к началу контента, обычный для остальных
-         if (showSideMenu) {
-          // Скроллим к началу контентного блока вместо самого верха страницы
+      // Плавный скроллинг для страниц с боковым меню к началу контента, обычный для остальных
+      if (showSideMenu) {
+        // Скроллим к началу контентного блока вместо самого верха страницы
         const pageContentContainer = document.querySelector(".page-content");
         if (pageContentContainer) {
           setTimeout(() => {
-            pageContentContainer.scrollIntoView({ 
-              behavior: "smooth", 
+            pageContentContainer.scrollIntoView({
+              behavior: "smooth",
               block: "start",
-              inline: "nearest"
+              inline: "nearest",
             });
           }, 50); // Небольшая задержка для завершения DOM операций
         } else {
           window.scrollTo({ top: 0, behavior: "smooth" });
         }
-        } else {
-          window.scrollTo(0, 0);
-        }
+      } else {
+        window.scrollTo(0, 0);
+      }
     }
   } catch (error) {
     console.error("Ошибка загрузки страницы:", error);
@@ -382,6 +464,13 @@ function initPageComponents() {
   }
 
   // Инициализация галереи теперь происходит через initGalleryModal()
+
+  // Усиление безопасности внешних ссылок
+  try {
+    window.secureExternalLinks?.(document);
+  } catch (e) {
+    console.warn("secureExternalLinks failed", e);
+  }
 }
 
 // ---------------- init ----------------

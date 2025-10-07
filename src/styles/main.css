@@ -16,14 +16,16 @@
 @import "./components/sidebar.css";
 @import "./components/mobile-nav.css";
 @import "./components/side-menu.css";
+@import "./components/modal-forms.css";
 
 /* Pages */
 @import "./pages/home.css";
 @import "./pages/pages.css";
 @import "./pages/price.css";
-@import "./pages/promotions.css";
 @import "./pages/about.css";
 @import "./pages/gallery.css";
 @import "./pages/reviews.css";
 @import "./pages/team.css";
 @import "./pages/vacancies.css";
+@import "./pages/contacts.css";
+@import "./pages/privacy.css";

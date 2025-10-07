@@ -1,0 +1,27 @@
+
+
+.contacts-page__container {
+  width: 100%;
+  display: flex;
+  align-items: start;
+  padding-top: 6rem;
+  gap: 70px;
+  flex-direction: column;
+}
+
+.contacts-page__title {
+  margin-bottom: 0;
+}
+
+.contacts-page__main {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.contacts-social {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}

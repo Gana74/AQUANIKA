@@ -13,6 +13,12 @@
     />
     <title>Aqvanika - Салон красоты</title>
 
+    <!-- Security: CSP, Referrer-Policy, HSTS (best-effort in meta), X-Content-Type-Options (requires server header) -->
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' https://cdnjs.cloudflare.com 'unsafe-inline'; img-src 'self' data: blob:; font-src 'self' https://cdnjs.cloudflare.com data:; connect-src 'self' https://formspree.io; media-src 'self' blob:; frame-ancestors 'none'; base-uri 'self'; upgrade-insecure-requests">
+    <meta name="referrer" content="strict-origin-when-cross-origin">
+    <meta http-equiv="X-Content-Type-Options" content="nosniff">
+    <meta http-equiv="Strict-Transport-Security" content="max-age=31536000; includeSubDomains; preload">
+
     <!-- Favicon -->
     <link
       rel="icon"
@@ -32,10 +38,11 @@
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
-    />
-    <script type="module" crossorigin src="/AQUANIKA/assets/main-hy1UE_aY.js"></script>
-    <link rel="modulepreload" crossorigin href="/AQUANIKA/assets/sideMenu-DxyCBO-0.js">
-    <link rel="stylesheet" crossorigin href="/AQUANIKA/assets/main-DNTk0gmw.css">
+      crossorigin="anonymous"
+    />
+    <script type="module" crossorigin src="/AQUANIKA/assets/main-DgYibSft.js"></script>
+    <link rel="modulepreload" crossorigin href="/AQUANIKA/assets/sideMenu-D1uie_U2.js">
+    <link rel="stylesheet" crossorigin href="/AQUANIKA/assets/main-D1RYAyh7.css">
   </head>
 
   <body>
@@ -150,7 +157,6 @@
                 <li><a href="/team">Наша команда</a></li>
                 <li><a href="/price">Цены</a></li>
                 <li><a href="/gallery">Галерея</a></li>
-                <li><a href="/promotions">Акции</a></li>
                 <li><a href="/vacancies">Вакансии</a></li>
                 <li><a href="/contacts">Контакты</a></li>
               </ul>
@@ -302,7 +308,7 @@
           <i class="fas fa-home"></i>
           <span>Главная</span>
         </a>
-        <a href="/promotions" class="mobile-nav__link">
+        <a href="/price" class="mobile-nav__link">
           <i class="fas fa-percent"></i>
           <span>Акции</span>
         </a>
@@ -368,7 +374,7 @@
       </button>
     </div>
 
-    <!-- Подключение JavaScript -->
+    <!-- Подключение JavaScript -->
     <!-- Логика кнопки "Наверх" теперь вынесена в отдельный модуль JS (src/js/components/toTopButton.js) -->
   </body>
 </html>

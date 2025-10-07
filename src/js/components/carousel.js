@@ -43,7 +43,7 @@ export class Carousel {
     // Создаем точки навигации (по реальным слайдам)
     const dots = [];
     if (controls) {
-      controls.innerHTML = "";
+      controls.replaceChildren();
       for (let i = 0; i < realCount; i++) {
         const dot = document.createElement("button");
         dot.className = `promo-carousel__dot ${
@@ -59,7 +59,7 @@ export class Carousel {
     const prevButton = document.createElement("button");
     prevButton.className = "promo-carousel__arrow promo-carousel__arrow--prev";
     prevButton.setAttribute("aria-label", "Предыдущие фото");
-    prevButton.innerHTML = "&#10094;";
+    prevButton.textContent = "❮";
     prevButton.addEventListener("click", (e) => {
       e.stopPropagation();
       this.prev();
@@ -68,7 +68,7 @@ export class Carousel {
     const nextButton = document.createElement("button");
     nextButton.className = "promo-carousel__arrow promo-carousel__arrow--next";
     nextButton.setAttribute("aria-label", "Следующие фото");
-    nextButton.innerHTML = "&#10095;";
+    nextButton.textContent = "❯";
     nextButton.addEventListener("click", (e) => {
       e.stopPropagation();
       this.next();

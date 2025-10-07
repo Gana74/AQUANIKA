@@ -1,7 +1,6 @@
-
-
 .price-container {
-  max-width: 800px;
+  max-width: var(--container-max-width);
+  width: 100%;
   margin: 0 auto;
   padding: 30px 20px;
 }

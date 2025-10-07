@@ -6,10 +6,11 @@ export class Forms {
 
   init() {
     console.log("Инициализация форм");
-    const forms = document.querySelectorAll("form");
+    const forms = document.querySelectorAll('form:not([data-form-initialized="true"])');
 
     forms.forEach((form) => {
       form.addEventListener("submit", handleSubmit);
+      form.dataset.formInitialized = "true";
     });
 
     // Обработчик отправки формы
@@ -32,7 +33,7 @@ export class Forms {
         submitButton.disabled = true;
 
         // Отправляем данные
-        const response = await sendFormData(data);
+        const response = await sendFormData(form);
 
         // Показываем сообщение об успехе
         showMessage(form, "Сообщение отправлено успешно!", "success");
@@ -125,13 +126,36 @@ export class Forms {
     }
 
     // Отправка данных формы
-    async function sendFormData(data) {
-      const response = await fetch("/api/send-form", {
-        method: "POST",
+    async function sendFormData(form) {
+      const action = form.getAttribute("action") || "/api/send-form";
+      const method = (form.getAttribute("method") || "POST").toUpperCase();
+      const formData = new FormData(form);
+
+      if (action.includes("formspree.io")) {
+        const response = await fetch(action, {
+          method,
+          body: formData,
+          headers: { Accept: "application/json" },
+        });
+
+        if (!response.ok) {
+          throw new Error(`HTTP error! status: ${response.status}`);
+        }
+
+        try {
+          return await response.json();
+        } catch (_) {
+          return {};
+        }
+      }
+
+      const json = Object.fromEntries(formData.entries());
+      const response = await fetch(action, {
+        method,
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify(data),
+        body: JSON.stringify(json),
       });
 
       if (!response.ok) {

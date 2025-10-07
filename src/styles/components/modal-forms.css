@@ -1,0 +1,84 @@
+/* modal-forms.css — стили модальных форм */
+
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  padding: var(--spacing-lg);
+}
+.modal-overlay.is-open { display: flex; }
+
+/* Переопределяем глобальное скрытие .modal в рамках нашего оверлея */
+#formsModalOverlay .forms-modal { display: none; }
+#formsModalOverlay.is-open .forms-modal[aria-hidden="false"] { display: block; }
+
+.forms-modal {
+  width: min(600px, 100%);
+  max-height: 90vh;
+  overflow: auto;
+  background: var(--color-background, #fff);
+  border-radius: var(--border-radius-lg, 12px);
+  box-shadow: var(--shadow-lg, 0 10px 30px rgba(0,0,0,.2));
+}
+
+.forms-modal__content {
+  position: relative;
+  padding: var(--spacing-xl, 24px);
+}
+
+.forms-modal__close {
+  position: absolute;
+  top: 8px;
+  right: 12px;
+  border: none;
+  background: transparent;
+  font-size: 28px;
+  line-height: 1;
+  cursor: pointer;
+  color: var(--color-text-muted, #666);
+}
+.forms-modal__close:hover { color: var(--color-text, #222); }
+
+.forms-modal__title {
+  margin: 0 0 var(--spacing-lg, 16px);
+  font-size: var(--font-size-xl, 20px);
+}
+
+/* Формы */
+.modal__form .form__row { margin-bottom: var(--spacing-md, 12px); }
+
+.form__label { display: block; font-weight: 500; }
+.form__req { color: var(--color-secondary, #b08968); margin-left: 4px; }
+
+.form__input, .form__textarea, .modal__form select {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid var(--color-border, #ddd);
+  border-radius: var(--border-radius, 8px);
+  background: var(--color-surface, #fff);
+  color: var(--color-text, #222);
+  outline: none;
+  transition: border var(--transition-normal, .2s);
+}
+
+.form__input:focus, .form__textarea:focus, .modal__form select:focus {
+  border-color: var(--color-secondary, #b08968);
+}
+
+.form__textarea { resize: vertical; }
+
+.form__error {
+  margin-top: 6px;
+  color: #b00020;
+  font-size: var(--font-size-sm, 12px);
+}
+.input--error { border-color: #b00020 !important; }
+
+.form__agree { margin: var(--spacing-md, 12px) 0; }
+.form__agree label { display: flex; align-items: center; gap: 8px; }
+
+.form__actions { margin-top: var(--spacing-lg, 16px); display: flex; justify-content: flex-end; }

@@ -20,12 +20,15 @@ export default defineConfig({
       input: {
         main: resolve(__dirname, "src/index.html"),
         home: resolve(__dirname, "src/pages/home.html"),
-          promotions: resolve(__dirname, "src/pages/promotions.html"),
         about: resolve(__dirname, "src/pages/about.html"),
         team: resolve(__dirname, "src/pages/team.html"),
         reviews: resolve(__dirname, "src/pages/reviews.html"),
         vacancies: resolve(__dirname, "src/pages/vacancies.html"),
         gallery: resolve(__dirname, "src/pages/gallery.html"),
+        price: resolve(__dirname, "src/pages/price.html"),
+        contacts: resolve(__dirname, "src/pages/contacts.html"),
+        privacy: resolve(__dirname, "src/pages/privacy.html"),
+
         spa: resolve(__dirname, "src/pages/spa-and-massage.html"),
         aquanika: resolve(__dirname, "src/pages/aquanika-massage.html"),
         massage: resolve(__dirname, "src/pages/massage.html"),
@@ -47,7 +50,6 @@ export default defineConfig({
           "src/pages/brows-architecture.html"
         ),
         browsExtensions: resolve(__dirname, "src/pages/brows-extensions.html"),
-
         epilation: resolve(__dirname, "src/pages/epilation.html"),
         laser: resolve(__dirname, "src/pages/laser-epilation.html"),
         sugaring: resolve(__dirname, "src/pages/sugaring.html"),
@@ -60,7 +62,7 @@ export default defineConfig({
         menHaircut: resolve(__dirname, "src/pages/men-haircut.html"),
         menEpilation: resolve(__dirname, "src/pages/men-epilation.html"),
         menManicure: resolve(__dirname, "src/pages/men-manicure.html"),
-        price: resolve(__dirname, "src/pages/price.html"),
+
         header: resolve(__dirname, "src/components/partials/header.html"),
         footer: resolve(__dirname, "src/components/partials/footer.html"),
         sideMenu: resolve(__dirname, "src/components/partials/side-menu.html"),

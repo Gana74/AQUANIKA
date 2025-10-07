@@ -14,7 +14,22 @@ async function loadComponent(elementId, componentPath) {
     const html = await response.text();
     const element = document.getElementById(elementId);
     if (element) {
-      element.innerHTML = html;
+      // Санитизация и безопасная вставка без прямого innerHTML на живой узел
+      try {
+        const safe = window.sanitizeHTML ? window.sanitizeHTML(html) : html;
+        const tpl = document.createElement("template");
+        tpl.innerHTML = safe;
+        element.replaceChildren();
+        element.append(tpl.content.cloneNode(true));
+        try {
+          window.secureExternalLinks?.(element);
+        } catch (_) {}
+      } catch (_) {
+        const fallbackTpl = document.createElement("template");
+        fallbackTpl.innerHTML = html;
+        element.replaceChildren();
+        element.append(fallbackTpl.content.cloneNode(true));
+      }
     } else {
       console.warn(`Элемент с ID ${elementId} не найден`);
     }

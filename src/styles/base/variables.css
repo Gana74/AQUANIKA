@@ -8,24 +8,24 @@
   --color-secondary: #c5a645; /* Матовое золото, заголовки  */
   --color-secondary-light: #e8d174; /* Шампанское золото */
   --color-secondary-dark: #a78b3d; /* Состаренное золото */
+  --color-accent: #d9b38c; /* Теплый персиково-золотой */
+  --color-accent-dark: #bf9770;
 
   /* фон  */
   --color-cream: #fff5f3; /* Розоватый кремовый  фон */
   --color-background: #fff;
   --color-background-alt: #f2f2f2;
-  --color-gray-dark: #4a3f3e;
-  --color-gray-light: #f0e6e4;
-  --color-gray: #b8a9a7;
-
-  /* Дополнительные акценты */
-  --color-accent: #d9b38c; /* Теплый персиково-золотой */
-  --color-accent-dark: #bf9770;
+  --color-background-alt-light: #f0f0f0; /* Легкий белый фон */
+  --color-background-alt-dark: #f8f9fa; /* Темный белый фон */
 
   /* Текст */
   --color-white: #ffff;
   --color-dark: #333333; /* Глубокий серый для текста */
   --color-dark-alt: #2d2d2d; /* Альтернативный темный */
   --color-text-light: #666666;
+  --color-gray-dark: #4a3f3e;
+  --color-gray-light: #f0e6e4;
+  --color-gray: #b8a9a7;
 
   /* Границы */
   --color-border: #e0e0e0;
@@ -58,6 +58,8 @@
   --spacing-lg: 1.5rem; /* 24px */
   --spacing-xl: 2rem; /* 32px */
   --spacing-2xl: 3rem; /* 48px */
+  --spacing-3xl: 4rem; /* 64px */
+  --spacing-4xl: 6rem; /* 96px */
 
   /* Borders radius */
   --border-radius: 4px;
