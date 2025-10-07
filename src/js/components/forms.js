@@ -27,6 +27,25 @@ export class Forms {
         return;
       }
 
+      // Маршрутизация: вопрос/отзыв — в WhatsApp, остальное по action
+      const typeInput = form.querySelector('input[name="type"]');
+      const formType = typeInput ? typeInput.value : "";
+      if (formType === "question" || formType === "review") {
+        try {
+          const waPhone = "79227445287"; // без плюса для wa.me
+          const message = buildWhatsAppMessage(formType, Object.fromEntries(new FormData(form).entries()));
+          const url = `https://wa.me/${waPhone}?text=${encodeURIComponent(message)}`;
+          window.open(url, "_blank", "noopener,noreferrer");
+          showMessage(form, "Откроется WhatsApp для отправки сообщения.", "success");
+          form.reset();
+          try { window.closeFormsModal?.(); } catch(_) {}
+        } catch (e) {
+          showMessage(form, "Не удалось открыть WhatsApp.", "error");
+          console.error("WhatsApp open error:", e);
+        }
+        return;
+      }
+
       try {
         // Показываем состояние загрузки
         submitButton.classList.add("button--loading");
@@ -38,6 +57,7 @@ export class Forms {
         // Показываем сообщение об успехе
         showMessage(form, "Сообщение отправлено успешно!", "success");
         form.reset();
+        try { window.closeFormsModal?.(); } catch(_) {}
       } catch (error) {
         // Показываем сообщение об ошибке
         showMessage(form, "Произошла ошибка. Попробуйте позже.", "error");
@@ -123,6 +143,24 @@ export class Forms {
       setTimeout(() => {
         messageElement.remove();
       }, 5000);
+    }
+
+    // Формирование текста для WhatsApp
+    function buildWhatsAppMessage(type, data) {
+      const lines = [];
+      if (type === "question") {
+        lines.push("Здравствуйте! Хочу задать вопрос.");
+      } else if (type === "review") {
+        lines.push("Здравствуйте! Хочу оставить отзыв.");
+      }
+      if (data.name) lines.push(`Имя: ${data.name}`);
+      if (data.phone) lines.push(`Телефон: ${data.phone}`);
+      if (data.email) lines.push(`Email: ${data.email}`);
+      if (data.preferred_time) lines.push(`Удобное время: ${data.preferred_time}`);
+      if (data.rating) lines.push(`Оценка: ${data.rating}`);
+      if (data.message) lines.push(`Сообщение: ${data.message}`);
+      if (data.page) lines.push(`Страница: ${data.page}`);
+      return lines.join("\n");
     }
 
     // Отправка данных формы

@@ -24,9 +24,10 @@ function createMarkup() {
     callback: "AQUANIKA: Заказать звонок",
     question: "AQUANIKA: Вопрос",
     review: "AQUANIKA: Отзыв",
+    resume: "AQUANIKA: Резюме",
   };
 
-  // Хелперы дл�� полей формы
+  // Хелперы для полей формы
   const createRequiredMark = () => el("span", "form__req", {}, "*");
 
   const addInputRow = (form, labelText, required, inputAttrs) => {
@@ -52,7 +53,8 @@ function createMarkup() {
       const o = document.createElement("option");
       if (typeof opt === "object") {
         if (opt.value !== undefined) o.value = String(opt.value);
-        o.textContent = opt.text !== undefined ? String(opt.text) : String(opt.value ?? "");
+        o.textContent =
+          opt.text !== undefined ? String(opt.text) : String(opt.value ?? "");
       } else {
         o.textContent = String(opt);
       }
@@ -93,26 +95,62 @@ function createMarkup() {
 
   const addActions = (form) => {
     const actions = el("div", "form__actions");
-    const btn = el("button", "button button--primary", { type: "submit" }, "Отправить");
+    const btn = el(
+      "button",
+      "button button--primary",
+      { type: "submit" },
+      "Отправить"
+    );
     actions.append(btn);
     form.append(actions);
   };
 
   const addHidden = (form, type) => {
-    const hType = el("input", null, { type: "hidden", name: "type", value: type });
-    const hPage = el("input", null, { type: "hidden", name: "page", value: "" });
-    const hSubject = el("input", null, { type: "hidden", name: "_subject", value: subjectMap[type] || "AQUANIKA" });
-    const honeypot = el("input", null, { type: "text", name: "_gotcha", tabindex: "-1", autocomplete: "off", style: "display:none" });
+    const hType = el("input", null, {
+      type: "hidden",
+      name: "type",
+      value: type,
+    });
+    const hPage = el("input", null, {
+      type: "hidden",
+      name: "page",
+      value: "",
+    });
+    const hSubject = el("input", null, {
+      type: "hidden",
+      name: "_subject",
+      value: subjectMap[type] || "AQUANIKA",
+    });
+    const honeypot = el("input", null, {
+      type: "text",
+      name: "_gotcha",
+      tabindex: "-1",
+      autocomplete: "off",
+      style: "display:none",
+    });
     form.append(hType, hPage, hSubject, honeypot);
   };
 
   const buildModal = (type, titleText, buildFields) => {
-    const modal = el("div", "forms-modal", { "data-modal": type, "aria-hidden": "true", role: "dialog", "aria-modal": "true" });
+    const modal = el("div", "forms-modal", {
+      "data-modal": type,
+      "aria-hidden": "true",
+      role: "dialog",
+      "aria-modal": "true",
+    });
     const content = el("div", "forms-modal__content");
-    const closeBtn = el("button", "forms-modal__close", { "aria-label": "Закрыть" }, "×");
+    const closeBtn = el(
+      "button",
+      "forms-modal__close",
+      { "aria-label": "Закрыть" },
+      "×"
+    );
     const title = el("h3", "forms-modal__title", {}, titleText);
 
-    const form = el("form", "modal__form", { action: "https://formspree.io/f/mgvnzqgl", method: "POST" });
+    const form = el("form", "modal__form", {
+      action: "https://formspree.io/f/mgvnzqgl",
+      method: "POST",
+    });
 
     addHidden(form, type);
     buildFields(form);
@@ -126,35 +164,81 @@ function createMarkup() {
 
   // Заказать звонок
   buildModal("callback", "Заказать звонок", (form) => {
-    addInputRow(form, "Имя", true, { type: "text", name: "name", placeholder: "Ваше имя" });
-    addInputRow(form, "Телефон", true, { type: "tel", name: "phone", placeholder: "+7 (___) ___-__-__" });
-    addSelectRow(
-      form,
-      "Удобное время",
-      false,
-      "preferred_time",
-      [
-        { value: "", text: "Не важно" },
-        { value: "10:00 - 12:00" },
-        { value: "12:00 - 15:00" },
-        { value: "15:00 - 18:00" },
-        { value: "18:00 - 21:00" },
-      ]
-    );
-    addTextareaRow(form, "Комментарий", false, { name: "message", rows: "4", placeholder: "Опишите вопрос" });
+    addInputRow(form, "Имя", true, {
+      type: "text",
+      name: "name",
+      placeholder: "Ваше имя",
+    });
+    addInputRow(form, "Телефон", true, {
+      type: "tel",
+      name: "phone",
+      placeholder: "+7 (___) ___-__-__",
+    });
+    addSelectRow(form, "Удобное время", false, "preferred_time", [
+      { value: "", text: "Не важно" },
+      { value: "10:00 - 12:00" },
+      { value: "12:00 - 15:00" },
+      { value: "15:00 - 18:00" },
+      { value: "18:00 - 21:00" },
+    ]);
+    addTextareaRow(form, "Комментарий", false, {
+      name: "message",
+      rows: "4",
+      placeholder: "Опишите вопрос",
+    });
   });
 
   // Задать вопрос
   buildModal("question", "Задать вопрос", (form) => {
-    addInputRow(form, "Имя", true, { type: "text", name: "name", placeholder: "Ваше имя" });
-    addInputRow(form, "Email", false, { type: "email", name: "email", placeholder: "name@example.com" });
-    addInputRow(form, "��елефон", false, { type: "tel", name: "phone", placeholder: "+7 (___) ___-__-__" });
-    addTextareaRow(form, "Сообщение", true, { name: "message", rows: "5", placeholder: "Ваш вопрос" });
+    addInputRow(form, "Имя", true, {
+      type: "text",
+      name: "name",
+      placeholder: "Ваше имя",
+    });
+
+    addTextareaRow(form, "Сообщение", true, {
+      name: "message",
+      rows: "5",
+      placeholder: "Ваш вопрос",
+    });
+  });
+
+  // Отправить резюме
+  buildModal("resume", "Отправить резюме", (form) => {
+    addInputRow(form, "Имя", true, {
+      type: "text",
+      name: "name",
+      placeholder: "Ваше имя",
+    });
+    addInputRow(form, "Email", true, {
+      type: "email",
+      name: "email",
+      placeholder: "name@example.com",
+    });
+    addInputRow(form, "Телефон", false, {
+      type: "tel",
+      name: "phone",
+      placeholder: "+7 (___) ___-__-__",
+    });
+    addInputRow(form, "Должность/направление", false, {
+      type: "text",
+      name: "position",
+      placeholder: "Например: Косметолог",
+    });
+    addTextareaRow(form, "Сопроводительное письмо", false, {
+      name: "message",
+      rows: "5",
+      placeholder: "Коротко о вашем опыте и ожиданиях",
+    });
   });
 
   // Оставить отзыв
   buildModal("review", "Оставить отзыв", (form) => {
-    addInputRow(form, "Имя", true, { type: "text", name: "name", placeholder: "Ваше имя" });
+    addInputRow(form, "Имя", true, {
+      type: "text",
+      name: "name",
+      placeholder: "Ваше имя",
+    });
     addSelectRow(form, "Оценка", false, "rating", [
       { value: "", text: "—" },
       { value: "5" },
@@ -163,16 +247,22 @@ function createMarkup() {
       { value: "2" },
       { value: "1" },
     ]);
-    addTextareaRow(form, "Отзыв", true, { name: "message", rows: "5", placeholder: "Ваш отзыв" });
+    addTextareaRow(form, "Отзыв", true, {
+      name: "message",
+      rows: "5",
+      placeholder: "Ваш отзыв",
+    });
   });
 
   document.body.appendChild(wrapper);
 }
 
 function disableScroll() {
-  const scrollBarWidth = window.innerWidth - document.documentElement.clientWidth;
+  const scrollBarWidth =
+    window.innerWidth - document.documentElement.clientWidth;
   document.body.dataset.prevOverflow = document.body.style.overflow || "";
-  document.body.dataset.prevPaddingRight = document.body.style.paddingRight || "";
+  document.body.dataset.prevPaddingRight =
+    document.body.style.paddingRight || "";
   document.body.style.overflow = "hidden";
   if (scrollBarWidth > 0) {
     document.body.style.paddingRight = scrollBarWidth + "px";
@@ -181,13 +271,16 @@ function disableScroll() {
 
 function enableScroll() {
   document.body.style.overflow = document.body.dataset.prevOverflow || "";
-  document.body.style.paddingRight = document.body.dataset.prevPaddingRight || "";
+  document.body.style.paddingRight =
+    document.body.dataset.prevPaddingRight || "";
   delete document.body.dataset.prevOverflow;
   delete document.body.dataset.prevPaddingRight;
 }
 
 function setPageHiddenValue() {
-  const forms = document.querySelectorAll('#formsModalOverlay form input[name="page"]');
+  const forms = document.querySelectorAll(
+    '#formsModalOverlay form input[name="page"]'
+  );
   forms.forEach((inp) => (inp.value = window.location.href));
 }
 
@@ -211,9 +304,14 @@ function closeModal() {
   const overlay = document.getElementById("formsModalOverlay");
   if (!overlay) return;
   overlay.classList.remove("is-open");
-  overlay.querySelectorAll(".forms-modal").forEach((m) => m.setAttribute("aria-hidden", "true"));
+  overlay
+    .querySelectorAll(".forms-modal")
+    .forEach((m) => m.setAttribute("aria-hidden", "true"));
   enableScroll();
 }
+
+// Экспорт закрытия модалки для внешних вызовов (forms.js)
+window.closeFormsModal = closeModal;
 
 function bindEvents() {
   const overlay = document.getElementById("formsModalOverlay");
@@ -243,6 +341,36 @@ function bindEvents() {
 
   // Триггеры открытия
   document.addEventListener("click", (e) => {
+    // Универсальный триггер для любых элементов с data-open-modal
+    const modalTrigger = e.target.closest("[data-open-modal]");
+    if (modalTrigger) {
+      e.preventDefault();
+      const type = modalTrigger.dataset.openModal || "question";
+      openModal(type);
+
+      // Префилл содержимого формы из дата-атрибутов
+      try {
+        const overlay = document.getElementById("formsModalOverlay");
+        const modal =
+          overlay &&
+          overlay.querySelector(`.forms-modal[data-modal="${type}"]`);
+        const form = modal && modal.querySelector("form");
+        if (form) {
+          const msg = modalTrigger.dataset.message;
+          if (msg) {
+            const ta = form.querySelector('textarea[name="message"]');
+            if (ta) ta.value = msg;
+          }
+          const subj = modalTrigger.dataset.subject;
+          if (subj) {
+            const subjInp = form.querySelector('input[name="_subject"]');
+            if (subjInp) subjInp.value = subj;
+          }
+        }
+      } catch (_) {}
+      return;
+    }
+
     const sidebarBtn = e.target.closest(".sidebar__button");
     if (sidebarBtn && sidebarBtn.dataset.action) {
       e.preventDefault();

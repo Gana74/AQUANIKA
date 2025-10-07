@@ -64,6 +64,10 @@
   font-size: var(--font-size-lg);
 }
 
+.privacy-link {
+  text-align: left;
+}
+
 .fa-phone {
   color: var(--color-primary);
   font-size: var(--font-size-lg);

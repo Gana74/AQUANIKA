@@ -69,6 +69,41 @@
   background-image: url("@/assets/icons/star.svg");
 }
 
+/* Всплывающая подсказка для боковых кнопок */
+.sidebar__button {
+  position: relative;
+}
+
+/* Пузырь подсказки слева от кнопки, текст берём из aria-label */
+.sidebar__button::after {
+  content: attr(aria-label);
+  position: absolute;
+  right: 100%;
+  top: 50%;
+  transform: translateY(-50%) translateX(-8px);
+  background: var(--color-background, #fff);
+  color: var(--color-dark, #333);
+  border: 1px solid var(--color-border, #e0e0e0);
+  border-radius: var(--border-radius-md, 10px);
+  padding: 6px 10px;
+  box-shadow: var(--shadow-md);
+  white-space: nowrap;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity var(--transition-normal), transform var(--transition-normal);
+  z-index: var(--z-index-popover, 400);
+}
+
+/* Показ подска��ки по hover/focus */
+.sidebar__button:hover::after,
+.sidebar__button:focus-visible::after {
+  opacity: 1;
+  transform: translateY(-50%) translateX(-12px);
+}
+
+/* Небольшой отступ между подсказкой и кнопкой */
+.sidebar__button::after { margin-right: 8px; }
+
 @media (max-width: 1024px) {
   .sidebar {
     display: none;
