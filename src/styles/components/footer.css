@@ -9,13 +9,15 @@
   gap: var(--spacing-xl);
 }
 
+@media (max-width: 1300px) {
+  .footer__info {
+    display: block;
+  }
+}
+
 @media (max-width: 1024px) {
   .footer__container {
     grid-template-columns: repeat(2, 1fr);
-  }
-
-  .footer__info {
-    grid-column: span 2;
   }
 }
 
@@ -28,9 +30,5 @@
   .footer__container {
     grid-template-columns: 1fr;
     gap: var(--spacing-lg);
-  }
-
-  .footer__info {
-    grid-column: auto;
   }
 }

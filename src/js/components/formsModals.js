@@ -148,7 +148,7 @@ function createMarkup() {
     const title = el("h3", "forms-modal__title", {}, titleText);
 
     const form = el("form", "modal__form", {
-      action: "https://formspree.io/f/mgvnzqgl",
+      action: "https://formspree.io/f/xldpwwpb",
       method: "POST",
     });
 

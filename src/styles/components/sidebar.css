@@ -104,6 +104,13 @@
 /* Небольшой отступ между подсказкой и кнопкой */
 .sidebar__button::after { margin-right: 8px; }
 
+@media (max-width: 1720px) {
+  .sidebar {
+    padding: 0;
+  }
+  
+}
+
 @media (max-width: 1024px) {
   .sidebar {
     display: none;

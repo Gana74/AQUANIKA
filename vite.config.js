@@ -36,6 +36,7 @@ export default defineConfig({
         cosmetology: resolve(__dirname, "src/pages/cosmetology.html"),
         cosmetologyFace: resolve(__dirname, "src/pages/face-care.html"),
         cosmetologyInjections: resolve(__dirname, "src/pages/injections.html"),
+
         cosmetologyTattooRemoval: resolve(
           __dirname,
           "src/pages/tattoo-removal.html"

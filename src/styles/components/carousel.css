@@ -262,6 +262,16 @@
   display: none;
 }
 
+@media (max-width: 1720px) {
+  .promo-carousel--compact .promo-carousel__arrow--prev {
+    left: 50px;
+  }
+
+  .promo-carousel--compact .promo-carousel__arrow--next {
+    right: 50px;
+  }
+}
+
 @media (max-width: 1024px) {
   .promo-carousel__content {
     padding: var(--spacing-xl);
