@@ -190,7 +190,7 @@
 .logo {
   display: inline-block;
   padding: 4.5em 5.5em;
-  background: url("/assets/images/services/logo.png") center/cover no-repeat;
+  background: url("/assets/images/services/logo.webp") center/cover no-repeat;
 }
 
 .logo:hover,

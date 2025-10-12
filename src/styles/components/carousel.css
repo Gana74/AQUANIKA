@@ -317,11 +317,36 @@
 }
 
 @media (max-width: 480px) {
+  .promo-carousel--compact {
+    overflow: hidden;
+  }
+
+  .promo-carousel--compact .promo-carousel__container {
+    gap: 0;
+  }
+
   .promo-carousel--compact .promo-carousel__slide {
-    flex-basis: 100%;
+    flex: 0 0 100%;
+    min-width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .promo-carousel--compact .promo-carousel__slide img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    object-position: center;
+    border-radius: var(--border-radius-lg);
   }
 
   .promo-carousel__actions {
     flex-direction: column;
+  }
+
+  /* Скрываем стрелки на очень маленьких экранах */
+  .promo-carousel--compact .promo-carousel__arrow {
+    display: none;
   }
 }

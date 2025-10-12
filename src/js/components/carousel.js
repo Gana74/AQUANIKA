@@ -32,8 +32,11 @@ export class Carousel {
     let unitWidthPercent = 100 / slidesPerView; // ширина одного шага
 
     // Количество клонов до/после для бесшовного цикла
-    let clonesBefore = Math.min(slidesPerView, realCount);
-    let clonesAfter = Math.min(slidesPerView, realCount);
+    // Для мобильных устройств (slidesPerView = 1) используем меньше клонов
+    let clonesBefore =
+      slidesPerView === 1 ? 1 : Math.min(slidesPerView, realCount);
+    let clonesAfter =
+      slidesPerView === 1 ? 1 : Math.min(slidesPerView, realCount);
 
     // виртуальный индекс (с учётом клонов)
     let currentIndex = realCount > 1 ? clonesBefore : 0;
@@ -94,16 +97,22 @@ export class Carousel {
       if (!smooth) {
         const prevTransition = container.style.transition;
         container.style.transition = "none";
-        container.style.transform = `translateX(-${
-          currentIndex * unitWidthPercent
-        }%)`;
+        // Для мобильных устройств используем точное позиционирование
+        const translateX =
+          slidesPerView === 1
+            ? `translateX(-${currentIndex * 100}%)`
+            : `translateX(-${currentIndex * unitWidthPercent}%)`;
+        container.style.transform = translateX;
         // форсируем reflow
         void container.offsetWidth;
         container.style.transition = prevTransition || "";
       } else {
-        container.style.transform = `translateX(-${
-          currentIndex * unitWidthPercent
-        }%)`;
+        // Для мобильных устройств используем точное позиционирование
+        const translateX =
+          slidesPerView === 1
+            ? `translateX(-${currentIndex * 100}%)`
+            : `translateX(-${currentIndex * unitWidthPercent}%)`;
+        container.style.transform = translateX;
       }
     };
 
@@ -162,7 +171,9 @@ export class Carousel {
       if (isTransitioning) return;
       if (realCount <= 1) return;
       isTransitioning = true;
-      currentIndex -= 1; // шаг 1
+      // Для мобильных устройств (slidesPerView = 1) переключаем точно на 1 слайд
+      const step = slidesPerView === 1 ? 1 : 1;
+      currentIndex -= step;
       updatePosition(true);
       updateDots();
     };
@@ -171,7 +182,9 @@ export class Carousel {
       if (isTransitioning) return;
       if (realCount <= 1) return;
       isTransitioning = true;
-      currentIndex += 1; // шаг 1
+      // Для мобильных устройств (slidesPerView = 1) переключаем точно на 1 слайд
+      const step = slidesPerView === 1 ? 1 : 1;
+      currentIndex += step;
       updatePosition(true);
       updateDots();
     };
@@ -240,7 +253,9 @@ export class Carousel {
 
     this.element.addEventListener("touchend", () => {
       const swipeDistance = touchEndX - touchStartX;
-      if (Math.abs(swipeDistance) > 50) {
+      // Уменьшаем порог для более чувствительных свайпов на мобильных
+      const threshold = slidesPerView === 1 ? 30 : 50;
+      if (Math.abs(swipeDistance) > threshold) {
         if (swipeDistance > 0) {
           this.prev();
         } else {
