@@ -295,6 +295,11 @@
 }
 
 @media (max-width: 768px) {
+
+  .promo-carousel__controls {
+bottom: var(--spacing-xs);
+  }
+
   .promo-carousel--reviews .reviews-carousel__grid {
     grid-template-columns: 1fr;
   }

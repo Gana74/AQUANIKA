@@ -182,6 +182,11 @@
 
 /* Адаптивность */
 @media (max-width: 768px) {
+.page-with-sidebar {
+  padding-top: 3rem;
+}
+
+
   .about__content {
     flex-direction: column;
   }
@@ -202,9 +207,7 @@
     font-size: 28px;
   }
 
-  .section-title {
-    font-size: 2rem;
-  }
+
 
   .video-logo {
     font-size: 2rem;
@@ -223,12 +226,7 @@
 }
 
 @media (max-width: 480px) {
-  /* .services,
-  .about,
-  .reviews,
-  .team {
-    padding-top: 3rem;
-  } */
+ 
 
   .about__philosophy-title {
     font-size: 20px;

@@ -280,15 +280,20 @@
 
 @media (max-width: 1720px) {
   .container__title {
+    max-height: 370px;
     height: 390px;
     gap: 0;
     align-items: stretch;
   }
+
   .container__title-left {
-    padding: 2rem 0 2rem 2rem;
+    padding: 1rem 0 1rem 1rem;
     display: flex;
     flex-direction: column;
+    height: 100%;
+    flex: 15;
   }
+
   .service-title {
     font-size: var(--font-size-2xl);
   }
@@ -301,7 +306,7 @@
   }
 
   .service-intro__text {
-    font-size: var(--font-size-lg);
+    font-size: var(--font-size-sm);
   }
 
   .service-intro__buttons {
@@ -310,11 +315,6 @@
 
   .container__title-right {
     flex: auto;
-  }
-
-  .container__title-left {
-    height: 100%;
-    flex: 15;
   }
 
   .service-intro {
@@ -327,7 +327,6 @@
     display: none;
   }
 
-  /* Изменяем позиционирование для планшетов */
   .container__title {
     position: relative;
     flex-direction: column;
@@ -341,13 +340,12 @@
     right: 0;
     bottom: 0;
     z-index: 1;
-    border-radius: var(--border-radius-xl);
+    /* border-radius: var(--border-radius-xl); */
     overflow: hidden;
   }
 
   .container__title-right img {
     width: max-content;
-    /* width: 100%; */
     height: 100%;
     object-fit: cover;
   }
@@ -356,27 +354,59 @@
     position: relative;
     z-index: 2;
     padding: 2rem;
-    /* backdrop-filter: blur(1.5px); */
-    border-radius: var(--border-radius-xl);
+    /* border-radius: var(--border-radius-xl); */
     flex: none;
-  }
-
-  .service-intro__buttons {
-    justify-content: right;
   }
 
   .service-intro__text {
     display: none;
   }
+
+  /* Сетка карточек — в строку (не колонка!) */
+  .benefits-grid {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  /* Стиль одной карточки */
+  .benefit-card {
+    text-align: center;
+    /* max-width: 280px;  */
+  }
+
+  /* Объединяем иконку и h3 в одну строку по центру */
+  .benefit-card > i,
+  .benefit-card > h3 {
+    display: inline-block;
+    vertical-align: middle;
+    margin: 0;
+  }
+
+  .benefit-card > i {
+    margin-right: 8px; /* отступ между иконкой и текстом */
+    font-size: 1.5em;
+  }
+
+  .benefit-card > h3 {
+    font-size: 1.2em;
+  }
+
+  .benefit-card > p {
+    margin-top: 10px;
+    font-size: 1rem;
+    color: #666;
+  }
 }
 
 @media (max-width: 768px) {
-  .service-intro {
-    grid-template-columns: 1fr;
+  .section-title {
+    margin-bottom: var(--spacing-lg);
   }
 
-  .benefits-grid {
-    grid-template-columns: repeat(2, 1fr);
+  .service-intro {
+    grid-template-columns: 1fr;
   }
 
   .gallery-grid {
@@ -387,16 +417,13 @@
   .home-gallery {
     grid-auto-rows: initial;
   }
+
   .home-gallery .gallery-item,
   .home-gallery .gallery-item--tall,
   .home-gallery .gallery-item--wide,
   .home-gallery .gallery-item--big {
     grid-column: auto;
     grid-row: auto;
-  }
-
-  .benefits-grid {
-    grid-template-columns: 1fr;
   }
 
   .submenu__list {
@@ -421,7 +448,6 @@
 
   .container__title-right {
     order: -1;
-    border-radius: 0;
   }
 
   .container__title-right {
@@ -455,7 +481,6 @@
   }
 
   .section-title {
-    font-size: var(--font-size-2xl);
     margin-bottom: 1rem;
   }
 

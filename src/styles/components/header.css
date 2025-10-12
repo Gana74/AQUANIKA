@@ -381,28 +381,26 @@
   }
 }
 
-
-@media   (max-width: 768px) {
-  
-  
-}
-
-@media (max-width: 480px) {
-  /* footer  &  header */
-  .address,
-  .hours,
-  .social,
-  .phone {
-    display: none;
-  }
-
-  .info {
+@media (max-width: 768px) {
+  .header__middle-social {
     display: none;
   }
 
   .header__middle {
     border-radius: var(--border-radius-xl);
   }
+
+  .logo {
+    padding: 2em 2em;
+    font-size: var(--font-size-xl);
+  }
+}
+
+@media (max-width: 480px) {
+  /* .info {
+    display: none;
+  }
+
   .header__top {
     padding: 0;
   }
@@ -413,19 +411,12 @@
 
   .header__bottom {
     display: none;
-  }
+  } */
 
-  .logo {
-    display: inline-block;
-    padding: 2em 2em;
-    background: url("/assets/images/services/logo.png") center/cover no-repeat;
-    font-size: var(--font-size-xl);
-  }
-
-  .header__address {
+  /* .header__address {
     font-size: var(--font-size-sm);
     flex-direction: column;
     align-items: flex-start;
     gap: var(--spacing-xs);
-  }
+  } */
 }

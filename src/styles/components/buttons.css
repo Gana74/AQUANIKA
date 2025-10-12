@@ -101,9 +101,3 @@
   width: 2.5rem;
   height: 2.5rem;
 }
-
-@media (max-width: 1024px) {
-  .button--outline {
-    background-color: revert;
-  }
-}

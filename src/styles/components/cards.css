@@ -79,7 +79,7 @@
 
 .service-card__description {
   color: var(--color-gray);
-  margin-bottom: auto;
+  /* margin-bottom: auto; */
   line-height: 1.6;
 }
 
@@ -157,6 +157,10 @@
     padding: 1rem;
   }
 
+  .service-card {
+    min-height: auto;
+  }
+
   .service-card__image {
     height: 180px;
   }
@@ -167,6 +171,7 @@
 
   .service-card__description {
     font-size: 0.9rem;
+    margin-bottom: var(--spacing-sm);
   }
 
   .button {

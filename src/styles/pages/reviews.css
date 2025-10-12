@@ -139,6 +139,22 @@
   color: var(--color-primary);
 }
 
+.reviews-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    align-items: start;
+  }
+
+@media (max-width: 1024px) {
+  .reviews-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+    align-items: start;
+  }
+}
+
 @media (max-width: 768px) {
   .reviews {
     padding-top: 4rem;

@@ -34,3 +34,16 @@
 .about-cta__content a {
   margin-left: 20px;
 }
+
+@media (max-width: 768px) {
+  .about-cta__content a {
+    margin-left: 0px;
+  }
+  .about-page__philosophy {
+    font-size: var(--font-size-lg);
+  }
+
+  .about-page__history {
+    font-size: var(--font-size-base);
+  }
+}
