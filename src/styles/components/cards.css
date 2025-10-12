@@ -178,3 +178,9 @@
     width: 100%;
   }
 }
+
+@media (max-width: 480px) {
+  .services-grid {
+    padding: 0;
+  }
+}

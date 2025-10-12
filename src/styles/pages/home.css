@@ -182,10 +182,9 @@
 
 /* Адаптивность */
 @media (max-width: 768px) {
-.page-with-sidebar {
-  padding-top: 3rem;
-}
-
+  .page-with-sidebar {
+    padding-top: 3rem;
+  }
 
   .about__content {
     flex-direction: column;
@@ -207,8 +206,6 @@
     font-size: 28px;
   }
 
-
-
   .video-logo {
     font-size: 2rem;
   }
@@ -226,8 +223,6 @@
 }
 
 @media (max-width: 480px) {
- 
-
   .about__philosophy-title {
     font-size: 20px;
   }
@@ -237,6 +232,7 @@
   }
 
   .about__video {
+    min-height: 250px;
     background-position: left;
   }
 
@@ -256,5 +252,9 @@
   .about__buttons {
     flex-direction: column;
     gap: 15px;
+  }
+
+  .about__content {
+    gap: 0;
   }
 }

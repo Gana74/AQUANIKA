@@ -295,9 +295,8 @@
 }
 
 @media (max-width: 768px) {
-
   .promo-carousel__controls {
-bottom: var(--spacing-xs);
+    bottom: var(--spacing-xs);
   }
 
   .promo-carousel--reviews .reviews-carousel__grid {
@@ -320,5 +319,9 @@ bottom: var(--spacing-xs);
 @media (max-width: 480px) {
   .promo-carousel--compact .promo-carousel__slide {
     flex-basis: 100%;
+  }
+
+  .promo-carousel__actions {
+    flex-direction: column;
   }
 }

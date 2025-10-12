@@ -94,7 +94,6 @@
   height: 100%;
   overflow-y: auto;
   flex-shrink: 0;
-  text-transform: uppercase;
 }
 
 .mobile-nav__slide-submenu {
@@ -376,4 +375,27 @@
 
 .mobile-nav__social .social-link:active {
   color: var(--color-secondary);
+}
+
+@media (max-width: 480px) {
+  .mobile-nav__main-menu li {
+    margin-bottom: var(--spacing-xs);
+  }
+
+  .mobile-nav__subcategory-btn {
+    font-size: var(--font-size-xs);
+  }
+
+  .mobile-nav__sidebar-content {
+    padding: var(--spacing-sm);
+  }
+
+  .mobile-nav__services {
+    margin-bottom: 0;
+  }
+
+  .mobile-nav__privacy {
+    text-align: left;
+    font-size: var(--font-size-sl);
+  }
 }

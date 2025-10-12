@@ -140,11 +140,11 @@
 }
 
 .reviews-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 24px;
-    align-items: start;
-  }
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  align-items: start;
+}
 
 @media (max-width: 1024px) {
   .reviews-grid {
@@ -159,6 +159,11 @@
   .reviews {
     padding-top: 4rem;
   }
+
+  .reviews-grid {
+    grid-template-columns: auto;
+  }
+
   .reviews__scroller {
     grid-auto-columns: minmax(260px, 80%);
   }

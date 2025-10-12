@@ -52,8 +52,6 @@
   margin-right: 15px;
 }
 
-
-
 .service-duration {
   font-size: 11px;
   color: #999;
@@ -120,5 +118,24 @@
   }
   .service-price {
     font-size: 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  .promotion {
+    padding: 0;
+  }
+
+  .service-name {
+    font-size: var(--font-size-xs);
+  }
+
+  .service-duration,
+  .service-price {
+    font-size: var(--font-size-sl);
+  }
+
+  .category-title {
+    font-size: var(--font-size-base);
   }
 }

@@ -34,6 +34,20 @@
   }
 }
 
+@media (max-width: 768px) {
+
+  .contacts-page__container {
+    gap: var(--spacing-lg);
+  }
+  .contacts-page__main {
+    flex-direction: column;
+  }
+
+  .contacts-info {
+    margin-bottom: var(--spacing-md);
+  }
+}
+
 @media (max-width: 480px) {
   .contacts-social {
     width: 100%;

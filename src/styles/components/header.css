@@ -397,26 +397,7 @@
 }
 
 @media (max-width: 480px) {
-  /* .info {
-    display: none;
+  .phone__link {
+    font-size: var(--font-size-mg);
   }
-
-  .header__top {
-    padding: 0;
-  }
-
-  .header__info {
-    width: 100%;
-  }
-
-  .header__bottom {
-    display: none;
-  } */
-
-  /* .header__address {
-    font-size: var(--font-size-sm);
-    flex-direction: column;
-    align-items: flex-start;
-    gap: var(--spacing-xs);
-  } */
 }
