@@ -315,7 +315,7 @@
     padding: 0;
   }
 
-  .info {
+  .header__middle-info {
     display: none;
   }
 
@@ -329,7 +329,7 @@
     max-width: 300px;
     width: auto;
   }
-  
+
   .services-submenu--last {
     left: 0;
   }
@@ -381,7 +381,13 @@
   }
 }
 
-@media (max-width: 576px) {
+
+@media   (max-width: 768px) {
+  
+  
+}
+
+@media (max-width: 480px) {
   /* footer  &  header */
   .address,
   .hours,

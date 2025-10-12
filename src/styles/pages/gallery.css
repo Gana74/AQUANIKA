@@ -244,7 +244,7 @@
   right: -56px;
 }
 
-@media (max-width: 640px) {
+@media (max-width: 480px) {
   .gallery-modal__prev {
     left: 8px;
   }

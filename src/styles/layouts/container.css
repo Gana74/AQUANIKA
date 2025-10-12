@@ -72,7 +72,7 @@
   }
 }
 
-@media (max-width: 640px) {
+@media (max-width: 768px) {
   .container {
     padding-left: var(--spacing-sm);
     padding-right: var(--spacing-sm);

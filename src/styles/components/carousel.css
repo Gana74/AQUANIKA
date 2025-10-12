@@ -288,6 +288,10 @@
   .promo-carousel--compact .promo-carousel__slide {
     flex-basis: calc(33.3333%);
   }
+
+  .promo-carousel__arrow {
+    display: none;
+  }
 }
 
 @media (max-width: 768px) {
@@ -298,22 +302,13 @@
   .promo-carousel--compact .promo-carousel__slide {
     flex-basis: 50%;
   }
-}
 
-@media (max-width: 640px) {
   .promo-carousel__content {
     padding: var(--spacing-lg);
   }
 
   .promo-carousel__title {
     font-size: var(--font-size-2xl);
-  }
-
-  .promo-carousel__arrow {
-    width: 44px;
-    height: 44px;
-    font-size: 28px;
-    opacity: 0.7;
   }
 }
 

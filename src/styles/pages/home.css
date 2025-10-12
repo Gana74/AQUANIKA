@@ -209,10 +209,7 @@
   .video-logo {
     font-size: 2rem;
   }
-}
 
-/* Адаптивные стили */
-@media (max-width: 992px) {
   .about__content {
     flex-direction: column;
     gap: 40px;
@@ -225,7 +222,7 @@
   }
 }
 
-@media (max-width: 576px) {
+@media (max-width: 480px) {
   /* .services,
   .about,
   .reviews,

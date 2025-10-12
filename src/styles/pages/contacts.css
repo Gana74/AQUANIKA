@@ -24,7 +24,17 @@
   display: none;
 }
 
-@media (max-width: 576px) {
+.fa-envelope {
+  padding-right: 5px;
+}
+
+@media (max-width: 1024px) {
+  .contacts-page__phone {
+    display: none;
+  }
+}
+
+@media (max-width: 480px) {
   .contacts-social {
     width: 100%;
     display: flex;

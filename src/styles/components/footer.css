@@ -11,7 +11,7 @@
 
 @media (max-width: 1300px) {
   .footer__info {
-    display: block;
+    display: flex;
   }
 }
 
@@ -21,7 +21,7 @@
   }
 }
 
-@media (max-width: 640px) {
+@media (max-width: 768x) {
   .footer {
     padding: var(--spacing-xl) 0;
     margin-top: var(--spacing-2xl);

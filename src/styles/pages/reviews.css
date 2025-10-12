@@ -104,12 +104,6 @@
   line-height: 1.2;
 }
 
-.review-card__date {
-  margin-left: auto;
-  font-size: var(--font-size-sm);
-  color: var(--color-text-light);
-}
-
 .review-card__rating {
   color: var(--color-primary);
   letter-spacing: 2px;
@@ -145,7 +139,7 @@
   color: var(--color-primary);
 }
 
-@media (max-width: 992px) {
+@media (max-width: 768px) {
   .reviews {
     padding-top: 4rem;
   }
@@ -154,7 +148,7 @@
   }
 }
 
-@media (max-width: 576px) {
+@media (max-width: 480px) {
   .reviews__scroller {
     grid-auto-columns: 85%;
     gap: var(--spacing-md);

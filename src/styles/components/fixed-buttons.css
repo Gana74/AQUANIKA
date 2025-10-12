@@ -80,9 +80,10 @@
 }
 
 /* Адаптивность */
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
   .fixed-buttons {
     right: 1rem;
+    bottom: 4rem;
   }
 
   .btn--booking {
