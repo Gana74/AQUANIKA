@@ -22,8 +22,8 @@
 .about__text {
   display: flex;
   flex-direction: column;
-  height: 100%;
-  min-height: 300px;
+  /* height: 100%; */
+  /* min-height: 300px; */
   flex: 1;
 }
 
@@ -37,7 +37,7 @@
   font-size: 18px;
   line-height: 1.6;
   color: #333;
-  margin-bottom: auto;
+  margin-bottom: var(--spacing-2xl);
   font-style: italic;
 }
 
@@ -61,14 +61,17 @@
 
 .about__video {
   flex: 1;
-  /* position: relative; */
-  min-height: 300px;
+  max-width: 350px;
+  width: 100%;
   display: flex;
-  align-items: end;
+  flex-direction: column;
+  align-items: center;
   justify-content: center;
-  background: url("/assets/images/services/logo-Photoroom.webp") top/contain
-    no-repeat;
   cursor: pointer;
+}
+
+.about__video-logo {
+  width: 155px;
 }
 
 .about__video:hover .play-button {
@@ -190,9 +193,9 @@
     flex-direction: column;
   }
 
-  .about__video {
+  /* .about__video {
     height: 250px;
-  }
+  } */
 
   .modal-content {
     width: 100%;
@@ -231,10 +234,10 @@
     font-size: 16px;
   }
 
-  .about__video {
+  /* .about__video {
     min-height: 250px;
     background-position: left;
-  }
+  } */
 
   .play-button i {
     font-size: 1rem;

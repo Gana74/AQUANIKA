@@ -188,18 +188,8 @@
 }
 
 .logo {
+  width: 155px;
   display: inline-block;
-  padding: 4.5em 5.5em;
-  background: url("/assets/images/services/logo.webp") center/cover no-repeat;
-}
-
-.logo:hover,
-.logo:focus {
-  color: var(--color-secondary-dark);
-}
-
-.logo:active {
-  color: var(--color-secondary);
 }
 
 /* ------------------------------------------------------------------------Нижняя строка */
@@ -391,8 +381,7 @@
   }
 
   .logo {
-    padding: 2em 2em;
-    font-size: var(--font-size-xl);
+    width: 100px;
   }
 }
 

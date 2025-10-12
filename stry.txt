@@ -4,66 +4,222 @@ d:/Документы/Обучение/Frontend/прочее/AQUANIKA/
 │       └── deploy.yml
 ├── .gitignore
 ├── .qodo/
+│   └── best_practices.md
+├─] .vscode/ (ignored)
 ├── docs/
 │   ├── 404.html
 │   ├── apple-touch-icon.png
 │   ├── assets/
-│   │   ├── about-BEjKIyXg.js.map
-│   │   ├── aquanika-BEjKIyXg.js.map
-│   │   ├── brows-BEjKIyXg.js.map
-│   │   ├── browsArchitecture-BEjKIyXg.js.map
-│   │   ├── browsExtensions-BEjKIyXg.js.map
-│   │   ├── browsTinting-BEjKIyXg.js.map
-│   │   ├── cosmet-uoq6DghS.jpg
-│   │   ├── cosmetology-BEjKIyXg.js.map
-│   │   ├── cosmetologyFace-BEjKIyXg.js.map
-│   │   ├── cosmetologyInjections-BEjKIyXg.js.map
-│   │   ├── cosmetologyTattooRemoval-BEjKIyXg.js.map
+│   │   ├── about-sPgBsYO4.js.map
+│   │   ├── aq-BBNQNqzK.webp
+│   │   ├── aq-CCsyS9g3.png
+│   │   ├── aqmin-BCoSKZJE.png
+│   │   ├── aqmin-ViUVUKWt.webp
+│   │   ├── aqu-CP_-74zv.webp
+│   │   ├── aqua-BX3f1Je8.webp
+│   │   ├── aqua-Dl1V3w-B.webp
+│   │   ├── aqua-DtXmkMR7.png
+│   │   ├── aqua1024px-DdhT5_2-.webp
+│   │   ├── aqua1024px-DRp8Jm7A.png
+│   │   ├── aquanika-sPgBsYO4.js.map
+│   │   ├── br-la-B9eczVsm.webp
+│   │   ├── br-la-BdepHPOf.png
+│   │   ├── br-la1024px-BtKbWERB.png
+│   │   ├── br-la1024px-ZYLfVBGJ.webp
+│   │   ├── br1-CCQJtzTE.webp
+│   │   ├── br2-CwHhxNxR.webp
+│   │   ├── br3-JIzazgjw.webp
+│   │   ├── br4-Vnn4Fitp.webp
+│   │   ├── brows-CIIeaHLJ.png
+│   │   ├── brows-DTs0A0WT.webp
+│   │   ├── brows-sPgBsYO4.js.map
+│   │   ├── brows1024px-B-pMgNzZ.webp
+│   │   ├── brows1024px-BEC9g9Dl.png
+│   │   ├── browsArchitecture-sPgBsYO4.js.map
+│   │   ├── browsExtensions-sPgBsYO4.js.map
+│   │   ├── carousel-Csg7kf2D.js
+│   │   ├── carousel-Csg7kf2D.js.map
+│   │   ├── color-CAu9008K.webp
+│   │   ├── color-DsoRyu85.png
+│   │   ├── color1024px-Bt9dX3tK.webp
+│   │   ├── color1024px-BzDtsuA4.png
+│   │   ├── contacts-sPgBsYO4.js.map
+│   │   ├── cosm-36WPtoE7.png
+│   │   ├── cosm-BU17NNk3.webp
+│   │   ├── cosm-CSHKTI7R.webp
+│   │   ├── cosm1-C1H7WbD-.webp
+│   │   ├── cosm1024px-B5GhIpiP.png
+│   │   ├── cosm1024px-iXLx2sge.webp
+│   │   ├── cosmetCard-CRxkkdbP.webp
+│   │   ├── cosmetology-sPgBsYO4.js.map
+│   │   ├── cosmetologyFace-sPgBsYO4.js.map
+│   │   ├── cosmetologyInjections-sPgBsYO4.js.map
+│   │   ├── cosmetologyTattooRemoval-sPgBsYO4.js.map
+│   │   ├── cut-C99JIXYM.webp
+│   │   ├── cut-CvXghr21.webp
+│   │   ├── cut-DZGIoxs3.png
+│   │   ├── cut1-CwcOXpzx.webp
+│   │   ├── cut1024px-3cRvQBqS.png
+│   │   ├── cut1024px-DHi5RTMq.webp
+│   │   ├── cut3-DqXiVkCj.webp
+│   │   ├── cut4-BxFvpopu.webp
+│   │   ├── cutman-CJHODyJc.webp
+│   │   ├── cutman-PwnHMF3R.png
+│   │   ├── cutman1024px-DXTv3GNs.png
+│   │   ├── cutman1024px-DyVl_qJW.webp
+│   │   ├── dis-B3DrchOr.png
+│   │   ├── dis-DLcLM3PY.webp
+│   │   ├── epilation-a8JkRtHJ.webp
+│   │   ├── epilation-DglobQDO.png
+│   │   ├── epilation-sPgBsYO4.js.map
+│   │   ├── epilation1024px-9YMZTdgb.webp
+│   │   ├── epilation1024px-igobKd88.png
+│   │   ├── epilationman-DgI-dRtT.webp
+│   │   ├── epilationman-mVrEG45O.png
+│   │   ├── epilationman1024px-btr_c3tz.png
+│   │   ├── epilationman1024px-Dz2O4edw.webp
+│   │   ├── exten-BH5bqPgQ.webp
+│   │   ├── exten-DKZAlleu.png
+│   │   ├── exten1024px-Cexe9lkO.png
+│   │   ├── exten1024px-CTTgjSr3.webp
 │   │   ├── footer-l0sNRNKZ.js.map
-│   │   ├── gallery-BEjKIyXg.js.map
+│   │   ├── gallery-sPgBsYO4.js.map
 │   │   ├── gold-brush-Nu-oZcNc.png
-│   │   ├── hair-T1o549P1.jpg
-│   │   ├── hairColoring-BEjKIyXg.js.map
-│   │   ├── haircuts-BEjKIyXg.js.map
-│   │   ├── hairdressing-BEjKIyXg.js.map
-│   │   ├── hairStyling-BEjKIyXg.js.map
+│   │   ├── hairCard-Be4rzqRZ.webp
+│   │   ├── hairColoring-sPgBsYO4.js.map
+│   │   ├── haircut-SbmzTLw9.png
+│   │   ├── haircut-sL8J674R.webp
+│   │   ├── haircut1024px-938Snj1h.png
+│   │   ├── haircut1024px-CW4UDUUm.webp
+│   │   ├── haircuts-sPgBsYO4.js.map
+│   │   ├── hairdressing-sPgBsYO4.js.map
+│   │   ├── hairStyling-sPgBsYO4.js.map
 │   │   ├── header-l0sNRNKZ.js.map
-│   │   ├── home-BEjKIyXg.js.map
-│   │   ├── laser-BEjKIyXg.js.map
-│   │   ├── laserArms-BEjKIyXg.js.map
-│   │   ├── laserBikini-BEjKIyXg.js.map
-│   │   ├── laserLegs-BEjKIyXg.js.map
-│   │   ├── logo-BrWsfXBx.png
-│   │   ├── main-CbxnMVqs.css
-│   │   ├── main-DFBWFQN_.js
-│   │   ├── main-DFBWFQN_.js.map
-│   │   ├── makeup-BEjKIyXg.js.map
-│   │   ├── makeup-Bhg7V6vf.jpg
-│   │   ├── makeupDay-BEjKIyXg.js.map
-│   │   ├── makeupEvening-BEjKIyXg.js.map
-│   │   ├── makeupWedding-BEjKIyXg.js.map
-│   │   ├── manicure-pedicure-DC0nkdQa.jpg
-│   │   ├── massage-BEjKIyXg.js.map
-│   │   ├── men-BEjKIyXg.js.map
-│   │   ├── men-DcddwxIG.jpg
-│   │   ├── menHaircut-BEjKIyXg.js.map
-│   │   ├── menManicure-BEjKIyXg.js.map
-│   │   ├── menMassage-BEjKIyXg.js.map
-│   │   ├── nails-BEjKIyXg.js.map
-│   │   ├── nailsExtensions-BEjKIyXg.js.map
-│   │   ├── nailsManicure-BEjKIyXg.js.map
-│   │   ├── nailsPedicure-BEjKIyXg.js.map
-│   │   ├── orig-CXFGsbss.jpg
-│   │   ├── res-BgNzH5Bg.jpg
-│   │   ├── reviews-BEjKIyXg.js.map
-│   │   ├── sideMenu-BR7BCqcV.js
-│   │   ├── sideMenu-BR7BCqcV.js.map
+│   │   ├── home-BCn1Fb8x.mp4
+│   │   ├── home-sPgBsYO4.js.map
+│   │   ├── inj-CIdxmvz8.webp
+│   │   ├── inje-Bu77rFhb.webp
+│   │   ├── inje-C62kreXr.png
+│   │   ├── inje1024px-BnMR8ENA.webp
+│   │   ├── inje1024px-BphLAO8b.png
+│   │   ├── laser-ClWrJGHN.png
+│   │   ├── laser-D-yyuNl8.webp
+│   │   ├── laser-sPgBsYO4.js.map
+│   │   ├── laser1-DNGwcPNB.webp
+│   │   ├── laser1024px-BRCJUTaj.png
+│   │   ├── laser1024px-Cqocws0O.webp
+│   │   ├── laser2-0_ZIYqZb.webp
+│   │   ├── laser3-BauLFPEm.webp
+│   │   ├── laser4-CKs035C8.webp
+│   │   ├── lashe-CCElwdwU.webp
+│   │   ├── lashe-iVjxRONY.png
+│   │   ├── lashe1024px-BhVA0hen.png
+│   │   ├── lashe1024px-BtY_v85k.webp
+│   │   ├── lasheCard-9MsGjd_j.webp
+│   │   ├── logo-BFolcQCp.webp
+│   │   ├── ma-pi-Bm1Es0fk.png
+│   │   ├── ma-pi-DGHupAUS.webp
+│   │   ├── ma-pi1024px-CQHbE-bj.png
+│   │   ├── ma-pi1024px-CX_gxI6v.webp
+│   │   ├── main-BtN1ZFez.css
+│   │   ├── main-CA5bduoH.js
+│   │   ├── main-CA5bduoH.js.map
+│   │   ├── mak-CSn5IR4O.webp
+│   │   ├── mak1-B-EhteoN.webp
+│   │   ├── mak2-BoyHEFpj.webp
+│   │   ├── mak3-B-ZnuWTB.webp
+│   │   ├── makeup-DTQEzWKV.png
+│   │   ├── makeup-R8HNRog2.webp
+│   │   ├── makeup-sPgBsYO4.js.map
+│   │   ├── makeup1024px-C1GgsWqP.webp
+│   │   ├── makeup1024px-CjlYRcIn.png
+│   │   ├── makeupCard-CNBFwV5q.webp
+│   │   ├── man-OIxxgztK.webp
+│   │   ├── man1-BfGAUgf-.webp
+│   │   ├── man2-DRKJe3d1.webp
+│   │   ├── man3-UyZpeNC5.webp
+│   │   ├── manicure-B2A-D_94.png
+│   │   ├── manicure-B3k_FKuL.webp
+│   │   ├── manicure1024px-DIu28iZs.png
+│   │   ├── manicure1024px-DR3EreXw.webp
+│   │   ├── manicureman-COcFB016.png
+│   │   ├── manicureman-DVQRrCzS.webp
+│   │   ├── manicureman1024px-C72f2swa.webp
+│   │   ├── manicureman1024px-pJ-5vAsB.png
+│   │   ├── manicurePedicureCard-CSg12pXe.webp
+│   │   ├── manped-BEkqeqYc.webp
+│   │   ├── manped-BzDZ-bSd.png
+│   │   ├── manPedMin-B2ezwAET.png
+│   │   ├── manPedMin-BHaayTrz.webp
+│   │   ├── mas-FTztm7ek.webp
+│   │   ├── mask-DENl9Q-D.webp
+│   │   ├── mask-DuW9RxdS.png
+│   │   ├── mask-WMx1vsuz.webp
+│   │   ├── mask1024px-BTZkP0vw.webp
+│   │   ├── mask1024px-D112HPHc.png
+│   │   ├── mass-B7-Hg7NR.webp
+│   │   ├── massage-BZoqhnSo.webp
+│   │   ├── massage-l1ET_vGR.png
+│   │   ├── massage-sPgBsYO4.js.map
+│   │   ├── massage1024px-DdDvxVa4.webp
+│   │   ├── massage1024px-DpWa9Yko.png
+│   │   ├── men-sPgBsYO4.js.map
+│   │   ├── menCard-D1uMu_-3.webp
+│   │   ├── menEpilation-sPgBsYO4.js.map
+│   │   ├── menHaircut-sPgBsYO4.js.map
+│   │   ├── menManicure-sPgBsYO4.js.map
+│   │   ├── nails-BmOtqWRt.webp
+│   │   ├── nails-CvH0hnZO.webp
+│   │   ├── nails-sPgBsYO4.js.map
+│   │   ├── nails1-DnOaOzAb.webp
+│   │   ├── nails2-DIDEyTYl.webp
+│   │   ├── nails3-2g9Umx55.webp
+│   │   ├── nails4-Da0z2tDV.webp
+│   │   ├── nailsExtensions-sPgBsYO4.js.map
+│   │   ├── nailsManicure-sPgBsYO4.js.map
+│   │   ├── nailsPedicure-sPgBsYO4.js.map
+│   │   ├── origCard-v6efiCUP.webp
+│   │   ├── ped-DQ0yC5mH.png
+│   │   ├── ped-DSQu9cw_.webp
+│   │   ├── ped1024px-Cm2Aps5H.png
+│   │   ├── ped1024px-CPx5BjZT.webp
+│   │   ├── place-DDK9ZJU7.webp
+│   │   ├── price-sPgBsYO4.js.map
+│   │   ├── privacy-sPgBsYO4.js.map
+│   │   ├── reviews-sPgBsYO4.js.map
+│   │   ├── serviceman-D9BkFTw_.png
+│   │   ├── serviceman-DUfVzbB4.webp
+│   │   ├── serviceman1024px-BNDimL9N.webp
+│   │   ├── serviceman1024px-l9lJVJH0.png
+│   │   ├── sideMenu-B-HCbgL4.js
+│   │   ├── sideMenu-B-HCbgL4.js.map
 │   │   ├── sideMenu-l0sNRNKZ.js.map
-│   │   ├── spa-BEjKIyXg.js.map
-│   │   ├── spa-KQnHmHoZ.png
-│   │   ├── team-BEjKIyXg.js.map
-│   │   ├── vacancies-BEjKIyXg.js.map
-│   │   └── wrapping-BEjKIyXg.js.map
+│   │   ├── spa-sPgBsYO4.js.map
+│   │   ├── spaCard-BbZPVPAU.webp
+│   │   ├── spa_massage-BUE-nd1v.webp
+│   │   ├── spa_massage-CZYv7-1D.png
+│   │   ├── spa_massage1024px-38AQYw8b.png
+│   │   ├── spa_massage1024px-BNlgdC0H.webp
+│   │   ├── styling-CNluNS_i.png
+│   │   ├── styling-GRvms5R_.webp
+│   │   ├── styling1024px-9nTeENmH.webp
+│   │   ├── styling1024px-CIlZEvgK.png
+│   │   ├── sugaring-BRMJPkRa.png
+│   │   ├── sugaring-Elt73pYd.webp
+│   │   ├── sugaring-sPgBsYO4.js.map
+│   │   ├── sugaring1024px-Cfuh5Kez.png
+│   │   ├── sugaring1024px-I1az37GX.webp
+│   │   ├── tattoo-Degwe2cw.webp
+│   │   ├── tattoo-VEIzVYcl.png
+│   │   ├── tattoo1024px-CqvFImgG.webp
+│   │   ├── tattoo1024px-D8vaKPe4.png
+│   │   ├── team-sPgBsYO4.js.map
+│   │   ├── vacancies-sPgBsYO4.js.map
+│   │   ├── wrapping-4pmcMv3q.png
+│   │   ├── wrapping-DkkwJTtC.webp
+│   │   ├── wrapping-sPgBsYO4.js.map
+│   │   ├── wrapping1024px--qKvPGSM.webp
+│   │   └── wrapping1024px-C-82hHcy.png
 │   ├── components/
 │   │   └── partials/
 │   │       ├── footer.html
@@ -79,8 +235,9 @@ d:/Документы/Обучение/Frontend/прочее/AQUANIKA/
 │   │   ├── brows-and-lashes.html
 │   │   ├── brows-architecture.html
 │   │   ├── brows-extensions.html
-│   │   ├── brows-tinting.html
+│   │   ├── contacts.html
 │   │   ├── cosmetology.html
+│   │   ├── epilation.html
 │   │   ├── face-care.html
 │   │   ├── gallery.html
 │   │   ├── hair-coloring.html
@@ -89,25 +246,22 @@ d:/Документы/Обучение/Frontend/прочее/AQUANIKA/
 │   │   ├── hairdressing.html
 │   │   ├── home.html
 │   │   ├── injections.html
-│   │   ├── laser-arms.html
-│   │   ├── laser-bikini.html
 │   │   ├── laser-epilation.html
-│   │   ├── laser-legs.html
-│   │   ├── makeup-day.html
-│   │   ├── makeup-evening.html
-│   │   ├── makeup-wedding.html
 │   │   ├── makeup.html
 │   │   ├── manicure-pedicure.html
 │   │   ├── manicure.html
 │   │   ├── massage.html
+│   │   ├── men-epilation.html
 │   │   ├── men-haircut.html
 │   │   ├── men-manicure.html
-│   │   ├── men-massage.html
 │   │   ├── men-services.html
 │   │   ├── nails-extensions.html
 │   │   ├── pedicure.html
+│   │   ├── price.html
+│   │   ├── privacy.html
 │   │   ├── reviews.html
 │   │   ├── spa-and-massage.html
+│   │   ├── sugaring.html
 │   │   ├── tattoo-removal.html
 │   │   ├── team.html
 │   │   ├── vacancies.html
@@ -134,18 +288,207 @@ d:/Документы/Обучение/Frontend/прочее/AQUANIKA/
 │   │   │   ├── message.svg
 │   │   │   ├── phone.svg
 │   │   │   └── star.svg
-│   │   └── images/
-│   │       └── services/
-│   │           ├── cosmet.jpg
-│   │           ├── gold-brush.png
-│   │           ├── hair.jpg
-│   │           ├── logo.png
-│   │           ├── makeup.jpg
-│   │           ├── manicure-pedicure.jpg
-│   │           ├── men.jpg
-│   │           ├── orig.jpg
-│   │           ├── res.jpg
-│   │           └── spa.png
+│   │   ├── images/
+│   │   │   ├── about/
+│   │   │   │   ├── place.webp
+│   │   │   │   └── place1.webp
+│   │   │   ├── br-la/
+│   │   │   │   ├── br1.webp
+│   │   │   │   ├── br2.webp
+│   │   │   │   ├── br3.webp
+│   │   │   │   └── br4.webp
+│   │   │   ├── carusel/
+│   │   │   │   ├── aq.png
+│   │   │   │   ├── aq.webp
+│   │   │   │   ├── aqmin.png
+│   │   │   │   ├── aqmin.webp
+│   │   │   │   ├── dis.png
+│   │   │   │   ├── dis.webp
+│   │   │   │   ├── manPed.png
+│   │   │   │   ├── manPed.webp
+│   │   │   │   ├── manPedMin.png
+│   │   │   │   └── manPedMin.webp
+│   │   │   ├── cosmet/
+│   │   │   │   ├── cosm.webp
+│   │   │   │   ├── cosm1.webp
+│   │   │   │   ├── inj.webp
+│   │   │   │   └── mask.webp
+│   │   │   ├── cut/
+│   │   │   │   ├── cut.webp
+│   │   │   │   ├── cut1.webp
+│   │   │   │   ├── cut3.webp
+│   │   │   │   └── cut4.webp
+│   │   │   ├── gallery/
+│   │   │   │   ├── hair.webp
+│   │   │   │   ├── lashe.webp
+│   │   │   │   ├── lashe1.webp
+│   │   │   │   ├── lashe2.webp
+│   │   │   │   ├── makeup.webp
+│   │   │   │   ├── makeup1.webp
+│   │   │   │   ├── makeup2.webp
+│   │   │   │   ├── makeup3.webp
+│   │   │   │   ├── massage.webp
+│   │   │   │   ├── nails.webp
+│   │   │   │   ├── nails1.webp
+│   │   │   │   ├── nails3.webp
+│   │   │   │   ├── plac2.webp
+│   │   │   │   ├── place.webp
+│   │   │   │   ├── place1.webp
+│   │   │   │   ├── place3.webp
+│   │   │   │   ├── place4.webp
+│   │   │   │   ├── spa.webp
+│   │   │   │   ├── spa1.webp
+│   │   │   │   ├── spa2.webp
+│   │   │   │   └── spa3.webp
+│   │   │   ├── laser/
+│   │   │   │   ├── laser1.webp
+│   │   │   │   ├── laser2.webp
+│   │   │   │   ├── laser3.webp
+│   │   │   │   └── laser4.webp
+│   │   │   ├── makeup/
+│   │   │   │   ├── mak.webp
+│   │   │   │   ├── mak1.webp
+│   │   │   │   ├── mak2.webp
+│   │   │   │   └── mak3.webp
+│   │   │   ├── man/
+│   │   │   │   ├── man.webp
+│   │   │   │   ├── man1.webp
+│   │   │   │   ├── man2.webp
+│   │   │   │   └── man3.webp
+│   │   │   ├── nails/
+│   │   │   │   ├── nails.webp
+│   │   │   │   ├── nails2.webp
+│   │   │   │   ├── nails3.webp
+│   │   │   │   └── nails4.webp
+│   │   │   ├── promo/
+│   │   │   │   ├── buttle.webp
+│   │   │   │   └── flow.webp
+│   │   │   ├── services/
+│   │   │   │   ├── aqua.png
+│   │   │   │   ├── aqua.webp
+│   │   │   │   ├── aqua1024px.png
+│   │   │   │   ├── aqua1024px.webp
+│   │   │   │   ├── br-la.png
+│   │   │   │   ├── br-la.webp
+│   │   │   │   ├── br-la1024px.png
+│   │   │   │   ├── br-la1024px.webp
+│   │   │   │   ├── brows.png
+│   │   │   │   ├── brows.webp
+│   │   │   │   ├── brows1024px.png
+│   │   │   │   ├── brows1024px.webp
+│   │   │   │   ├── color.png
+│   │   │   │   ├── color.webp
+│   │   │   │   ├── color1024px.png
+│   │   │   │   ├── color1024px.webp
+│   │   │   │   ├── cosm.png
+│   │   │   │   ├── cosm.webp
+│   │   │   │   ├── cosm1024px.png
+│   │   │   │   ├── cosm1024px.webp
+│   │   │   │   ├── cosmetCard.webp
+│   │   │   │   ├── cut.png
+│   │   │   │   ├── cut.webp
+│   │   │   │   ├── cut1024px.png
+│   │   │   │   ├── cut1024px.webp
+│   │   │   │   ├── cutman.png
+│   │   │   │   ├── cutman.webp
+│   │   │   │   ├── cutman1024px.png
+│   │   │   │   ├── cutman1024px.webp
+│   │   │   │   ├── epilation.png
+│   │   │   │   ├── epilation.webp
+│   │   │   │   ├── epilation1024px.png
+│   │   │   │   ├── epilation1024px.webp
+│   │   │   │   ├── epilationman.png
+│   │   │   │   ├── epilationman.webp
+│   │   │   │   ├── epilationman1024px.png
+│   │   │   │   ├── epilationman1024px.webp
+│   │   │   │   ├── exten.png
+│   │   │   │   ├── exten.webp
+│   │   │   │   ├── exten1024px.png
+│   │   │   │   ├── exten1024px.webp
+│   │   │   │   ├── gold-brush.png
+│   │   │   │   ├── hairCard.webp
+│   │   │   │   ├── haircut.png
+│   │   │   │   ├── haircut.webp
+│   │   │   │   ├── haircut1024px.png
+│   │   │   │   ├── haircut1024px.webp
+│   │   │   │   ├── inje.png
+│   │   │   │   ├── inje.webp
+│   │   │   │   ├── inje1024px.png
+│   │   │   │   ├── inje1024px.webp
+│   │   │   │   ├── laser.png
+│   │   │   │   ├── laser.webp
+│   │   │   │   ├── laser1024px.png
+│   │   │   │   ├── laser1024px.webp
+│   │   │   │   ├── lashe.png
+│   │   │   │   ├── lashe.webp
+│   │   │   │   ├── lashe1024px.png
+│   │   │   │   ├── lashe1024px.webp
+│   │   │   │   ├── lasheCard.webp
+│   │   │   │   ├── logo.webp
+│   │   │   │   ├── ma-pi.png
+│   │   │   │   ├── ma-pi.webp
+│   │   │   │   ├── ma-pi1024px.png
+│   │   │   │   ├── ma-pi1024px.webp
+│   │   │   │   ├── makeup.png
+│   │   │   │   ├── makeup.webp
+│   │   │   │   ├── makeup1024px.png
+│   │   │   │   ├── makeup1024px.webp
+│   │   │   │   ├── makeupCard.webp
+│   │   │   │   ├── manicure.png
+│   │   │   │   ├── manicure.webp
+│   │   │   │   ├── manicure1024px.png
+│   │   │   │   ├── manicure1024px.webp
+│   │   │   │   ├── manicureman.png
+│   │   │   │   ├── manicureman.webp
+│   │   │   │   ├── manicureman1024px.png
+│   │   │   │   ├── manicureman1024px.webp
+│   │   │   │   ├── manicurePedicureCard.webp
+│   │   │   │   ├── mask.png
+│   │   │   │   ├── mask.webp
+│   │   │   │   ├── mask1024px.png
+│   │   │   │   ├── mask1024px.webp
+│   │   │   │   ├── massage.png
+│   │   │   │   ├── massage.webp
+│   │   │   │   ├── massage1024px.png
+│   │   │   │   ├── massage1024px.webp
+│   │   │   │   ├── menCard.webp
+│   │   │   │   ├── origCard.webp
+│   │   │   │   ├── ped.png
+│   │   │   │   ├── ped.webp
+│   │   │   │   ├── ped1024px.png
+│   │   │   │   ├── ped1024px.webp
+│   │   │   │   ├── serviceman.png
+│   │   │   │   ├── serviceman.webp
+│   │   │   │   ├── serviceman1024px.png
+│   │   │   │   ├── serviceman1024px.webp
+│   │   │   │   ├── spa&massage.png
+│   │   │   │   ├── spa&massage.webp
+│   │   │   │   ├── spa&massage1024px.png
+│   │   │   │   ├── spa&massage1024px.webp
+│   │   │   │   ├── spaCard.webp
+│   │   │   │   ├── styling.png
+│   │   │   │   ├── styling.webp
+│   │   │   │   ├── styling1024px.png
+│   │   │   │   ├── styling1024px.webp
+│   │   │   │   ├── sugaring.png
+│   │   │   │   ├── sugaring.webp
+│   │   │   │   ├── sugaring1024px.png
+│   │   │   │   ├── sugaring1024px.webp
+│   │   │   │   ├── tattoo.png
+│   │   │   │   ├── tattoo.webp
+│   │   │   │   ├── tattoo1024px.png
+│   │   │   │   ├── tattoo1024px.webp
+│   │   │   │   ├── wrapping.png
+│   │   │   │   ├── wrapping.webp
+│   │   │   │   ├── wrapping1024px.png
+│   │   │   │   └── wrapping1024px.webp
+│   │   │   └── spa/
+│   │   │       ├── aqu.webp
+│   │   │       ├── aqua.webp
+│   │   │       ├── mas.webp
+│   │   │       └── mass.webp
+│   │   └── video/
+│   │       └── home.mp4
 │   ├── components/
 │   │   └── partials/
 │   │       ├── footer.html
@@ -156,8 +499,11 @@ d:/Документы/Обучение/Frontend/прочее/AQUANIKA/
 │   │   ├── components/
 │   │   │   ├── carousel.js
 │   │   │   ├── forms.js
+│   │   │   ├── formsModals.js
 │   │   │   ├── loadComponents.js
 │   │   │   ├── mobileMenu.js
+│   │   │   ├── modalGallery.js
+│   │   │   ├── modalVideo.js
 │   │   │   ├── router.js
 │   │   │   ├── sidebar.js
 │   │   │   ├── sideMenu.js
@@ -169,8 +515,9 @@ d:/Документы/Обучение/Frontend/прочее/AQUANIKA/
 │   │   ├── brows-and-lashes.html
 │   │   ├── brows-architecture.html
 │   │   ├── brows-extensions.html
-│   │   ├── brows-tinting.html
+│   │   ├── contacts.html
 │   │   ├── cosmetology.html
+│   │   ├── epilation.html
 │   │   ├── face-care.html
 │   │   ├── gallery.html
 │   │   ├── hair-coloring.html
@@ -179,55 +526,57 @@ d:/Документы/Обучение/Frontend/прочее/AQUANIKA/
 │   │   ├── hairdressing.html
 │   │   ├── home.html
 │   │   ├── injections.html
-│   │   ├── laser-arms.html
-│   │   ├── laser-bikini.html
 │   │   ├── laser-epilation.html
-│   │   ├── laser-legs.html
-│   │   ├── makeup-day.html
-│   │   ├── makeup-evening.html
-│   │   ├── makeup-wedding.html
 │   │   ├── makeup.html
 │   │   ├── manicure-pedicure.html
 │   │   ├── manicure.html
 │   │   ├── massage.html
+│   │   ├── men-epilation.html
 │   │   ├── men-haircut.html
 │   │   ├── men-manicure.html
-│   │   ├── men-massage.html
 │   │   ├── men-services.html
 │   │   ├── nails-extensions.html
 │   │   ├── pedicure.html
+│   │   ├── price.html
+│   │   ├── privacy.html
 │   │   ├── reviews.html
 │   │   ├── spa-and-massage.html
+│   │   ├── sugaring.html
 │   │   ├── tattoo-removal.html
 │   │   ├── team.html
 │   │   ├── vacancies.html
 │   │   └── wrapping.html
 │   ├── styles/
 │   │   ├── base/
-│   │   │   ├── media.css
 │   │   │   ├── reset.css
 │   │   │   ├── typography.css
 │   │   │   └── variables.css
 │   │   ├── components/
-│   │   │   ├── about.css
 │   │   │   ├── buttons.css
 │   │   │   ├── cards.css
 │   │   │   ├── carousel.css
 │   │   │   ├── fixed-buttons.css
 │   │   │   ├── footer.css
 │   │   │   ├── header.css
-│   │   │   ├── menu.css
 │   │   │   ├── mobile-nav.css
-│   │   │   ├── page-with-sidebar.css
+│   │   │   ├── modal-forms.css
 │   │   │   ├── side-menu.css
 │   │   │   └── sidebar.css
 │   │   ├── layouts/
-│   │   │   ├── container.css
-│   │   │   └── grid.css
+│   │   │   └── container.css
 │   │   ├── main.css
 │   │   └── pages/
+│   │       ├── about.css
+│   │       ├── contacts.css
+│   │       ├── gallery.css
 │   │       ├── home.css
-│   │       └── spa-and-massage.css
+│   │       ├── pages.css
+│   │       ├── price.css
+│   │       ├── privacy.css
+│   │       ├── reviews.css
+│   │       ├── team.css
+│   │       └── vacancies.css
 │   └── templates/
 │       └── base.html
+├── stry.txt
 └── vite.config.js
