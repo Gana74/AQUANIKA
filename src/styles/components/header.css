@@ -178,18 +178,26 @@
 
 .header__middle-content {
   display: flex;
+  padding-bottom: var(--spacing-xs);
   align-items: center;
   justify-content: space-between;
-  gap: var(--spacing-lg);
 }
 
 .header__logo {
+  display: flex;
+  flex-direction: column;
   flex-shrink: 0;
+  align-items: center;
+}
+
+.header__logo-desc {
+  font-family: var(--font-secondary);
+  font-size: var(--font-size-sl);
+  color: var(--color-primary);
 }
 
 .logo {
   width: 155px;
-  display: inline-block;
 }
 
 /* ------------------------------------------------------------------------Нижняя строка */

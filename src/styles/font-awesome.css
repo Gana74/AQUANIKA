@@ -1,0 +1,192 @@
+/* Font Awesome 6 - полный список иконок проекта */
+@font-face {
+  font-family: "Font Awesome 6 Free";
+  font-style: normal;
+  font-weight: 900;
+  font-display: swap;
+  src: url("../assets/fonts/fa-solid-900.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Font Awesome 6 Brands";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("../assets/fonts/fa-brands-400.woff2") format("woff2");
+}
+
+/* Базовые стили */
+.fa,
+.fas,
+.fa-solid {
+  font-family: "Font Awesome 6 Free";
+  font-weight: 900;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-style: normal;
+  line-height: 1;
+  display: inline-block;
+}
+
+.fab,
+.fa-brands {
+  font-family: "Font Awesome 6 Brands";
+  font-weight: 400;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-style: normal;
+  line-height: 1;
+  display: inline-block;
+}
+
+/* ВСЕ используемые иконки в проекте */
+.fa-address-book::before {
+  content: "\f2b9";
+}
+.fa-award::before {
+  content: "\f559";
+}
+.fa-bars::before {
+  content: "\f0c9";
+}
+.fa-bolt::before {
+  content: "\f0e7";
+}
+.fa-brush::before {
+  content: "\f55d";
+}
+.fa-calendar-check::before {
+  content: "\f274";
+}
+.fa-certificate::before {
+  content: "\f0a3";
+}
+.fa-chart-line::before {
+  content: "\f201";
+}
+.fa-chevron-down::before {
+  content: "\f078";
+}
+.fa-chevron-left::before {
+  content: "\f053";
+}
+.fa-chevron-right::before {
+  content: "\f054";
+}
+.fa-clock::before {
+  content: "\f017";
+}
+.fa-crown::before {
+  content: "\f521";
+}
+.fa-cut::before {
+  content: "\f0c4";
+}
+.fa-envelope::before {
+  content: "\f0e0";
+}
+.fa-eye::before {
+  content: "\f06e";
+}
+.fa-gem::before {
+  content: "\f3a5";
+}
+.fa-hand-holding-heart::before {
+  content: "\f4be";
+}
+.fa-hands::before {
+  content: "\f2a7";
+}
+.fa-hand-sparkles::before {
+  content: "\f95d";
+}
+.fa-heart::before {
+  content: "\f004";
+}
+.fa-home::before {
+  content: "\f015";
+}
+.fa-instagram::before {
+  content: "\f16d";
+}
+.fa-leaf::before {
+  content: "\f06c";
+}
+.fa-location-dot::before {
+  content: "\f3c5";
+}
+.fa-magic::before {
+  content: "\f0d0";
+}
+.fa-microscope::before {
+  content: "\f610";
+}
+.fa-palette::before {
+  content: "\f53f";
+}
+.fa-percent::before {
+  content: "\f295";
+}
+.fa-phone::before {
+  content: "\f095";
+}
+.fa-play::before {
+  content: "\f04b";
+}
+.fa-prescription-bottle::before {
+  content: "\f485";
+}
+.fa-scissors::before {
+  content: "\f0c4";
+}
+.fa-shield-alt::before {
+  content: "\f3ed";
+}
+.fa-snowflake::before {
+  content: "\f2dc";
+}
+.fa-spa::before {
+  content: "\f5bb";
+}
+.fa-spray-can::before {
+  content: "\f5bd";
+}
+.fa-star::before {
+  content: "\f005";
+}
+.fa-syringe::before {
+  content: "\f48e";
+}
+.fa-telegram::before {
+  content: "\f2c6";
+}
+.fa-temperature-low::before {
+  content: "\f76b";
+}
+.fa-times::before {
+  content: "\f00d";
+}
+.fa-user-check::before {
+  content: "\f4fc";
+}
+.fa-user-md::before {
+  content: "\f0f0";
+}
+.fa-user-shield::before {
+  content: "\f505";
+}
+.fa-user-tie::before {
+  content: "\f508";
+}
+.fa-vial::before {
+  content: "\f492";
+}
+.fa-vk::before {
+  content: "\f189";
+}
+.fa-water::before {
+  content: "\f773";
+}
+.fa-whatsapp::before {
+  content: "\f232";
+}

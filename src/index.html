@@ -13,17 +13,40 @@
     />
     <title>Aqvanika - Салон красоты</title>
 
-    <!-- Security: CSP, Referrer-Policy, HSTS (best-effort in meta), X-Content-Type-Options (requires server header) -->
+    <!-- ========== SECURITY HEADERS ========== -->
+    <!-- CSP - Content Security Policy -->
     <meta
       http-equiv="Content-Security-Policy"
-      content="default-src 'self'; script-src 'self'; style-src 'self' https://cdnjs.cloudflare.com 'unsafe-inline'; img-src 'self' data: blob: https://api-maps.yandex.ru https://static-maps.yandex.ru; font-src 'self' https://cdnjs.cloudflare.com data:; connect-src 'self' https://formspree.io; media-src 'self' blob:; frame-ancestors 'none'; base-uri 'self'; upgrade-insecure-requests"
+      content="default-src 'self'; 
+           script-src 'self' 'unsafe-inline'; 
+           style-src 'self' 'unsafe-inline'; 
+           img-src 'self' data: blob: https://api-maps.yandex.ru https://static-maps.yandex.ru; 
+           font-src 'self' data:; 
+           connect-src 'self' https://formspree.io https://api-maps.yandex.ru;
+           frame-src 'self' https://n265102.yclients.com;
+           media-src 'self' blob:;
+           child-src 'none';
+           object-src 'none';
+           base-uri 'self';
+           form-action 'self' https://formspree.io;"
     />
+
+    <!-- Other Security Headers -->
     <meta name="referrer" content="strict-origin-when-cross-origin" />
     <meta http-equiv="X-Content-Type-Options" content="nosniff" />
+    <meta http-equiv="X-Frame-Options" content="DENY" />
+    <meta http-equiv="X-XSS-Protection" content="1; mode=block" />
+    <meta
+      http-equiv="Permissions-Policy"
+      content="geolocation=(), microphone=(), camera=()"
+    />
+
+    <!-- HSTS - HTTP Strict Transport Security -->
     <meta
       http-equiv="Strict-Transport-Security"
       content="max-age=31536000; includeSubDomains; preload"
     />
+    <!-- ========== END SECURITY HEADERS ========== -->
 
     <!-- Favicon -->
     <link
@@ -40,12 +63,12 @@
       href="/AQUANIKA/apple-touch-icon.png"
     />
 
+    <!-- Preload критических ресурсов -->
+    <link rel="preload" href="/styles/main.css" as="style" />
+    <link rel="preconnect" href="https://formspree.io" />
+    <link rel="preconnect" href="https://api-maps.yandex.ru" />
+
     <!-- Стили -->
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
-      crossorigin="anonymous"
-    />
     <link rel="stylesheet" href="/styles/main.css" />
   </head>
 
@@ -186,7 +209,7 @@
                   </p>
                 </div>
                 <div class="hours">
-                  <i class="far fa-clock"></i>
+                  <i class="fas fa-clock"></i>
                   <span>с 10:00 до 21:00</span>
                 </div>
                 <a href="/privacy" class="privacy-link mobile-nav__privacy"
