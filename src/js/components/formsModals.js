@@ -86,8 +86,20 @@ function createMarkup() {
     checkbox.type = "checkbox";
     checkbox.name = "consent";
     checkbox.required = true;
+
     const span = document.createElement("span");
-    span.textContent = "Соглашаюсь с обработкой персональных данных";
+
+    // Безопасное создание ссылки
+    const link = document.createElement("a");
+    link.href = "/privacy"; // Относительная ссылка на вашу страницу
+    link.textContent = " политикой конфиденциальности";
+    link.target = "_blank"; // Открывать в новой вкладке
+    link.rel = "noopener noreferrer"; // Безопасность
+    link.className = "highlight-link";
+
+    span.textContent = "Соглашаюсь с ";
+    span.appendChild(link);
+
     label.append(checkbox, span);
     agree.append(label);
     form.append(agree);

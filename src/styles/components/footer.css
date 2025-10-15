@@ -33,7 +33,7 @@
   }
 
   .footer__container {
-      gap: var(--spacing-lg);
+    gap: var(--spacing-lg);
     grid-template-columns: 1fr;
     margin-bottom: 50px;
   }

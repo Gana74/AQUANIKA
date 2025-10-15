@@ -393,9 +393,4 @@
   .mobile-nav__services {
     margin-bottom: 0;
   }
-
-  .mobile-nav__privacy {
-    text-align: left;
-    font-size: var(--font-size-sl);
-  }
 }
