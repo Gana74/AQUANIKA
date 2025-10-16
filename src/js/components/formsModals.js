@@ -84,7 +84,8 @@ function createMarkup() {
     const label = document.createElement("label");
     const checkbox = document.createElement("input");
     checkbox.type = "checkbox";
-    checkbox.name = "consent";
+    // Имя согласия унифицировано с глобальной проверкой
+    checkbox.name = "personal-data-consent";
     checkbox.required = true;
 
     const span = document.createElement("span");
@@ -104,7 +105,6 @@ function createMarkup() {
     agree.append(label);
     form.append(agree);
   };
-  
 
   const addActions = (form) => {
     const actions = el("div", "form__actions");
@@ -163,6 +163,7 @@ function createMarkup() {
     const form = el("form", "modal__form", {
       action: "https://formspree.io/f/xldpwwpb",
       method: "POST",
+      "data-no-consent": "",
     });
 
     addHidden(form, type);

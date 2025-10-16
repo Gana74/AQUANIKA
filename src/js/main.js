@@ -528,32 +528,6 @@ function initFormValidation() {
   });
 }
 
-// Проверка юридических требований при загрузке
-function checkLegalRequirements() {
-  const requirements = {
-    privacyPage: !!document.querySelector('a[href*="privacy"]'),
-    formsWithConsent: document.querySelectorAll(
-      'input[name="personal-data-consent"]'
-    ).length,
-    cookieBanner: !!document.getElementById("cookieBanner"),
-    hasLegalInfo: !!document.querySelector(
-      '.legal-info, [class*="requisites"], [class*="реквизиты"]'
-    ),
-  };
-
-  console.log("📋 Проверка юридических требований:", requirements);
-
-  if (!requirements.privacyPage) {
-    console.warn("⚠️ Не найдена ссылка на политику конфиденциальности");
-  }
-
-  if (!requirements.hasLegalInfo) {
-    console.warn("⚠️ Не найдена юридическая информация (реквизиты)");
-  }
-
-  return requirements;
-}
-
 function initCookieBanner() {
   try {
     if (localStorage.getItem("cookieConsent") === "accepted") {
@@ -656,11 +630,6 @@ document.addEventListener("DOMContentLoaded", async () => {
     console.warn("Form consent initialization failed", e);
   }
 
-  try {
-    checkLegalRequirements();
-  } catch (e) {
-    console.warn("Legal requirements check failed", e);
-  }
   // ========== КОНЕЦ ИНИЦИАЛИЗАЦИИ ЮРИДИЧЕСКИХ ФУНКЦИЙ ==========
 
   // Инициализация карты на начальной загрузке
@@ -682,7 +651,6 @@ export {
   initCookieBanner,
   addConsentToForms,
   initFormValidation,
-  checkLegalRequirements,
   initMap,
   destroyMap,
 };
