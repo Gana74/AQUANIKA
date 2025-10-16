@@ -25,7 +25,7 @@ import { initForms } from "./components/forms.js";
 window.initForms = initForms;
 
 // Экспортируем утилиты безопасности глобально
-import /* re-exported in router */ "./components/router.js";
+import "./components/router.js";
 window.sanitizeHTML = window.sanitizeHTML || ((html) => html);
 
 // ========== BREADCRUMBS (Хлебные крошки) ==========
@@ -375,8 +375,8 @@ function injectCookieBannerStyles() {
       flex: 1;
       min-width: 120px;
     }
-  }
-  `;
+  }`;
+
   document.head.appendChild(style);
 }
 

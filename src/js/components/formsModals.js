@@ -104,6 +104,7 @@ function createMarkup() {
     agree.append(label);
     form.append(agree);
   };
+  
 
   const addActions = (form) => {
     const actions = el("div", "form__actions");
