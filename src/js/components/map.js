@@ -1,7 +1,7 @@
 // /js/map.js
 // Конфигурация карты
 const mapConfig = {
-  salonCoordinates: [55.164157, 61.313381],
+  salonCoordinates: [55.175026, 61.310027],
   mapOptions: {
     zoom: 16,
     controls: ["zoomControl", "fullscreenControl", "typeSelector"],

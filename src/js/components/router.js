@@ -461,6 +461,18 @@ async function initPageComponents() {
   } catch (e) {
     console.warn("secureExternalLinks failed", e);
   }
+
+  // Инициализация карты, если на странице есть контейнер карты
+  try {
+    const hasMapContainer = !!document.getElementById("map");
+    if (hasMapContainer && typeof window.initMap === "function") {
+      window.initMap();
+    } else if (!hasMapContainer && typeof window.destroyMap === "function") {
+      window.destroyMap();
+    }
+  } catch (e) {
+    console.warn("Map init/destroy failed", e);
+  }
 }
 
 // Обработчик изменения location
@@ -468,7 +480,10 @@ function handleLocation() {
   loadPage(getRoute());
   // Обновляем breadcrumbs при смене страницы
   setTimeout(() => {
-    if (window.initBreadcrumbs && typeof window.initBreadcrumbs === 'function') {
+    if (
+      window.initBreadcrumbs &&
+      typeof window.initBreadcrumbs === "function"
+    ) {
       window.initBreadcrumbs();
     }
   }, 100);
@@ -484,7 +499,6 @@ export function initRouter() {
     handleLocation();
   }
 }
-
 
 // Глобальные экспорты
 window.navigateTo = navigateTo;
