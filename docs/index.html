@@ -34,7 +34,6 @@
     <!-- Other Security Headers -->
     <meta name="referrer" content="strict-origin-when-cross-origin" />
     <meta http-equiv="X-Content-Type-Options" content="nosniff" />
-    <meta http-equiv="X-Frame-Options" content="DENY" />
     <meta http-equiv="X-XSS-Protection" content="1; mode=block" />
     <meta
       http-equiv="Permissions-Policy"
@@ -66,9 +65,50 @@
     <link rel="preconnect" href="https://api-maps.yandex.ru" />
 
     <!-- Стили -->
-    <script type="module" crossorigin src="/AQUANIKA/assets/main-DZHqVqX5.js"></script>
-    <link rel="modulepreload" crossorigin href="/AQUANIKA/assets/sideMenu-B-HCbgL4.js">
-    <link rel="stylesheet" crossorigin href="/AQUANIKA/assets/main-CthGzKNb.css">
+
+    <!-- Canonical -->
+    <link rel="canonical" href="https://gana74.github.io/AQUANIKA/" />
+
+    <!-- Open Graph / VK / Yandex -->
+    <meta property="og:locale" content="ru_RU" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="AQUANIKA" />
+    <meta property="og:title" content="AQUANIKA — салон красоты в Челябинске" />
+    <meta
+      property="og:description"
+      content="Салон красоты AQUANIKA в Челябинске: косметология, макияж, парикмахерские услуги, маникюр/педикюр, SPA и массаж, лазерная эпиляция. Онлайн‑запись."
+    />
+    <meta property="og:url" content="https://gana74.github.io/AQUANIKA/" />
+    <meta
+      property="og:image"
+      content="https://gana74.github.io/AQUANIKA/web-app-manifest-512x512.png"
+    />
+
+    <!-- Schema.org JSON-LD -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "BeautySalon",
+        "name": "AQUANIKA",
+        "url": "https://gana74.github.io/AQUANIKA/",
+        "telephone": "+7-922-744-52-87",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "Братьев Кашириных, 131",
+          "addressLocality": "Челябинск",
+          "addressCountry": "RU"
+        },
+        "openingHours": "Mo-Su 10:00-21:00",
+        "sameAs": [
+          "https://vk.com/aqvanikachelybinsk",
+          "https://t.me/+79227445287",
+          "https://wa.me/79227445287"
+        ]
+      }
+    </script>
+    <script type="module" crossorigin src="/AQUANIKA/assets/main-pq8W5ORL.js"></script>
+    <link rel="modulepreload" crossorigin href="/AQUANIKA/assets/sideMenu-BdB3PgFm.js">
+    <link rel="stylesheet" crossorigin href="/AQUANIKA/assets/main-B-npCCLV.css">
   </head>
 
   <body>

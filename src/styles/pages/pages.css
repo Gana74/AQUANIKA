@@ -1,6 +1,37 @@
+.breadcrumbs__list {
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  gap: 8px;
+  font-size: 14px;
+  opacity: 0.7;
+}
+
+.breadcrumbs__item:not(:last-child)::after {
+  content: "/";
+  margin-left: 8px;
+  color: var(--color-dark);
+}
+
+.breadcrumbs__link {
+  color: var(--color-gray-dark);
+  text-decoration: none;
+}
+
+.breadcrumbs__link:hover {
+  text-decoration: underline;
+}
+
+.breadcrumbs__current {
+  color: #6c757d;
+  font-weight: 500;
+}
+
 /* Подменю категорий */
 .category-submenu {
-  padding-top: 4.5rem;
+  padding-top: 2.5rem;
 }
 
 .submenu {
@@ -446,7 +477,7 @@
   .container__title {
     flex-direction: column;
     max-height: 330px;
-    
+
     gap: 0;
   }
 

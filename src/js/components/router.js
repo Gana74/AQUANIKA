@@ -1,23 +1,19 @@
 // ==============  router.js  ==============
 // Умное определение basePath для всех окружений
 export const basePath = (() => {
-  // Если GitHub Pages
   if (window.location.hostname.includes("github.io")) {
     return "/AQUANIKA";
   }
-  // Если локальная разработка с Vite
   if (window.location.hostname === "localhost") {
     return "/AQUANIKA";
   }
-  // Для продакшена на собственном домене
   return "";
 })();
 
-// Флаг для определения типа окружения
 export const isGitHubPages = window.location.hostname.includes("github.io");
 export const isLocal = window.location.hostname === "localhost";
 
-// Маршруты: ключ — «чистый» pathname, значение — файл страницы.
+// Маршруты
 export const routes = {
   "/": "/pages/home.html",
   "/about": "/pages/about.html",
@@ -27,7 +23,6 @@ export const routes = {
   "/gallery": "/pages/gallery.html",
   "/price": "/pages/price.html",
   "/contacts": "/pages/contacts.html",
-  "/price": "/pages/price.html",
   "/privacy": "/pages/privacy.html",
 
   "/services/spa": "/pages/spa-and-massage.html",
@@ -66,7 +61,7 @@ export const routes = {
   "/services/men/manicure": "/pages/men-manicure.html",
 };
 
-// Страницы, где нужно показывать боковое меню
+// Страницы с боковым меню
 const pagesWithSideMenu = [
   "/about",
   "/team",
@@ -118,60 +113,59 @@ const pageTitles = {
   "/services/men/manicure": "Для мужчин — Маникюр – Aquanika",
 };
 
-// ---------------- helpers ----------------
-// Умная загрузка компонентов для всех окружений
-// Простая санитизация HTML перед вставкой в DOM
-function sanitizeHTML(html) {
-  try {
-    const template = document.createElement("template");
-    template.innerHTML = html;
+// ---------------- БЕЗОПАСНЫЕ HELPERS ----------------
 
-    // Удаляем опасные теги
-    const unsafeTags = ["script", "iframe", "object", "embed"];
-    template.content
-      .querySelectorAll(unsafeTags.join(","))
-      .forEach((el) => el.remove());
+// Безопасное создание элементов
+function createElement(tag, attributes = {}, children = []) {
+  const element = document.createElement(tag);
 
-    // Чистим опасные атрибуты и javascript: URI
-    const all = template.content.querySelectorAll("*");
-    all.forEach((el) => {
-      Array.from(el.attributes).forEach((attr) => {
-        const name = attr.name;
-        const value = attr.value || "";
-        if (/^on/i.test(name)) {
-          el.removeAttribute(name);
-          return;
-        }
-        if (["href", "src", "xlink:href"].includes(name)) {
-          if (/^\s*javascript:/i.test(value)) {
-            el.setAttribute(name, "#");
-          }
-        }
-      });
-    });
-
-    return template.innerHTML;
-  } catch (e) {
-    console.warn("sanitizeHTML failed, returning original", e);
-    return html;
-  }
-}
-
-// Усиление безопасности внешних ссылок (target="_blank")
-function secureExternalLinks(root = document) {
-  const links = root.querySelectorAll('a[target="_blank"]');
-  links.forEach((a) => {
-    const rel = (a.getAttribute("rel") || "").split(/\s+/).filter(Boolean);
-    if (!rel.includes("noopener")) rel.push("noopener");
-    if (!rel.includes("noreferrer")) rel.push("noreferrer");
-    a.setAttribute("rel", rel.join(" "));
+  // Установка атрибутов
+  Object.entries(attributes).forEach(([key, value]) => {
+    if (key === "className") {
+      element.className = value;
+    } else if (key === "textContent") {
+      element.textContent = value;
+    } else if (key === "innerHTML") {
+      // ВАЖНО: никогда не используем innerHTML в продакшене
+      console.warn("Потенциально опасное использование innerHTML");
+    } else if (key.startsWith("on")) {
+      // Запрещаем обработчики событий извне
+      console.warn("Потенциально опасные обработчики событий запрещены");
+    } else {
+      element.setAttribute(key, value);
+    }
   });
-}
-window.secureExternalLinks = secureExternalLinks;
-window.sanitizeHTML = sanitizeHTML;
 
+  // Добавление детей
+  children.forEach((child) => {
+    if (typeof child === "string") {
+      element.appendChild(document.createTextNode(child));
+    } else if (child instanceof Node) {
+      element.appendChild(child);
+    }
+  });
+
+  return element;
+}
+
+// Безопасное создание ссылки
+function createSafeLink(href, text, className = "", target = "_self") {
+  const link = createElement(
+    "a",
+    {
+      href: href,
+      className: className,
+      target: target,
+      rel: target === "_blank" ? "noopener noreferrer" : "",
+    },
+    [text]
+  );
+
+  return link;
+}
+
+// Безопасная загрузка компонентов
 async function loadComponent(path) {
-  // Всегда добавляем basePath для абсолютных путей
   let url = path;
   if (path.startsWith("/")) {
     url = `${basePath}${path}`;
@@ -182,37 +176,59 @@ async function loadComponent(path) {
   return res.text();
 }
 
-// Извлекает только содержимое основной части страницы, исключая теги из <head>
-function extractPageContent(html) {
+// Безопасное извлечение контента страницы
+function extractPageContentSafely(html) {
   try {
     const parser = new DOMParser();
     const doc = parser.parseFromString(html, "text/html");
-    // Предпочитаем содержимое <main>
+
+    // Полностью безопасное извлечение - только текстовые узлы и разрешенные элементы
     const mainEl = doc.querySelector("main");
-    if (mainEl) return mainEl.innerHTML;
-    // Fallback на <body>
-    if (doc.body) return doc.body.innerHTML;
+    if (mainEl) {
+      return Array.from(mainEl.childNodes);
+    }
+
+    return Array.from(doc.body?.childNodes || []);
   } catch (e) {
-    console.warn("HTML parse failed, using raw content", e);
+    console.warn("Safe HTML parse failed, using fallback", e);
+    return [document.createTextNode("Контент временно недоступен")];
   }
-  // Если парсинг не удался — возвращаем как есть
-  return html;
 }
 
-// ---------------- routing ----------------
-// Определяет актуальный «чистый» маршрут
+// Усиление безопасности внешних ссылок
+function secureExternalLinks(root = document) {
+  const links = root.querySelectorAll('a[target="_blank"]');
+  links.forEach((a) => {
+    const rel = (a.getAttribute("rel") || "").split(/\s+/).filter(Boolean);
+    if (!rel.includes("noopener")) rel.push("noopener");
+    if (!rel.includes("noreferrer")) rel.push("noreferrer");
+    a.setAttribute("rel", rel.join(" "));
+  });
+}
+
+// ---------------- БЕЗОПАСНЫЙ ROUTING ----------------
+
+// Определяет актуальный маршрут
 export function getRoute() {
   let path = window.location.pathname;
-
-  // Убираем basePath если он присутствует
   if (basePath && path.startsWith(basePath)) {
     path = path.slice(basePath.length);
   }
-
   return path || "/";
 }
 
-// Загружает контент нужной страницы
+// Безопасная вставка контента
+function safelyInsertContent(container, contentNodes) {
+  container.replaceChildren(); // Очищаем безопасно
+
+  contentNodes.forEach((node) => {
+    // Клонируем узлы для безопасности
+    const clonedNode = node.cloneNode(true);
+    container.appendChild(clonedNode);
+  });
+}
+
+// Загружает контент безопасно
 export async function loadPage(route) {
   const htmlPath = routes[route] || routes["/"];
   const showSideMenu = pagesWithSideMenu.includes(route);
@@ -221,120 +237,116 @@ export async function loadPage(route) {
 
   try {
     const rawContent = await loadComponent(htmlPath);
-    const pageContent = extractPageContent(rawContent);
-    const safeContent = sanitizeHTML(pageContent);
+    const pageContentNodes = extractPageContentSafely(rawContent);
+
+    const mainEl = document.querySelector("main");
+    if (!mainEl) return;
 
     if (showSideMenu) {
-      const sideMenu = await loadComponent(
-        "/components/partials/side-menu.html"
-      );
-      const safeSideMenu = sanitizeHTML(sideMenu);
-      {
-        const mainEl = document.querySelector("main");
-        if (mainEl) {
-          mainEl.replaceChildren();
-          const wrapper = document.createElement("div");
-          wrapper.className = "page-with-sidebar container";
-
-          // Вставляем side-menu фрагмент
-          try {
-            const tplSide = document.createElement("template");
-            tplSide.innerHTML = safeSideMenu;
-            wrapper.append(tplSide.content.cloneNode(true));
-          } catch (_) {}
-
-          // Вставляем контент страницы
-          const pageContentDiv = document.createElement("div");
-          pageContentDiv.className = "page-content";
-          try {
-            const tplPage = document.createElement("template");
-            tplPage.innerHTML = safeContent;
-            pageContentDiv.append(tplPage.content.cloneNode(true));
-          } catch (_) {}
-
-          wrapper.append(pageContentDiv);
-          mainEl.append(wrapper);
-        }
-      }
-
-      // Динамический импорт sideMenu.js
-      try {
-        const sideMenuModule = await import("./sideMenu.js");
-        if (sideMenuModule.initSideMenu) {
-          sideMenuModule.initSideMenu();
-        } else if (
-          sideMenuModule.default &&
-          sideMenuModule.default.initSideMenu
-        ) {
-          sideMenuModule.default.initSideMenu();
-        }
-      } catch (err) {
-        console.warn("sideMenu.js not available:", err);
-      }
+      // Загрузка side menu безопасно
+      await loadSideMenuSafely(mainEl, pageContentNodes);
     } else {
-      {
-        const mainEl = document.querySelector("main");
-        if (mainEl) {
-          mainEl.replaceChildren();
-          try {
-            const tpl = document.createElement("template");
-            tpl.innerHTML = safeContent;
-            mainEl.append(tpl.content.cloneNode(true));
-          } catch (_) {}
-        }
-      }
+      // Прямая вставка контента
+      safelyInsertContent(mainEl, pageContentNodes);
     }
 
-    // Инициализация компонентов после загрузки страницы
-    initPageComponents();
+    // Инициализация компонентов после загрузки
+    await initPageComponents();
 
-    // Скроллинг: если есть hash — прокрутить к якорю, иначе — в начало страницы
-    const { hash } = window.location;
-    if (hash) {
-      const tryScrollToHash = () => {
-        const id = hash.slice(1);
-        const target =
-          document.getElementById(id) || document.querySelector(hash);
-        if (target) {
-          target.scrollIntoView({ behavior: "smooth", block: "start" });
-          return true;
-        }
-        return false;
-      };
-      // Несколько попыток, чтобы подождать вставку DOM/инициализацию
-      if (!tryScrollToHash()) {
-        requestAnimationFrame(() => {
-          if (!tryScrollToHash()) {
-            setTimeout(tryScrollToHash, 50);
-          }
-        });
-      }
-    } else {
-      // Плавный скроллинг для страниц с боковым меню к началу контента, обычный для остальных
-      if (showSideMenu) {
-        // Скроллим к началу контентного блока вместо самого верха страницы
-        const pageContentContainer = document.querySelector(".page-content");
-        if (pageContentContainer) {
-          setTimeout(() => {
-            pageContentContainer.scrollIntoView({
-              behavior: "smooth",
-              block: "start",
-              inline: "nearest",
-            });
-          }, 50); // Небольшая задержка для завершения DOM операций
-        } else {
-          window.scrollTo({ top: 0, behavior: "smooth" });
-        }
-      } else {
-        window.scrollTo(0, 0);
-      }
-    }
+    // Безопасный скроллинг
+    handleSafeScrolling(showSideMenu);
   } catch (error) {
     console.error("Ошибка загрузки страницы:", error);
-    // Fallback на главную страницу
     if (route !== "/") {
       navigateTo("/");
     }
+  }
+}
+
+// Безопасная загрузка side menu
+async function loadSideMenuSafely(mainEl, pageContentNodes) {
+  try {
+    const sideMenuContent = await loadComponent(
+      "/components/partials/side-menu.html"
+    );
+    const sideMenuNodes = extractPageContentSafely(sideMenuContent);
+
+    const wrapper = createElement("div", {
+      className: "page-with-sidebar container",
+    });
+
+    // Создаем контейнер для side menu
+    const sideMenuContainer = createElement("div", {
+      className: "side-menu-container",
+    });
+    safelyInsertContent(sideMenuContainer, sideMenuNodes);
+    wrapper.appendChild(sideMenuContainer);
+
+    // Создаем контейнер для контента
+    const contentContainer = createElement("div", {
+      className: "page-content",
+    });
+    safelyInsertContent(contentContainer, pageContentNodes);
+    wrapper.appendChild(contentContainer);
+
+    // Очищаем и вставляем
+    mainEl.replaceChildren();
+    mainEl.appendChild(wrapper);
+
+    // Динамический импорт sideMenu.js
+    try {
+      const sideMenuModule = await import("./sideMenu.js");
+      const initFn =
+        sideMenuModule.initSideMenu ||
+        (sideMenuModule.default && sideMenuModule.default.initSideMenu);
+      if (initFn) initFn();
+    } catch (err) {
+      console.warn("sideMenu.js not available:", err);
+    }
+  } catch (error) {
+    console.error("Ошибка загрузки side menu:", error);
+    // Fallback - показываем только контент
+    safelyInsertContent(mainEl, pageContentNodes);
+  }
+}
+
+// Безопасный скроллинг
+function handleSafeScrolling(showSideMenu) {
+  const { hash } = window.location;
+
+  if (hash) {
+    const tryScrollToHash = () => {
+      const id = hash.slice(1);
+      const target = document.getElementById(id);
+      if (target) {
+        target.scrollIntoView({ behavior: "smooth", block: "start" });
+        return true;
+      }
+      return false;
+    };
+
+    if (!tryScrollToHash()) {
+      requestAnimationFrame(() => {
+        if (!tryScrollToHash()) {
+          setTimeout(tryScrollToHash, 50);
+        }
+      });
+    }
+  } else if (showSideMenu) {
+    const pageContentContainer = document.querySelector(".page-content");
+    if (pageContentContainer) {
+      setTimeout(() => {
+        pageContentContainer.scrollIntoView({
+          behavior: "smooth",
+          block: "start",
+          inline: "nearest",
+        });
+      }, 50);
+    } else {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }
+  } else {
+    window.scrollTo(0, 0);
   }
 }
 
@@ -349,15 +361,7 @@ export function navigateTo(path) {
   handleLocation();
 }
 
-// Сделайте navigateTo доступной глобально для использования в sideMenu.js
-window.navigateTo = navigateTo;
-
-// Переход по истории браузера
-function handleLocation() {
-  loadPage(getRoute());
-}
-
-// Клик по внутренним ссылкам
+// Обработчик навигации
 function handleNavigation(e) {
   const link = e.target.closest("a");
   if (!link) return;
@@ -366,18 +370,16 @@ function handleNavigation(e) {
   if (url.origin !== window.location.origin || link.closest(".side-menu"))
     return;
 
-  // Если ссылка ведёт на тот же путь и содержит хеш — прокручиваем к якорю
+  // Обработка якорей
   const currentPath = window.location.pathname;
   const linkPath = url.pathname;
   if (link.hash && linkPath === currentPath) {
     e.preventDefault();
     const id = link.hash.slice(1);
-    const target =
-      document.getElementById(id) || document.querySelector(link.hash);
+    const target = document.getElementById(id);
     if (target) {
       target.scrollIntoView({ behavior: "smooth", block: "start" });
     } else {
-      // если якорь появится позже (SPA-контент), обновим hash, а обработка произойдёт в loadPage
       window.location.hash = link.hash;
     }
     return;
@@ -388,9 +390,8 @@ function handleNavigation(e) {
   navigateTo(relativePath + (url.hash || ""));
 }
 
-// Функция для обработки редиректов
+// Обработка редиректов
 export function handleRedirects() {
-  // Для GitHub Pages - проверяем sessionStorage
   if (isGitHubPages) {
     const redirectPath = sessionStorage.getItem("redirectPath");
     if (redirectPath) {
@@ -403,7 +404,6 @@ export function handleRedirects() {
     }
   }
 
-  // Для всех окружений - проверяем текущий URL
   const currentPath = window.location.pathname;
   let cleanPath = currentPath;
 
@@ -411,7 +411,6 @@ export function handleRedirects() {
     cleanPath = currentPath.slice(basePath.length);
   }
 
-  // Если путь не корневой и не заканчивается на .html, но есть в маршрутах
   if (cleanPath !== "/" && !cleanPath.endsWith(".html") && routes[cleanPath]) {
     console.log("Прямой переход по ссылке:", cleanPath);
     navigateTo(cleanPath);
@@ -421,31 +420,26 @@ export function handleRedirects() {
   return false;
 }
 
-// Инициализация компонентов страницы
-function initPageComponents() {
-  // Инициализация каруселей, форм и других компонентов
+// Безопасная инициализация компонентов
+async function initPageComponents() {
+  // Инициализация других компонентов
   if (typeof window.initCarousels === "function") {
     window.initCarousels();
   }
   if (typeof window.initForms === "function") {
     window.initForms();
   }
-  // Инициализация видео-модалки после вставки контента страницы
   if (typeof window.initVideoModal === "function") {
     window.initVideoModal();
   }
-
-  // Инициализация галереи-модалки после вставки контента страницы
   if (typeof window.initGalleryModal === "function") {
     window.initGalleryModal();
   }
 
-  // Инициализация всех каруселей на странице (включая промо на главной)
+  // Безопасная инициализация каруселей
   try {
-    const initAllCarousels = () => {
-      const carousels = document.querySelectorAll(".promo-carousel");
-      if (!carousels.length) return;
-
+    const carousels = document.querySelectorAll(".promo-carousel");
+    if (carousels.length) {
       import("./carousel.js").then((m) => {
         const init = m.initCarousel || (m.default && m.default.initCarousel);
         if (!init) return;
@@ -456,37 +450,47 @@ function initPageComponents() {
           }
         });
       });
-    };
-
-    initAllCarousels();
+    }
   } catch (e) {
     console.warn("Carousel init failed", e);
   }
 
-  // Инициализация галереи теперь происходит через initGalleryModal()
-
   // Усиление безопасности внешних ссылок
   try {
-    window.secureExternalLinks?.(document);
+    secureExternalLinks(document);
   } catch (e) {
     console.warn("secureExternalLinks failed", e);
   }
 }
 
-// ---------------- init ----------------
+// Обработчик изменения location
+function handleLocation() {
+  loadPage(getRoute());
+  // Обновляем breadcrumbs при смене страницы
+  setTimeout(() => {
+    if (window.initBreadcrumbs && typeof window.initBreadcrumbs === 'function') {
+      window.initBreadcrumbs();
+    }
+  }, 100);
+}
+
+// Инициализация роутера
 export function initRouter() {
-  // Обрабатываем редиректы
   const hasRedirect = handleRedirects();
 
   if (!hasRedirect) {
-    // Инициализируем обычный роутинг
     document.addEventListener("click", handleNavigation);
     window.addEventListener("popstate", handleLocation);
     handleLocation();
   }
 }
 
-// Экспорт для использования в других модулях
+
+// Глобальные экспорты
+window.navigateTo = navigateTo;
+window.secureExternalLinks = secureExternalLinks;
+
+// Экспорт по умолчанию
 export default {
   basePath,
   routes,

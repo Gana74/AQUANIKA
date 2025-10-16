@@ -8,8 +8,17 @@ import { initFormsModals } from "./components/formsModals.js";
 import { loadComponent } from "./components/loadComponents.js";
 import { MobileMenu } from "./components/mobileMenu.js";
 import { initRouter } from "./components/router.js";
+
+// Импорт карты
+import { initMap, destroyMap } from "./components/map.js";
+
+// Делаем функции видеомодального окна доступными глобально для роутера
 window.initVideoModal = initVideoModal;
 window.initGalleryModal = initGalleryModal;
+
+// Делаем функции карты доступными глобально для роутера
+window.initMap = initMap;
+window.destroyMap = destroyMap;
 
 // Делаем initForms доступной для роутера (динамических страниц)
 import { initForms } from "./components/forms.js";
@@ -18,6 +27,258 @@ window.initForms = initForms;
 // Экспортируем утилиты безопасности глобально
 import /* re-exported in router */ "./components/router.js";
 window.sanitizeHTML = window.sanitizeHTML || ((html) => html);
+
+// ========== BREADCRUMBS (Хлебные крошки) ==========
+
+/**
+ * Генерирует BreadcrumbList структурированные данные
+ */
+function generateBreadcrumbs() {
+  const currentPath = window.location.pathname;
+  const baseUrl = window.location.origin;
+
+  // Используем basePath из роутера для согласованности
+  const basePath =
+    window.basePath ||
+    (window.location.hostname.includes("github.io") ? "/AQUANIKA" : "");
+
+  // Базовая структура для главной страницы
+  const breadcrumbs = [
+    {
+      "@type": "ListItem",
+      position: 1,
+      name: "Главная",
+      item: `${baseUrl}${basePath}/`,
+    },
+  ];
+
+  let position = 2;
+
+  // Главная страница
+  if (currentPath === `${basePath}/` || currentPath === "/") {
+    return createBreadcrumbScript(breadcrumbs);
+  }
+
+  // Страницы верхнего уровня
+  const topLevelPages = {
+    "/about": "О нас",
+    "/team": "Наша команда",
+    "/reviews": "Отзывы",
+    "/price": "Цены",
+    "/gallery": "Галерея",
+    "/vacancies": "Вакансии",
+    "/contacts": "Контакты",
+    "/privacy": "Политика конфиденциальности",
+  };
+
+  // Услуги верхнего уровня
+  const serviceCategories = {
+    "/services/spa": "SPA и массаж",
+    "/services/epilation": "Эпиляция",
+    "/services/brows": "Брови и ресницы",
+    "/services/nails": "Маникюр и педикюр",
+    "/services/cosmetology": "Уход за кожей",
+    "/services/hairdressing": "Парикмахерские услуги",
+    "/services/makeup": "Макияж",
+    "/services/men": "Для мужчин",
+  };
+
+  // Проверяем страницы верхнего уровня
+  for (const [path, name] of Object.entries(topLevelPages)) {
+    if (currentPath.includes(path)) {
+      breadcrumbs.push({
+        "@type": "ListItem",
+        position: position,
+        name: name,
+        item: `${baseUrl}/AQUANIKA${path}`,
+      });
+      return createBreadcrumbScript(breadcrumbs);
+    }
+  }
+
+  // Обрабатываем услуги с иерархией
+  for (const [categoryPath, categoryName] of Object.entries(
+    serviceCategories
+  )) {
+    if (currentPath.includes(categoryPath)) {
+      // Добавляем категорию
+      breadcrumbs.push({
+        "@type": "ListItem",
+        position: position++,
+        name: categoryName,
+        item: `${baseUrl}/AQUANIKA${categoryPath}`,
+      });
+
+      // Добавляем конкретную услугу если есть
+      const servicePages = getServicePages(categoryPath);
+      for (const [servicePath, serviceName] of Object.entries(servicePages)) {
+        if (currentPath.includes(servicePath)) {
+          breadcrumbs.push({
+            "@type": "ListItem",
+            position: position,
+            name: serviceName,
+            item: `${baseUrl}/AQUANIKA${servicePath}`,
+          });
+          break;
+        }
+      }
+
+      return createBreadcrumbScript(breadcrumbs);
+    }
+  }
+
+  return null;
+}
+
+/**
+ * Возвращает подуслуги для каждой категории
+ */
+function getServicePages(categoryPath) {
+  const services = {
+    "/services/spa": {
+      "/services/aquanika": 'ПВМ "Акваника"',
+      "/services/massage": "Массаж",
+      "/services/wrapping": "Обертывание",
+    },
+    "/services/epilation": {
+      "/services/epilation/laser": "Лазерная эпиляция",
+      "/services/epilation/sugaring": "Шугаринг",
+    },
+    "/services/brows": {
+      "/services/brows/architecture": "Архитектура бровей",
+      "/services/brows/extensions": "Наращивание ресниц",
+    },
+    "/services/nails": {
+      "/services/nails/manicure": "Маникюр",
+      "/services/nails/pedicure": "Педикюр",
+      "/services/nails/extensions": "Наращивание ногтей",
+    },
+    "/services/cosmetology": {
+      "/services/cosmetology/face-care": "Косметология",
+      "/services/cosmetology/injections": "Инъекции",
+      "/services/cosmetology/tattoo-removal": "Выведение татуажа",
+    },
+    "/services/hairdressing": {
+      "/services/hairdressing/haircuts": "Стрижки",
+      "/services/hairdressing/coloring": "Окрашивание",
+      "/services/hairdressing/styling": "Укладки",
+    },
+    "/services/men": {
+      "/services/men/haircut": "Мужская стрижка",
+      "/services/men/epilation": "Мужская эпиляция",
+      "/services/men/manicure": "Мужской маникюр",
+    },
+  };
+
+  return services[categoryPath] || {};
+}
+
+/**
+ * Создает script элемент с structured data
+ */
+function createBreadcrumbScript(breadcrumbs) {
+  // Удаляем старые breadcrumbs если есть
+  const oldScript = document.querySelector(
+    'script[type="application/ld+json"][data-breadcrumbs]'
+  );
+  if (oldScript) {
+    oldScript.remove();
+  }
+
+  const breadcrumbData = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: breadcrumbs,
+  };
+
+  const script = document.createElement("script");
+  script.type = "application/ld+json";
+  script.setAttribute("data-breadcrumbs", "true");
+  script.textContent = JSON.stringify(breadcrumbData, null, 2);
+
+  return script;
+}
+
+/**
+ * Создает визуальные хлебные крошки на странице
+ */
+function createVisualBreadcrumbs() {
+  const breadcrumbScript = document.querySelector(
+    'script[type="application/ld+json"][data-breadcrumbs]'
+  );
+  if (!breadcrumbScript) return;
+
+  const data = JSON.parse(breadcrumbScript.textContent);
+  const items = data.itemListElement;
+
+  const breadcrumbNav = document.createElement("nav");
+  breadcrumbNav.setAttribute("aria-label", "Хлебные крошки");
+  breadcrumbNav.className = "breadcrumbs";
+
+  // Создаем контейнер для ограничения ширины
+  const breadcrumbContainer = document.createElement("div");
+  breadcrumbContainer.className = "container";
+
+  const ol = document.createElement("ol");
+  ol.className = "breadcrumbs__list";
+
+  items.forEach((item, index) => {
+    const li = document.createElement("li");
+    li.className = "breadcrumbs__item";
+
+    if (index === items.length - 1) {
+      // Текущая страница - безопасное создание
+      const currentSpan = document.createElement("span");
+      currentSpan.className = "breadcrumbs__current";
+      currentSpan.setAttribute("aria-current", "page");
+      currentSpan.textContent = item.name;
+      li.appendChild(currentSpan);
+    } else {
+      // Ссылка - безопасное создание
+      const link = document.createElement("a");
+      link.href = item.item;
+      link.className = "breadcrumbs__link";
+      link.textContent = item.name;
+      li.appendChild(link);
+    }
+
+    ol.appendChild(li);
+  });
+
+  breadcrumbContainer.appendChild(ol);
+  breadcrumbNav.appendChild(breadcrumbContainer);
+
+  // Вставляем после хедера или в начало main
+  const header = document.querySelector("header");
+  const main = document.querySelector("main");
+
+  if (header && main) {
+    main.insertBefore(breadcrumbNav, main.firstChild);
+  }
+}
+
+/**
+ * Инициализация хлебных крошек
+ */
+function initBreadcrumbs() {
+  const breadcrumbScript = generateBreadcrumbs();
+  if (breadcrumbScript) {
+    document.head.appendChild(breadcrumbScript);
+    console.log("🍞 Breadcrumbs initialized");
+
+    // Опционально: создаем визуальные крошки
+    createVisualBreadcrumbs();
+  }
+}
+
+// Делаем функции breadcrumbs доступными глобально для роутера
+window.initBreadcrumbs = initBreadcrumbs;
+window.generateBreadcrumbs = generateBreadcrumbs;
+
+// Глобальная переменная basePath для согласованности с роутером
+window.basePath = window.location.hostname.includes("github.io")
+  ? "/AQUANIKA"
+  : "";
 
 // ========== ЮРИДИЧЕСКИЕ ФУНКЦИИ ДЛЯ СООТВЕТСТВИЯ РФ ==========
 
@@ -179,7 +440,6 @@ function buildCookieBanner() {
 }
 
 // Инициализация аналитики (после согласия)
-
 function initAnalytics() {
   console.log("📊 Инициализация аналитики (после согласия пользователя)");
 
@@ -328,6 +588,24 @@ async function loadLayoutComponents() {
   }
 }
 
+// Инициализация карты на странице контактов
+function initContactsPage() {
+  const currentPath = window.location.pathname;
+  const isContactsPage =
+    currentPath.includes("/contacts") || document.getElementById("map");
+
+  if (isContactsPage) {
+    console.log("🗺️ Инициализация карты на странице контактов");
+    // Даем время DOM для обновления после роутинга
+    setTimeout(() => {
+      initMap();
+    }, 100);
+  } else {
+    // Уничтожаем карту при переходе с контактов
+    destroyMap();
+  }
+}
+
 // Инициализация при загрузке страницы
 document.addEventListener("DOMContentLoaded", async () => {
   console.log(
@@ -339,6 +617,14 @@ document.addEventListener("DOMContentLoaded", async () => {
       : "Production",
     "mode"
   );
+
+  // ========== ИНИЦИАЛИЗАЦИЯ BREADCRUMBS ==========
+  try {
+    initBreadcrumbs();
+  } catch (e) {
+    console.warn("Breadcrumbs initialization failed", e);
+  }
+  // ========== КОНЕЦ BREADCRUMBS ==========
 
   // Параллельная загрузка компонентов и инициализация
   await Promise.all([
@@ -377,7 +663,18 @@ document.addEventListener("DOMContentLoaded", async () => {
   }
   // ========== КОНЕЦ ИНИЦИАЛИЗАЦИИ ЮРИДИЧЕСКИХ ФУНКЦИЙ ==========
 
+  // Инициализация карты на начальной загрузке
+  initContactsPage();
+
+  // Инициализация роутера
   initRouter();
+});
+
+// Обработка изменений маршрута для карты
+window.addEventListener("popstate", () => {
+  setTimeout(() => {
+    initContactsPage();
+  }, 50);
 });
 
 // Экспортируем юридические функции для использования в других модулях
@@ -386,4 +683,6 @@ export {
   addConsentToForms,
   initFormValidation,
   checkLegalRequirements,
+  initMap,
+  destroyMap,
 };

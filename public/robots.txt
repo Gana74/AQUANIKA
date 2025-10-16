@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+
+# Основной домен проекта на GitHub Pages
+Host: gana74.github.io
+Sitemap: https://gana74.github.io/AQUANIKA/sitemap.xml
+

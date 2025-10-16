@@ -8,11 +8,49 @@
       content="Контакты салона красоты Aquanika - адрес, телефон, время работы. Запишитесь на процедуры онлайн!"
     />
     <title>Контакты - Aquanika</title>
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    <!-- В head добавляем SEO-метатеги и структурированные данные -->
+    <link rel="canonical" href="https://gana74.github.io/AQUANIKA/contacts" />
+    <meta
+      name="description"
+      content="Контакты салона красоты Aquanika в Челябинске - адрес, телефон, время работы, онлайн-запись. Свяжитесь с нами удобным способом!"
     />
-    <link rel="stylesheet" crossorigin href="/AQUANIKA/assets/main-CthGzKNb.css">
+
+    <meta
+      property="og:title"
+      content="Контакты - салон красоты Aquanika в Челябинске"
+    />
+    <meta
+      property="og:description"
+      content="Контактная информация салона красоты Aquanika. Адрес, телефон, время работы, онлайн-запись. Свяжитесь с нами удобным способом!"
+    />
+    <meta
+      property="og:url"
+      content="https://gana74.github.io/AQUANIKA/contacts"
+    />
+    <meta
+      property="og:image"
+      content="https://gana74.github.io/AQUANIKA/web-app-manifest-512x512.png"
+    />
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "BeautySalon",
+        "name": "Aquanika",
+        "description": "Салон красоты премиум-класса в Челябинске",
+        "url": "https://gana74.github.io/AQUANIKA/",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "ул. Братьев Кашириных, 131",
+          "addressLocality": "Челябинск",
+          "addressCountry": "RU",
+          "postalCode": "454021"
+        },
+        "openingHours": "Mo-Su 10:00-21:00",
+        "telephone": "+79227445287",
+        "email": "aqua.nika@bk.ru"
+      }
+    </script>
   </head>
   <body>
     <main>
@@ -22,26 +60,25 @@
             Контакты салона красоты Aquanika
           </h2>
           <div class="contacts-page__main">
-            
-              <div class="info contacts-info">
-                <div class="address">
-                  <i class="fas fa-location-dot"></i>
-                  <p>
-                    <a
-                      href="https://yandex.ru/maps/-/CHsIBZZ2"
-                      class="address__link"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      Братьев Кашириных, 131
-                    </a>
-                  </p>
-                </div>
-                <div class="hours">
-                  <i class="fas fa-clock"></i>
-                  <span>с 10:00 до 21:00</span>
-                </div>
+            <div class="info contacts-info">
+              <div class="address">
+                <i class="fas fa-location-dot"></i>
+                <p>
+                  <a
+                    href="https://yandex.ru/maps/-/CHsIBZZ2"
+                    class="address__link"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    Братьев Кашириных, 131
+                  </a>
+                </p>
               </div>
+              <div class="hours">
+                <i class="fas fa-clock"></i>
+                <span>с 10:00 до 21:00</span>
+              </div>
+            </div>
 
             <div class="phone contacts-page__phone">
               <i class="fas fa-phone"></i>
@@ -85,18 +122,22 @@
               ></a>
             </div>
           </div>
+
+          <!-- Интерактивная Яндекс.Карта -->
           <div class="location-map">
-            <a
-              href="https://yandex.ru/maps/?um=constructor%3A6c71b99ccf1f2b1ece9efab9e7a6672d6bb373294df3d4738952dd7d58ef905a&amp;source=constructorStatic"
-              target="_blank"
-              ><img
-                src="https://api-maps.yandex.ru/services/constructor/1.0/static/?um=constructor%3A6c71b99ccf1f2b1ece9efab9e7a6672d6bb373294df3d4738952dd7d58ef905a&amp;width=600&amp;height=450&amp;lang=ru_RU"
-                alt=""
-                style="border: 0"
-            /></a>
+            <div id="map"></div>
           </div>
         </div>
       </section>
     </main>
+
+    <!-- Подключаем API Яндекс.Карт -->
+    <script
+      src="https://api-maps.yandex.ru/2.1/?apikey=480aa768-745b-4ac9-8ec8-e40c2e8d6c82&lang=ru_RU"
+      type="text/javascript"
+    ></script>
+
+    <!-- Подключаем наш скрипт карты -->
+    <script src="/js/map.js" type="text/javascript"></script>
   </body>
 </html>
