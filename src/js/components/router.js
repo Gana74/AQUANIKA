@@ -477,16 +477,17 @@ async function initPageComponents() {
 
 // Обработчик изменения location
 function handleLocation() {
-  loadPage(getRoute());
-  // Обновляем breadcrumbs при смене страницы
-  setTimeout(() => {
-    if (
-      window.initBreadcrumbs &&
-      typeof window.initBreadcrumbs === "function"
-    ) {
-      window.initBreadcrumbs();
-    }
-  }, 100);
+  loadPage(getRoute()).then(() => {
+    // После загрузки контента синхронно перестраиваем крошки, чтобы избежать исчезновения
+    try {
+      if (
+        window.initBreadcrumbs &&
+        typeof window.initBreadcrumbs === "function"
+      ) {
+        window.initBreadcrumbs();
+      }
+    } catch (_) {}
+  });
 }
 
 // Инициализация роутера

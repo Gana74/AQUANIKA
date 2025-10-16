@@ -208,7 +208,13 @@ function createVisualBreadcrumbs() {
   );
   if (!breadcrumbScript) return;
 
-  const data = JSON.parse(breadcrumbScript.textContent);
+  // Защищённый парсинг JSON-LD (на случай, если CSP/минификация повредит содержимое)
+  let data;
+  try {
+    data = JSON.parse(breadcrumbScript.textContent || "");
+  } catch (_) {
+    return; // Не рисуем визуальные крошки, если данные невалидные
+  }
   const items = data.itemListElement;
 
   const breadcrumbNav = document.createElement("nav");
@@ -248,11 +254,9 @@ function createVisualBreadcrumbs() {
   breadcrumbContainer.appendChild(ol);
   breadcrumbNav.appendChild(breadcrumbContainer);
 
-  // Вставляем после хедера или в начало main
-  const header = document.querySelector("header");
+  // Вставляем навигацию в начало основного контента
   const main = document.querySelector("main");
-
-  if (header && main) {
+  if (main) {
     main.insertBefore(breadcrumbNav, main.firstChild);
   }
 }
@@ -262,13 +266,11 @@ function createVisualBreadcrumbs() {
  */
 function initBreadcrumbs() {
   const breadcrumbScript = generateBreadcrumbs();
-  if (breadcrumbScript) {
-    document.head.appendChild(breadcrumbScript);
-    console.log("🍞 Breadcrumbs initialized");
+  if (!breadcrumbScript) return;
 
-    // Опционально: создаем визуальные крошки
-    createVisualBreadcrumbs();
-  }
+  // Всегда пересоздаём визуальные крошки синхронно перед навигацией, чтобы избежать мерцания
+  document.head.appendChild(breadcrumbScript);
+  createVisualBreadcrumbs();
 }
 
 // Делаем функции breadcrumbs доступными глобально для роутера
