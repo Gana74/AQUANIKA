@@ -186,16 +186,13 @@
 /* Адаптивность */
 @media (max-width: 768px) {
   .page-with-sidebar {
+    flex-direction: column;
     padding-top: 3rem;
   }
 
   .about__content {
     flex-direction: column;
   }
-
-  /* .about__video {
-    height: 250px;
-  } */
 
   .modal-content {
     width: 100%;

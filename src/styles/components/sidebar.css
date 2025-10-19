@@ -39,10 +39,10 @@
 .sidebar__button:focus {
   color: var(--color-secondary-dark);
 }
+
 .sidebar__button:active {
   color: var(--color-secondary);
 }
-
 
 .sidebar__button::before {
   content: "";

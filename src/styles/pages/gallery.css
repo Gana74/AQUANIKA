@@ -53,7 +53,7 @@
 @media (max-width: 479px) {
   .gallery-masonry,
   .gallery-grid {
-    column-count: 1;
+    column-count: 2;
   }
 }
 @media (min-width: 480px) and (max-width: 767px) {
