@@ -11,7 +11,7 @@
     "lint:js": "eslint src/**/*.js",
     "lint:css": "stylelint src/**/*.css",
     "clean": "rimraf docs",
-    "deploy": "gh-pages -d docs",
+    "deploy": "npm run build && echo 'Сборка завершена. Загрузите содержимое папки dist на ваш хостинг aquanika74.ru'",
     "copy:fonts": "node copy-fonts.js"
   },
   "devDependencies": {
