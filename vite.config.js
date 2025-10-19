@@ -3,15 +3,15 @@ import { resolve } from "path";
 
 export default defineConfig({
   root: "src",
-  base: "/AQUANIKA/",
+  base: "/",
   publicDir: "../public",
   optimizeDeps: {
     include: ["**/*.svg"],
   },
   build: {
-    outDir: "../docs",
+    outDir: "../dist",
     emptyOutDir: true,
-    sourcemap: true,
+    sourcemap: false,
     assetsDir: "assets",
     cssCodeSplit: true,
     minify: true,

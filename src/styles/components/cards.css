@@ -1,5 +1,13 @@
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v8.4.14,
+* Autoprefixer: v10.4.7
+* Browsers: last 4 version
+*/
+
 /* Сетка услуг */
 .services-grid {
+  display: -ms-grid;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 2rem;
@@ -7,19 +15,33 @@
 
 /* Карточка услуги */
 .service-card {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
   flex-direction: column;
   height: 100%;
   min-height: 470px;
   background: var(--color-white);
   border-radius: var(--border-radius-xl);
   overflow: hidden;
+  -webkit-box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  -webkit-transition: -webkit-transform 0.3s ease, -webkit-box-shadow 0.3s ease;
+  transition: -webkit-transform 0.3s ease, -webkit-box-shadow 0.3s ease;
+  -o-transition: transform 0.3s ease, box-shadow 0.3s ease;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition: transform 0.3s ease, box-shadow 0.3s ease,
+    -webkit-transform 0.3s ease, -webkit-box-shadow 0.3s ease;
 }
 
 .service-card:hover {
+  -webkit-transform: translateY(-5px);
+  -ms-transform: translateY(-5px);
   transform: translateY(-5px);
+  -webkit-box-shadow: 0 8px 12px rgba(0, 0, 0, 0.15);
   box-shadow: 0 8px 12px rgba(0, 0, 0, 0.15);
 }
 
@@ -34,8 +56,12 @@
 .card-image {
   width: 100%;
   height: 100%;
+  -o-object-fit: cover;
   object-fit: cover;
+  -webkit-transition: all 0.4s ease;
+  -o-transition: all 0.4s ease;
   transition: all 0.4s ease;
+  -webkit-filter: brightness(0.95) contrast(0.95);
   filter: brightness(0.95) contrast(0.95); /* Легкое смягчение */
 }
 
@@ -46,6 +72,12 @@
   left: 0;
   width: 100%;
   height: 100%;
+  background: -o-linear-gradient(
+    45deg,
+    rgba(255, 255, 255, 0.15) 0%,
+    rgba(255, 255, 255, 0.05) 50%,
+    rgba(255, 255, 255, 0.15) 100%
+  );
   background: linear-gradient(
     45deg,
     rgba(255, 255, 255, 0.15) 0%,
@@ -58,14 +90,24 @@
 }
 
 .service-card:hover .card-image {
+  -webkit-transform: scale(1.05);
+  -ms-transform: scale(1.05);
   transform: scale(1.05);
+  -webkit-filter: brightness(1.05) contrast(1);
   filter: brightness(1.05) contrast(1); /* Легкое осветление при наведении */
 }
 
 /* Контент карточки */
 .service-card__content {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
   flex-direction: column;
+  -webkit-box-flex: 1;
+  -ms-flex: 1;
   flex: 1;
   padding: 1.5rem;
 }
@@ -85,56 +127,84 @@
 
 /* Кнопки */
 .service-card__buttons {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
   gap: 1rem;
   margin-top: auto;
 }
 
 /* Анимация при появлении */
-@keyframes fadeInUp {
+@-webkit-keyframes fadeInUp {
   from {
     opacity: 0;
+    -webkit-transform: translateY(20px);
     transform: translateY(20px);
   }
   to {
     opacity: 1;
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+}
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    -webkit-transform: translateY(20px);
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    -webkit-transform: translateY(0);
     transform: translateY(0);
   }
 }
 
 .service-card {
+  -webkit-animation: fadeInUp 0.6s ease forwards;
   animation: fadeInUp 0.6s ease forwards;
   opacity: 0;
 }
 
 /* Задержка анимации для каждой карточки */
 .service-card:nth-child(1) {
+  -webkit-animation-delay: 0.1s;
   animation-delay: 0.1s;
 }
 .service-card:nth-child(2) {
+  -webkit-animation-delay: 0.2s;
   animation-delay: 0.2s;
 }
 .service-card:nth-child(3) {
+  -webkit-animation-delay: 0.3s;
   animation-delay: 0.3s;
 }
 .service-card:nth-child(4) {
+  -webkit-animation-delay: 0.4s;
   animation-delay: 0.4s;
 }
 .service-card:nth-child(5) {
+  -webkit-animation-delay: 0.5s;
   animation-delay: 0.5s;
 }
 .service-card:nth-child(6) {
+  -webkit-animation-delay: 0.6s;
   animation-delay: 0.6s;
 }
 .service-card:nth-child(7) {
+  -webkit-animation-delay: 0.7s;
   animation-delay: 0.7s;
 }
 .service-card:nth-child(8) {
+  -webkit-animation-delay: 0.8s;
   animation-delay: 0.8s;
 }
 
 @media (max-width: 1300px) {
   .service-card__buttons {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
     flex-direction: column;
   }
 }
@@ -146,6 +216,9 @@
     padding: 1rem;
   }
   .service-card__buttons {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
     flex-direction: column;
   }
 }

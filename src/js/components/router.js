@@ -4,9 +4,9 @@ export const basePath = (() => {
   if (window.location.hostname.includes("github.io")) {
     return "/AQUANIKA";
   }
-  if (window.location.hostname === "localhost") {
-    return "/AQUANIKA";
-  }
+  // if (window.location.hostname === "localhost") {
+  //   return "/AQUANIKA";
+  // }
   return "";
 })();
 

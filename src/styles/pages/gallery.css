@@ -1,3 +1,10 @@
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v8.4.14,
+* Autoprefixer: v10.4.7
+* Browsers: last 4 version
+*/
+
 .gallery-page__title,
 .gallery-cta__title {
   margin-bottom: 0;
@@ -10,13 +17,18 @@
 
 /* Фильтры */
 .gallery-filter {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -ms-flex-wrap: wrap;
   flex-wrap: wrap;
   gap: 12px;
   margin: 12px 0 20px;
 }
 
 .gallery-filter .filter-button {
+  -webkit-appearance: none;
+  -moz-appearance: none;
   appearance: none;
   border: 1px solid var(--color-border, #e5e7eb);
   background: var(--color-surface, #fff);
@@ -26,8 +38,16 @@
   font-size: 14px;
   line-height: 1;
   cursor: pointer;
+  -webkit-transition: background 0.2s ease, color 0.2s ease,
+    border-color 0.2s ease, -webkit-box-shadow 0.2s ease;
+  transition: background 0.2s ease, color 0.2s ease, border-color 0.2s ease,
+    -webkit-box-shadow 0.2s ease;
+  -o-transition: background 0.2s ease, color 0.2s ease, border-color 0.2s ease,
+    box-shadow 0.2s ease;
   transition: background 0.2s ease, color 0.2s ease, border-color 0.2s ease,
     box-shadow 0.2s ease;
+  transition: background 0.2s ease, color 0.2s ease, border-color 0.2s ease,
+    box-shadow 0.2s ease, -webkit-box-shadow 0.2s ease;
 }
 
 .gallery-filter .filter-button:hover {
@@ -38,6 +58,8 @@
   background: var(--color-primary, #2563eb);
   color: #fff;
   border-color: var(--color-primary, #2563eb);
+  -webkit-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.06),
+    0 1px 1px rgba(0, 0, 0, 0.04);
   box-shadow: 0 1px 2px rgba(0, 0, 0, 0.06), 0 1px 1px rgba(0, 0, 0, 0.04);
 }
 
@@ -45,7 +67,11 @@
 .gallery-masonry,
 .gallery-grid {
   /* поддержка старого класса на случай, если он уже используется */
+  -webkit-column-gap: 16px;
+  -moz-column-gap: 16px;
   column-gap: 16px;
+  -webkit-column-fill: balance;
+  -moz-column-fill: balance;
   column-fill: balance;
 }
 
@@ -53,24 +79,32 @@
 @media (max-width: 479px) {
   .gallery-masonry,
   .gallery-grid {
+    -webkit-column-count: 2;
+    -moz-column-count: 2;
     column-count: 2;
   }
 }
 @media (min-width: 480px) and (max-width: 767px) {
   .gallery-masonry,
   .gallery-grid {
+    -webkit-column-count: 2;
+    -moz-column-count: 2;
     column-count: 2;
   }
 }
 @media (min-width: 768px) and (max-width: 1199px) {
   .gallery-masonry,
   .gallery-grid {
+    -webkit-column-count: 3;
+    -moz-column-count: 3;
     column-count: 3;
   }
 }
 @media (min-width: 1200px) {
   .gallery-masonry,
   .gallery-grid {
+    -webkit-column-count: 4;
+    -moz-column-count: 4;
     column-count: 4;
   }
 }
@@ -92,8 +126,14 @@
   width: 100%;
   height: auto;
   display: block;
+  -o-object-fit: cover;
   object-fit: cover;
+  -webkit-transition: opacity 0.3s ease, -webkit-transform 0.35s ease;
+  transition: opacity 0.3s ease, -webkit-transform 0.35s ease;
+  -o-transition: transform 0.35s ease, opacity 0.3s ease;
   transition: transform 0.35s ease, opacity 0.3s ease;
+  transition: transform 0.35s ease, opacity 0.3s ease,
+    -webkit-transform 0.35s ease;
 }
 
 /* Плейсхолдер для изображений во время загрузки */
@@ -103,9 +143,28 @@
 }
 
 .gallery-masonry .gallery-item img[loading="lazy"] {
+  background: -webkit-gradient(
+    linear,
+    left top,
+    right top,
+    color-stop(25%, #f0f0f0),
+    color-stop(50%, #e0e0e0),
+    color-stop(75%, #f0f0f0)
+  );
+  background: -o-linear-gradient(left, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
   background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
   background-size: 200% 100%;
+  -webkit-animation: loading 1.5s infinite;
   animation: loading 1.5s infinite;
+}
+
+@-webkit-keyframes loading {
+  0% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: -200% 0;
+  }
 }
 
 @keyframes loading {
@@ -118,6 +177,8 @@
 }
 
 .gallery-item:hover img {
+  -webkit-transform: scale(1.02);
+  -ms-transform: scale(1.02);
   transform: scale(1.02);
 }
 
@@ -125,9 +186,25 @@
 .gallery-item figcaption {
   position: absolute;
   inset: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-align: end;
+  -ms-flex-align: end;
   align-items: flex-end;
   padding: 12px;
+  background: -webkit-gradient(
+    linear,
+    left top,
+    left bottom,
+    color-stop(50%, rgba(0, 0, 0, 0)),
+    to(rgba(0, 0, 0, 0.55))
+  );
+  background: -o-linear-gradient(
+    top,
+    rgba(0, 0, 0, 0) 50%,
+    rgba(0, 0, 0, 0.55) 100%
+  );
   background: linear-gradient(
     180deg,
     rgba(0, 0, 0, 0) 50%,
@@ -135,6 +212,8 @@
   );
   color: #fff;
   opacity: 0;
+  -webkit-transition: opacity 0.25s ease;
+  -o-transition: opacity 0.25s ease;
   transition: opacity 0.25s ease;
 }
 
@@ -164,6 +243,8 @@
 }
 
 .gallery-cta .social-links {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
   display: inline-flex;
   gap: 12px;
 }
@@ -174,12 +255,18 @@
   inset: 0;
   background: rgba(0, 0, 0, 0.8);
   display: none;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
   justify-content: center;
   z-index: 1000;
 }
 
 .gallery-modal.is-open {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
 }
 
@@ -195,6 +282,7 @@
   width: auto;
   height: auto;
   border-radius: 8px;
+  -webkit-box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
 }
 
@@ -224,6 +312,8 @@
 .gallery-modal__next {
   position: absolute;
   top: 50%;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
   transform: translateY(-50%);
   width: 44px;
   height: 44px;
@@ -232,8 +322,14 @@
   background: rgba(17, 24, 39, 0.85);
   color: #fff;
   cursor: pointer;
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
   display: inline-flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
   justify-content: center;
 }
 

@@ -1,10 +1,23 @@
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v8.4.14,
+* Autoprefixer: v10.4.7
+* Browsers: last 4 version
+*/
+
 /* Стили для бокового меню */
 .side-menu {
   position: sticky;
   top: 20px; /* Отступ от верха экрана */
+  -ms-flex-item-align: start;
   align-self: flex-start;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
   height: fit-content;
+  -ms-flex-negative: 0;
   flex-shrink: 0; /* Не сжимать меню */
+  -webkit-transition: top 0.3s ease;
+  -o-transition: top 0.3s ease;
   transition: top 0.3s ease; /* Легкая анимация при скролле */
 }
 
@@ -24,12 +37,18 @@
 }
 
 .side-menu__link {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
   padding: 15px 20px;
   color: var(--color-text-light);
   text-decoration: none;
   font-size: var(--font-size-lg);
+  -webkit-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
   transition: all 0.3s ease;
   border-left: 3px solid transparent;
 }

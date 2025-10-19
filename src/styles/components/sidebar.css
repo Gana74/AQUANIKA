@@ -1,28 +1,52 @@
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v8.4.14,
+* Autoprefixer: v10.4.7
+* Browsers: last 4 version
+*/
+
 /* меню с боку из 3 кнопок */
 
 .sidebar {
   position: fixed;
   right: 0;
   top: 50%;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
   transform: translateY(-50%);
   z-index: var(--z-index-fixed);
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
   flex-direction: column;
   gap: var(--spacing-sm);
   padding: var(--spacing-sm);
   background-color: var(--color-background);
+  -webkit-box-shadow: var(--shadow-md);
   box-shadow: var(--shadow-md);
   border-radius: var(--border-radius-md) 0 0 var(--border-radius-md);
 }
 
 .sidebar__buttons {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
   flex-direction: column;
   gap: var(--spacing-sm);
 }
 
 .sidebar__button {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
   gap: var(--spacing-sm);
   padding: var(--spacing-sm) var(--spacing-md);
@@ -31,6 +55,8 @@
   color: var(--color-text);
   font-weight: 500;
   cursor: pointer;
+  -webkit-transition: color var(--transition-normal);
+  -o-transition: color var(--transition-normal);
   transition: color var(--transition-normal);
   white-space: nowrap;
 }
@@ -52,9 +78,10 @@
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
+  -webkit-filter: brightness(0) saturate(100%) invert(48%) sepia(32%)
+    saturate(1100%) hue-rotate(18deg) brightness(95%) contrast(90%);
   filter: brightness(0) saturate(100%) invert(48%) sepia(32%) saturate(1100%)
     hue-rotate(18deg) brightness(95%) contrast(90%);
-
 }
 
 .sidebar__button[data-action="callback"]::before {
@@ -80,17 +107,30 @@
   position: absolute;
   right: 100%;
   top: 50%;
+  -webkit-transform: translateY(-50%) translateX(-8px);
+  -ms-transform: translateY(-50%) translateX(-8px);
   transform: translateY(-50%) translateX(-8px);
   background: var(--color-background, #fff);
   color: var(--color-dark, #333);
   border: 1px solid var(--color-border, #e0e0e0);
   border-radius: var(--border-radius-md, 10px);
   padding: 6px 10px;
+  -webkit-box-shadow: var(--shadow-md);
   box-shadow: var(--shadow-md);
   white-space: nowrap;
   opacity: 0;
   pointer-events: none;
-  transition: opacity var(--transition-normal), transform var(--transition-normal);
+  -webkit-transition: opacity var(--transition-normal),
+    -webkit-transform var(--transition-normal);
+  transition: opacity var(--transition-normal),
+    -webkit-transform var(--transition-normal);
+  -o-transition: opacity var(--transition-normal),
+    transform var(--transition-normal);
+  transition: opacity var(--transition-normal),
+    transform var(--transition-normal);
+  transition: opacity var(--transition-normal),
+    transform var(--transition-normal),
+    -webkit-transform var(--transition-normal);
   z-index: var(--z-index-popover, 400);
 }
 
@@ -98,17 +138,20 @@
 .sidebar__button:hover::after,
 .sidebar__button:focus-visible::after {
   opacity: 1;
+  -webkit-transform: translateY(-50%) translateX(-12px);
+  -ms-transform: translateY(-50%) translateX(-12px);
   transform: translateY(-50%) translateX(-12px);
 }
 
 /* Небольшой отступ между подсказкой и кнопкой */
-.sidebar__button::after { margin-right: 8px; }
+.sidebar__button::after {
+  margin-right: 8px;
+}
 
 @media (max-width: 1720px) {
   .sidebar {
     padding: 0;
   }
-  
 }
 
 @media (max-width: 1024px) {

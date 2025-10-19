@@ -185,7 +185,6 @@ h4 {
 }
 
 @media (max-width: 1024px) {
-
   h1 {
     font-family: var(--font-primary);
     font-size: var(--font-size-xl);

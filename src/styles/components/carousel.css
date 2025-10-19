@@ -1,3 +1,10 @@
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v8.4.14,
+* Autoprefixer: v10.4.7
+* Browsers: last 4 version
+*/
+
 .promo__container {
   margin-top: 2rem;
 }
@@ -10,11 +17,20 @@
 
 .promo-carousel__container {
   min-height: 400px;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-transition: -webkit-transform var(--transition-normal);
+  transition: -webkit-transform var(--transition-normal);
+  -o-transition: transform var(--transition-normal);
   transition: transform var(--transition-normal);
+  transition: transform var(--transition-normal),
+    -webkit-transform var(--transition-normal);
 }
 
 .promo-carousel__slide {
+  -webkit-box-flex: 0;
+  -ms-flex: 0 0 100%;
   flex: 0 0 100%;
   position: relative;
   overflow: hidden;
@@ -25,6 +41,8 @@
   position: absolute;
 
   right: 0; /* Прижимает к правому краю */
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
   width: fit-content;
   max-width: 80%;
 }
@@ -35,10 +53,31 @@
   left: 0;
   right: 0;
   bottom: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
   flex-direction: column;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
   justify-content: center;
   padding: var(--spacing-3xl);
+  background: -webkit-gradient(
+    linear,
+    left top,
+    right top,
+    from(#fff5f3),
+    color-stop(20%, rgba(255, 245, 243, 0.5)),
+    to(rgba(0, 0, 0, 0.2))
+  );
+  background: -o-linear-gradient(
+    left,
+    #fff5f3 0%,
+    rgba(255, 245, 243, 0.5) 20%,
+    rgba(0, 0, 0, 0.2) 100%
+  );
   background: linear-gradient(
     to right,
     #fff5f3 0%,
@@ -64,7 +103,11 @@
   position: absolute;
   bottom: var(--spacing-lg);
   left: 50%;
+  -webkit-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
   transform: translateX(-50%);
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
   gap: var(--spacing-sm);
 }
@@ -73,15 +116,25 @@
 .promo-carousel__arrow {
   position: absolute;
   top: 50%;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
   transform: translateY(-50%);
   background: transparent;
   border: none;
   width: 60px;
   height: 60px;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
   justify-content: center;
   cursor: pointer;
+  -webkit-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
   transition: all 0.3s ease;
   z-index: 1000;
   font-size: 0;
@@ -95,15 +148,21 @@
   height: 30px;
   border-top: 3px solid var(--color-primary-dark);
   border-right: 3px solid var(--color-primary-dark);
+  -webkit-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
   transition: all 0.3s ease;
 }
 
 .promo-carousel__arrow--prev::before {
+  -webkit-transform: rotate(-135deg);
+  -ms-transform: rotate(-135deg);
   transform: rotate(-135deg);
   margin-left: 4px;
 }
 
 .promo-carousel__arrow--next::before {
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
   transform: rotate(45deg);
   margin-right: 4px;
 }
@@ -112,6 +171,8 @@
 .promo-carousel__arrow:hover {
   /* opacity: 100%; */
   color: var(--color-secondary-dark);
+  -webkit-transform: translateY(-50%) scale(1.1);
+  -ms-transform: translateY(-50%) scale(1.1);
   transform: translateY(-50%) scale(1.1);
 }
 
@@ -127,12 +188,30 @@
 
 /* ------------------------------------------------Компактный вариант карусели (для галереи на главной) */
 .promo-carousel--compact {
+  mask-image: -webkit-gradient(
+    linear,
+    left top,
+    right top,
+    from(transparent),
+    color-stop(20%, white),
+    color-stop(80%, white),
+    to(transparent)
+  );
   mask-image: linear-gradient(
     to right,
     transparent,
     white 20%,
     white 80%,
     transparent
+  );
+  -webkit-mask-image: -webkit-gradient(
+    linear,
+    left top,
+    right top,
+    from(transparent),
+    color-stop(20%, white),
+    color-stop(80%, white),
+    to(transparent)
   );
   -webkit-mask-image: linear-gradient(
     to right,
@@ -154,18 +233,26 @@
 
 .promo-carousel--compact .promo-carousel__slide {
   border-radius: var(--border-radius-xl);
+  -webkit-box-flex: 0;
+  -ms-flex: 0 0 calc(25%);
   flex: 0 0 calc(25%); /* 4 видимых */
 }
 
 .promo-carousel--compact .promo-carousel__slide-content {
+  display: -ms-grid;
   display: grid;
+  -ms-grid-columns: 1fr 2rem 1fr 2rem 1fr 2rem 1fr;
   grid-template-columns: repeat(4, 1fr);
   gap: 2rem;
 }
 
 .promo-carousel--compact .promo-carousel__controls {
   position: static;
+  -webkit-transform: none;
+  -ms-transform: none;
   transform: none;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
   justify-content: center;
   margin-top: var(--spacing-sm);
 }
@@ -175,14 +262,20 @@
 .promo-carousel--compact .promo-carousel__slide img {
   width: 100%;
   height: 400px;
+  -o-object-fit: cover;
   object-fit: cover;
   overflow: hidden;
+  -webkit-transition: all 1s ease;
+  -o-transition: all 1s ease;
   transition: all 1s ease;
 }
 
 .promo-carousel--compact .promo-carousel__slide img:hover {
   /* border-radius: var(--border-radius-xl); */
+  -webkit-transform: scale(1.03);
+  -ms-transform: scale(1.03);
   transform: scale(1.03);
+  -webkit-box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
   box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
 }
 
@@ -193,6 +286,8 @@
   border: none;
   background-color: var(--color-background-alt);
   cursor: pointer;
+  -webkit-transition: background-color var(--transition-normal);
+  -o-transition: background-color var(--transition-normal);
   transition: background-color var(--transition-normal);
 }
 
@@ -201,6 +296,8 @@
 }
 
 .promo-carousel__actions {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
   gap: 1rem;
   margin-top: auto;
@@ -213,6 +310,8 @@
   height: 40px;
   border-top: 6px solid var(--color-primary-dark);
   border-right: 6px solid var(--color-primary-dark);
+  -webkit-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
   transition: all 0.3s ease;
 }
 
@@ -241,14 +340,20 @@
 
 .promo-carousel--reviews .promo-carousel__controls {
   position: static;
+  -webkit-transform: none;
+  -ms-transform: none;
   transform: none;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
   justify-content: center;
   margin-top: var(--spacing-md);
 }
 
 /* Сетка карточек внутри слайда отзывов (резерв на случай удаления inline-стилей) */
 .promo-carousel--reviews .reviews-carousel__grid {
+  display: -ms-grid;
   display: grid;
+  -ms-grid-columns: 1fr var(--spacing-lg) 1fr;
   grid-template-columns: repeat(2, 1fr);
   gap: var(--spacing-lg);
   min-height: 300px;
@@ -286,6 +391,7 @@
   }
 
   .promo-carousel--compact .promo-carousel__slide {
+    -ms-flex-preferred-size: calc(33.3333%);
     flex-basis: calc(33.3333%);
   }
 
@@ -300,10 +406,12 @@
   }
 
   .promo-carousel--reviews .reviews-carousel__grid {
+    -ms-grid-columns: 1fr;
     grid-template-columns: 1fr;
   }
 
   .promo-carousel--compact .promo-carousel__slide {
+    -ms-flex-preferred-size: 50%;
     flex-basis: 50%;
   }
 
@@ -326,22 +434,35 @@
   }
 
   .promo-carousel--compact .promo-carousel__slide {
+    -webkit-box-flex: 0;
+    -ms-flex: 0 0 100%;
     flex: 0 0 100%;
     min-width: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
     justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
     align-items: center;
   }
 
   .promo-carousel--compact .promo-carousel__slide img {
     width: 100%;
     height: 300px;
+    -o-object-fit: cover;
     object-fit: cover;
+    -o-object-position: center;
     object-position: center;
     border-radius: var(--border-radius-lg);
   }
 
   .promo-carousel__actions {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
     flex-direction: column;
   }
 

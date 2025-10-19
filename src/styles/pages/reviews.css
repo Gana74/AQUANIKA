@@ -1,3 +1,10 @@
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v8.4.14,
+* Autoprefixer: v10.4.7
+* Browsers: last 4 version
+*/
+
 /* ===================== Reviews (Главная) ===================== */
 
 .reviews__all {
@@ -6,12 +13,14 @@
 
 .reviews__scroller {
   --card-w: 360px;
+  display: -ms-grid;
   display: grid;
   grid-auto-flow: column;
   grid-auto-columns: minmax(300px, var(--card-w));
   gap: var(--spacing-lg);
   overflow-x: auto;
   padding: var(--spacing-sm) 2px var(--spacing-sm) 2px;
+  -ms-scroll-snap-type: x mandatory;
   scroll-snap-type: x mandatory;
   -webkit-overflow-scrolling: touch;
   scrollbar-width: none;
@@ -40,11 +49,18 @@
   position: relative;
   scroll-snap-align: start;
   background: rgba(255, 255, 255, 0.75);
+  -webkit-backdrop-filter: blur(8px);
   backdrop-filter: blur(8px);
   border: 1px solid rgba(212, 175, 55, 0.25);
   border-radius: var(--border-radius-xxl);
   padding: 1.25rem 1.25rem;
+  -webkit-transition: -webkit-transform 0.25s ease,
+    -webkit-box-shadow 0.25s ease;
+  transition: -webkit-transform 0.25s ease, -webkit-box-shadow 0.25s ease;
+  -o-transition: transform 0.25s ease, box-shadow 0.25s ease;
   transition: transform 0.25s ease, box-shadow 0.25s ease;
+  transition: transform 0.25s ease, box-shadow 0.25s ease,
+    -webkit-transform 0.25s ease, -webkit-box-shadow 0.25s ease;
   isolation: isolate;
 }
 
@@ -66,7 +82,10 @@
 } */
 
 .review-card:hover {
+  -webkit-transform: translateY(-4px);
+  -ms-transform: translateY(-4px);
   transform: translateY(-4px);
+  -webkit-box-shadow: 0 13px 23px rgba(0, 0, 0, 0.12);
   box-shadow: 0 13px 23px rgba(0, 0, 0, 0.12);
 }
 
@@ -77,29 +96,47 @@
 }
 
 .review-card__meta {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
   gap: 0.75rem;
   margin-bottom: 0.5rem;
 }
 
 .review-card__avatar {
+  -webkit-box-flex: 0;
+  -ms-flex: 0 0 auto;
   flex: 0 0 auto;
   width: 46px;
   height: 46px;
   border-radius: 50%;
   background: var(--gradient-primary);
   color: var(--color-white);
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
   justify-content: center;
   font-weight: 700;
   letter-spacing: 0.5px;
+  -webkit-box-shadow: 0 4px 12px rgba(212, 175, 55, 0.35);
   box-shadow: 0 4px 12px rgba(212, 175, 55, 0.35);
 }
 
 .review-card__author {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
   flex-direction: column;
   line-height: 1.2;
 }
@@ -140,17 +177,25 @@
 }
 
 .reviews-grid {
+  display: -ms-grid;
   display: grid;
+  -ms-grid-columns: 1fr 24px 1fr 24px 1fr;
   grid-template-columns: repeat(3, 1fr);
   gap: 24px;
+  -webkit-box-align: start;
+  -ms-flex-align: start;
   align-items: start;
 }
 
 @media (max-width: 1024px) {
   .reviews-grid {
+    display: -ms-grid;
     display: grid;
+    -ms-grid-columns: 1fr 24px 1fr;
     grid-template-columns: repeat(2, 1fr);
     gap: 24px;
+    -webkit-box-align: start;
+    -ms-flex-align: start;
     align-items: start;
   }
 }
@@ -161,6 +206,7 @@
   }
 
   .reviews-grid {
+    -ms-grid-columns: auto;
     grid-template-columns: auto;
   }
 

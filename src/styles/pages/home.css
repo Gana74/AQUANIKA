@@ -1,5 +1,16 @@
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v8.4.14,
+* Autoprefixer: v10.4.7
+* Browsers: last 4 version
+*/
+
 .page-with-sidebar {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
   justify-content: center;
   padding-top: 6rem;
   gap: 2rem;
@@ -14,16 +25,27 @@
 }
 
 .about__content {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
   gap: 60px;
 }
 
 .about__text {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
   flex-direction: column;
   /* height: 100%; */
   /* min-height: 300px; */
+  -webkit-box-flex: 1;
+  -ms-flex: 1;
   flex: 1;
 }
 
@@ -42,30 +64,47 @@
 }
 
 .about__buttons {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
   gap: 20px;
 }
 
 .about__image {
+  -webkit-box-flex: 1;
+  -ms-flex: 1;
   flex: 1;
   border-radius: 8px;
   overflow: hidden;
+  -webkit-box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
 }
 
 .about__image img {
   width: 100%;
   height: 100%;
+  -o-object-fit: cover;
   object-fit: cover;
 }
 
 .about__video {
+  -webkit-box-flex: 1;
+  -ms-flex: 1;
   flex: 1;
   max-width: 350px;
   width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
   flex-direction: column;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
   justify-content: center;
   cursor: pointer;
 }
@@ -77,6 +116,8 @@
 .about__video:hover .play-button {
   background: none;
   border: solid 1px var(--color-primary-dark);
+  -webkit-transform: scale(1.1, 1.1);
+  -ms-transform: scale(1.1, 1.1);
   transform: scale(1.1, 1.1);
   color: var(--color-secondary-dark);
 }
@@ -89,7 +130,11 @@
 }
 
 .play-button {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
   display: inline-flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
   color: var(--color-primary-dark);
   gap: 10px;
@@ -100,6 +145,8 @@
   font-size: 1.1rem;
   font-weight: 600;
   cursor: pointer;
+  -webkit-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
   transition: all 0.3s ease;
 }
 
@@ -117,6 +164,7 @@
   width: 100%;
   height: 100%;
   background-color: rgba(0, 0, 0, 0.9);
+  -webkit-animation: fadeIn 0.3s ease;
   animation: fadeIn 0.3s ease;
   overflow: hidden;
 }
@@ -126,6 +174,7 @@
   margin: 0;
   width: 100%;
   height: 100%;
+  -webkit-animation: slideIn 0.3s ease;
   animation: slideIn 0.3s ease;
 }
 
@@ -156,11 +205,22 @@
   font-weight: bold;
   cursor: pointer;
   z-index: 1001;
+  -webkit-transition: color 0.3s ease;
+  -o-transition: color 0.3s ease;
   transition: color 0.3s ease;
 }
 
 .close:hover {
   color: #ff6b6b;
+}
+
+@-webkit-keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
 
 @keyframes fadeIn {
@@ -172,12 +232,27 @@
   }
 }
 
-@keyframes slideIn {
+@-webkit-keyframes slideIn {
   from {
+    -webkit-transform: translateY(-50px);
     transform: translateY(-50px);
     opacity: 0;
   }
   to {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideIn {
+  from {
+    -webkit-transform: translateY(-50px);
+    transform: translateY(-50px);
+    opacity: 0;
+  }
+  to {
+    -webkit-transform: translateY(0);
     transform: translateY(0);
     opacity: 1;
   }
@@ -186,11 +261,17 @@
 /* Адаптивность */
 @media (max-width: 768px) {
   .page-with-sidebar {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
     flex-direction: column;
     padding-top: 3rem;
   }
 
   .about__content {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
     flex-direction: column;
   }
 
@@ -211,6 +292,9 @@
   }
 
   .about__content {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
     flex-direction: column;
     gap: 40px;
   }
@@ -250,6 +334,9 @@
   }
 
   .about__buttons {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
     flex-direction: column;
     gap: 15px;
   }

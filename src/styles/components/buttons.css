@@ -1,6 +1,19 @@
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v8.4.14,
+* Autoprefixer: v10.4.7
+* Browsers: last 4 version
+*/
+
 .button {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
   display: inline-flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
   justify-content: center;
   padding: var(--spacing-sm) var(--spacing-lg);
   border: 2px solid transparent;
@@ -10,6 +23,8 @@
   line-height: 1.5;
   text-align: center;
   cursor: pointer;
+  -webkit-transition: all var(--transition-normal);
+  -o-transition: all var(--transition-normal);
   transition: all var(--transition-normal);
   white-space: nowrap;
 }
@@ -78,15 +93,30 @@
   border: 2px solid white;
   border-radius: 50%;
   border-right-color: transparent;
+  -webkit-animation: button-spin 0.75s linear infinite;
   animation: button-spin 0.75s linear infinite;
 }
 
-@keyframes button-spin {
+@-webkit-keyframes button-spin {
   from {
+    -webkit-transform: rotate(0deg);
     transform: rotate(0deg);
   }
 
   to {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes button-spin {
+  from {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+
+  to {
+    -webkit-transform: rotate(360deg);
     transform: rotate(360deg);
   }
 }

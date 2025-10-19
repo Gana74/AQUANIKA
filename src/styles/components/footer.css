@@ -1,16 +1,27 @@
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v8.4.14,
+* Autoprefixer: v10.4.7
+* Browsers: last 4 version
+*/
+
 .footer {
   background-color: var(--color-cream);
   padding: var(--spacing-lg) 0;
 }
 
 .footer__container {
+  display: -ms-grid;
   display: grid;
+  -ms-grid-columns: 1fr var(--spacing-xl) 1fr var(--spacing-xl) 1fr;
   grid-template-columns: repeat(3, 1fr);
   gap: var(--spacing-xl);
 }
 
 @media (max-width: 1300px) {
   .footer__info {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
   }
 }
@@ -18,6 +29,7 @@
 @media (max-width: 1024px) {
   .footer__container {
     min-height: 100px;
+    /* -ms-grid-columns: (1fr) [2]; */
     grid-template-columns: repeat(2, 1fr);
   }
 
@@ -34,12 +46,15 @@
 
   .footer__container {
     gap: var(--spacing-lg);
+    -ms-grid-columns: 1fr;
     grid-template-columns: 1fr;
     margin-bottom: 50px;
   }
 
   .footer__address,
   .footer__hours {
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
     justify-content: center;
   }
 

@@ -1,10 +1,24 @@
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v8.4.14,
+* Autoprefixer: v10.4.7
+* Browsers: last 4 version
+*/
+
 /* Контейнер для фиксированных кнопок */
 .fixed-buttons {
   position: fixed;
   right: 2rem;
   bottom: 2rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
   flex-direction: column;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
   gap: 1rem;
   z-index: 1000;
@@ -19,30 +33,67 @@
   border-radius: 1.5rem;
   font-weight: 600;
   text-decoration: none;
+  -webkit-box-shadow: 0 4px 12px rgba(212, 175, 55, 0.3);
   box-shadow: 0 4px 12px rgba(212, 175, 55, 0.3);
+  -webkit-transition: -webkit-transform 0.3s ease, -webkit-box-shadow 0.3s ease;
+  transition: -webkit-transform 0.3s ease, -webkit-box-shadow 0.3s ease;
+  -o-transition: transform 0.3s ease, box-shadow 0.3s ease;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition: transform 0.3s ease, box-shadow 0.3s ease,
+    -webkit-transform 0.3s ease, -webkit-box-shadow 0.3s ease;
+  -webkit-animation: pulse 2s infinite;
   animation: pulse 2s infinite;
 }
 
 .btn--booking:hover {
+  -webkit-transform: translateY(-2px);
+  -ms-transform: translateY(-2px);
   transform: translateY(-2px);
+  -webkit-box-shadow: 0 6px 16px rgba(212, 175, 55, 0.4);
   box-shadow: 0 6px 16px rgba(212, 175, 55, 0.4);
   background-color: var(--color-secondary-dark);
+  -webkit-animation: none;
   animation: none;
 }
 
 /* Пульсация для кнопки онлайн записи */
-@keyframes pulse {
+@-webkit-keyframes pulse {
   0% {
+    -webkit-transform: scale(1);
     transform: scale(1);
+    -webkit-box-shadow: 0 4px 12px rgba(212, 175, 55, 0.3);
     box-shadow: 0 4px 12px rgba(212, 175, 55, 0.3);
   }
   50% {
+    -webkit-transform: scale(1.05);
     transform: scale(1.05);
+    -webkit-box-shadow: 0 8px 24px rgba(212, 175, 55, 0.4);
     box-shadow: 0 8px 24px rgba(212, 175, 55, 0.4);
   }
   100% {
+    -webkit-transform: scale(1);
     transform: scale(1);
+    -webkit-box-shadow: 0 4px 12px rgba(212, 175, 55, 0.3);
+    box-shadow: 0 4px 12px rgba(212, 175, 55, 0.3);
+  }
+}
+@keyframes pulse {
+  0% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+    -webkit-box-shadow: 0 4px 12px rgba(212, 175, 55, 0.3);
+    box-shadow: 0 4px 12px rgba(212, 175, 55, 0.3);
+  }
+  50% {
+    -webkit-transform: scale(1.05);
+    transform: scale(1.05);
+    -webkit-box-shadow: 0 8px 24px rgba(212, 175, 55, 0.4);
+    box-shadow: 0 8px 24px rgba(212, 175, 55, 0.4);
+  }
+  100% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+    -webkit-box-shadow: 0 4px 12px rgba(212, 175, 55, 0.3);
     box-shadow: 0 4px 12px rgba(212, 175, 55, 0.3);
   }
 }
@@ -55,27 +106,43 @@
   height: 48px;
   border-radius: 50%;
   border: 2px solid var(--color-secondary);
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
   justify-content: center;
   cursor: pointer;
   opacity: 0;
   visibility: hidden;
+  -webkit-transform: translateY(20px);
+  -ms-transform: translateY(20px);
   transform: translateY(20px);
+  -webkit-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
   transition: all 0.3s ease;
+  -webkit-box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
 .btn--to-top:hover {
   background-color: var(--color-secondary);
   color: var(--color-white);
+  -webkit-transform: translateY(-2px);
+  -ms-transform: translateY(-2px);
   transform: translateY(-2px);
+  -webkit-box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
   box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
 }
 
 .btn--to-top.show {
   opacity: 1;
   visibility: visible;
+  -webkit-transform: translateY(0);
+  -ms-transform: translateY(0);
   transform: translateY(0);
 }
 

@@ -1,3 +1,10 @@
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v8.4.14,
+* Autoprefixer: v10.4.7
+* Browsers: last 4 version
+*/
+
 /* Mobile Navigation */
 .mobile-nav {
   display: none;
@@ -16,8 +23,13 @@
   bottom: 0;
   left: 0;
   right: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -ms-flex-pack: distribute;
   justify-content: space-around;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
   height: 60px;
   background-color: #fff;
@@ -28,9 +40,18 @@
 /* Кнопки в нижней панели */
 .mobile-nav__link,
 .mobile-nav__menu-btn {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
   flex-direction: column;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
   justify-content: center;
   gap: 4px;
   padding: 8px;
@@ -40,6 +61,8 @@
   border: none;
   cursor: pointer;
   font-size: 12px;
+  -webkit-transition: color 0.2s ease;
+  -o-transition: color 0.2s ease;
   transition: color 0.2s ease;
 }
 
@@ -68,15 +91,28 @@
   width: 70%;
   height: 100vh;
   background-color: #fff;
+  -webkit-transform: translateX(-100%);
+  -ms-transform: translateX(-100%);
   transform: translateX(-100%);
+  -webkit-transition: -webkit-transform 0.3s ease;
+  transition: -webkit-transform 0.3s ease;
+  -o-transition: transform 0.3s ease;
   transition: transform 0.3s ease;
+  transition: transform 0.3s ease, -webkit-transform 0.3s ease;
   z-index: var(--z-index-modal);
   overflow: hidden;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
   flex-direction: column;
 }
 
 .mobile-nav__sidebar.is-open {
+  -webkit-transform: translateX(0);
+  -ms-transform: translateX(0);
   transform: translateX(0);
 }
 
@@ -85,14 +121,21 @@
   position: relative;
   width: 300%; /* теперь три слайда */
   height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-transition: -webkit-transform 0.3s ease;
+  transition: -webkit-transform 0.3s ease;
+  -o-transition: transform 0.3s ease;
   transition: transform 0.3s ease;
+  transition: transform 0.3s ease, -webkit-transform 0.3s ease;
 }
 
 .mobile-nav__slide-main {
   width: 33.3333%;
   height: 100%;
   overflow-y: auto;
+  -ms-flex-negative: 0;
   flex-shrink: 0;
 }
 
@@ -100,6 +143,7 @@
   width: 33.3333%;
   height: 100%;
   overflow-y: auto;
+  -ms-flex-negative: 0;
   flex-shrink: 0;
   background-color: #fff;
 }
@@ -108,22 +152,33 @@
   width: 33.3333%;
   height: 100%;
   overflow-y: auto;
+  -ms-flex-negative: 0;
   flex-shrink: 0;
   background-color: #fff;
 }
 
 .mobile-nav__slides.show-submenu {
+  -webkit-transform: translateX(-33.3333%);
+  -ms-transform: translateX(-33.3333%);
   transform: translateX(-33.3333%);
 }
 
 .mobile-nav__slides.show-subsubmenu {
+  -webkit-transform: translateX(-66.6666%);
+  -ms-transform: translateX(-66.6666%);
   transform: translateX(-66.6666%);
 }
 
 /* Шапка бокового меню */
 .mobile-nav__header {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
   justify-content: space-between;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
   padding: 16px;
   background-color: var(--color-primary);
@@ -131,7 +186,11 @@
 }
 
 .mobile-nav__city {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
   gap: 8px;
   font-size: 14px;
@@ -145,6 +204,8 @@
   font-size: 20px;
   cursor: pointer;
   padding: 4px;
+  -webkit-transition: opacity 0.2s ease;
+  -o-transition: opacity 0.2s ease;
   transition: opacity 0.2s ease;
 }
 
@@ -161,8 +222,15 @@
 /* Контент бокового меню */
 .mobile-nav__sidebar-content {
   padding: 20px;
+  -webkit-box-flex: 1;
+  -ms-flex: 1;
   flex: 1;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
   flex-direction: column;
 }
 
@@ -181,8 +249,14 @@
 
 /* Кнопка "ВСЕ УСЛУГИ" */
 .mobile-nav__category-btn {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
   justify-content: space-between;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
   width: 100%;
   padding: 12px 0;
@@ -192,6 +266,8 @@
   font-weight: 500;
   cursor: pointer;
   color: var(--color-text);
+  -webkit-transition: all 0.2s ease;
+  -o-transition: all 0.2s ease;
   transition: all 0.2s ease;
 }
 
@@ -205,10 +281,16 @@
 }
 
 .mobile-nav__category-btn i {
+  -webkit-transition: -webkit-transform 0.2s ease;
+  transition: -webkit-transform 0.2s ease;
+  -o-transition: transform 0.2s ease;
   transition: transform 0.2s ease;
+  transition: transform 0.2s ease, -webkit-transform 0.2s ease;
 }
 
 .mobile-nav__category-btn.is-open i {
+  -webkit-transform: rotate(180deg);
+  -ms-transform: rotate(180deg);
   transform: rotate(180deg);
 }
 
@@ -225,8 +307,14 @@
 
 /* Кнопки категорий */
 .mobile-nav__subcategory-btn {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
   justify-content: space-between;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
   width: 100%;
   padding: 12px 0;
@@ -236,6 +324,8 @@
   cursor: pointer;
   color: var(--color-text);
   text-transform: uppercase;
+  -webkit-transition: all 0.2s ease;
+  -o-transition: all 0.2s ease;
   transition: all 0.2s ease;
 }
 
@@ -267,6 +357,8 @@
   color: var(--color-text);
   text-decoration: none;
   font-size: 14px;
+  -webkit-transition: color 0.2s ease;
+  -o-transition: color 0.2s ease;
   transition: color 0.2s ease;
   display: block;
   padding: 8px 0;
@@ -285,6 +377,8 @@
   color: var(--color-text);
   text-decoration: none;
   font-size: 14px;
+  -webkit-transition: color 0.2s ease;
+  -o-transition: color 0.2s ease;
   transition: color 0.2s ease;
   display: block;
   padding: 8px 0;
@@ -314,6 +408,8 @@
   text-decoration: none;
   font-size: 14px;
   font-weight: 500;
+  -webkit-transition: color 0.2s ease;
+  -o-transition: color 0.2s ease;
   transition: color 0.2s ease;
   display: block;
   padding: 8px 0;
@@ -341,6 +437,8 @@
   font-weight: 500;
   cursor: pointer;
   text-transform: uppercase;
+  -webkit-transition: all 0.2s ease;
+  -o-transition: all 0.2s ease;
   transition: all 0.2s ease;
 }
 
@@ -355,7 +453,11 @@
 
 /* Социальные сети */
 .mobile-nav__social {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
   justify-content: center;
   gap: 16px;
   margin-bottom: 16px;
@@ -365,6 +467,8 @@
   color: var(--color-primary);
   font-size: 20px;
   text-decoration: none;
+  -webkit-transition: all 0.2s ease;
+  -o-transition: all 0.2s ease;
   transition: all 0.2s ease;
 }
 
