@@ -412,6 +412,17 @@ function buildCookieBanner() {
   const actions = document.createElement("div");
   actions.className = "cookie-banner__actions";
 
+  const rejectBtn = document.createElement("button");
+  rejectBtn.className = "button button--secondary cookie-banner__btn";
+  rejectBtn.type = "button";
+  rejectBtn.textContent = "Отклонить";
+  rejectBtn.addEventListener("click", () => {
+    try {
+      localStorage.setItem("cookieConsent", "rejected");
+    } catch (_) {}
+    banner.remove();
+  });
+
   const acceptBtn = document.createElement("button");
   acceptBtn.className = "button button--primary cookie-banner__btn";
   acceptBtn.type = "button";
@@ -425,18 +436,7 @@ function buildCookieBanner() {
     initAnalytics();
   });
 
-  const rejectBtn = document.createElement("button");
-  rejectBtn.className = "button button--secondary cookie-banner__btn";
-  rejectBtn.type = "button";
-  rejectBtn.textContent = "Отклонить";
-  rejectBtn.addEventListener("click", () => {
-    try {
-      localStorage.setItem("cookieConsent", "rejected");
-    } catch (_) {}
-    banner.remove();
-  });
-
-  actions.append(acceptBtn, rejectBtn);
+  actions.append(rejectBtn, acceptBtn);
   banner.append(text, actions);
   document.body.appendChild(banner);
 }

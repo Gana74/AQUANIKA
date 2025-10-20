@@ -6,11 +6,13 @@ d:/Документы/Обучение/Frontend/прочее/AQUANIKA/
 ├── .qodo/
 │   └── best_practices.md
 ├─] .vscode/ (ignored)
+├── copy-fonts.js
+├─] dist/ (ignored)
 ├── docs/
 │   ├── 404.html
 │   ├── apple-touch-icon.png
 │   ├── assets/
-│   │   ├── about-sPgBsYO4.js.map
+│   │   ├── about-l0sNRNKZ.js.map
 │   │   ├── aq-BBNQNqzK.webp
 │   │   ├── aq-CCsyS9g3.png
 │   │   ├── aqmin-BCoSKZJE.png
@@ -21,7 +23,7 @@ d:/Документы/Обучение/Frontend/прочее/AQUANIKA/
 │   │   ├── aqua-DtXmkMR7.png
 │   │   ├── aqua1024px-DdhT5_2-.webp
 │   │   ├── aqua1024px-DRp8Jm7A.png
-│   │   ├── aquanika-sPgBsYO4.js.map
+│   │   ├── aquanika-l0sNRNKZ.js.map
 │   │   ├── br-la-B9eczVsm.webp
 │   │   ├── br-la-BdepHPOf.png
 │   │   ├── br-la1024px-BtKbWERB.png
@@ -32,18 +34,18 @@ d:/Документы/Обучение/Frontend/прочее/AQUANIKA/
 │   │   ├── br4-Vnn4Fitp.webp
 │   │   ├── brows-CIIeaHLJ.png
 │   │   ├── brows-DTs0A0WT.webp
-│   │   ├── brows-sPgBsYO4.js.map
+│   │   ├── brows-l0sNRNKZ.js.map
 │   │   ├── brows1024px-B-pMgNzZ.webp
 │   │   ├── brows1024px-BEC9g9Dl.png
-│   │   ├── browsArchitecture-sPgBsYO4.js.map
-│   │   ├── browsExtensions-sPgBsYO4.js.map
+│   │   ├── browsArchitecture-l0sNRNKZ.js.map
+│   │   ├── browsExtensions-l0sNRNKZ.js.map
 │   │   ├── carousel-Csg7kf2D.js
 │   │   ├── carousel-Csg7kf2D.js.map
 │   │   ├── color-CAu9008K.webp
 │   │   ├── color-DsoRyu85.png
 │   │   ├── color1024px-Bt9dX3tK.webp
 │   │   ├── color1024px-BzDtsuA4.png
-│   │   ├── contacts-sPgBsYO4.js.map
+│   │   ├── contacts-l0sNRNKZ.js.map
 │   │   ├── cosm-36WPtoE7.png
 │   │   ├── cosm-BU17NNk3.webp
 │   │   ├── cosm-CSHKTI7R.webp
@@ -51,10 +53,10 @@ d:/Документы/Обучение/Frontend/прочее/AQUANIKA/
 │   │   ├── cosm1024px-B5GhIpiP.png
 │   │   ├── cosm1024px-iXLx2sge.webp
 │   │   ├── cosmetCard-CRxkkdbP.webp
-│   │   ├── cosmetology-sPgBsYO4.js.map
-│   │   ├── cosmetologyFace-sPgBsYO4.js.map
-│   │   ├── cosmetologyInjections-sPgBsYO4.js.map
-│   │   ├── cosmetologyTattooRemoval-sPgBsYO4.js.map
+│   │   ├── cosmetology-l0sNRNKZ.js.map
+│   │   ├── cosmetologyFace-l0sNRNKZ.js.map
+│   │   ├── cosmetologyInjections-l0sNRNKZ.js.map
+│   │   ├── cosmetologyTattooRemoval-l0sNRNKZ.js.map
 │   │   ├── cut-C99JIXYM.webp
 │   │   ├── cut-CvXghr21.webp
 │   │   ├── cut-DZGIoxs3.png
@@ -71,7 +73,7 @@ d:/Документы/Обучение/Frontend/прочее/AQUANIKA/
 │   │   ├── dis-DLcLM3PY.webp
 │   │   ├── epilation-a8JkRtHJ.webp
 │   │   ├── epilation-DglobQDO.png
-│   │   ├── epilation-sPgBsYO4.js.map
+│   │   ├── epilation-l0sNRNKZ.js.map
 │   │   ├── epilation1024px-9YMZTdgb.webp
 │   │   ├── epilation1024px-igobKd88.png
 │   │   ├── epilationman-DgI-dRtT.webp
@@ -82,21 +84,23 @@ d:/Документы/Обучение/Frontend/прочее/AQUANIKA/
 │   │   ├── exten-DKZAlleu.png
 │   │   ├── exten1024px-Cexe9lkO.png
 │   │   ├── exten1024px-CTTgjSr3.webp
+│   │   ├── fa-brands-400-BfBXV7Mm.woff2
+│   │   ├── fa-solid-900-8GirhLYJ.woff2
 │   │   ├── footer-l0sNRNKZ.js.map
-│   │   ├── gallery-sPgBsYO4.js.map
-│   │   ├── gold-brush-Nu-oZcNc.png
+│   │   ├── gallery-l0sNRNKZ.js.map
+│   │   ├── gold-brush-CWUjum1m.webp
 │   │   ├── hairCard-Be4rzqRZ.webp
-│   │   ├── hairColoring-sPgBsYO4.js.map
+│   │   ├── hairColoring-l0sNRNKZ.js.map
 │   │   ├── haircut-SbmzTLw9.png
 │   │   ├── haircut-sL8J674R.webp
 │   │   ├── haircut1024px-938Snj1h.png
 │   │   ├── haircut1024px-CW4UDUUm.webp
-│   │   ├── haircuts-sPgBsYO4.js.map
-│   │   ├── hairdressing-sPgBsYO4.js.map
-│   │   ├── hairStyling-sPgBsYO4.js.map
+│   │   ├── haircuts-l0sNRNKZ.js.map
+│   │   ├── hairdressing-l0sNRNKZ.js.map
+│   │   ├── hairStyling-l0sNRNKZ.js.map
 │   │   ├── header-l0sNRNKZ.js.map
 │   │   ├── home-BCn1Fb8x.mp4
-│   │   ├── home-sPgBsYO4.js.map
+│   │   ├── home-l0sNRNKZ.js.map
 │   │   ├── inj-CIdxmvz8.webp
 │   │   ├── inje-Bu77rFhb.webp
 │   │   ├── inje-C62kreXr.png
@@ -104,7 +108,7 @@ d:/Документы/Обучение/Frontend/прочее/AQUANIKA/
 │   │   ├── inje1024px-BphLAO8b.png
 │   │   ├── laser-ClWrJGHN.png
 │   │   ├── laser-D-yyuNl8.webp
-│   │   ├── laser-sPgBsYO4.js.map
+│   │   ├── laser-l0sNRNKZ.js.map
 │   │   ├── laser1-DNGwcPNB.webp
 │   │   ├── laser1024px-BRCJUTaj.png
 │   │   ├── laser1024px-Cqocws0O.webp
@@ -116,21 +120,21 @@ d:/Документы/Обучение/Frontend/прочее/AQUANIKA/
 │   │   ├── lashe1024px-BhVA0hen.png
 │   │   ├── lashe1024px-BtY_v85k.webp
 │   │   ├── lasheCard-9MsGjd_j.webp
-│   │   ├── logo-BFolcQCp.webp
+│   │   ├── logo-CDXuiJ4t.webp
 │   │   ├── ma-pi-Bm1Es0fk.png
 │   │   ├── ma-pi-DGHupAUS.webp
 │   │   ├── ma-pi1024px-CQHbE-bj.png
 │   │   ├── ma-pi1024px-CX_gxI6v.webp
-│   │   ├── main-BtN1ZFez.css
-│   │   ├── main-CA5bduoH.js
-│   │   ├── main-CA5bduoH.js.map
+│   │   ├── main-CuzzqBaA.css
+│   │   ├── main-CWJgHMf4.js
+│   │   ├── main-CWJgHMf4.js.map
 │   │   ├── mak-CSn5IR4O.webp
 │   │   ├── mak1-B-EhteoN.webp
 │   │   ├── mak2-BoyHEFpj.webp
 │   │   ├── mak3-B-ZnuWTB.webp
 │   │   ├── makeup-DTQEzWKV.png
+│   │   ├── makeup-l0sNRNKZ.js.map
 │   │   ├── makeup-R8HNRog2.webp
-│   │   ├── makeup-sPgBsYO4.js.map
 │   │   ├── makeup1024px-C1GgsWqP.webp
 │   │   ├── makeup1024px-CjlYRcIn.png
 │   │   ├── makeupCard-CNBFwV5q.webp
@@ -147,8 +151,8 @@ d:/Документы/Обучение/Frontend/прочее/AQUANIKA/
 │   │   ├── manicureman1024px-C72f2swa.webp
 │   │   ├── manicureman1024px-pJ-5vAsB.png
 │   │   ├── manicurePedicureCard-CSg12pXe.webp
-│   │   ├── manped-BEkqeqYc.webp
-│   │   ├── manped-BzDZ-bSd.png
+│   │   ├── manPed-BEkqeqYc.webp
+│   │   ├── manPed-BzDZ-bSd.png
 │   │   ├── manPedMin-B2ezwAET.png
 │   │   ├── manPedMin-BHaayTrz.webp
 │   │   ├── mas-FTztm7ek.webp
@@ -159,42 +163,42 @@ d:/Документы/Обучение/Frontend/прочее/AQUANIKA/
 │   │   ├── mask1024px-D112HPHc.png
 │   │   ├── mass-B7-Hg7NR.webp
 │   │   ├── massage-BZoqhnSo.webp
+│   │   ├── massage-l0sNRNKZ.js.map
 │   │   ├── massage-l1ET_vGR.png
-│   │   ├── massage-sPgBsYO4.js.map
 │   │   ├── massage1024px-DdDvxVa4.webp
 │   │   ├── massage1024px-DpWa9Yko.png
-│   │   ├── men-sPgBsYO4.js.map
+│   │   ├── men-l0sNRNKZ.js.map
 │   │   ├── menCard-D1uMu_-3.webp
-│   │   ├── menEpilation-sPgBsYO4.js.map
-│   │   ├── menHaircut-sPgBsYO4.js.map
-│   │   ├── menManicure-sPgBsYO4.js.map
+│   │   ├── menEpilation-l0sNRNKZ.js.map
+│   │   ├── menHaircut-l0sNRNKZ.js.map
+│   │   ├── menManicure-l0sNRNKZ.js.map
 │   │   ├── nails-BmOtqWRt.webp
 │   │   ├── nails-CvH0hnZO.webp
-│   │   ├── nails-sPgBsYO4.js.map
+│   │   ├── nails-l0sNRNKZ.js.map
 │   │   ├── nails1-DnOaOzAb.webp
 │   │   ├── nails2-DIDEyTYl.webp
 │   │   ├── nails3-2g9Umx55.webp
 │   │   ├── nails4-Da0z2tDV.webp
-│   │   ├── nailsExtensions-sPgBsYO4.js.map
-│   │   ├── nailsManicure-sPgBsYO4.js.map
-│   │   ├── nailsPedicure-sPgBsYO4.js.map
+│   │   ├── nailsExtensions-l0sNRNKZ.js.map
+│   │   ├── nailsManicure-l0sNRNKZ.js.map
+│   │   ├── nailsPedicure-l0sNRNKZ.js.map
 │   │   ├── origCard-v6efiCUP.webp
 │   │   ├── ped-DQ0yC5mH.png
 │   │   ├── ped-DSQu9cw_.webp
 │   │   ├── ped1024px-Cm2Aps5H.png
 │   │   ├── ped1024px-CPx5BjZT.webp
 │   │   ├── place-DDK9ZJU7.webp
-│   │   ├── price-sPgBsYO4.js.map
-│   │   ├── privacy-sPgBsYO4.js.map
-│   │   ├── reviews-sPgBsYO4.js.map
+│   │   ├── price-l0sNRNKZ.js.map
+│   │   ├── privacy-l0sNRNKZ.js.map
+│   │   ├── reviews-l0sNRNKZ.js.map
 │   │   ├── serviceman-D9BkFTw_.png
 │   │   ├── serviceman-DUfVzbB4.webp
 │   │   ├── serviceman1024px-BNDimL9N.webp
 │   │   ├── serviceman1024px-l9lJVJH0.png
-│   │   ├── sideMenu-B-HCbgL4.js
-│   │   ├── sideMenu-B-HCbgL4.js.map
+│   │   ├── sideMenu-8Nj3gUjw.js
+│   │   ├── sideMenu-8Nj3gUjw.js.map
 │   │   ├── sideMenu-l0sNRNKZ.js.map
-│   │   ├── spa-sPgBsYO4.js.map
+│   │   ├── spa-l0sNRNKZ.js.map
 │   │   ├── spaCard-BbZPVPAU.webp
 │   │   ├── spa_massage-BUE-nd1v.webp
 │   │   ├── spa_massage-CZYv7-1D.png
@@ -206,18 +210,18 @@ d:/Документы/Обучение/Frontend/прочее/AQUANIKA/
 │   │   ├── styling1024px-CIlZEvgK.png
 │   │   ├── sugaring-BRMJPkRa.png
 │   │   ├── sugaring-Elt73pYd.webp
-│   │   ├── sugaring-sPgBsYO4.js.map
+│   │   ├── sugaring-l0sNRNKZ.js.map
 │   │   ├── sugaring1024px-Cfuh5Kez.png
 │   │   ├── sugaring1024px-I1az37GX.webp
 │   │   ├── tattoo-Degwe2cw.webp
 │   │   ├── tattoo-VEIzVYcl.png
 │   │   ├── tattoo1024px-CqvFImgG.webp
 │   │   ├── tattoo1024px-D8vaKPe4.png
-│   │   ├── team-sPgBsYO4.js.map
-│   │   ├── vacancies-sPgBsYO4.js.map
+│   │   ├── team-l0sNRNKZ.js.map
+│   │   ├── vacancies-l0sNRNKZ.js.map
 │   │   ├── wrapping-4pmcMv3q.png
 │   │   ├── wrapping-DkkwJTtC.webp
-│   │   ├── wrapping-sPgBsYO4.js.map
+│   │   ├── wrapping-l0sNRNKZ.js.map
 │   │   ├── wrapping1024px--qKvPGSM.webp
 │   │   └── wrapping1024px-C-82hHcy.png
 │   ├── components/
@@ -266,24 +270,36 @@ d:/Документы/Обучение/Frontend/прочее/AQUANIKA/
 │   │   ├── team.html
 │   │   ├── vacancies.html
 │   │   └── wrapping.html
+│   ├── robots.txt
+│   ├── sitemap.xml
 │   ├── web-app-manifest-192x192.png
 │   ├── web-app-manifest-512x512.png
-│   └── webmanifest.json
+│   ├── webmanifest.json
+│   └── _headers
 ├─] node_modules/ (ignored)
 ├── package-lock.json
 ├── package.json
 ├── public/
+│   ├── .htaccess
 │   ├── 404.html
 │   ├── apple-touch-icon.png
 │   ├── favicon-96x96.png
 │   ├── favicon.ico
 │   ├── favicon.svg
+│   ├── robots.txt
+│   ├── sitemap.xml
 │   ├── web-app-manifest-192x192.png
 │   ├── web-app-manifest-512x512.png
-│   └── webmanifest.json
+│   ├── webmanifest.json
+│   └── _headers
 ├── README.md
 ├── src/
 │   ├── assets/
+│   │   ├── fonts/
+│   │   │   ├── fa-brands-400.woff2
+│   │   │   ├── fa-regular-400.woff2
+│   │   │   ├── fa-solid-900.woff2
+│   │   │   └── fa-v4compatibility.woff2
 │   │   ├── icons/
 │   │   │   ├── message.svg
 │   │   │   ├── phone.svg
@@ -405,7 +421,7 @@ d:/Документы/Обучение/Frontend/прочее/AQUANIKA/
 │   │   │   │   ├── exten.webp
 │   │   │   │   ├── exten1024px.png
 │   │   │   │   ├── exten1024px.webp
-│   │   │   │   ├── gold-brush.png
+│   │   │   │   ├── gold-brush.webp
 │   │   │   │   ├── hairCard.webp
 │   │   │   │   ├── haircut.png
 │   │   │   │   ├── haircut.webp
@@ -424,6 +440,7 @@ d:/Документы/Обучение/Frontend/прочее/AQUANIKA/
 │   │   │   │   ├── lashe1024px.png
 │   │   │   │   ├── lashe1024px.webp
 │   │   │   │   ├── lasheCard.webp
+│   │   │   │   ├── logo-Photoroom.png
 │   │   │   │   ├── logo.webp
 │   │   │   │   ├── ma-pi.png
 │   │   │   │   ├── ma-pi.webp
@@ -501,6 +518,7 @@ d:/Документы/Обучение/Frontend/прочее/AQUANIKA/
 │   │   │   ├── forms.js
 │   │   │   ├── formsModals.js
 │   │   │   ├── loadComponents.js
+│   │   │   ├── map.js
 │   │   │   ├── mobileMenu.js
 │   │   │   ├── modalGallery.js
 │   │   │   ├── modalVideo.js
@@ -562,6 +580,7 @@ d:/Документы/Обучение/Frontend/прочее/AQUANIKA/
 │   │   │   ├── modal-forms.css
 │   │   │   ├── side-menu.css
 │   │   │   └── sidebar.css
+│   │   ├── font-awesome.css
 │   │   ├── layouts/
 │   │   │   └── container.css
 │   │   ├── main.css
@@ -579,4 +598,5 @@ d:/Документы/Обучение/Frontend/прочее/AQUANIKA/
 │   └── templates/
 │       └── base.html
 ├── stry.txt
-└── vite.config.js
+├── vite.config.js
+└── yandex_e0756192125e9994.html

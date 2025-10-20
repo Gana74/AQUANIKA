@@ -1,7 +1,7 @@
 {
-  "name": "Aqvanika - Салон красоты",
-  "short_name": "Aqvanika",
-  "description": "Профессиональный уход за красотой. Уникальная технология подводно-вакуумного массажа",
+  "name": "AQUANIKA - Салон красоты в Челябинске",
+  "short_name": "AQUANIKA",
+  "description": "Салон красоты AQUANIKA в Челябинске: косметология, макияж, парикмахерские услуги, маникюр/педикюр, SPA и массаж, лазерная эпиляция",
   "start_url": "/",
   "display": "standalone",
   "background_color": "#ffffff",
@@ -10,12 +10,14 @@
     {
       "src": "/web-app-manifest-192x192.png",
       "sizes": "192x192",
-      "type": "image/png"
+      "type": "image/png",
+      "purpose": "any maskable"
     },
     {
       "src": "/web-app-manifest-512x512.png",
       "sizes": "512x512",
-      "type": "image/png"
+      "type": "image/png",
+      "purpose": "any maskable"
     }
   ]
 }
