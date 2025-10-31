@@ -52,6 +52,7 @@ export const routes = {
   "/services/hairdressing/haircuts": "/pages/haircuts.html",
   "/services/hairdressing/coloring": "/pages/hair-coloring.html",
   "/services/hairdressing/styling": "/pages/hair-styling.html",
+  "/services/hairdressing/hair-care": "/pages/hair-care.html",
 
   "/services/makeup": "/pages/makeup.html",
 
@@ -106,6 +107,7 @@ const pageTitles = {
   "/services/hairdressing/haircuts": "Стрижки – Aquanika",
   "/services/hairdressing/coloring": "Окрашивание – Aquanika",
   "/services/hairdressing/styling": "Укладки – Aquanika",
+  "/services/hairdressing/hair-care": "Уход за волосами – Aquanika",
   "/services/makeup": "Макияж – Aquanika",
   "/services/men": "Услуги для мужчин – Aquanika",
   "/services/men/haircut": "Для мужчин — Стрижка – Aquanika",

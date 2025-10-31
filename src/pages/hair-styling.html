@@ -69,29 +69,30 @@
         <nav class="submenu">
           <ul class="submenu__list">
             <li class="submenu__item">
-              <a href="/AQUANIKA/services/hairdressing" class="submenu__link"
+              <a href="/services/hairdressing" class="submenu__link"
                 >Парикмахерские услуги</a
               >
             </li>
             <li class="submenu__item">
-              <a
-                href="/AQUANIKA/services/hairdressing/haircuts"
-                class="submenu__link"
+              <a href="/services/hairdressing/haircuts" class="submenu__link"
                 >Стрижки</a
               >
             </li>
             <li class="submenu__item">
-              <a
-                href="/AQUANIKA/services/hairdressing/coloring"
-                class="submenu__link"
+              <a href="/services/hairdressing/coloring" class="submenu__link"
                 >Окрашивание</a
               >
             </li>
             <li class="submenu__item">
               <a
-                href="/AQUANIKA/services/hairdressing/styling"
+                href="/services/hairdressing/styling"
                 class="submenu__link active"
                 >Укладки</a
+              >
+            </li>
+            <li class="submenu__item">
+              <a href="/services/hairdressing/hair-care" class="submenu__link"
+                >Восстановление и уход</a
               >
             </li>
           </ul>
@@ -108,11 +109,7 @@
                 <p class="service-intro__text">
                   Профессиональная укладка волос от мастеров салона Aquanika —
                   это искусство создания идеального образа с помощью современных
-                  техник и качественных средств. Мы предлагаем различные виды
-                  укладок, каждая из которых выполняется с учетом индивидуальных
-                  предпочтений клиента. Наши мастера используют профессиональные
-                  инструменты и продукты, чтобы подарить вам безупречные волосы,
-                  которые подчеркнут вашу женственность и стиль.
+                  техник и качественных средств.
                 </p>
 
                 <div class="service-intro__buttons">
@@ -187,33 +184,92 @@
           <!-- Прайс -->
           <div class="service-prices">
             <h2 id="stylingTables" class="section-title">
-              Прайс-лист на укладку волос
+              Прайс-лист: Укладки и прически
             </h2>
             <div class="price-tables">
               <div class="price-table">
                 <table>
                   <thead>
                     <tr>
-                      <th>Услуга</th>
-                      <th>Цена</th>
+                      <th class="price-table__service">Услуга</th>
+                      <th class="price-table__price">Цена</th>
                     </tr>
                   </thead>
                   <tbody class="price-table__bg">
                     <tr>
-                      <td>Праздничная детская прическа</td>
-                      <td>1 500 ₽</td>
+                      <td class="price-table__service">
+                        Мытье головы
+                        <span class="price-table__duration">(30 мин)</span>
+                      </td>
+                      <td class="price-table__price">
+                        <strong>800 – 1 000 ₽</strong>
+                      </td>
                     </tr>
                     <tr>
-                      <td>Биозавивка (короткая длина волос)</td>
-                      <td>4 000 – 7 000 ₽</td>
+                      <td class="price-table__service">
+                        Биозавивка (короткая длина волос)
+                        <span class="price-table__duration">(3 ч 30 мин)</span>
+                        <span class="price-table__note"
+                          >Долговременная кудрявая укладка без агрессивных
+                          компонентов</span
+                        >
+                      </td>
+                      <td class="price-table__price">
+                        <strong>4 000 – 5 000 ₽</strong>
+                      </td>
                     </tr>
                     <tr>
-                      <td>Биозавивка (длинные волосы)</td>
-                      <td>6 000 – 8 000 ₽</td>
+                      <td class="price-table__service">
+                        Биозавивка (средняя длина волос)
+                        <span class="price-table__duration">(4 ч)</span>
+                        <span class="price-table__note"
+                          >Долговременная кудрявая укладка без агрессивных
+                          компонентов</span
+                        >
+                      </td>
+                      <td class="price-table__price">
+                        <strong>5 000 – 7 000 ₽</strong>
+                      </td>
                     </tr>
                     <tr>
-                      <td>Прическа (вечерняя, свадебная)</td>
-                      <td>2 000 – 3 500 ₽</td>
+                      <td class="price-table__service">
+                        Биозавивка (длинные волосы)
+                        <span class="price-table__duration">(5 ч)</span>
+                        <span class="price-table__note"
+                          >Долговременная кудрявая укладка без агрессивных
+                          компонентов</span
+                        >
+                      </td>
+                      <td class="price-table__price">
+                        <strong>6 000 – 8 000 ₽</strong>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="price-table__service">
+                        Праздничная детская прическа
+                        <span class="price-table__duration">(1 ч 30 мин)</span>
+                      </td>
+                      <td class="price-table__price">
+                        <strong>1 500 ₽</strong>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="price-table__service">
+                        Прическа (вечерняя, свадебная)
+                        <span class="price-table__duration">(1 ч 30 мин)</span>
+                      </td>
+                      <td class="price-table__price">
+                        <strong>2 000 – 3 500 ₽</strong>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="price-table__service">
+                        Точечные косы
+                        <span class="price-table__duration">(5 ч)</span>
+                      </td>
+                      <td class="price-table__price">
+                        <strong>3 000 – 8 000 ₽</strong>
+                      </td>
                     </tr>
                   </tbody>
                 </table>

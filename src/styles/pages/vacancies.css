@@ -16,3 +16,64 @@
   padding-bottom: 0.8em;
   font-size: var(--font-size-lg);
 }
+
+/* Стили для новой вакансии */
+.vacancy-card {
+  background-color: var(--color-white);
+  border-radius: var(--border-radius-lg);
+  padding: var(--spacing-xl);
+  margin: var(--spacing-xl) 0;
+  box-shadow: var(--shadow-md);
+  border-left: 4px solid var(--color-primary);
+}
+
+.vacancy-title {
+  color: var(--color-primary);
+  font-size: var(--font-size-2xl);
+  margin-bottom: var(--spacing-md);
+  font-family: var(--font-primary);
+}
+
+.vacancy-details {
+  margin-bottom: var(--spacing-lg);
+}
+
+.vacancy-feature {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: var(--spacing-sm);
+}
+
+.vacancy-feature i {
+  color: var(--color-primary);
+  margin-right: var(--spacing-sm);
+  margin-top: 0.2rem;
+}
+
+.vacancy-highlight {
+  background-color: var(--color-primary-light);
+  padding: var(--spacing-md);
+  border-radius: var(--border-radius);
+  margin: var(--spacing-lg) 0;
+  border: 1px solid var(--color-primary);
+}
+
+.vacancy-contact {
+  text-align: center;
+  margin-top: var(--spacing-2xl);
+  padding-top: var(--spacing-lg);
+  border-top: 1px solid var(--color-border);
+}
+
+.phone__link {
+  color: var(--color-primary);
+  font-weight: bold;
+  font-size: var(--font-size-xl);
+  text-decoration: none;
+  transition: color var(--transition-normal);
+}
+
+.phone__link:hover {
+  color: var(--color-primary-dark);
+  text-decoration: underline;
+}

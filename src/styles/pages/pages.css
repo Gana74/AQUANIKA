@@ -287,6 +287,19 @@
 .price-table thead th {
   padding-left: 3rem;
 }
+.price-table__duration {
+  /* display: inline-block; */
+  color: var(--color-gray);
+  font-size: 0.8rem;
+  font-weight: 500;
+}
+
+.price-table__note {
+  display: block;
+  color: var(--color-text-light);
+  font-size: 0.8rem;
+  font-weight: 500;
+}
 
 /* Галерея */
 .gallery-grid {
@@ -442,7 +455,6 @@
     right: 0;
     bottom: 0;
     z-index: 1;
-    /* border-radius: var(--border-radius-xl); */
     overflow: hidden;
   }
 
@@ -458,15 +470,14 @@
   .container__title-left {
     position: relative;
     z-index: 2;
-    padding: 2rem;
-    /* border-radius: var(--border-radius-xl); */
+    padding: var(--spacing-md);
     -webkit-box-flex: 0;
     -ms-flex: none;
     flex: none;
   }
 
-  .service-intro__text {
-    display: none;
+  .container__title-left {
+    background-color: rgba(255, 255, 255, 0.5);
   }
 
   /* Сетка карточек — в строку (не колонка!) */
@@ -553,34 +564,20 @@
   .price-table {
     font-size: small;
   }
-
-  .service-title {
-    -webkit-backdrop-filter: blur(10px);
-    backdrop-filter: blur(10px);
-    background-color: rgba(255, 255, 255, 0.5);
-  }
 }
 
 @media (max-width: 480px) {
-  .service-title {
-    -webkit-backdrop-filter: none;
-    backdrop-filter: none;
-    background-color: unset;
-  }
-
   .container__title {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
     -ms-flex-direction: column;
     flex-direction: column;
     max-height: 330px;
-
     gap: 0;
   }
 
   .container__title-left {
     padding: var(--spacing-sm);
-    background-color: rgba(255, 255, 255, 0.5);
   }
 
   .service-intro__buttons {
