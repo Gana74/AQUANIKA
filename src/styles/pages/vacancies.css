@@ -64,16 +64,3 @@
   padding-top: var(--spacing-lg);
   border-top: 1px solid var(--color-border);
 }
-
-.phone__link {
-  color: var(--color-primary);
-  font-weight: bold;
-  font-size: var(--font-size-xl);
-  text-decoration: none;
-  transition: color var(--transition-normal);
-}
-
-.phone__link:hover {
-  color: var(--color-primary-dark);
-  text-decoration: underline;
-}

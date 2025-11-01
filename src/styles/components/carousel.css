@@ -39,7 +39,6 @@
 
 .promo-carousel__slide picture {
   position: absolute;
-
   right: 0; /* Прижимает к правому краю */
   width: -webkit-fit-content;
   width: -moz-fit-content;
@@ -88,6 +87,7 @@
 }
 
 .promo-carousel__title {
+  color: var(--color-secondary-dark);
   font-size: var(--font-size-4xl);
   font-weight: 700;
   margin-bottom: var(--spacing-md);
@@ -388,6 +388,7 @@
 
   .promo-carousel__description {
     font-size: var(--font-size-base);
+    font-weight: 600;
   }
 
   .promo-carousel--compact .promo-carousel__slide {
@@ -417,6 +418,7 @@
 
   .promo-carousel__content {
     padding: var(--spacing-lg);
+    background-color: rgba(255, 255, 255, 0.5);
   }
 
   .promo-carousel__title {
