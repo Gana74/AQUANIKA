@@ -445,17 +445,134 @@ function buildCookieBanner() {
 function initAnalytics() {
   console.log("📊 Инициализация аналитики (после согласия пользователя)");
 
-  // Здесь можно добавить Яндекс.Метрику или другие российские системы
-  // Пример для Яндекс.Метрики:
-  /*
-  if (typeof ym !== 'undefined') {
-    ym(12345678, 'init', {
-      clickmap: true,
-      trackLinks: true,
-      accurateTrackBounce: true
-    });
+  // Универсальная загрузка скрипта Метрики (однократно)
+  (function (m, e, t, r, i, k, a) {
+    m[i] =
+      m[i] ||
+      function () {
+        (m[i].a = m[i].a || []).push(arguments);
+      };
+    m[i].l = 1 * new Date();
+    for (var j = 0; j < document.scripts.length; j++) {
+      if (document.scripts[j].src === r) {
+        return; // Уже подключено
+      }
+    }
+    (k = e.createElement(t)),
+      (a = e.getElementsByTagName(t)[0]),
+      (k.async = 1),
+      (k.src = r),
+      a.parentNode.insertBefore(k, a);
+  })(
+    window,
+    document,
+    "script",
+    "https://mc.yandex.ru/metrika/tag.js",
+    "ym"
+  );
+
+  // ВАШ ID счетчика
+  const YM_ID = 105193701;
+
+  // Инициализация с defer:true для SPA
+  ym(YM_ID, "init", {
+    defer: true,
+    webvisor: true,
+    clickmap: true,
+    trackLinks: true,
+    accurateTrackBounce: true,
+    ecommerce: "dataLayer",
+  });
+
+  // Экспортируем хелперы глобально один раз
+  if (!window.__ymHelpersInstalled) {
+    window.__ymHelpersInstalled = true;
+
+    // Безопасный hit
+    window.ymHit = function ymHit(url, options) {
+      try {
+        if (typeof ym !== "function") return;
+        const finalUrl = url || window.location.href;
+        const { title = document.title, referer, params, callback, ctx } =
+          options || {};
+        ym(YM_ID, "hit", finalUrl, {
+          title,
+          referer,
+          params,
+          callback,
+          ctx,
+        });
+      } catch (e) {
+        console.warn("Yandex.Metrica hit error:", e);
+      }
+    };
+
+    // Достижение цели
+    window.ymGoal = function ymGoal(name, params) {
+      try {
+        if (typeof ym !== "function") return;
+        ym(YM_ID, "reachGoal", name, params);
+      } catch (e) {
+        console.warn("Yandex.Metrica reachGoal error:", e);
+      }
+    };
+
+    // Параметры визита/пользователя
+    window.ymParams = function ymParams(obj) {
+      try {
+        if (typeof ym !== "function") return;
+        ym(YM_ID, "params", obj);
+      } catch (e) {
+        console.warn("Yandex.Metrica params error:", e);
+      }
+    };
+
+    // Деинициализация
+    window.ymDestruct = function ymDestruct() {
+      try {
+        if (typeof ym !== "function") return;
+        ym(YM_ID, "destruct");
+      } catch (e) {
+        console.warn("Yandex.Metrica destruct error:", e);
+      }
+    };
+
+    // Авто-отправка hit для SPA: первичная загрузка + навигация
+    (function setupSpaHits() {
+      let lastUrl = window.location.href;
+
+      // Первичный просмотр
+      window.ymHit(lastUrl, { referer: document.referrer || undefined });
+
+      const wrapHistoryMethod = (type) => {
+        const orig = history[type];
+        return function (...args) {
+          const result = orig.apply(this, args);
+          const newUrl = window.location.href;
+          if (newUrl !== lastUrl) {
+            window.ymHit(newUrl, { referer: lastUrl });
+            lastUrl = newUrl;
+          }
+          return result;
+        };
+      };
+
+      try {
+        history.pushState = wrapHistoryMethod("pushState");
+        history.replaceState = wrapHistoryMethod("replaceState");
+      } catch (e) {
+        console.warn("History interception failed", e);
+      }
+
+      window.addEventListener("popstate", () => {
+        const newUrl = window.location.href;
+        if (newUrl !== lastUrl) {
+          window.ymHit(newUrl, { referer: lastUrl });
+          lastUrl = newUrl;
+        }
+      });
+    })();
   }
-  */
 }
 
 // Добавление согласия в формы обратной связи

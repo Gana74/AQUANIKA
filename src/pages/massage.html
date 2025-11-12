@@ -3,59 +3,120 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Основные мета-теги -->
+    <title>
+      AQUANIKA — Массаж в Челябинске | Классический, антицеллюлитный, релакс
+    </title>
     <meta
       name="description"
-      content="Профессиональный массаж в Челябинске: классический, релакс, антицеллюлитный, лимфодренажный. Опытные мастера, индивидуальный подход. Запись онлайн в салоне AQUANIKA."
+      content="Профессиональный массаж в Челябинске: классический, антицеллюлитный, релакс, лимфодренажный. Опытные мастера, индивидуальный подход. Запись онлайн в салоне AQUANIKA."
     />
-    <title>
-      Массаж в Челябинске: классический, релакс, антицеллюлитный | AQUANIKA
-    </title>
 
-    <link rel="canonical" href="https://aquanika74.ru/services/massage" />
+    <!-- Гео-метатеги -->
+    <meta name="geo.region" content="RU-CHE" />
+    <meta name="geo.placename" content="Челябинск" />
+    <meta name="geo.position" content="55.164442;61.436843" />
+    <meta name="ICBM" content="55.164442, 61.436843" />
+
+    <!-- Open Graph -->
     <meta property="og:locale" content="ru_RU" />
     <meta property="og:type" content="article" />
     <meta property="og:site_name" content="AQUANIKA" />
     <meta
       property="og:title"
-      content="Массаж в Челябинске: классический, релакс, антицеллюлитный | AQUANIKA"
+      content="AQUANIKA — Массаж в Челябинске | Классический, антицеллюлитный, релакс"
     />
     <meta
       property="og:description"
-      content="Профессиональный массаж в Челябинске: классический, релакс, антицеллюлитный, лимфодренажный. Опытные мастера, индивидуальный подход."
+      content="Профессиональный массаж в Челябинске: классический, антицеллюлитный, релакс, лимфодренажный. Опытные мастера, индивидуальный подход."
     />
     <meta property="og:url" content="https://aquanika74.ru/services/massage" />
     <meta
       property="og:image"
-      content="https://aquanika74.ru/web-app-manifest-512x512.png"
+      content="https://aquanika74.ru/assets/images/services/massage1024px.png"
     />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
 
+    <!-- Автор и копирайт -->
+    <meta name="author" content="Салон красоты AQUANIKA Челябинск" />
+    <meta name="copyright" content="AQUANIKA" />
+
+    <!-- Canonical -->
+    <link rel="canonical" href="https://aquanika74.ru/services/massage" />
+
+    <!-- Structured Data для услуги -->
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
         "@type": "Service",
         "name": "Массаж",
-        "serviceType": "Massage",
-        "description": "Профессиональный массаж в Челябинске: классический, релакс, антицеллюлитный, лимфодренажный. Опытные мастера, индивидуальный подход",
-        "areaServed": {
-          "@type": "City",
-          "name": "Челябинск"
-        },
+        "description": "Профессиональный массаж в Челябинске: классический, антицеллюлитный, релакс, лимфодренажный. Опытные мастера, индивидуальный подход",
         "provider": {
           "@type": "BeautySalon",
           "name": "AQUANIKA",
+          "description": "Салон красоты AQUANIKA в Челябинске: косметология, SPA-процедуры, маникюр, педикюр, парикмахерские услуги, массаж",
+          "telephone": "+79227445287",
           "address": {
             "@type": "PostalAddress",
             "streetAddress": "ул. Братьев Кашириных, 131",
             "addressLocality": "Челябинск",
-            "addressCountry": "RU"
-          }
+            "addressCountry": "RU",
+            "postalCode": "454021"
+          },
+          "openingHours": ["Mo-Su 10:00-21:00"],
+          "priceRange": "₽₽"
         },
-        "url": "https://aquanika74.ru/services/massage",
-        "offers": {
-          "@type": "Offer",
-          "price": "1300",
-          "priceCurrency": "RUB",
-          "description": "Пробное посещение: классический массаж"
+        "areaServed": {
+          "@type": "City",
+          "name": "Челябинск"
+        },
+        "hasOfferCatalog": {
+          "@type": "OfferCatalog",
+          "name": "Услуги массажа",
+          "itemListElement": [
+            {
+              "@type": "Offer",
+              "price": "1300",
+              "priceCurrency": "RUB",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "Пробное посещение: классический массаж всего тела",
+                "description": "Пробный сеанс классического массажа всего тела 45 минут"
+              }
+            },
+            {
+              "@type": "Offer",
+              "price": "2500",
+              "priceCurrency": "RUB",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "Классический массаж всего тела",
+                "description": "Классический массаж всего тела 1 час"
+              }
+            },
+            {
+              "@type": "Offer",
+              "price": "2500",
+              "priceCurrency": "RUB",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "Антицеллюлитный массаж",
+                "description": "Антицеллюлитный массаж ягодиц, бедер, живота и спины 1 час"
+              }
+            },
+            {
+              "@type": "Offer",
+              "price": "3000",
+              "priceCurrency": "RUB",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "Антицеллюлитный массаж + обёртывание",
+                "description": "Комплексная процедура: антицеллюлитный массаж с обёртыванием 1 час 40 минут"
+              }
+            }
+          ]
         }
       }
     </script>

@@ -13,6 +13,7 @@ RewriteRule ^(.*)$ /index.html [L]
     Header always set X-Frame-Options DENY
     Header always set X-XSS-Protection "1; mode=block"
     Header always set Referrer-Policy "strict-origin-when-cross-origin"
+    Header set Content-Security-Policy "default-src 'self'; connect-src 'self' https://formspree.io https://api-maps.yandex.ru https://mc.yandex.ru wss://mc.yandex.ru ws://localhost:5173; frame-src 'self' https://yandex.ru https://mc.yandex.ru; img-src 'self' data: https://mc.yandex.ru; script-src 'self' 'unsafe-inline' https://mc.yandex.ru; style-src 'self' 'unsafe-inline';"
 </IfModule>
 
 # Кэширование статических файлов

@@ -3,33 +3,76 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta
-      name="description"
-      content="Стрижки в Челябинске — женские, мужские, детские. Современные техники, идеальные линии. AQUANIKA: прайс и онлайн‑запись."
-    />
-    <title>Стрижки в Челябинске: женские, мужские, детские | AQUANIKA</title>
 
-    <!-- Исправляем canonical и URL -->
+    <!-- Основные SEO-метатеги -->
+    <title>AQUANIKA — Стрижки в Челябинске | Женские, мужские, детские</title>
     <link
       rel="canonical"
       href="https://aquanika74.ru/services/hairdressing/haircuts"
+    />
+
+    <!-- Description -->
+    <meta
+      name="description"
+      content="Профессиональные стрижки в Челябинске: женские, мужские, детские. Современные техники, индивидуальный подход. Опытные мастера салона AQUANIKA. Запись онлайн"
+    />
+
+    <!-- Keywords -->
+    <meta
+      name="keywords"
+      content="стрижки Челябинск, женские стрижки, мужские стрижки, детские стрижки, парикмахерская Челябинск, стрижка волос, AQUANIKA, салон красоты Челябинск"
+    />
+
+    <!-- Автор и копирайт -->
+    <meta name="author" content="Салон красоты AQUANIKA Челябинск" />
+    <meta name="copyright" content="AQUANIKA" />
+
+    <!-- Гео-метатеги -->
+    <meta name="geo.region" content="RU-CHE" />
+    <meta name="geo.placename" content="Челябинск" />
+    <meta name="geo.position" content="55.164442;61.436843" />
+    <meta name="ICBM" content="55.164442, 61.436843" />
+
+    <!-- Open Graph -->
+    <meta property="og:locale" content="ru_RU" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="AQUANIKA" />
+    <meta
+      property="og:title"
+      content="AQUANIKA — Стрижки в Челябинске | Женские, мужские, детские"
+    />
+    <meta
+      property="og:description"
+      content="Профессиональные стрижки в Челябинске: женские, мужские, детские. Современные техники, индивидуальный подход. Опытные мастера салона AQUANIKA."
     />
     <meta
       property="og:url"
       content="https://aquanika74.ru/services/hairdressing/haircuts"
     />
-
-    <!-- Улучшаем мета-описания -->
     <meta
-      name="description"
-      content="Профессиональные стрижки в Челябинске: женские, мужские, детские. Современные техники, индивидуальный подход. Запись онлайн в салоне AQUANIKA."
+      property="og:image"
+      content="https://aquanika74.ru/assets/images/services/haircut.png"
     />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
     <meta
-      property="og:description"
-      content="Профессиональные стрижки в Челябинске: женские, мужские, детские. Современные техники, индивидуальный подход."
+      property="og:image:alt"
+      content="Профессиональные стрижки в салоне AQUANIKA Челябинск"
     />
 
-    <!-- Улучшаем структурированные данные -->
+    <!-- Дополнительные ссылки -->
+    <link
+      rel="alternate"
+      hreflang="ru"
+      href="https://aquanika74.ru/services/hairdressing/haircuts"
+    />
+    <link
+      rel="alternate"
+      hreflang="x-default"
+      href="https://aquanika74.ru/services/hairdressing/haircuts"
+    />
+
+    <!-- Structured Data -->
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
@@ -37,26 +80,83 @@
         "name": "Стрижки волос",
         "serviceType": "Haircut",
         "description": "Профессиональные стрижки в Челябинске: женские, мужские, детские. Современные техники, индивидуальный подход",
-        "areaServed": {
-          "@type": "City",
-          "name": "Челябинск"
-        },
+
         "provider": {
           "@type": "BeautySalon",
           "name": "AQUANIKA",
+          "description": "Салон красоты AQUANIKA в Челябинске: косметология, SPA-процедуры, маникюр, педикюр, парикмахерские услуги, лазерная эпиляция",
+          "url": "https://aquanika74.ru/",
+          "telephone": "+79227445287",
           "address": {
             "@type": "PostalAddress",
             "streetAddress": "ул. Братьев Кашириных, 131",
             "addressLocality": "Челябинск",
-            "addressCountry": "RU"
+            "addressCountry": "RU",
+            "postalCode": "454021"
+          },
+          "openingHours": ["Mo-Su 10:00-21:00"],
+          "priceRange": "₽₽",
+          "aggregateRating": {
+            "@type": "AggregateRating",
+            "ratingValue": "4.9",
+            "bestRating": "5",
+            "worstRating": "1",
+            "ratingCount": "47"
           }
         },
+
+        "areaServed": {
+          "@type": "City",
+          "name": "Челябинск"
+        },
+
         "url": "https://aquanika74.ru/services/hairdressing/haircuts",
-        "offers": {
-          "@type": "Offer",
-          "price": "500",
-          "priceCurrency": "RUB",
-          "description": "Оформление челки"
+
+        "hasOfferCatalog": {
+          "@type": "OfferCatalog",
+          "name": "Услуги стрижек",
+          "itemListElement": [
+            {
+              "@type": "Offer",
+              "price": "500",
+              "priceCurrency": "RUB",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "Оформление челки",
+                "description": "Коррекция и оформление челки в Челябинске"
+              }
+            },
+            {
+              "@type": "Offer",
+              "price": "1600",
+              "priceCurrency": "RUB",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "Женская стрижка",
+                "description": "Профессиональная женская стрижка в Челябинске"
+              }
+            },
+            {
+              "@type": "Offer",
+              "price": "1000",
+              "priceCurrency": "RUB",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "Мужская стрижка",
+                "description": "Стильная мужская стрижка в Челябинске"
+              }
+            },
+            {
+              "@type": "Offer",
+              "price": "600",
+              "priceCurrency": "RUB",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "Детская стрижка",
+                "description": "Бережная стрижка для детей в Челябинске"
+              }
+            }
+          ]
         }
       }
     </script>

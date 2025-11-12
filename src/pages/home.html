@@ -4,43 +4,76 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta
-      name="description"
-      content="Aquanika - салон красоты премиум класса. Профессиональные услуги красоты и ухода за телом."
-    />
-    <title>Aquanika - Салон красоты премиум класса</title>
 
-    <!-- Добавляем SEO-метатеги и структурированные данные. -->
+    <!-- SEO-метатеги -->
+    <title>
+      AQUANIKA — салон красоты в Челябинске | Косметология, SPA, маникюр
+    </title>
     <link rel="canonical" href="https://aquanika74.ru/" />
     <meta
       name="description"
-      content="Салон красоты Aquanika в Челябинске - профессиональные услуги: косметология, парикмахерские услуги, маникюр, массаж, эпиляция. Премиум-класс, опытные мастера, онлайн-запись."
+      content="Салон красоты AQUANIKA в Челябинске: косметология, SPA-процедуры, маникюр, педикюр, парикмахерские услуги, лазерная эпиляция. Онлайн-запись 24/7."
+    />
+    <meta
+      name="keywords"
+      content="салон красоты Челябинск, косметология Челябинск, маникюр Челябинск, SPA салон Челябинск, парикмахерская Челябинск, лазерная эпиляция Челябинск, ногтевой сервис, подводно-вакуумный массаж Акваника"
     />
 
+    <!-- Автор и копирайт -->
+    <meta name="author" content="Салон красоты AQUANIKA Челябинск" />
+    <meta name="copyright" content="AQUANIKA" />
+
+    <!-- Гео-метатеги -->
+    <meta name="geo.region" content="RU-CHE" />
+    <meta name="geo.placename" content="Челябинск" />
+    <meta name="geo.position" content="55.164442;61.436843" />
+    <meta name="ICBM" content="55.164442, 61.436843" />
+
+    <!-- Open Graph -->
     <meta property="og:locale" content="ru_RU" />
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content="AQUANIKA" />
     <meta
       property="og:title"
-      content="Салон красоты Aquanika в Челябинске - премиум услуги красоты"
+      content="AQUANIKA — салон красоты в Челябинске | Косметология, SPA, маникюр"
     />
     <meta
       property="og:description"
-      content="Профессиональный салон красоты в Челябинске: косметология, парикмахерские услуги, маникюр, массаж, эпиляция. Опытные мастера, современное оборудование."
+      content="Салон красоты AQUANIKA в Челябинске: косметология, SPA-процедуры, маникюр, педикюр, парикмахерские услуги. Онлайн-запись 24/7."
     />
     <meta property="og:url" content="https://aquanika74.ru/" />
     <meta
       property="og:image"
-      content="https://aquanika74.ru/web-app-manifest-512x512.png"
+      content="https://aquanika74.ru/assets/images/services/carusel/aq.png"
+    />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta
+      property="og:image:alt"
+      content="Салон красоты AQUANIKA в Челябинске"
     />
 
-    <!-- Structured Data для салона красоты -->
+    <!-- Дополнительные ссылки -->
+    <link rel="alternate" hreflang="ru" href="https://aquanika74.ru/" />
+    <link rel="alternate" hreflang="x-default" href="https://aquanika74.ru/" />
+
+    <!-- Preload критичных ресурсов -->
+    <link rel="preload" href="/assets/images/carusel/aq.png" as="image" />
+    <link rel="preload" href="/assets/css/main.css" as="style" />
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+
+    <!-- Structured Data -->
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
         "@type": "BeautySalon",
-        "name": "Aquanika",
-        "description": "Салон красоты премиум-класса в Челябинске",
+        "name": "AQUANIKA",
+        "description": "Салон красоты AQUANIKA в Челябинске: косметология, SPA-процедуры, маникюр, педикюр, парикмахерские услуги, лазерная эпиляция",
         "url": "https://aquanika74.ru/",
         "telephone": "+79227445287",
         "address": {
@@ -52,6 +85,14 @@
         },
         "openingHours": ["Mo-Su 10:00-21:00"],
         "priceRange": "₽₽",
+        "areaServed": "Челябинск и область",
+        "aggregateRating": {
+          "@type": "AggregateRating",
+          "ratingValue": "4.9",
+          "bestRating": "5",
+          "worstRating": "1",
+          "ratingCount": "47"
+        },
         "serviceType": [
           "Косметология",
           "Парикмахерские услуги",
@@ -62,33 +103,62 @@
         ],
         "hasOfferCatalog": {
           "@type": "OfferCatalog",
-          "name": "Услуги салона",
+          "name": "Услуги салона красоты AQUANIKA",
           "itemListElement": [
             {
               "@type": "Offer",
               "itemOffered": {
                 "@type": "Service",
-                "name": "Косметология"
+                "name": "Косметология",
+                "description": "Профессиональный уход за кожей лица в Челябинске"
               }
             },
             {
               "@type": "Offer",
               "itemOffered": {
                 "@type": "Service",
-                "name": "Парикмахерские услуги"
+                "name": "Парикмахерские услуги",
+                "description": "Стрижки, окрашивание и укладки в Челябинске"
               }
             },
             {
               "@type": "Offer",
               "itemOffered": {
                 "@type": "Service",
-                "name": "Маникюр и педикюр"
+                "name": "Маникюр и педикюр",
+                "description": "Ногтевой сервис в Челябинске"
+              }
+            },
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "SPA и массаж",
+                "description": "Расслабляющие процедуры в Челябинске"
+              }
+            },
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "Эпиляция",
+                "description": "Лазерная эпиляция и шугаринг в Челябинске"
+              }
+            },
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "Брови и ресницы",
+                "description": "Архитектура бровей и наращивание ресниц в Челябинске"
               }
             }
           ]
         }
       }
     </script>
+
+  
   </head>
   <body>
     <main>
