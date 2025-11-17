@@ -443,8 +443,6 @@ function buildCookieBanner() {
 
 // Инициализация аналитики (после согласия)
 function initAnalytics() {
-  console.log("📊 Инициализация аналитики (после согласия пользователя)");
-
   // Универсальная загрузка скрипта Метрики (однократно)
   (function (m, e, t, r, i, k, a) {
     m[i] =
@@ -463,13 +461,7 @@ function initAnalytics() {
       (k.async = 1),
       (k.src = r),
       a.parentNode.insertBefore(k, a);
-  })(
-    window,
-    document,
-    "script",
-    "https://mc.yandex.ru/metrika/tag.js",
-    "ym"
-  );
+  })(window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
 
   // ВАШ ID счетчика
   const YM_ID = 105193701;
@@ -493,8 +485,13 @@ function initAnalytics() {
       try {
         if (typeof ym !== "function") return;
         const finalUrl = url || window.location.href;
-        const { title = document.title, referer, params, callback, ctx } =
-          options || {};
+        const {
+          title = document.title,
+          referer,
+          params,
+          callback,
+          ctx,
+        } = options || {};
         ym(YM_ID, "hit", finalUrl, {
           title,
           referer,
@@ -688,7 +685,6 @@ function initContactsPage() {
     currentPath.includes("/contacts") || document.getElementById("map");
 
   if (isContactsPage) {
-    console.log("🗺️ Инициализация карты на странице контактов");
     // Даем время DOM для обновления после роутинга
     setTimeout(() => {
       initMap();
@@ -701,16 +697,6 @@ function initContactsPage() {
 
 // Инициализация при загрузке страницы
 document.addEventListener("DOMContentLoaded", async () => {
-  console.log(
-    "🚀 AQUANIKA loaded in",
-    window.location.hostname.includes("github.io")
-      ? "GitHub Pages"
-      : window.location.hostname === "localhost"
-      ? "Local development"
-      : "Production",
-    "mode"
-  );
-
   // ========== ИНИЦИАЛИЗАЦИЯ BREADCRUMBS ==========
   try {
     initBreadcrumbs();

@@ -5,7 +5,6 @@ export class Forms {
   }
 
   init() {
-    console.log("Инициализация форм");
     const forms = document.querySelectorAll(
       'form:not([data-form-initialized="true"])'
     );
@@ -223,6 +222,5 @@ export class Forms {
 
 // Функция инициализации
 export function initForms() {
-  console.log("Запуск инициализации форм");
   return new Forms();
 }

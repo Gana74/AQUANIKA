@@ -413,7 +413,6 @@ export function initFormsModals() {
   createMarkup();
   bindEvents();
   inited = true;
-  console.log("Модальные формы инициализированы");
 }
 
 export default { initFormsModals };

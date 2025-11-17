@@ -24,6 +24,7 @@ export const routes = {
   "/price": "/pages/price.html",
   "/contacts": "/pages/contacts.html",
   "/privacy": "/pages/privacy.html",
+  "/404": "/404.html", // Добавлен маршрут для 404 страницы
 
   "/services/spa": "/pages/spa-and-massage.html",
   "/services/aquanika": "/pages/aquanika-massage.html",
@@ -83,6 +84,7 @@ const pageTitles = {
   "/contacts": "Контакты – Aquanika",
   "/price": "Прайс-лист",
   "/privacy": "Политика конфиденциальности",
+  "/404": "Страница не найдена – Aquanika", // Добавлен заголовок для 404
 
   "/services/spa": "SPA и массаж – Aquanika",
   "/services/aquanika": "Подводно-вакуумный массаж 'Акваника' – Aquanika",
@@ -219,6 +221,11 @@ export function getRoute() {
   return path || "/";
 }
 
+// Проверка существования маршрута
+export function isValidRoute(route) {
+  return routes.hasOwnProperty(route);
+}
+
 // Безопасная вставка контента
 function safelyInsertContent(container, contentNodes) {
   container.replaceChildren(); // Очищаем безопасно
@@ -232,6 +239,12 @@ function safelyInsertContent(container, contentNodes) {
 
 // Загружает контент безопасно
 export async function loadPage(route) {
+  // Проверяем существование маршрута
+  if (!isValidRoute(route) && route !== "/") {
+    console.warn(`🚨 Маршрут не найден: ${route}, показываем страницу 404`);
+    route = "/404";
+  }
+
   const htmlPath = routes[route] || routes["/"];
   const showSideMenu = pagesWithSideMenu.includes(route);
 
@@ -259,8 +272,9 @@ export async function loadPage(route) {
     handleSafeScrolling(showSideMenu);
   } catch (error) {
     console.error("Ошибка загрузки страницы:", error);
-    if (route !== "/") {
-      navigateTo("/");
+    // При ошибке загрузки показываем 404
+    if (route !== "/404") {
+      navigateTo("/404");
     }
   }
 }
@@ -397,7 +411,6 @@ export function handleRedirects() {
   if (isGitHubPages) {
     const redirectPath = sessionStorage.getItem("redirectPath");
     if (redirectPath) {
-      console.log("GitHub Pages редирект:", redirectPath);
       sessionStorage.removeItem("redirectPath");
       if (routes[redirectPath]) {
         navigateTo(redirectPath);
@@ -414,7 +427,6 @@ export function handleRedirects() {
   }
 
   if (cleanPath !== "/" && !cleanPath.endsWith(".html") && routes[cleanPath]) {
-    console.log("Прямой переход по ссылке:", cleanPath);
     navigateTo(cleanPath);
     return true;
   }
@@ -512,6 +524,7 @@ export default {
   basePath,
   routes,
   getRoute,
+  isValidRoute,
   loadPage,
   navigateTo,
   handleRedirects,
