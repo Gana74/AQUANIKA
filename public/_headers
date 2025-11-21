@@ -2,7 +2,9 @@
   X-Frame-Options: DENY
   X-Content-Type-Options: nosniff
   Referrer-Policy: strict-origin-when-cross-origin
-  Content-Security-Policy: default-src 'self'; connect-src 'self' https://formspree.io https://api-maps.yandex.ru https://mc.yandex.ru wss://mc.yandex.ru ws://localhost:5173; frame-src 'self' https://yandex.ru https://mc.yandex.ru; img-src 'self' data: https://mc.yandex.ru; script-src 'self' 'unsafe-inline' https://mc.yandex.ru; style-src 'self' 'unsafe-inline';
+  Strict-Transport-Security: max-age=31536000; includeSubDomains; preload
+  Cross-Origin-Opener-Policy: same-origin
+  Content-Security-Policy: default-src 'self'; connect-src 'self' https://formspree.io https://api-maps.yandex.ru https://mc.yandex.ru https://mc.yandex.com wss://mc.yandex.ru wss://mc.yandex.com ws://localhost:3000; frame-src 'self' https://yandex.ru https://mc.yandex.ru https://mc.yandex.com; img-src 'self' data: https: https://mc.yandex.ru https://mc.yandex.com; script-src 'self' 'unsafe-inline' https://mc.yandex.ru https://mc.yandex.com https://api-maps.yandex.ru https://yastatic.net https://core-renderer-tiles.maps.yandex.net; style-src 'self' 'unsafe-inline' data: https://yastatic.net; font-src 'self' https://yastatic.net; base-uri 'self'; form-action 'self' https://formspree.io;
   
 /assets/*
   Cache-Control: public, max-age=31536000, immutable

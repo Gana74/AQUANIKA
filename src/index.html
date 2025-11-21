@@ -15,16 +15,18 @@
       AQUANIKA — салон красоты в Челябинске | Косметология, SPA, маникюр
     </title>
 
+    <meta name="yandex-verification" content="e0756192125e9994" />
+
     <!-- ========== SECURITY HEADERS ========== -->
     <!-- CSP - Content Security Policy -->
     <meta
       http-equiv="Content-Security-Policy"
       content="default-src 'self' https://mc.yandex.ru https://top-fwz1.mail.ru;
-       script-src 'self' 'unsafe-inline' https://mc.yandex.ru https://api-maps.yandex.ru https://yastatic.net;
-       style-src 'self' 'unsafe-inline' https://yastatic.net;
-       img-src 'self' data: blob: https: http: https://mc.yandex.ru;
-       font-src 'self' data: https://yastatic.net;
-       connect-src 'self' https://formspree.io https://api-maps.yandex.ru https://mc.yandex.ru wss://mc.yandex.ru ws://localhost:5173;
+      script-src 'self' 'unsafe-inline' https://mc.yandex.ru https://mc.yandex.com https://api-maps.yandex.ru https://yastatic.net https://core-renderer-tiles.maps.yandex.net;
+      style-src 'self' 'unsafe-inline' data: https://yastatic.net;
+      img-src 'self' data: blob: https: http: https://mc.yandex.ru https://mc.yandex.com;
+      font-src 'self' data: https://yastatic.net;
+      connect-src 'self' https://formspree.io https://api-maps.yandex.ru https://mc.yandex.ru https://mc.yandex.com wss://mc.yandex.ru wss://mc.yandex.com ws://localhost:3000;
        frame-src 'self' https://n265102.yclients.com https://yandex.ru https://mc.yandex.ru;
        media-src 'self' blob:;
        child-src 'none';
@@ -43,8 +45,9 @@
     />
     <meta
       http-equiv="Strict-Transport-Security"
-      content="max-age=31536000; includeSubDomains"
+      content="max-age=31536000; includeSubDomains; preload"
     />
+    <meta http-equiv="Cross-Origin-Opener-Policy" content="same-origin" />
     <!-- ========== END SECURITY HEADERS ========== -->
 
     <!-- Favicon -->
@@ -60,11 +63,80 @@
     />
 
     <!-- Preload критических ресурсов -->
-    <link rel="preconnect" href="https://formspree.io" />
-    <link rel="preconnect" href="https://api-maps.yandex.ru" />
+    <link rel="preconnect" href="https://mc.yandex.ru" />
 
-    <!-- Стили -->
-    <link rel="stylesheet" href="/styles/main.css" />
+    <style>
+      /* Reset */
+      *,
+      *::before,
+      *::after {
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      /* Links */
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+
+      body {
+        min-height: 100vh;
+        text-rendering: optimizeSpeed;
+        line-height: 1.5;
+        font-family: var(--font-primary);
+        color: var(--color-dark);
+        background-color: var(--color-background);
+      }
+
+      img,
+      picture {
+        max-width: 100%;
+        display: block;
+      }
+
+      .button {
+        display: -webkit-inline-box;
+        display: -ms-inline-flexbox;
+        display: inline-flex;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        justify-content: center;
+        padding: var(--spacing-sm) var(--spacing-lg);
+        border: 2px solid transparent;
+        border-radius: var(--border-radius);
+        font-weight: 600;
+        font-size: var(--font-size-base);
+        line-height: 1.5;
+        text-align: center;
+        cursor: pointer;
+        -webkit-transition: all var(--transition-normal);
+        -o-transition: all var(--transition-normal);
+        transition: all var(--transition-normal);
+        white-space: nowrap;
+      }
+
+      .container {
+        max-width: var(--container-max-width-xl);
+        margin: auto;
+        padding-left: var(--spacing-xl);
+        padding-right: var(--spacing-xl);
+      }
+    </style>
+
+    <!-- Асинхронная загрузка полного CSS -->
+    <link
+      rel="stylesheet"
+      href="/styles/main.css"
+      media="print"
+      onload="this.media='all'"
+    />
+    <noscript><link rel="stylesheet" href="/styles/main.css" /></noscript>
 
     <!-- Canonical -->
     <link rel="canonical" href="https://aquanika74.ru/" />
@@ -130,8 +202,8 @@
                 <i class="fas fa-location-dot"></i>
                 <span>Челябинск</span>
               </div>
-              <button class="mobile-nav__close">
-                <i class="fas fa-times"></i>
+              <button class="mobile-nav__close" aria-label="Закрыть меню">
+                <i class="fas fa-times" aria-hidden="true"></i>
               </button>
             </div>
 
@@ -141,9 +213,10 @@
                 <button
                   class="mobile-nav__category-btn"
                   data-action="show-categories"
+                  aria-label="Показать все услуги"
                 >
                   <span>ВСЕ УСЛУГИ</span>
-                  <i class="fas fa-chevron-down"></i>
+                  <i class="fas fa-chevron-down" aria-hidden="true"></i>
                 </button>
 
                 <!-- Список категорий -->
@@ -152,60 +225,67 @@
                     <button
                       class="mobile-nav__subcategory-btn"
                       data-category="spa"
+                      aria-label="СПА и массаж"
                     >
                       <span>SPA и массаж</span>
-                      <i class="fas fa-chevron-right"></i>
+                      <i class="fas fa-chevron-right" aria-hidden="true"></i>
                     </button>
                   </li>
                   <li>
                     <button
                       class="mobile-nav__subcategory-btn"
                       data-category="epilation"
+                      aria-label="Эпиляция"
                     >
                       <span>Эпиляция</span>
-                      <i class="fas fa-chevron-right"></i>
+                      <i class="fas fa-chevron-right" aria-hidden="true"></i>
                     </button>
                   </li>
                   <li>
                     <button
                       class="mobile-nav__subcategory-btn"
                       data-category="brows"
+                      aria-label="Брови/Ресницы"
                     >
                       <span>Брови/Ресницы</span>
-                      <i class="fas fa-chevron-right"></i>
+                      <i class="fas fa-chevron-right" aria-hidden="true"></i>
                     </button>
                   </li>
                   <li>
                     <button
                       class="mobile-nav__subcategory-btn"
                       data-category="nails"
+                      aria-label="Ногтевой сервис"
                     >
                       <span>Ногтевой сервис</span>
-                      <i class="fas fa-chevron-right"></i>
+                      <i class="fas fa-chevron-right" aria-hidden="true"></i>
                     </button>
                   </li>
                   <li>
                     <button
                       class="mobile-nav__subcategory-btn"
                       data-category="cosmetology"
+                      aria-label="Уход за кожей"
                     >
                       <span>Уход за кожей</span>
-                      <i class="fas fa-chevron-right"></i>
+                      <i class="fas fa-chevron-right" aria-hidden="true"></i>
                     </button>
                   </li>
                   <li>
                     <button
                       class="mobile-nav__subcategory-btn"
                       data-category="hairdressing"
+                      aria-label="Парикмахерские услуги"
                     >
                       <span>Парикмахерские услуги</span>
-                      <i class="fas fa-chevron-right"></i>
+                      <i class="fas fa-chevron-right" aria-hidden="true"></i>
                     </button>
                   </li>
                   <li>
                     <a
                       href="/services/makeup"
                       class="mobile-nav__subcategory-btn"
+                      aria-label="Макияж"
                     >
                       <span>Макияж</span>
                     </a>
@@ -214,9 +294,10 @@
                     <button
                       class="mobile-nav__subcategory-btn"
                       data-category="men"
+                      aria-label="Для Мужчин"
                     >
                       <span>Для Мужчин</span>
-                      <i class="fas fa-chevron-right"></i>
+                      <i class="fas fa-chevron-right" aria-hidden="true"></i>
                     </button>
                   </li>
                 </ul>
@@ -256,33 +337,43 @@
               </div>
 
               <!-- Кнопка действия -->
-              <button class="mobile-nav__action-btn">ЗАДАТЬ ВОПРОС</button>
+              <button class="mobile-nav__action-btn" aria-label="задать вопрос">
+                ЗАДАТЬ ВОПРОС
+              </button>
 
               <!-- Социальные сети -->
               <div class="mobile-nav__social">
                 <a
                   href="https://vk.com/aqvanikachelybinsk"
                   target="_blank"
+                  rel="noopener noreferrer"
                   class="social-link"
-                  ><i class="fab fa-vk"></i
+                  aria-label="Мы в ВКонтакте"
+                  ><i class="fab fa-vk" aria-hidden="true"></i
                 ></a>
                 <a
                   href="https://t.me/+79227445287"
                   target="_blank"
+                  rel="noopener noreferrer"
                   class="social-link"
-                  ><i class="fab fa-telegram"></i
+                  aria-label="Написать в Telegram"
+                  ><i class="fab fa-telegram" aria-hidden="true"></i
                 ></a>
                 <a
                   href="https://wa.me/79227445287"
                   target="_blank"
+                  rel="noopener noreferrer"
                   class="social-link"
-                  ><i class="fab fa-whatsapp"></i
+                  aria-label="Написать в WhatsApp"
+                  ><i class="fab fa-whatsapp" aria-hidden="true"></i
                 ></a>
                 <a
                   href="https://instagram.com/aqva"
                   target="_blank"
+                  rel="noopener noreferrer"
                   class="social-link"
-                  ><i class="fab fa-instagram"></i
+                  aria-label="Мы в Instagram"
+                  ><i class="fab fa-instagram" aria-hidden="true"></i
                 ></a>
               </div>
             </div>
@@ -296,7 +387,7 @@
                 <span>Челябинск</span>
               </div>
               <button class="mobile-nav__back">
-                <i class="fas fa-chevron-left"></i>
+                <i class="fas fa-chevron-left" aria-hidden="true"></i>
               </button>
             </div>
 
@@ -385,8 +476,12 @@
           <i class="fas fa-percent"></i>
           <span>Акции</span>
         </a>
-        <button class="mobile-nav__menu-btn">
-          <i class="fas fa-bars"></i>
+        <button
+          class="mobile-nav__menu-btn"
+          aria-label="Открыть меню"
+          aria-expanded="false"
+        >
+          <i class="fas fa-bars" aria-hidden="true"></i>
           <span>Меню</span>
         </button>
       </div>
@@ -427,7 +522,9 @@
       <a
         href="https://n265102.yclients.com/"
         target="_blank"
+        rel="noopener noreferrer"
         class="btn btn--booking"
+        aria-label="Онлайн запись на услуги"
       >
         <span class="btn--booking__text"
           >Онлайн <br />
@@ -449,6 +546,5 @@
 
     <!-- Подключение JavaScript -->
     <script type="module" src="./js/main.js"></script>
-    <!-- Логика кнопки "Наверх" теперь вынесена в отдельный модуль JS (src/js/components/toTopButton.js) -->
   </body>
 </html>

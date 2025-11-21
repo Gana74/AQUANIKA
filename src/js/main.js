@@ -697,6 +697,8 @@ function initContactsPage() {
 
 // Инициализация при загрузке страницы
 document.addEventListener("DOMContentLoaded", async () => {
+  // Инициализация приложения
+
   // ========== ИНИЦИАЛИЗАЦИЯ BREADCRUMBS ==========
   try {
     initBreadcrumbs();

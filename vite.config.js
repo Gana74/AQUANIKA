@@ -14,7 +14,21 @@ export default defineConfig({
     sourcemap: false,
     assetsDir: "assets",
     cssCodeSplit: true,
-    minify: true,
+    minify: "terser",
+    terserOptions: {
+      compress: {
+        drop_console: true, // Удаляет console.log, console.warn, console.info
+        drop_debugger: true,
+        pure_funcs: ["console.log"], // Дополнительно удаляет console.log
+        passes: 2, // Множественные проходы для лучшей оптимизации
+      },
+      format: {
+        comments: false, // Удаляет комментарии
+      },
+      mangle: {
+        safari10: true, // Исправляет проблемы с Safari 10
+      },
+    },
     copyPublicDir: true,
     rollupOptions: {
       input: {
@@ -70,8 +84,39 @@ export default defineConfig({
         sideMenu: resolve(__dirname, "src/components/partials/side-menu.html"),
       },
       output: {
-        manualChunks: {
-          sideMenu: ["./src/js/components/sideMenu.js"],
+        // Оптимизация имен файлов для кэширования
+        entryFileNames: "assets/js/[name]-[hash].js",
+        chunkFileNames: "assets/js/[name]-[hash].js",
+        assetFileNames: (assetInfo) => {
+          const info = assetInfo.name.split(".");
+          const ext = info[info.length - 1];
+          if (/png|jpe?g|svg|gif|tiff|bmp|ico/i.test(ext)) {
+            return `assets/images/[name]-[hash][extname]`;
+          }
+          if (/woff2?|eot|ttf|otf/i.test(ext)) {
+            return `assets/fonts/[name]-[hash][extname]`;
+          }
+          return `assets/[name]-[hash][extname]`;
+        },
+        // Разделение кода для лучшей производительности
+        manualChunks: (id) => {
+          // Разделение vendor библиотек
+          if (id.includes("node_modules")) {
+            if (id.includes("lazysizes")) {
+              return "vendor-lazysizes";
+            }
+            return "vendor";
+          }
+          // Разделение больших компонентов
+          if (id.includes("components/map.js")) {
+            return "map";
+          }
+          if (id.includes("components/router.js")) {
+            return "router";
+          }
+          if (id.includes("components/sideMenu.js")) {
+            return "sideMenu";
+          }
         },
       },
     },

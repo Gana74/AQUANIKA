@@ -36,6 +36,10 @@
       content="https://aquanika74.ru/web-app-manifest-512x512.png"
     />
 
+    <link rel="preconnect" href="https://api-maps.yandex.ru" />
+    <link rel="preconnect" href="https://yastatic.net" />
+    <link rel="preconnect" href="https://formspree.io" />
+
     <!-- Structured Data -->
     <script type="application/ld+json">
       {
@@ -97,10 +101,14 @@
             </div>
 
             <div class="phone contacts-page__phone">
-              <i class="fas fa-phone"></i>
-              <a href="tel:79227445287" class="phone__link"
-                >+7 (922) 744-52-87</a
+              <i class="fas fa-phone" aria-hidden="true"></i>
+              <a
+                href="tel:+79227445287"
+                class="phone__link"
+                aria-label="Позвонить по номеру +7 922 744-52-87"
               >
+                +7 (922) 744-52-87
+              </a>
             </div>
 
             <div class="contacts-actions">

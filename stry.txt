@@ -4,7 +4,9 @@ d:/Документы/Обучение/Frontend/прочее/AQUANIKA/
 │       └── deploy.yml
 ├── .gitignore
 ├── .qodo/
-│   └── best_practices.md
+│   ├── agents/
+│   ├── best_practices.md
+│   └── workflows/
 ├─] .vscode/ (ignored)
 ├── copy-fonts.js
 ├─] dist/ (ignored)
@@ -299,7 +301,15 @@ d:/Документы/Обучение/Frontend/прочее/AQUANIKA/
 │   │   │   ├── fa-brands-400.woff2
 │   │   │   ├── fa-regular-400.woff2
 │   │   │   ├── fa-solid-900.woff2
-│   │   │   └── fa-v4compatibility.woff2
+│   │   │   ├── fa-v4compatibility.woff2
+│   │   │   ├── Georgia-Bold.woff2
+│   │   │   ├── Georgia.woff2
+│   │   │   ├── Montserrat-Black.woff
+│   │   │   ├── Montserrat-Bold.woff2
+│   │   │   ├── Montserrat-Italic.woff2
+│   │   │   ├── Montserrat-Medium.woff2
+│   │   │   ├── Montserrat-Regular.woff2
+│   │   │   └── Montserrat-SemiBold.woff2
 │   │   ├── icons/
 │   │   │   ├── message.svg
 │   │   │   ├── phone.svg
@@ -376,9 +386,6 @@ d:/Документы/Обучение/Frontend/прочее/AQUANIKA/
 │   │   │   │   ├── nails2.webp
 │   │   │   │   ├── nails3.webp
 │   │   │   │   └── nails4.webp
-│   │   │   ├── promo/
-│   │   │   │   ├── buttle.webp
-│   │   │   │   └── flow.webp
 │   │   │   ├── services/
 │   │   │   │   ├── aqua.png
 │   │   │   │   ├── aqua.webp
@@ -422,6 +429,12 @@ d:/Документы/Обучение/Frontend/прочее/AQUANIKA/
 │   │   │   │   ├── exten1024px.png
 │   │   │   │   ├── exten1024px.webp
 │   │   │   │   ├── gold-brush.webp
+│   │   │   │   ├── hair-care.png
+│   │   │   │   ├── hair-care.webp
+│   │   │   │   ├── hair-care1024.png
+│   │   │   │   ├── hair-care1024.webp
+│   │   │   │   ├── hair-care1024px.png
+│   │   │   │   ├── hair-care1024px.webp
 │   │   │   │   ├── hairCard.webp
 │   │   │   │   ├── haircut.png
 │   │   │   │   ├── haircut.webp
@@ -538,6 +551,7 @@ d:/Документы/Обучение/Frontend/прочее/AQUANIKA/
 │   │   ├── epilation.html
 │   │   ├── face-care.html
 │   │   ├── gallery.html
+│   │   ├── hair-care.html
 │   │   ├── hair-coloring.html
 │   │   ├── hair-styling.html
 │   │   ├── haircuts.html
@@ -581,6 +595,7 @@ d:/Документы/Обучение/Frontend/прочее/AQUANIKA/
 │   │   │   ├── side-menu.css
 │   │   │   └── sidebar.css
 │   │   ├── font-awesome.css
+│   │   ├── fonts.css
 │   │   ├── layouts/
 │   │   │   └── container.css
 │   │   ├── main.css

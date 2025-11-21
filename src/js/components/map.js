@@ -9,6 +9,8 @@ const mapConfig = {
 };
 
 let myMap = null;
+let scriptLoading = false;
+let scriptLoaded = false;
 
 // Безопасное создание контента балуна
 function createBalloonContent() {
@@ -74,31 +76,13 @@ function createMapErrorContent() {
 }
 
 export function initMap() {
-  if (!document.getElementById("map")) {
+  const mapContainer = document.getElementById("map");
+  if (!mapContainer) {
     return;
   }
 
-  if (typeof ymaps === "undefined") {
-    loadYandexMapsAPI();
-    return;
-  }
-
-  ymaps.ready(() => {
-    try {
-      createMap();
-    } catch (error) {
-      console.error("Ошибка при создании карты:", error);
-      showMapError();
-    }
-  });
-}
-
-function loadYandexMapsAPI() {
-  const script = document.createElement("script");
-  script.src = `https://api-maps.yandex.ru/2.1/?apikey=480aa768-745b-4ac9-8ec8-e40c2e8d6c82&lang=ru_RU`;
-  script.type = "text/javascript";
-
-  script.onload = () => {
+  // Если API уже загружен и готов
+  if (typeof ymaps !== "undefined") {
     ymaps.ready(() => {
       try {
         createMap();
@@ -107,9 +91,95 @@ function loadYandexMapsAPI() {
         showMapError();
       }
     });
+    return;
+  }
+
+  // Если скрипт уже загружен, но API еще не готов, ждем
+  if (scriptLoaded) {
+    // Ждем готовности API
+    const checkReady = setInterval(() => {
+      if (typeof ymaps !== "undefined") {
+        clearInterval(checkReady);
+        ymaps.ready(() => {
+          try {
+            createMap();
+          } catch (error) {
+            console.error("Ошибка при создании карты:", error);
+            showMapError();
+          }
+        });
+      }
+    }, 100);
+
+    // Таймаут на случай, если API не загрузится
+    setTimeout(() => clearInterval(checkReady), 10000);
+    return;
+  }
+
+  // Если скрипт уже загружается, не загружаем повторно
+  if (scriptLoading) {
+    return;
+  }
+
+  // Загружаем скрипт
+  loadYandexMapsAPI();
+}
+
+function loadYandexMapsAPI() {
+  // Проверяем, не загружен ли скрипт уже
+  const existingScript = document.querySelector(
+    'script[src*="api-maps.yandex.ru"]'
+  );
+  if (existingScript) {
+    scriptLoaded = true;
+    scriptLoading = false;
+    // Если скрипт уже есть, просто ждем готовности API
+    const checkReady = setInterval(() => {
+      if (typeof ymaps !== "undefined") {
+        clearInterval(checkReady);
+        ymaps.ready(() => {
+          try {
+            createMap();
+          } catch (error) {
+            console.error("Ошибка при создании карты:", error);
+            showMapError();
+          }
+        });
+      }
+    }, 100);
+    setTimeout(() => clearInterval(checkReady), 10000);
+    return;
+  }
+
+  // Устанавливаем флаг загрузки
+  scriptLoading = true;
+
+  const script = document.createElement("script");
+  script.src = `https://api-maps.yandex.ru/2.1/?apikey=480aa768-745b-4ac9-8ec8-e40c2e8d6c82&lang=ru_RU`;
+  script.type = "text/javascript";
+  script.async = true;
+
+  script.onload = () => {
+    scriptLoaded = true;
+    scriptLoading = false;
+    // Небольшая задержка для инициализации API
+    setTimeout(() => {
+      if (typeof ymaps !== "undefined") {
+        ymaps.ready(() => {
+          try {
+            createMap();
+          } catch (error) {
+            console.error("Ошибка при создании карты:", error);
+            showMapError();
+          }
+        });
+      }
+    }, 100);
   };
 
   script.onerror = () => {
+    scriptLoading = false;
+    scriptLoaded = false;
     console.error("Ошибка загрузки API Яндекс.Карт");
     showMapError();
   };
@@ -220,7 +290,11 @@ function showMapError() {
 
 export function destroyMap() {
   if (myMap) {
-    myMap.destroy();
+    try {
+      myMap.destroy();
+    } catch (error) {
+      console.warn("Ошибка при уничтожении карты:", error);
+    }
     myMap = null;
   }
 }

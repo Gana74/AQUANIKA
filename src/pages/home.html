@@ -9,6 +9,44 @@
     <title>
       AQUANIKA — салон красоты в Челябинске | Косметология, SPA, маникюр
     </title>
+
+    <!-- ✅ В home.html -->
+    <!-- Preconnect внешних ресурсов (если нужно) -->
+    <link rel="preconnect" href="https://mc.yandex.ru" crossorigin />
+
+    <!-- Preload шрифтов, используемых в hero/services -->
+    <link
+      rel="preload"
+      href="/assets/fonts/Montserrat-Regular.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+    <link
+      rel="preload"
+      href="/assets/fonts/Montserrat-Bold.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+
+    <!-- Preload LCP-изображения (hero) -->
+    <link
+      rel="preload"
+      href="/assets/images/carusel/aq.webp"
+      as="image"
+      type="image/webp"
+    />
+    <link
+      rel="preload"
+      href="/assets/images/carusel/aq.png"
+      as="image"
+      type="image/png"
+    />
+
+    <!-- Preload критического CSS (на всякий случай) -->
+    <link rel="preload" href="/styles/main.css" as="style" />
+
     <link rel="canonical" href="https://aquanika74.ru/" />
     <meta
       name="description"
@@ -56,10 +94,6 @@
     <!-- Дополнительные ссылки -->
     <link rel="alternate" hreflang="ru" href="https://aquanika74.ru/" />
     <link rel="alternate" hreflang="x-default" href="https://aquanika74.ru/" />
-
-    <!-- Preload критичных ресурсов -->
-    <link rel="preload" href="/assets/images/carusel/aq.png" as="image" />
-    <link rel="preload" href="/assets/css/main.css" as="style" />
 
     <!-- Favicon -->
     <link rel="icon" type="image/x-icon" href="/favicon.ico" />
@@ -157,8 +191,6 @@
         }
       }
     </script>
-
-  
   </head>
   <body>
     <main>
@@ -186,6 +218,7 @@
                     class="lazyload"
                     src="/assets/images/carusel/aq.png"
                     alt="Скидка 40% на ботокс"
+                    fetchpriority="high"
                     loading="lazy"
                   />
                 </picture>
@@ -209,48 +242,7 @@
                   </div>
                 </div>
               </div>
-              <!-- <div class="promo-carousel__slide">
-                <picture>
-                  <source
-                    srcset="/assets/images/carusel/manPedMin.webp"
-                    type="image/webp"
-                    media="(max-width: 1024px)"
-                  />
-                  <source
-                    srcset="/assets/images/carusel/manPedMin.png"
-                    type="image/png"
-                    media="(max-width: 1024px)"
-                  />
-                  <source
-                    srcset="/assets/images/carusel/manPed.webp"
-                    type="image/webp"
-                  />
-                  <img
-                    class="lazyload"
-                    src="/assets/images/carusel/manPed.png"
-                    alt="Маникюр + педикюр 3000 ₽"
-                    loading="lazy"
-                  />
-                </picture>
-                <div class="promo-carousel__content">
-                  <h2 class="promo-carousel__title">
-                    Маникюр + педикюр с гель-лаком — 3000 ₽
-                  </h2>
-                  <p class="promo-carousel__description">
-                    Комплекс по выгодной цене от Aquanika. Будь на высоте в
-                    любой ситуации!
-                  </p>
-                  <div class="promo-carousel__actions">
-                    <a
-                      class="button button--primary"
-                      href="https://n265102.yclients.com/"
-                      target="_blank"
-                      rel="noopener"
-                      >Записаться</a
-                    >
-                  </div>
-                </div>
-              </div> -->
+
               <div class="promo-carousel__slide">
                 <picture>
                   <source
@@ -956,14 +948,6 @@
           </div>
         </div>
       </section>
-
-      <!-- <section class="team">
-        <div class="container">
-          <h2 class="section-title">Наши специалисты</h2>
-          <div class="team__grid">
-          </div>
-        </div>
-      </section> -->
     </main>
   </body>
 </html>

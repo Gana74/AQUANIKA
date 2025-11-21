@@ -22,8 +22,18 @@ RewriteRule ^(.*)$ /index.html [L]
     Header always set X-XSS-Protection "1; mode=block"
     Header always set Referrer-Policy "strict-origin-when-cross-origin"
     
-    # Обновленный CSP для Яндекс.Метрики
-    Header always set Content-Security-Policy "default-src 'self'; script-src 'self' 'unsafe-inline' https://mc.yandex.ru https://yastatic.net; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; connect-src 'self' https://formspree.io https://api-maps.yandex.ru https://mc.yandex.ru wss://mc.yandex.ru; frame-src 'self' https://yandex.ru https://mc.yandex.ru; font-src 'self';"
+    # HSTS - Strict Transport Security
+    Header always set Strict-Transport-Security "max-age=31536000; includeSubDomains; preload"
+    
+    # COOP - Cross-Origin-Opener-Policy
+    Header always set Cross-Origin-Opener-Policy "same-origin"
+    
+    # COEP - Cross-Origin-Embedder-Policy (опционально, может сломать некоторые виджеты)
+    # Header always set Cross-Origin-Embedder-Policy "require-corp"
+    
+    # Обновленный CSP для Яндекс.Метрики и Яндекс.Карт
+    # unsafe-inline необходим для Яндекс.Карт и некоторых виджетов
+    Header always set Content-Security-Policy "default-src 'self'; script-src 'self' 'unsafe-inline' https://mc.yandex.ru https://mc.yandex.com https://api-maps.yandex.ru https://yastatic.net https://core-renderer-tiles.maps.yandex.net; style-src 'self' 'unsafe-inline' data: https://yastatic.net; img-src 'self' data: https: https://mc.yandex.ru https://mc.yandex.com; connect-src 'self' https://formspree.io https://api-maps.yandex.ru https://mc.yandex.ru https://mc.yandex.com wss://mc.yandex.ru wss://mc.yandex.com; frame-src 'self' https://yandex.ru https://mc.yandex.ru https://mc.yandex.com; font-src 'self' https://yastatic.net; base-uri 'self'; form-action 'self' https://formspree.io;"
 </IfModule>
 
 # Кэширование статических файлов

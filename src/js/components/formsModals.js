@@ -3,6 +3,65 @@
 
 let inited = false;
 
+// Фокус-менеджмент
+let lastOpener = null; // элемент, открывший модалку (для возврата фокуса)
+
+function getFocusableElements(container) {
+  if (!container) return [];
+  const selectors = [
+    'a[href]:not([tabindex="-1"])',
+    'button:not([disabled]):not([tabindex="-1"])',
+    'input:not([disabled]):not([tabindex="-1"])',
+    'select:not([disabled]):not([tabindex="-1"])',
+    'textarea:not([disabled]):not([tabindex="-1"])',
+    '[tabindex]:not([tabindex="-1"])',
+  ];
+  return Array.from(container.querySelectorAll(selectors.join(',')))
+    .filter((el) => !el.hasAttribute('disabled') && !el.getAttribute('aria-hidden'));
+}
+
+function moveFocusInto(modal) {
+  if (!modal) return;
+  // Сначала фокус на контейнер (есть tabindex="-1"), затем на первый интерактивный
+  modal.focus({ preventScroll: true });
+  const focusables = getFocusableElements(modal);
+  if (focusables.length) {
+    focusables[0].focus({ preventScroll: true });
+  }
+}
+
+function setModalsInert(overlay, activeModal) {
+  const modals = overlay.querySelectorAll('.forms-modal');
+  modals.forEach((m) => {
+    const isActive = m === activeModal;
+    m.setAttribute('aria-hidden', isActive ? 'false' : 'true');
+    try {
+      m.inert = !isActive; // нативный inert
+    } catch (_) {}
+  });
+}
+
+function getActiveModal(overlay) {
+  return overlay.querySelector('.forms-modal[aria-hidden="false"]');
+}
+
+function ensureFormspreePreconnect() {
+  // Проверяем, не добавлен ли уже
+  if (
+    document.querySelector(
+      'link[href="https://formspree.io"][rel="preconnect"]'
+    )
+  ) {
+    return;
+  }
+
+  const link = document.createElement("link");
+  link.rel = "preconnect";
+  link.href = "https://formspree.io";
+  link.crossOrigin = "anonymous"; // важно — Formspree требует CORS
+  document.head.appendChild(link);
+}
+
 function createMarkup() {
   if (document.getElementById("formsModalOverlay")) return;
 
@@ -19,6 +78,7 @@ function createMarkup() {
   };
 
   const wrapper = el("div", "modal-overlay", { id: "formsModalOverlay" });
+  try { wrapper.inert = true; } catch (_) {}
 
   const subjectMap = {
     callback: "AQUANIKA: Заказать звонок",
@@ -150,6 +210,7 @@ function createMarkup() {
       "aria-hidden": "true",
       role: "dialog",
       "aria-modal": "true",
+      tabindex: "-1",
     });
     const content = el("div", "forms-modal__content");
     const closeBtn = el(
@@ -303,25 +364,55 @@ function openModal(type) {
   if (!overlay) return;
   setPageHiddenValue();
 
-  const modals = overlay.querySelectorAll(".forms-modal");
-  modals.forEach((m) => m.setAttribute("aria-hidden", "true"));
+  // Запоминаем инициатор, если он не был установлен кликом
+  if (!lastOpener) {
+    lastOpener = document.activeElement instanceof HTMLElement ? document.activeElement : null;
+  }
+
+  // Перед открытием уводим фокус из скрываемых модалок
+  const currentlyFocused = document.activeElement;
+  if (currentlyFocused && overlay.contains(currentlyFocused)) {
+    // Переместим временно фокус на body, чтобы не было потомка с aria-hidden
+    document.body.focus();
+  }
 
   const target = overlay.querySelector(`.forms-modal[data-modal="${type}"]`);
   if (!target) return;
 
   overlay.classList.add("is-open");
-  target.setAttribute("aria-hidden", "false");
+  try { overlay.inert = false; } catch (_) {}
+
+  // Включаем только нужную модалку, остальные делаем inert + aria-hidden
+  setModalsInert(overlay, target);
+
+  // Переводим фокус внутрь модалки
+  moveFocusInto(target);
+
   disableScroll();
 }
 
 function closeModal() {
   const overlay = document.getElementById("formsModalOverlay");
   if (!overlay) return;
+
+  // Уводим фокус, если он внутри оверлея, чтобы не оставался в aria-hidden
+  const active = document.activeElement;
+  if (active && overlay.contains(active)) {
+    document.body.focus();
+  }
+
   overlay.classList.remove("is-open");
-  overlay
-    .querySelectorAll(".forms-modal")
-    .forEach((m) => m.setAttribute("aria-hidden", "true"));
+  // Все модалки скрыты и inert
+  setModalsInert(overlay, null);
+  try { overlay.inert = true; } catch (_) {}
+
   enableScroll();
+
+  // Возвращаем фокус на инициатор, если он ещё в документе
+  if (lastOpener && document.contains(lastOpener)) {
+    try { lastOpener.focus({ preventScroll: true }); } catch (_) {}
+  }
+  lastOpener = null;
 }
 
 // Экспорт закрытия модалки для внешних вызовов (forms.js)
@@ -346,10 +437,37 @@ function bindEvents() {
     }
   });
 
-  // ESC
+  // ESC и ловушка фокуса (Tab)
   document.addEventListener("keydown", (e) => {
     if (e.key === "Escape" && overlay.classList.contains("is-open")) {
+      e.preventDefault();
       closeModal();
+      return;
+    }
+
+    if (e.key === "Tab" && overlay.classList.contains("is-open")) {
+      const activeModal = getActiveModal(overlay);
+      if (!activeModal) return;
+      const focusables = getFocusableElements(activeModal);
+      if (focusables.length === 0) {
+        e.preventDefault();
+        activeModal.focus();
+        return;
+      }
+      const first = focusables[0];
+      const last = focusables[focusables.length - 1];
+      const current = document.activeElement;
+      if (e.shiftKey) {
+        if (current === first || !activeModal.contains(current)) {
+          e.preventDefault();
+          last.focus();
+        }
+      } else {
+        if (current === last || !activeModal.contains(current)) {
+          e.preventDefault();
+          first.focus();
+        }
+      }
     }
   });
 
@@ -359,6 +477,7 @@ function bindEvents() {
     const modalTrigger = e.target.closest("[data-open-modal]");
     if (modalTrigger) {
       e.preventDefault();
+      lastOpener = modalTrigger;
       const type = modalTrigger.dataset.openModal || "question";
       openModal(type);
 
@@ -388,6 +507,7 @@ function bindEvents() {
     const sidebarBtn = e.target.closest(".sidebar__button");
     if (sidebarBtn && sidebarBtn.dataset.action) {
       e.preventDefault();
+      lastOpener = sidebarBtn;
       openModal(sidebarBtn.dataset.action);
       return;
     }
@@ -395,6 +515,7 @@ function bindEvents() {
     const contactBtn = e.target.closest(".contacts-message-btn");
     if (contactBtn) {
       e.preventDefault();
+      lastOpener = contactBtn;
       openModal("question");
       return;
     }
@@ -402,6 +523,7 @@ function bindEvents() {
     const mobileAskBtn = e.target.closest(".mobile-nav__action-btn");
     if (mobileAskBtn) {
       e.preventDefault();
+      lastOpener = mobileAskBtn;
       openModal("question");
       return;
     }
@@ -410,6 +532,7 @@ function bindEvents() {
 
 export function initFormsModals() {
   if (inited) return;
+  ensureFormspreePreconnect();
   createMarkup();
   bindEvents();
   inited = true;

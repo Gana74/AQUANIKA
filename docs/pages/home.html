@@ -16,6 +16,13 @@
       name="description"
       content="Салон красоты Aquanika в Челябинске - профессиональные услуги: косметология, парикмахерские услуги, маникюр, массаж, эпиляция. Премиум-класс, опытные мастера, онлайн-запись."
     />
+    <!-- Preload LCP service image (SPA card) -->
+    <link
+      rel="preload"
+      href="/AQUANIKA/assets/spaCard-BbZPVPAU.webp"
+      as="image"
+      type="image/webp"
+    />
 
     <meta property="og:locale" content="ru_RU" />
     <meta property="og:type" content="website" />
@@ -227,12 +234,25 @@
             <!-- SPA и массаж -->
             <div class="service-card">
               <div class="service-card__image">
-                <img
-                  class="card-image lazyload"
-                  src="/AQUANIKA/assets/spaCard-BbZPVPAU.webp"
-                  alt="раздел спа и массаж"
-                  loading="lazy"
-                />
+                <picture>
+                  <source
+                    type="image/webp"
+                    srcset="
+                      /AQUANIKA/assets/spaCard-BbZPVPAU.webp   796w,
+                      /AQUANIKA/assets/spa&massage1024px.webp 1024w
+                    "
+                  />
+                  <img
+                    class="card-image"
+                    src="/AQUANIKA/assets/spaCard-BbZPVPAU.webp"
+                    alt="раздел спа и массаж"
+                    width="483"
+                    height="225"
+                    sizes="(max-width:600px) 100vw, 483px"
+                    fetchpriority="high"
+                    decoding="async"
+                  />
+                </picture>
               </div>
               <div class="service-card__content">
                 <h3 class="service-card__title">SPA и массаж</h3>

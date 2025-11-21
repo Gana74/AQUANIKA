@@ -7,12 +7,12 @@
   </head>
   <body>
     <!-- Шапка сайта -->
-    <header class="container header">
+    <header class="container header" role="banner">
       <div class="header__container">
         <!-- Верхняя строка с основным меню -->
         <div class="header__top">
           <div class="container">
-            <nav class="header__nav">
+            <nav class="header__nav" aria-label="Основная навигация">
               <ul class="nav__list">
                 <li class="nav__item">
                   <a href="/about" class="nav__link">О нас</a>
@@ -32,7 +32,6 @@
                 <li class="nav__item">
                   <a href="/price" class="nav__link">Цены</a>
                 </li>
-
                 <li class="nav__item">
                   <a href="/contacts" class="nav__link">Контакты</a>
                 </li>
@@ -46,40 +45,50 @@
           <div class="container">
             <div class="header__middle-content">
               <div class="header__logo">
-                <a href="/" class="logo"
-                  ><img
+                <a
+                  href="/"
+                  class="logo"
+                  aria-label="Салон красоты AQUANIKA - главная страница"
+                >
+                  <img
                     class="lazyload"
                     src="/assets/images/services/logo.webp"
-                    alt="Салон красоты Aqvanika - профессиональные услуги"
+                    alt="Салон красоты AQUANIKA"
                     loading="eager"
                     decoding="async"
-                /></a>
+                  />
+                </a>
                 <span class="header__logo-desc">Салон красоты и здоровья</span>
               </div>
 
               <div class="phone">
-                <i class="fas fa-phone"></i>
-                <a href="tel:79227445287" class="phone__link"
-                  >+7 (922) 744-52-87</a
+                <i class="fas fa-phone" aria-hidden="true" title="Телефон"></i>
+                <a
+                  href="tel:+79227445287"
+                  class="phone__link"
+                  aria-label="Позвонить по номеру +7 922 744-52-87"
                 >
+                  +7 (922) 744-52-87
+                </a>
               </div>
 
               <div class="info header__middle-info">
                 <div class="address">
-                  <i class="fas fa-location-dot"></i>
+                  <i class="fas fa-location-dot" aria-hidden="true"></i>
                   <p>
                     <a
                       href="https://yandex.ru/maps/-/CHsIBZZ2"
                       class="address__link"
                       target="_blank"
                       rel="noopener noreferrer"
+                      aria-label="Наш адрес: Братьев Кашириных, 131. Открыть в Яндекс Картах"
                     >
                       Братьев Кашириных, 131
                     </a>
                   </p>
                 </div>
                 <div class="hours">
-                  <i class="fas fa-clock"></i>
+                  <i class="fas fa-clock" aria-hidden="true"></i>
                   <span>с 10:00 до 21:00</span>
                 </div>
               </div>
@@ -90,22 +99,31 @@
                   target="_blank"
                   rel="noopener noreferrer"
                   class="social-link"
-                  ><i class="fab fa-vk"></i
-                ></a>
+                  aria-label="Мы в ВКонтакте"
+                >
+                  <i class="fab fa-vk" aria-hidden="true"></i>
+                  <span class="visually-hidden">ВКонтакте</span>
+                </a>
                 <a
                   href="https://t.me/+79227445287"
                   target="_blank"
                   rel="noopener noreferrer"
                   class="social-link"
-                  ><i class="fab fa-telegram"></i
-                ></a>
+                  aria-label="Написать в Telegram"
+                >
+                  <i class="fab fa-telegram" aria-hidden="true"></i>
+                  <span class="visually-hidden">Telegram</span>
+                </a>
                 <a
                   href="https://wa.me/79227445287"
                   target="_blank"
                   rel="noopener noreferrer"
                   class="social-link"
-                  ><i class="fab fa-whatsapp"></i
-                ></a>
+                  aria-label="Написать в WhatsApp"
+                >
+                  <i class="fab fa-whatsapp" aria-hidden="true"></i>
+                  <span class="visually-hidden">WhatsApp</span>
+                </a>
               </div>
             </div>
           </div>
@@ -114,224 +132,304 @@
         <!-- Нижняя строка с меню услуг -->
         <div class="header__bottom">
           <div class="container">
-            <nav class="services-nav">
+            <nav class="services-nav" aria-label="Услуги салона">
               <ul class="services-nav__list">
                 <li class="services-nav__item">
-                  <a href="/services/spa" class="services-nav__link uppercase"
-                    >SPA-процедуры</a
+                  <a
+                    href="/services/spa"
+                    class="services-nav__link uppercase"
+                    aria-haspopup="true"
+                    aria-expanded="false"
                   >
-                  <div class="services-submenu">
+                    SPA-процедуры
+                  </a>
+                  <div class="services-submenu" role="menu">
                     <ul class="submenu__list-header">
-                      <li>
+                      <li role="none">
                         <a
                           class="submenu__item-header"
                           href="/services/aquanika"
-                          >Подводно-вакуумный массаж "Акваника"</a
+                          role="menuitem"
                         >
+                          Подводно-вакуумный массаж "Акваника"
+                        </a>
                       </li>
                     </ul>
                     <ul class="submenu__list-header">
-                      <li>
-                        <a class="submenu__item-header" href="/services/massage"
-                          >Массаж</a
+                      <li role="none">
+                        <a
+                          class="submenu__item-header"
+                          href="/services/massage"
+                          role="menuitem"
                         >
+                          Массаж
+                        </a>
                       </li>
                     </ul>
                     <ul class="submenu__list-header">
-                      <li>
+                      <li role="none">
                         <a
                           class="submenu__item-header"
                           href="/services/wrapping"
-                          >Обертывание</a
+                          role="menuitem"
                         >
+                          Обертывание
+                        </a>
                       </li>
                     </ul>
                   </div>
                 </li>
+
                 <li class="services-nav__item">
                   <a
                     href="/services/epilation"
                     class="services-nav__link uppercase"
-                    >Эпиляция</a
+                    aria-haspopup="true"
+                    aria-expanded="false"
                   >
-                  <div class="services-submenu">
+                    Эпиляция
+                  </a>
+                  <div class="services-submenu" role="menu">
                     <ul class="submenu__list-header">
-                      <li>
+                      <li role="none">
                         <a
                           class="submenu__item-header"
                           href="/services/epilation/laser"
-                          >Лазерная эпиляция</a
+                          role="menuitem"
                         >
+                          Лазерная эпиляция
+                        </a>
                       </li>
-
-                      <li>
+                      <li role="none">
                         <a
                           class="submenu__item-header"
                           href="/services/epilation/sugaring"
-                          >Шугаринг</a
+                          role="menuitem"
                         >
+                          Шугаринг
+                        </a>
                       </li>
                     </ul>
                   </div>
                 </li>
+
                 <li class="services-nav__item">
-                  <a href="/services/brows" class="services-nav__link uppercase"
-                    >Брови/ресницы</a
+                  <a
+                    href="/services/brows"
+                    class="services-nav__link uppercase"
+                    aria-haspopup="true"
+                    aria-expanded="false"
                   >
-                  <div class="services-submenu">
+                    Брови/ресницы
+                  </a>
+                  <div class="services-submenu" role="menu">
                     <ul class="submenu__list-header">
-                      <li>
+                      <li role="none">
                         <a
                           class="submenu__item-header"
                           href="/services/brows/architecture"
-                          >Архитектура бровей</a
+                          role="menuitem"
                         >
+                          Архитектура бровей
+                        </a>
                       </li>
-
-                      <li>
+                      <li role="none">
                         <a
                           class="submenu__item-header"
                           href="/services/brows/extensions"
-                          >Наращивание ресниц</a
+                          role="menuitem"
                         >
+                          Наращивание ресниц
+                        </a>
                       </li>
                     </ul>
                   </div>
                 </li>
+
                 <li class="services-nav__item">
-                  <a href="/services/nails" class="services-nav__link uppercase"
-                    >Ногтевой сервис</a
+                  <a
+                    href="/services/nails"
+                    class="services-nav__link uppercase"
+                    aria-haspopup="true"
+                    aria-expanded="false"
                   >
-                  <div class="services-submenu">
+                    Ногтевой сервис
+                  </a>
+                  <div class="services-submenu" role="menu">
                     <ul class="submenu__list-header">
-                      <li>
+                      <li role="none">
                         <a
                           class="submenu__item-header"
                           href="/services/nails/manicure"
-                          >Маникюр</a
+                          role="menuitem"
                         >
+                          Маникюр
+                        </a>
                       </li>
-                      <li>
+                      <li role="none">
                         <a
                           class="submenu__item-header"
                           href="/services/nails/pedicure"
-                          >Педикюр</a
+                          role="menuitem"
                         >
+                          Педикюр
+                        </a>
                       </li>
-                      <li>
+                      <li role="none">
                         <a
                           class="submenu__item-header"
                           href="/services/nails/extensions"
-                          >Наращивание ногтей</a
+                          role="menuitem"
                         >
+                          Наращивание ногтей
+                        </a>
                       </li>
                     </ul>
                   </div>
                 </li>
+
                 <li class="services-nav__item">
                   <a
                     href="/services/cosmetology"
                     class="services-nav__link uppercase"
-                    >Уход за кожей</a
+                    aria-haspopup="true"
+                    aria-expanded="false"
                   >
-                  <div class="services-submenu">
+                    Уход за кожей
+                  </a>
+                  <div class="services-submenu" role="menu">
                     <ul class="submenu__list-header">
-                      <li>
+                      <li role="none">
                         <a
                           class="submenu__item-header"
                           href="/services/cosmetology/face-care"
-                          >Косметология</a
+                          role="menuitem"
                         >
+                          Косметология
+                        </a>
                       </li>
-                      <li>
+                      <li role="none">
                         <a
                           class="submenu__item-header"
                           href="/services/cosmetology/injections"
-                          >Инъекции</a
+                          role="menuitem"
                         >
+                          Инъекции
+                        </a>
                       </li>
-                      <li>
+                      <li role="none">
                         <a
                           class="submenu__item-header"
                           href="/services/cosmetology/tattoo-removal"
-                          >Выведение татуажа</a
+                          role="menuitem"
                         >
+                          Выведение татуажа
+                        </a>
                       </li>
                     </ul>
                   </div>
                 </li>
+
                 <li class="services-nav__item">
                   <a
                     href="/services/hairdressing"
                     class="services-nav__link uppercase"
-                    >Парикмахерские услуги</a
+                    aria-haspopup="true"
+                    aria-expanded="false"
                   >
-                  <div class="services-submenu">
+                    Парикмахерские услуги
+                  </a>
+                  <div class="services-submenu" role="menu">
                     <ul class="submenu__list-header">
-                      <li>
+                      <li role="none">
                         <a
                           class="submenu__item-header"
                           href="/services/hairdressing/haircuts"
-                          >Стрижки</a
+                          role="menuitem"
                         >
+                          Стрижки
+                        </a>
                       </li>
-                      <li>
+                      <li role="none">
                         <a
                           class="submenu__item-header"
                           href="/services/hairdressing/coloring"
-                          >Окрашивание</a
+                          role="menuitem"
                         >
+                          Окрашивание
+                        </a>
                       </li>
-                      <li>
+                      <li role="none">
                         <a
                           class="submenu__item-header"
                           href="/services/hairdressing/styling"
-                          >Укладки</a
+                          role="menuitem"
                         >
+                          Укладки
+                        </a>
                       </li>
-                      <li>
+                      <li role="none">
                         <a
                           class="submenu__item-header"
                           href="/services/hairdressing/hair-care"
-                          >Восстановление и уход</a
+                          role="menuitem"
                         >
+                          Восстановление и уход
+                        </a>
                       </li>
                     </ul>
                   </div>
                 </li>
+
                 <li class="services-nav__item">
                   <a
                     href="/services/makeup"
                     class="services-nav__link uppercase"
-                    >Макияж</a
                   >
+                    Макияж
+                  </a>
                 </li>
+
                 <li class="services-nav__item">
-                  <a href="/services/men" class="services-nav__link uppercase"
-                    >Для Мужчин</a
+                  <a
+                    href="/services/men"
+                    class="services-nav__link uppercase"
+                    aria-haspopup="true"
+                    aria-expanded="false"
                   >
-                  <div class="services-submenu services-submenu--last">
+                    Для Мужчин
+                  </a>
+                  <div
+                    class="services-submenu services-submenu--last"
+                    role="menu"
+                  >
                     <ul class="submenu__list-header">
-                      <li>
+                      <li role="none">
                         <a
                           class="submenu__item-header"
                           href="/services/men/haircut"
-                          >Стрижка</a
+                          role="menuitem"
                         >
+                          Стрижка
+                        </a>
                       </li>
-                      <li>
+                      <li role="none">
                         <a
                           class="submenu__item-header"
                           href="/services/men/epilation"
-                          >Эпиляция</a
+                          role="menuitem"
                         >
+                          Эпиляция
+                        </a>
                       </li>
-                      <li>
+                      <li role="none">
                         <a
                           class="submenu__item-header"
                           href="/services/men/manicure"
-                          >Маникюр</a
+                          role="menuitem"
                         >
+                          Маникюр
+                        </a>
                       </li>
                     </ul>
                   </div>
