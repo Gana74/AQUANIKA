@@ -1,0 +1,54 @@
+# 🔄 Permanent redirects from old .html pages to new clean URLs
+# SPA и массаж
+Redirect 301 /pages/spa-and-massage.html /services/spa
+Redirect 301 /pages/aquanika-massage.html /services/aquanika
+Redirect 301 /pages/massage.html /services/massage
+Redirect 301 /pages/wrapping.html /services/wrapping
+
+# Эпиляция
+Redirect 301 /pages/epilation.html /services/epilation
+Redirect 301 /pages/laser-epilation.html /services/epilation/laser
+Redirect 301 /pages/sugaring.html /services/epilation/sugaring
+
+# Брови и ресницы
+Redirect 301 /pages/brows-and-lashes.html /services/brows
+Redirect 301 /pages/brows-architecture.html /services/brows/architecture
+Redirect 301 /pages/brows-extensions.html /services/brows/extensions
+
+# Ногтевой сервис
+Redirect 301 /pages/manicure-pedicure.html /services/nails
+Redirect 301 /pages/manicure.html /services/nails/manicure
+Redirect 301 /pages/pedicure.html /services/nails/pedicure
+Redirect 301 /pages/nails-extensions.html /services/nails/extensions
+
+# Косметология
+Redirect 301 /pages/cosmetology.html /services/cosmetology
+Redirect 301 /pages/face-care.html /services/cosmetology/face-care
+Redirect 301 /pages/injections.html /services/cosmetology/injections
+Redirect 301 /pages/tattoo-removal.html /services/cosmetology/tattoo-removal
+
+# Парикмахерские услуги
+Redirect 301 /pages/hairdressing.html /services/hairdressing
+Redirect 301 /pages/haircuts.html /services/hairdressing/haircuts
+Redirect 301 /pages/hair-coloring.html /services/hairdressing/coloring
+Redirect 301 /pages/hair-styling.html /services/hairdressing/styling
+Redirect 301 /pages/hair-care.html /services/hairdressing/hair-care
+
+# Макияж
+Redirect 301 /pages/makeup.html /services/makeup
+
+# Мужские услуги
+Redirect 301 /pages/men-services.html /services/men
+Redirect 301 /pages/men-haircut.html /services/men/haircut
+Redirect 301 /pages/men-epilation.html /services/men/epilation
+Redirect 301 /pages/men-manicure.html /services/men/manicure
+
+# Основные страницы
+Redirect 301 /pages/about.html /about
+Redirect 301 /pages/team.html /team
+Redirect 301 /pages/reviews.html /reviews
+Redirect 301 /pages/gallery.html /gallery
+Redirect 301 /pages/price.html /price
+Redirect 301 /pages/contacts.html /contacts
+Redirect 301 /pages/privacy.html /privacy
+Redirect 301 /pages/vacancies.html /vacancies

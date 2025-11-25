@@ -100,7 +100,12 @@ function generateBreadcrumbs() {
   for (const [categoryPath, categoryName] of Object.entries(
     serviceCategories
   )) {
-    if (currentPath.includes(categoryPath)) {
+    const servicePages = getServicePages(categoryPath);
+    const matchedService = Object.entries(servicePages).find(([servicePath]) =>
+      currentPath.includes(servicePath)
+    );
+
+    if (currentPath.includes(categoryPath) || matchedService) {
       // Добавляем категорию
       breadcrumbs.push({
         "@type": "ListItem",
@@ -109,18 +114,15 @@ function generateBreadcrumbs() {
         item: `${baseUrl}/AQUANIKA${categoryPath}`,
       });
 
-      // Добавляем конкретную услугу если есть
-      const servicePages = getServicePages(categoryPath);
-      for (const [servicePath, serviceName] of Object.entries(servicePages)) {
-        if (currentPath.includes(servicePath)) {
-          breadcrumbs.push({
-            "@type": "ListItem",
-            position: position,
-            name: serviceName,
-            item: `${baseUrl}/AQUANIKA${servicePath}`,
-          });
-          break;
-        }
+      // Добавляем конкретную услугу если попали сразу на нее
+      if (matchedService) {
+        const [servicePath, serviceName] = matchedService;
+        breadcrumbs.push({
+          "@type": "ListItem",
+          position: position,
+          name: serviceName,
+          item: `${baseUrl}/AQUANIKA${servicePath}`,
+        });
       }
 
       return createBreadcrumbScript(breadcrumbs);
