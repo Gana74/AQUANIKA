@@ -40,10 +40,10 @@
 .promo-carousel__slide picture {
   position: absolute;
   right: 0; /* Прижимает к правому краю */
-  width: -webkit-fit-content;
-  width: -moz-fit-content;
-  width: fit-content;
-  max-width: 80%;
+  /* width: -webkit-fit-content; */
+  /* width: -moz-fit-content; */
+  /* width: fit-content; */
+  /* max-width: 80%; */
 }
 
 .promo-carousel__content {
@@ -301,6 +301,9 @@
   display: flex;
   gap: 1rem;
   margin-top: auto;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
 }
 
 /* стрелки  */

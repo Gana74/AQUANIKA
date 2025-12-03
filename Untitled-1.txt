@@ -1,0 +1,440 @@
+d:/Документы/Обучение/Frontend/прочее/AQUANIKA/dist/
+├── .htaccess
+├── .htaccess-redirects
+├── 404.html
+├── apple-touch-icon.png
+├── assets/
+│   ├── aq-BBNQNqzK.webp
+│   ├── aqmin-ViUVUKWt.webp
+│   ├── aqu-CP_-74zv.webp
+│   ├── aqua-BX3f1Je8.webp
+│   ├── aqua-Dl1V3w-B.webp
+│   ├── aqua1024px-DdhT5_2-.webp
+│   ├── br-la-B9eczVsm.webp
+│   ├── br-la1024px-ZYLfVBGJ.webp
+│   ├── br1-CCQJtzTE.webp
+│   ├── br2-CwHhxNxR.webp
+│   ├── br3-JIzazgjw.webp
+│   ├── br4-Vnn4Fitp.webp
+│   ├── brows-DTs0A0WT.webp
+│   ├── brows1024px-B-pMgNzZ.webp
+│   ├── color-CAu9008K.webp
+│   ├── color1024px-Bt9dX3tK.webp
+│   ├── cosm-BU17NNk3.webp
+│   ├── cosm-CSHKTI7R.webp
+│   ├── cosm1-C1H7WbD-.webp
+│   ├── cosm1024px-iXLx2sge.webp
+│   ├── cosmetCard-CRxkkdbP.webp
+│   ├── cut-C99JIXYM.webp
+│   ├── cut-CvXghr21.webp
+│   ├── cut1-CwcOXpzx.webp
+│   ├── cut1024px-DHi5RTMq.webp
+│   ├── cut3-DqXiVkCj.webp
+│   ├── cut4-BxFvpopu.webp
+│   ├── cutman-CJHODyJc.webp
+│   ├── cutman1024px-DyVl_qJW.webp
+│   ├── dis-rTKTvgwT.webp
+│   ├── epilation-a8JkRtHJ.webp
+│   ├── epilation1024px-9YMZTdgb.webp
+│   ├── epilationman-DgI-dRtT.webp
+│   ├── epilationman1024px-Dz2O4edw.webp
+│   ├── exten-BH5bqPgQ.webp
+│   ├── exten1024px-CTTgjSr3.webp
+│   ├── fonts/
+│   │   ├── fa-brands-400-BfBXV7Mm.woff2
+│   │   ├── fa-solid-900-8GirhLYJ.woff2
+│   │   ├── Georgia-Bold-DCzS9Qb2.woff2
+│   │   ├── Georgia-Dmydelbc.woff2
+│   │   ├── Montserrat-Black-BBHr-AMM.woff
+│   │   ├── Montserrat-Bold-DDsib7xD.woff2
+│   │   ├── Montserrat-Italic-BxL7KEk_.woff2
+│   │   ├── Montserrat-Medium-BEHhDI1r.woff2
+│   │   ├── Montserrat-Regular-tAhv13WX.woff2
+│   │   └── Montserrat-SemiBold-DbypEg2j.woff2
+│   ├── gold-brush-CWUjum1m.webp
+│   ├── hair-care-DGzSqR1m.webp
+│   ├── hair-care1024px-7X2VKckp.webp
+│   ├── hairCard-Be4rzqRZ.webp
+│   ├── haircut-sL8J674R.webp
+│   ├── haircut1024px-CW4UDUUm.webp
+│   ├── home-BCn1Fb8x.mp4
+│   ├── images/
+│   │   ├── about/
+│   │   │   ├── place.webp
+│   │   │   └── place1.webp
+│   │   ├── aq-CCsyS9g3.png
+│   │   ├── aqmin-BCoSKZJE.png
+│   │   ├── aqua-DtXmkMR7.png
+│   │   ├── aqua1024px-DRp8Jm7A.png
+│   │   ├── br-la/
+│   │   │   ├── br1.webp
+│   │   │   ├── br2.webp
+│   │   │   ├── br3.webp
+│   │   │   └── br4.webp
+│   │   ├── br-la-BdepHPOf.png
+│   │   ├── br-la1024px-BtKbWERB.png
+│   │   ├── brows-CIIeaHLJ.png
+│   │   ├── brows1024px-BEC9g9Dl.png
+│   │   ├── carusel/
+│   │   │   ├── aq.png
+│   │   │   ├── aq.webp
+│   │   │   ├── aqmin.png
+│   │   │   ├── aqmin.webp
+│   │   │   ├── dis.png
+│   │   │   └── dis.webp
+│   │   ├── color-DsoRyu85.png
+│   │   ├── color1024px-BzDtsuA4.png
+│   │   ├── cosm-36WPtoE7.png
+│   │   ├── cosm1024px-B5GhIpiP.png
+│   │   ├── cosmet/
+│   │   │   ├── cosm.webp
+│   │   │   ├── cosm1.webp
+│   │   │   ├── inj.webp
+│   │   │   └── mask.webp
+│   │   ├── cut/
+│   │   │   ├── cut.webp
+│   │   │   ├── cut1.webp
+│   │   │   ├── cut3.webp
+│   │   │   └── cut4.webp
+│   │   ├── cut-DZGIoxs3.png
+│   │   ├── cut1024px-3cRvQBqS.png
+│   │   ├── cutman-PwnHMF3R.png
+│   │   ├── cutman1024px-DXTv3GNs.png
+│   │   ├── dis-n5nd1cRP.png
+│   │   ├── epilation-DglobQDO.png
+│   │   ├── epilation1024px-igobKd88.png
+│   │   ├── epilationman-mVrEG45O.png
+│   │   ├── epilationman1024px-btr_c3tz.png
+│   │   ├── exten-DKZAlleu.png
+│   │   ├── exten1024px-Cexe9lkO.png
+│   │   ├── gallery/
+│   │   │   ├── hair.webp
+│   │   │   ├── lashe.webp
+│   │   │   ├── lashe1.webp
+│   │   │   ├── lashe2.webp
+│   │   │   ├── makeup.webp
+│   │   │   ├── makeup1.webp
+│   │   │   ├── makeup2.webp
+│   │   │   ├── makeup3.webp
+│   │   │   ├── massage.webp
+│   │   │   ├── nails.webp
+│   │   │   ├── nails1.webp
+│   │   │   ├── nails3.webp
+│   │   │   ├── plac2.webp
+│   │   │   ├── place.webp
+│   │   │   ├── place1.webp
+│   │   │   ├── place3.webp
+│   │   │   ├── place4.webp
+│   │   │   ├── spa.webp
+│   │   │   ├── spa1.webp
+│   │   │   ├── spa2.webp
+│   │   │   └── spa3.webp
+│   │   ├── hair-care-BwR7h_4u.png
+│   │   ├── hair-care1024px-BIQloe8P.png
+│   │   ├── haircut-SbmzTLw9.png
+│   │   ├── haircut1024px-938Snj1h.png
+│   │   ├── inje-C62kreXr.png
+│   │   ├── inje1024px-BphLAO8b.png
+│   │   ├── laser/
+│   │   │   ├── laser1.webp
+│   │   │   ├── laser2.webp
+│   │   │   ├── laser3.webp
+│   │   │   └── laser4.webp
+│   │   ├── laser-ClWrJGHN.png
+│   │   ├── laser1024px-BRCJUTaj.png
+│   │   ├── lashe-iVjxRONY.png
+│   │   ├── lashe1024px-BhVA0hen.png
+│   │   ├── ma-pi-Bm1Es0fk.png
+│   │   ├── ma-pi1024px-CQHbE-bj.png
+│   │   ├── makeup/
+│   │   │   ├── mak.webp
+│   │   │   ├── mak1.webp
+│   │   │   ├── mak2.webp
+│   │   │   └── mak3.webp
+│   │   ├── makeup-DTQEzWKV.png
+│   │   ├── makeup1024px-CjlYRcIn.png
+│   │   ├── man/
+│   │   │   ├── man.webp
+│   │   │   ├── man1.webp
+│   │   │   ├── man2.webp
+│   │   │   └── man3.webp
+│   │   ├── manicure-B2A-D_94.png
+│   │   ├── manicure1024px-DIu28iZs.png
+│   │   ├── manicureman-COcFB016.png
+│   │   ├── manicureman1024px-pJ-5vAsB.png
+│   │   ├── mask-DuW9RxdS.png
+│   │   ├── mask1024px-D112HPHc.png
+│   │   ├── massage-l1ET_vGR.png
+│   │   ├── massage1024px-DpWa9Yko.png
+│   │   ├── nails/
+│   │   │   ├── nails.webp
+│   │   │   ├── nails2.webp
+│   │   │   ├── nails3.webp
+│   │   │   └── nails4.webp
+│   │   ├── ped-DQ0yC5mH.png
+│   │   ├── ped1024px-Cm2Aps5H.png
+│   │   ├── serviceman-D9BkFTw_.png
+│   │   ├── serviceman1024px-l9lJVJH0.png
+│   │   ├── services/
+│   │   │   ├── aqua.png
+│   │   │   ├── aqua.webp
+│   │   │   ├── aqua1024px.png
+│   │   │   ├── aqua1024px.webp
+│   │   │   ├── br-la.png
+│   │   │   ├── br-la.webp
+│   │   │   ├── br-la1024px.png
+│   │   │   ├── br-la1024px.webp
+│   │   │   ├── brows.png
+│   │   │   ├── brows.webp
+│   │   │   ├── brows1024px.png
+│   │   │   ├── brows1024px.webp
+│   │   │   ├── color.png
+│   │   │   ├── color.webp
+│   │   │   ├── color1024px.png
+│   │   │   ├── color1024px.webp
+│   │   │   ├── cosm.png
+│   │   │   ├── cosm.webp
+│   │   │   ├── cosm1024px.png
+│   │   │   ├── cosm1024px.webp
+│   │   │   ├── cosmetCard.webp
+│   │   │   ├── cut.png
+│   │   │   ├── cut.webp
+│   │   │   ├── cut1024px.png
+│   │   │   ├── cut1024px.webp
+│   │   │   ├── cutman.png
+│   │   │   ├── cutman.webp
+│   │   │   ├── cutman1024px.png
+│   │   │   ├── cutman1024px.webp
+│   │   │   ├── epilation.png
+│   │   │   ├── epilation.webp
+│   │   │   ├── epilation1024px.png
+│   │   │   ├── epilation1024px.webp
+│   │   │   ├── epilationman.png
+│   │   │   ├── epilationman.webp
+│   │   │   ├── epilationman1024px.png
+│   │   │   ├── epilationman1024px.webp
+│   │   │   ├── exten.png
+│   │   │   ├── exten.webp
+│   │   │   ├── exten1024px.png
+│   │   │   ├── exten1024px.webp
+│   │   │   ├── gold-brush.webp
+│   │   │   ├── hair-care.png
+│   │   │   ├── hair-care.webp
+│   │   │   ├── hair-care1024.png
+│   │   │   ├── hair-care1024.webp
+│   │   │   ├── hair-care1024px.png
+│   │   │   ├── hair-care1024px.webp
+│   │   │   ├── hairCard.webp
+│   │   │   ├── haircut.png
+│   │   │   ├── haircut.webp
+│   │   │   ├── haircut1024px.png
+│   │   │   ├── haircut1024px.webp
+│   │   │   ├── inje.png
+│   │   │   ├── inje.webp
+│   │   │   ├── inje1024px.png
+│   │   │   ├── inje1024px.webp
+│   │   │   ├── laser.png
+│   │   │   ├── laser.webp
+│   │   │   ├── laser1024px.png
+│   │   │   ├── laser1024px.webp
+│   │   │   ├── lashe.png
+│   │   │   ├── lashe.webp
+│   │   │   ├── lashe1024px.png
+│   │   │   ├── lashe1024px.webp
+│   │   │   ├── lasheCard.webp
+│   │   │   ├── logo-Photoroom.png
+│   │   │   ├── logo.webp
+│   │   │   ├── ma-pi.png
+│   │   │   ├── ma-pi.webp
+│   │   │   ├── ma-pi1024px.png
+│   │   │   ├── ma-pi1024px.webp
+│   │   │   ├── makeup.png
+│   │   │   ├── makeup.webp
+│   │   │   ├── makeup1024px.png
+│   │   │   ├── makeup1024px.webp
+│   │   │   ├── makeupCard.webp
+│   │   │   ├── manicure.png
+│   │   │   ├── manicure.webp
+│   │   │   ├── manicure1024px.png
+│   │   │   ├── manicure1024px.webp
+│   │   │   ├── manicureman.png
+│   │   │   ├── manicureman.webp
+│   │   │   ├── manicureman1024px.png
+│   │   │   ├── manicureman1024px.webp
+│   │   │   ├── manicurePedicureCard.webp
+│   │   │   ├── mask.png
+│   │   │   ├── mask.webp
+│   │   │   ├── mask1024px.png
+│   │   │   ├── mask1024px.webp
+│   │   │   ├── massage.png
+│   │   │   ├── massage.webp
+│   │   │   ├── massage1024px.png
+│   │   │   ├── massage1024px.webp
+│   │   │   ├── menCard.webp
+│   │   │   ├── origCard.webp
+│   │   │   ├── ped.png
+│   │   │   ├── ped.webp
+│   │   │   ├── ped1024px.png
+│   │   │   ├── ped1024px.webp
+│   │   │   ├── serviceman.png
+│   │   │   ├── serviceman.webp
+│   │   │   ├── serviceman1024px.png
+│   │   │   ├── serviceman1024px.webp
+│   │   │   ├── spa&massage.png
+│   │   │   ├── spa&massage.webp
+│   │   │   ├── spa&massage1024px.png
+│   │   │   ├── spa&massage1024px.webp
+│   │   │   ├── spaCard.webp
+│   │   │   ├── styling.png
+│   │   │   ├── styling.webp
+│   │   │   ├── styling1024px.png
+│   │   │   ├── styling1024px.webp
+│   │   │   ├── sugaring.png
+│   │   │   ├── sugaring.webp
+│   │   │   ├── sugaring1024px.png
+│   │   │   ├── sugaring1024px.webp
+│   │   │   ├── tattoo.png
+│   │   │   ├── tattoo.webp
+│   │   │   ├── tattoo1024px.png
+│   │   │   ├── tattoo1024px.webp
+│   │   │   ├── wrapping.png
+│   │   │   ├── wrapping.webp
+│   │   │   ├── wrapping1024px.png
+│   │   │   └── wrapping1024px.webp
+│   │   ├── spa/
+│   │   │   ├── aqu.webp
+│   │   │   ├── aqua.webp
+│   │   │   ├── mas.webp
+│   │   │   └── mass.webp
+│   │   ├── spa_massage-CZYv7-1D.png
+│   │   ├── spa_massage1024px-38AQYw8b.png
+│   │   ├── styling-CNluNS_i.png
+│   │   ├── styling1024px-CIlZEvgK.png
+│   │   ├── sugaring-BRMJPkRa.png
+│   │   ├── sugaring1024px-Cfuh5Kez.png
+│   │   ├── tattoo-VEIzVYcl.png
+│   │   ├── tattoo1024px-D8vaKPe4.png
+│   │   ├── wrapping-4pmcMv3q.png
+│   │   └── wrapping1024px-C-82hHcy.png
+│   ├── inj-CIdxmvz8.webp
+│   ├── inje-Bu77rFhb.webp
+│   ├── inje1024px-BnMR8ENA.webp
+│   ├── js/
+│   │   ├── carousel-DFon6iEa.js
+│   │   ├── main-BfHOnQJ2.js
+│   │   ├── map-CCNRiTfP.js
+│   │   ├── router-aBqtabEB.js
+│   │   ├── sideMenu-gB-SHISs.js
+│   │   └── vendor-lazysizes-CdbcVqBp.js
+│   ├── laser-D-yyuNl8.webp
+│   ├── laser1-DNGwcPNB.webp
+│   ├── laser1024px-Cqocws0O.webp
+│   ├── laser2-0_ZIYqZb.webp
+│   ├── laser3-BauLFPEm.webp
+│   ├── laser4-CKs035C8.webp
+│   ├── lashe-CCElwdwU.webp
+│   ├── lashe1024px-BtY_v85k.webp
+│   ├── lasheCard-9MsGjd_j.webp
+│   ├── logo-CfhTafj5.webp
+│   ├── ma-pi-DGHupAUS.webp
+│   ├── ma-pi1024px-CX_gxI6v.webp
+│   ├── main-CGI1Ycsx.css
+│   ├── mak-CSn5IR4O.webp
+│   ├── mak1-B-EhteoN.webp
+│   ├── mak2-BoyHEFpj.webp
+│   ├── mak3-B-ZnuWTB.webp
+│   ├── makeup-R8HNRog2.webp
+│   ├── makeup1024px-C1GgsWqP.webp
+│   ├── makeupCard-CNBFwV5q.webp
+│   ├── man-OIxxgztK.webp
+│   ├── man1-BfGAUgf-.webp
+│   ├── man2-DRKJe3d1.webp
+│   ├── man3-UyZpeNC5.webp
+│   ├── manicure-B3k_FKuL.webp
+│   ├── manicure1024px-DR3EreXw.webp
+│   ├── manicureman-DVQRrCzS.webp
+│   ├── manicureman1024px-C72f2swa.webp
+│   ├── manicurePedicureCard-CSg12pXe.webp
+│   ├── mas-FTztm7ek.webp
+│   ├── mask-DENl9Q-D.webp
+│   ├── mask-WMx1vsuz.webp
+│   ├── mask1024px-BTZkP0vw.webp
+│   ├── mass-B7-Hg7NR.webp
+│   ├── massage-BZoqhnSo.webp
+│   ├── massage1024px-DdDvxVa4.webp
+│   ├── menCard-D1uMu_-3.webp
+│   ├── nails-BmOtqWRt.webp
+│   ├── nails-CvH0hnZO.webp
+│   ├── nails1-DnOaOzAb.webp
+│   ├── nails2-DIDEyTYl.webp
+│   ├── nails3-2g9Umx55.webp
+│   ├── nails4-Da0z2tDV.webp
+│   ├── origCard-v6efiCUP.webp
+│   ├── ped-DSQu9cw_.webp
+│   ├── ped1024px-CPx5BjZT.webp
+│   ├── place-DDK9ZJU7.webp
+│   ├── serviceman-DUfVzbB4.webp
+│   ├── serviceman1024px-BNDimL9N.webp
+│   ├── spaCard-BbZPVPAU.webp
+│   ├── spa_massage-BUE-nd1v.webp
+│   ├── spa_massage1024px-BNlgdC0H.webp
+│   ├── styling-GRvms5R_.webp
+│   ├── styling1024px-9nTeENmH.webp
+│   ├── sugaring-Elt73pYd.webp
+│   ├── sugaring1024px-I1az37GX.webp
+│   ├── tattoo-Degwe2cw.webp
+│   ├── tattoo1024px-CqvFImgG.webp
+│   ├── wrapping-DkkwJTtC.webp
+│   └── wrapping1024px--qKvPGSM.webp
+├── components/
+│   └── partials/
+│       ├── footer.html
+│       ├── header.html
+│       └── side-menu.html
+├── favicon-96x96.png
+├── favicon.ico
+├── favicon.svg
+├── fragments/
+│   ├── about.html
+│   ├── aquanika-massage.html
+│   ├── brows-and-lashes.html
+│   ├── brows-architecture.html
+│   ├── brows-extensions.html
+│   ├── contacts.html
+│   ├── cosmetology.html
+│   ├── epilation.html
+│   ├── face-care.html
+│   ├── gallery.html
+│   ├── hair-care.html
+│   ├── hair-coloring.html
+│   ├── hair-styling.html
+│   ├── haircuts.html
+│   ├── hairdressing.html
+│   ├── home.html
+│   ├── injections.html
+│   ├── laser-epilation.html
+│   ├── makeup.html
+│   ├── manicure-pedicure.html
+│   ├── manicure.html
+│   ├── massage.html
+│   ├── men-epilation.html
+│   ├── men-haircut.html
+│   ├── men-manicure.html
+│   ├── men-services.html
+│   ├── nails-extensions.html
+│   ├── pedicure.html
+│   ├── price.html
+│   ├── privacy.html
+│   ├── reviews.html
+│   ├── spa-and-massage.html
+│   ├── sugaring.html
+│   ├── tattoo-removal.html
+│   ├── team.html
+│   ├── vacancies.html
+│   └── wrapping.html
+├── index.html
+├── robots.txt
+├── sitemap.xml
+├── web-app-manifest-192x192.png
+├── web-app-manifest-512x512.png
+└── webmanifest.json

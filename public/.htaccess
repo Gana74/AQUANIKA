@@ -4,7 +4,24 @@ RewriteEngine On
 RewriteCond %{HTTP_HOST} ^www\.aquanika74\.ru$ [NC]
 RewriteRule ^(.*)$ https://aquanika74.ru/$1 [R=301,L]
 
-# 📁 Если запрашиваемый путь — физический файл/папка (кроме /pages/), отдать как есть
+# 🚫 Блокируем прямой доступ к фрагментам через браузер (но разрешаем fetch/AJAX)
+# ВАЖНО: Это правило должно быть ПЕРЕД проверкой существования файла!
+# Фрагменты должны загружаться только через JavaScript fetch(), не напрямую в браузере
+# Проверяем: если это запрос к /fragments/ И нет заголовка X-Requested-With → блокируем
+# Исключение: разрешаем Яндексботу доступ к фрагментам для корректной индексации SPA
+RewriteCond %{REQUEST_URI} ^/fragments/ [NC]
+RewriteCond %{HTTP_USER_AGENT} !(YandexBot|YandexImages) [NC]
+RewriteCond %{HTTP:X-Requested-With} ^$ [OR]
+RewriteCond %{HTTP:X-Requested-With} !XMLHttpRequest
+# Если это прямой переход в браузере (не fetch) → запрещаем доступ (403 Forbidden)
+RewriteRule ^fragments/.*$ - [F,L]
+
+# 🚫 Блокируем прямые запросы к старым /pages/* (если они остались)
+RewriteCond %{REQUEST_URI} ^/pages/ [NC]
+RewriteRule ^pages/(.*)$ /404.html [R=404,L]
+
+# 📁 Если запрашиваемый путь — физический файл/папка, отдать как есть
+# Это включает статику (assets, components, etc.), но НЕ /fragments/* (уже заблокированы выше)
 RewriteCond %{REQUEST_FILENAME} -f [OR]
 RewriteCond %{REQUEST_FILENAME} -d
 RewriteRule ^ - [L]
@@ -14,7 +31,8 @@ RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_URI} \.(css|js|png|jpg|jpeg|gif|ico|pdf|txt|svg|woff|woff2|ttf|eot|webp|mp4|xml|json)$ [NC]
 RewriteRule ^ - [R=404,L]
 
-# 🏠 SPA fallback: все остальные запросы → index.html (роутер сам подгрузит /pages/X.html)
+# 🏠 SPA fallback: все остальные запросы → index.html (роутер сам подгрузит /fragments/X.html)
+# Все остальные пути (не файлы, не папки) → index.html для SPA роутинга
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteRule ^(.*)$ /index.html [L]

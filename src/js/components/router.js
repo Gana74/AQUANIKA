@@ -15,52 +15,52 @@ export const isLocal = window.location.hostname === "localhost";
 
 // Маршруты
 export const routes = {
-  "/": "/pages/home.html",
-  "/about": "/pages/about.html",
-  "/team": "/pages/team.html",
-  "/reviews": "/pages/reviews.html",
-  "/vacancies": "/pages/vacancies.html",
-  "/gallery": "/pages/gallery.html",
-  "/price": "/pages/price.html",
-  "/contacts": "/pages/contacts.html",
-  "/privacy": "/pages/privacy.html",
+  "/": "/fragments/home.html",
+  "/about": "/fragments/about.html",
+  "/team": "/fragments/team.html",
+  "/reviews": "/fragments/reviews.html",
+  "/vacancies": "/fragments/vacancies.html",
+  "/gallery": "/fragments/gallery.html",
+  "/price": "/fragments/price.html",
+  "/contacts": "/fragments/contacts.html",
+  "/privacy": "/fragments/privacy.html",
   "/404": "/404.html", // Добавлен маршрут для 404 страницы
 
-  "/services/spa": "/pages/spa-and-massage.html",
-  "/services/aquanika": "/pages/aquanika-massage.html",
-  "/services/massage": "/pages/massage.html",
-  "/services/wrapping": "/pages/wrapping.html",
+  "/services/spa": "/fragments/spa-and-massage.html",
+  "/services/aquanika": "/fragments/aquanika-massage.html",
+  "/services/massage": "/fragments/massage.html",
+  "/services/wrapping": "/fragments/wrapping.html",
 
-  "/services/epilation": "/pages/epilation.html",
-  "/services/epilation/laser": "/pages/laser-epilation.html",
-  "/services/epilation/sugaring": "/pages/sugaring.html",
+  "/services/epilation": "/fragments/epilation.html",
+  "/services/epilation/laser": "/fragments/laser-epilation.html",
+  "/services/epilation/sugaring": "/fragments/sugaring.html",
 
-  "/services/brows": "/pages/brows-and-lashes.html",
-  "/services/brows/architecture": "/pages/brows-architecture.html",
-  "/services/brows/extensions": "/pages/brows-extensions.html",
+  "/services/brows": "/fragments/brows-and-lashes.html",
+  "/services/brows/architecture": "/fragments/brows-architecture.html",
+  "/services/brows/extensions": "/fragments/brows-extensions.html",
 
-  "/services/nails": "/pages/manicure-pedicure.html",
-  "/services/nails/manicure": "/pages/manicure.html",
-  "/services/nails/pedicure": "/pages/pedicure.html",
-  "/services/nails/extensions": "/pages/nails-extensions.html",
+  "/services/nails": "/fragments/manicure-pedicure.html",
+  "/services/nails/manicure": "/fragments/manicure.html",
+  "/services/nails/pedicure": "/fragments/pedicure.html",
+  "/services/nails/extensions": "/fragments/nails-extensions.html",
 
-  "/services/cosmetology": "/pages/cosmetology.html",
-  "/services/cosmetology/face-care": "/pages/face-care.html",
-  "/services/cosmetology/injections": "/pages/injections.html",
-  "/services/cosmetology/tattoo-removal": "/pages/tattoo-removal.html",
+  "/services/cosmetology": "/fragments/cosmetology.html",
+  "/services/cosmetology/face-care": "/fragments/face-care.html",
+  "/services/cosmetology/injections": "/fragments/injections.html",
+  "/services/cosmetology/tattoo-removal": "/fragments/tattoo-removal.html",
 
-  "/services/hairdressing": "/pages/hairdressing.html",
-  "/services/hairdressing/haircuts": "/pages/haircuts.html",
-  "/services/hairdressing/coloring": "/pages/hair-coloring.html",
-  "/services/hairdressing/styling": "/pages/hair-styling.html",
-  "/services/hairdressing/hair-care": "/pages/hair-care.html",
+  "/services/hairdressing": "/fragments/hairdressing.html",
+  "/services/hairdressing/haircuts": "/fragments/haircuts.html",
+  "/services/hairdressing/coloring": "/fragments/hair-coloring.html",
+  "/services/hairdressing/styling": "/fragments/hair-styling.html",
+  "/services/hairdressing/hair-care": "/fragments/hair-care.html",
 
-  "/services/makeup": "/pages/makeup.html",
+  "/services/makeup": "/fragments/makeup.html",
 
-  "/services/men": "/pages/men-services.html",
-  "/services/men/haircut": "/pages/men-haircut.html",
-  "/services/men/epilation": "/pages/men-epilation.html",
-  "/services/men/manicure": "/pages/men-manicure.html",
+  "/services/men": "/fragments/men-services.html",
+  "/services/men/haircut": "/fragments/men-haircut.html",
+  "/services/men/epilation": "/fragments/men-epilation.html",
+  "/services/men/manicure": "/fragments/men-manicure.html",
 };
 
 // Страницы с боковым меню
@@ -175,16 +175,24 @@ async function loadComponent(path) {
     url = `${basePath}${path}`;
   }
 
-  const res = await fetch(url);
+  // Добавляем заголовок для отличия fetch запросов от прямых переходов в браузере
+  const res = await fetch(url, {
+    headers: {
+      "X-Requested-With": "XMLHttpRequest",
+    },
+  });
   if (!res.ok) throw new Error(`HTTP ${res.status} – ${url}`);
   return res.text();
 }
 
-// Безопасное извлечение контента страницы
+// Безопасное извлечение контента страницы и мета-тегов
 function extractPageContentSafely(html) {
   try {
     const parser = new DOMParser();
     const doc = parser.parseFromString(html, "text/html");
+
+    // Извлекаем мета-теги из head фрагмента и обновляем основной документ
+    updateMetaTagsFromFragment(doc);
 
     // Полностью безопасное извлечение - только текстовые узлы и разрешенные элементы
     const mainEl = doc.querySelector("main");
@@ -197,6 +205,61 @@ function extractPageContentSafely(html) {
     console.warn("Safe HTML parse failed, using fallback", e);
     return [document.createTextNode("Контент временно недоступен")];
   }
+}
+
+// Обновление мета-тегов из фрагмента в основной документ
+function updateMetaTagsFromFragment(fragmentDoc) {
+  const head = fragmentDoc.querySelector("head");
+  if (!head) return;
+
+  // Обновляем title
+  const fragmentTitle = head.querySelector("title");
+  if (fragmentTitle) {
+    document.title = fragmentTitle.textContent;
+  }
+
+  // Обновляем meta description
+  const fragmentDesc = head.querySelector('meta[name="description"]');
+  if (fragmentDesc) {
+    let descMeta = document.querySelector('meta[name="description"]');
+    if (!descMeta) {
+      descMeta = document.createElement("meta");
+      descMeta.setAttribute("name", "description");
+      document.head.appendChild(descMeta);
+    }
+    descMeta.setAttribute(
+      "content",
+      fragmentDesc.getAttribute("content") || ""
+    );
+  }
+
+  // Обновляем canonical
+  const fragmentCanonical = head.querySelector('link[rel="canonical"]');
+  if (fragmentCanonical) {
+    let canonical = document.querySelector('link[rel="canonical"]');
+    if (!canonical) {
+      canonical = document.createElement("link");
+      canonical.setAttribute("rel", "canonical");
+      document.head.appendChild(canonical);
+    }
+    canonical.setAttribute(
+      "href",
+      fragmentCanonical.getAttribute("href") || ""
+    );
+  }
+
+  // Обновляем Open Graph теги
+  const ogTags = head.querySelectorAll('meta[property^="og:"]');
+  ogTags.forEach((ogTag) => {
+    const property = ogTag.getAttribute("property");
+    let existing = document.querySelector(`meta[property="${property}"]`);
+    if (!existing) {
+      existing = document.createElement("meta");
+      existing.setAttribute("property", property);
+      document.head.appendChild(existing);
+    }
+    existing.setAttribute("content", ogTag.getAttribute("content") || "");
+  });
 }
 
 // Усиление безопасности внешних ссылок
@@ -248,6 +311,7 @@ export async function loadPage(route) {
   const htmlPath = routes[route] || routes["/"];
   const showSideMenu = pagesWithSideMenu.includes(route);
 
+  // Устанавливаем title по умолчанию (может быть перезаписан из фрагмента)
   document.title = pageTitles[route] || "Aquanika";
 
   try {

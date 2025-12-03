@@ -17,25 +17,7 @@
 
     <meta name="yandex-verification" content="e0756192125e9994" />
 
-    <!-- ========== SECURITY HEADERS ========== -->
-    <!-- CSP - Content Security Policy -->
-    <meta
-      http-equiv="Content-Security-Policy"
-      content="default-src 'self' https://mc.yandex.ru https://top-fwz1.mail.ru;
-      script-src 'self' 'unsafe-inline' https://mc.yandex.ru https://mc.yandex.com https://api-maps.yandex.ru https://yastatic.net https://core-renderer-tiles.maps.yandex.net;
-      style-src 'self' 'unsafe-inline' data: https://yastatic.net;
-      img-src 'self' data: blob: https: http: https://mc.yandex.ru https://mc.yandex.com;
-      font-src 'self' data: https://yastatic.net;
-      connect-src 'self' https://formspree.io https://api-maps.yandex.ru https://mc.yandex.ru https://mc.yandex.com wss://mc.yandex.ru wss://mc.yandex.com ws://localhost:3000;
-       frame-src 'self' https://n265102.yclients.com https://yandex.ru https://mc.yandex.ru;
-       media-src 'self' blob:;
-       child-src 'none';
-       object-src 'none';
-       base-uri 'self';
-       form-action 'self' https://formspree.io;"
-    />
-
-    <!-- Other Security Headers -->
+    <!-- ========== SECURITY HEADERS (set via HTTP headers in production) ========== -->
     <meta name="referrer" content="strict-origin-when-cross-origin" />
     <meta http-equiv="X-Content-Type-Options" content="nosniff" />
     <meta http-equiv="X-XSS-Protection" content="1; mode=block" />

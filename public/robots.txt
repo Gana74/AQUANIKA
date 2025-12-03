@@ -1,9 +1,6 @@
 User-agent: *
 Allow: /
 
-# 🔒 Запрет индексации старых страниц и дублей
-Disallow: /pages/
-Disallow: /*.html$
-
 # Карта сайта
 Sitemap: https://aquanika74.ru/sitemap.xml
+

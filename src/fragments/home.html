@@ -1,0 +1,984 @@
+<!-- Основное содержимое главной страницы -->
+<!DOCTYPE html>
+<html lang="ру">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- SEO-метатеги -->
+    <title>
+      AQUANIKA — салон красоты в Челябинске | Косметология, SPA, маникюр
+    </title>
+
+    <link rel="canonical" href="https://aquanika74.ru/" />
+
+    <!-- ✅ В home.html -->
+    <!-- Preconnect внешних ресурсов (если нужно) -->
+    <link rel="preconnect" href="https://mc.yandex.ru" crossorigin />
+
+    <!-- Preload шрифтов, используемых в hero/services -->
+    <link
+      rel="preload"
+      href="/assets/fonts/Montserrat-Regular.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+    <link
+      rel="preload"
+      href="/assets/fonts/Montserrat-Bold.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+
+    <!-- Preload LCP-изображения (hero) -->
+    <link
+      rel="preload"
+      href="/assets/images/carusel/aq.webp"
+      as="image"
+      type="image/webp"
+    />
+    <link
+      rel="preload"
+      href="/assets/images/carusel/aq.png"
+      as="image"
+      type="image/png"
+    />
+
+    <!-- Preload критического CSS (на всякий случай) -->
+    <link rel="preload" href="/styles/main.css" as="style" />
+
+    <link rel="canonical" href="https://aquanika74.ru/" />
+    <meta
+      name="description"
+      content="Салон красоты AQUANIKA в Челябинске: косметология, SPA-процедуры, маникюр, педикюр, парикмахерские услуги, лазерная эпиляция. Онлайн-запись 24/7."
+    />
+    <meta
+      name="keywords"
+      content="салон красоты Челябинск, косметология Челябинск, маникюр Челябинск, SPA салон Челябинск, парикмахерская Челябинск, лазерная эпиляция Челябинск, ногтевой сервис, подводно-вакуумный массаж Акваника"
+    />
+
+    <!-- Автор и копирайт -->
+    <meta name="author" content="Салон красоты AQUANIKA Челябинск" />
+    <meta name="copyright" content="AQUANIKA" />
+
+    <!-- Гео-метатеги -->
+    <meta name="geo.region" content="RU-CHE" />
+    <meta name="geo.placename" content="Челябинск" />
+    <meta name="geo.position" content="55.164442;61.436843" />
+    <meta name="ICBM" content="55.164442, 61.436843" />
+
+    <!-- Open Graph -->
+    <meta property="og:locale" content="ru_RU" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="AQUANIKA" />
+    <meta
+      property="og:title"
+      content="AQUANIKA — салон красоты в Челябинске | Косметология, SPA, маникюр"
+    />
+    <meta
+      property="og:description"
+      content="Салон красоты AQUANIKA в Челябинске: косметология, SPA-процедуры, маникюр, педикюр, парикмахерские услуги. Онлайн-запись 24/7."
+    />
+    <meta property="og:url" content="https://aquanika74.ru/" />
+    <meta
+      property="og:image"
+      content="https://aquanika74.ru/assets/images/services/carusel/aq.png"
+    />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta
+      property="og:image:alt"
+      content="Салон красоты AQUANIKA в Челябинске"
+    />
+
+    <!-- Дополнительные ссылки -->
+    <link rel="alternate" hreflang="ru" href="https://aquanika74.ru/" />
+    <link rel="alternate" hreflang="x-default" href="https://aquanika74.ru/" />
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "BeautySalon",
+        "name": "AQUANIKA",
+        "description": "Салон красоты AQUANIKA в Челябинске: косметология, SPA-процедуры, маникюр, педикюр, парикмахерские услуги, лазерная эпиляция",
+        "url": "https://aquanika74.ru/",
+        "telephone": "+79227445287",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "ул. Братьев Кашириных, 131",
+          "addressLocality": "Челябинск",
+          "addressCountry": "RU",
+          "postalCode": "454021"
+        },
+        "openingHours": ["Mo-Su 10:00-21:00"],
+        "priceRange": "₽₽",
+        "areaServed": "Челябинск и область",
+        "aggregateRating": {
+          "@type": "AggregateRating",
+          "ratingValue": "4.9",
+          "bestRating": "5",
+          "worstRating": "1",
+          "ratingCount": "47"
+        },
+        "serviceType": [
+          "Косметология",
+          "Парикмахерские услуги",
+          "Маникюр",
+          "Массаж",
+          "Эпиляция",
+          "SPA-процедуры"
+        ],
+        "hasOfferCatalog": {
+          "@type": "OfferCatalog",
+          "name": "Услуги салона красоты AQUANIKA",
+          "itemListElement": [
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "Косметология",
+                "description": "Профессиональный уход за кожей лица в Челябинске"
+              }
+            },
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "Парикмахерские услуги",
+                "description": "Стрижки, окрашивание и укладки в Челябинске"
+              }
+            },
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "Маникюр и педикюр",
+                "description": "Ногтевой сервис в Челябинске"
+              }
+            },
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "SPA и массаж",
+                "description": "Расслабляющие процедуры в Челябинске"
+              }
+            },
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "Эпиляция",
+                "description": "Лазерная эпиляция и шугаринг в Челябинске"
+              }
+            },
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "Брови и ресницы",
+                "description": "Архитектура бровей и наращивание ресниц в Челябинске"
+              }
+            }
+          ]
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <main>
+      <section class="hero">
+        <div class="container promo__container">
+          <div class="promo-carousel" id="homePromotions">
+            <div class="promo-carousel__container">
+              <div class="promo-carousel__slide">
+                <picture>
+                  <!-- Мобильные устройства (до 768px): мини-версия -->
+                  <source
+                    media="(max-width: 640px)"
+                    srcset="/assets/images/carusel/aqmin.webp"
+                    type="image/webp"
+                  />
+                  <source
+                    media="(max-width: 640px)"
+                    srcset="/assets/images/carusel/aqmin.png"
+                    type="image/png"
+                  />
+
+                  <!-- Планшеты и десктопы (769px+): основная версия -->
+                  <source
+                    srcset="/assets/images/carusel/aq.webp"
+                    type="image/webp"
+                  />
+                  <source
+                    srcset="/assets/images/carusel/aq.png"
+                    type="image/png"
+                  />
+
+                  <!-- Fallback для старых браузеров -->
+                  <img
+                    class="lazyload"
+                    src="/assets/images/carusel/aq.png"
+                    alt="Пробное посещение: подводно-вакуумный массаж"
+                    fetchpriority="high"
+                    loading="lazy"
+                  />
+                </picture>
+                <div class="promo-carousel__content">
+                  <h2 class="promo-carousel__title">
+                    Пробное посещение "Акваника"
+                  </h2>
+                  <p class="promo-carousel__description">
+                    Пробное посещение: подводно-вакуумный массаж - рай для
+                    фигуры! Видимый результат уже после первого посещения!
+                    Потеря в весе составляет 300-900 грамм за один сеанс!
+                  </p>
+                  <div class="promo-carousel__actions">
+                    <a
+                      class="button button--primary"
+                      href="https://n265102.yclients.com/"
+                      target="_blank"
+                      rel="noopener"
+                      >Записаться</a
+                    >
+                  </div>
+                </div>
+              </div>
+
+              <div class="promo-carousel__slide">
+                <picture>
+                  <source
+                    srcset="/assets/images/carusel/dis.webp"
+                    type="image/webp"
+                  />
+                  <img
+                    class="lazyload"
+                    src="/assets/images/carusel/dis.png"
+                    alt="все скидки месяца"
+                    loading="lazy"
+                  />
+                </picture>
+                <div class="promo-carousel__content">
+                  <h2 class="promo-carousel__title">Акции и скидки месяца</h2>
+                  <p class="promo-carousel__description">
+                    Каждый месяц у нас проходят акции, скидки и другие
+                    предложения.
+                  </p>
+                  <div class="promo-carousel__actions">
+                    <a
+                      class="button button--primary"
+                      href="https://n265102.yclients.com/"
+                      target="_blank"
+                      rel="noopener"
+                      >Записаться</a
+                    >
+                    <a class="button button--outline" href="/price"
+                      >Все акции</a
+                    >
+                  </div>
+                </div>
+              </div>
+
+              <div class="promo-carousel__slide">
+                <div class="promo-carousel__content">
+                  <h2 class="promo-carousel__title">Подарочный сертификат</h2>
+                  <p class="promo-carousel__description">
+                    Дарите эмоции, расслабление и преображение! На любую сумму
+                    или услугу!
+                  </p>
+                  <div class="promo-carousel__actions">
+                    <a
+                      class="button button--primary"
+                      href="https://n265102.yclients.com/"
+                      target="_blank"
+                      rel="noopener"
+                      >Заказать сертификат</a
+                    >
+                    
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="promo-carousel__controls"></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="services">
+        <div class="container">
+          <h2 class="section-title">Услуги</h2>
+          <div class="services-grid">
+            <!-- SPA и массаж -->
+            <div class="service-card">
+              <div class="service-card__image">
+                <img
+                  class="card-image lazyload"
+                  src="/assets/images/services/spaCard.webp"
+                  alt="раздел спа и массаж"
+                  loading="lazy"
+                />
+              </div>
+              <div class="service-card__content">
+                <h3 class="service-card__title">SPA и массаж</h3>
+                <p class="service-card__description">
+                  Расслабляющие SPA-процедуры и профессиональный массаж для
+                  вашего комфорта и здоровья
+                </p>
+                <div class="service-card__buttons">
+                  <a
+                    class="button button--primary"
+                    href="https://n265102.yclients.com/"
+                    target="_blank"
+                    rel="noopener"
+                    >Записаться</a
+                  >
+                  <a class="button button--outline" href="/services/spa"
+                    >Подробнее</a
+                  >
+                </div>
+              </div>
+            </div>
+
+            <!--эпиляция -->
+            <div class="service-card">
+              <div class="service-card__image">
+                <img
+                  class="card-image lazyload"
+                  src="/assets/images/services/origCard.webp"
+                  alt="раздел эпиляция"
+                  loading="lazy"
+                />
+              </div>
+              <div class="service-card__content">
+                <h3 class="service-card__title">Эпиляция</h3>
+                <p class="service-card__description">
+                  Безопасное и эффективное удаление нежелательных волос с
+                  использованием современного оборудования
+                </p>
+                <div class="service-card__buttons">
+                  <a
+                    class="button button--primary"
+                    href="https://n265102.yclients.com/"
+                    target="_blank"
+                    rel="noopener"
+                    >Записаться</a
+                  >
+                  <a class="button button--outline" href="/services/epilation"
+                    >Подробнее</a
+                  >
+                </div>
+              </div>
+            </div>
+
+            <!-- Брови и ресницы -->
+            <div class="service-card">
+              <div class="service-card__image">
+                <img
+                  class="card-image lazyload"
+                  src="/assets/images/services/lasheCard.webp"
+                  alt="раздел Брови и ресницы"
+                  loading="lazy"
+                />
+              </div>
+              <div class="service-card__content">
+                <h3 class="service-card__title">Брови и ресницы</h3>
+                <p class="service-card__description">
+                  Профессиональное оформление бровей и наращивание ресниц для
+                  выразительного взгляда
+                </p>
+                <div class="service-card__buttons">
+                  <a
+                    class="button button--primary"
+                    href="https://n265102.yclients.com/"
+                    target="_blank"
+                    rel="noopener"
+                    >Записаться</a
+                  >
+                  <a class="button button--outline" href="/services/brows"
+                    >Подробнее</a
+                  >
+                </div>
+              </div>
+            </div>
+
+            <!-- Маникюр/Педикюр -->
+            <div class="service-card">
+              <div class="service-card__image">
+                <img
+                  class="card-image lazyload"
+                  src="/assets/images/services/manicurePedicureCard.webp"
+                  alt="раздел Маникюр и Педикюр"
+                  loading="lazy"
+                />
+              </div>
+              <div class="service-card__content">
+                <h3 class="service-card__title">Маникюр/Педикюр</h3>
+                <p class="service-card__description">
+                  Качественный уход за ногтями рук и ног, современный дизайн и
+                  стерильность инструментов
+                </p>
+                <div class="service-card__buttons">
+                  <a
+                    class="button button--primary"
+                    href="https://n265102.yclients.com/"
+                    target="_blank"
+                    rel="noopener"
+                    >Записаться</a
+                  >
+                  <a class="button button--outline" href="/services/nails"
+                    >Подробнее</a
+                  >
+                </div>
+              </div>
+            </div>
+
+            <!-- Косметология -->
+            <div class="service-card">
+              <div class="service-card__image">
+                <img
+                  class="card-image lazyload"
+                  src="/assets/images/services/cosmetCard.webp"
+                  alt="раздел Косметология"
+                  loading="lazy"
+                />
+              </div>
+              <div class="service-card__content">
+                <h3 class="service-card__title">Косметология</h3>
+                <p class="service-card__description">
+                  Профессиональный уход за кожей лица и тела, омолаживающие
+                  процедуры и лечение проблемной кожи
+                </p>
+                <div class="service-card__buttons">
+                  <a
+                    class="button button--primary"
+                    href="https://n265102.yclients.com/"
+                    target="_blank"
+                    rel="noopener"
+                    >Записаться</a
+                  >
+                  <a class="button button--outline" href="/services/cosmetology"
+                    >Подробнее</a
+                  >
+                </div>
+              </div>
+            </div>
+
+            <!-- Парикмахерские услуги -->
+            <div class="service-card">
+              <div class="service-card__image">
+                <img
+                  class="card-image lazyload"
+                  src="/assets/images/services/hairCard.webp"
+                  alt="раздел Парикмахерские услуги"
+                  loading="lazy"
+                />
+              </div>
+              <div class="service-card__content">
+                <h3 class="service-card__title">Парикмахерские услуги</h3>
+                <p class="service-card__description">
+                  Стрижки, окрашивание и укладки любой сложности от опытных
+                  мастеров
+                </p>
+                <div class="service-card__buttons">
+                  <a
+                    class="button button--primary"
+                    href="https://n265102.yclients.com/"
+                    target="_blank"
+                    rel="noopener"
+                    >Записаться</a
+                  >
+                  <a
+                    class="button button--outline"
+                    href="/services/hairdressing"
+                    >Подробнее</a
+                  >
+                </div>
+              </div>
+            </div>
+
+            <!-- Макияж -->
+            <div class="service-card">
+              <div class="service-card__image">
+                <img
+                  class="card-image lazyload"
+                  src="/assets/images/services/makeupCard.webp"
+                  alt="раздел Макияж"
+                  loading="lazy"
+                />
+              </div>
+              <div class="service-card__content">
+                <h3 class="service-card__title">Макияж</h3>
+                <p class="service-card__description">
+                  Профессиональный макияж для любого случая: дневной, вечерний,
+                  свадебный
+                </p>
+                <div class="service-card__buttons">
+                  <a
+                    class="button button--primary"
+                    href="https://n265102.yclients.com/"
+                    target="_blank"
+                    rel="noopener"
+                    >Записаться</a
+                  >
+                  <a class="button button--outline" href="/services/makeup"
+                    >Подробнее</a
+                  >
+                </div>
+              </div>
+            </div>
+
+            <!--для мужчин -->
+            <div class="service-card">
+              <div class="service-card__image">
+                <img
+                  class="card-image lazyload"
+                  src="/assets/images/services/menCard.webp"
+                  alt="раздел Для Мужчин"
+                  loading="lazy"
+                />
+              </div>
+              <div class="service-card__content">
+                <h3 class="service-card__title">Для Мужчин</h3>
+                <p class="service-card__description">
+                  Профессиональный уход за телом, стрижки и укладки, а также
+                  услуги по маникюру и педикюру
+                </p>
+                <div class="service-card__buttons">
+                  <a
+                    class="button button--primary"
+                    href="https://n265102.yclients.com/"
+                    target="_blank"
+                    rel="noopener"
+                    >Записаться</a
+                  >
+                  <a class="button button--outline" href="/services/men"
+                    >Подробнее</a
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="about">
+        <div class="container">
+          <h2 class="section-title">О нас</h2>
+          <div class="container">
+            <div class="about__content">
+              <div class="about__text">
+                <h1 class="about__title">Салон красоты «Акваника»</h1>
+                <p class="about__philosophy-text">
+                  «Мы не стремимся стать крупнейшими — мы хотим стать лучшими
+                  для тех, кто ценит персональный подход и безупречный
+                  результат»
+                </p>
+                <div class="about__buttons">
+                  <button
+                    class="button button--primary"
+                    data-open-modal="question"
+                  >
+                    Задать вопрос
+                  </button>
+                  <button class="button button--outline">
+                    <a href="/about">Подробнее</a>
+                  </button>
+                </div>
+              </div>
+              <div class="about__video" id="videoBlock">
+                <img
+                  class="lazyload about__video-logo"
+                  src="/assets/images/services/logo.webp"
+                  alt="Салон красоты Aqvanika - профессиональные услуги"
+                  loading="lazy"
+                  decoding="async"
+                />
+                <div class="video-content">
+                  <button class="play-button" id="playButton">
+                    <i class="fas fa-play"></i> Смотреть видео
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Модальное окно видео -->
+      <div id="videoModal" class="modal">
+        <div class="modal-content">
+          <span class="close" id="closeModal">&times;</span>
+          <div class="video-container">
+            <video id="aboutVideo" controls preload="none">
+              Ваш браузер не поддерживает видео тег
+            </video>
+          </div>
+        </div>
+      </div>
+
+      <section class="foto">
+        <div class="container">
+          <h2 class="section-title">Галерея</h2>
+          <div class="promo-carousel promo-carousel--compact" id="homeGallery">
+            <div class="promo-carousel__container">
+              <!-- Каждый слайд = одна картинка -->
+              <div class="promo-carousel__slide">
+                <img
+                  class="lazyload"
+                  src="/assets/images/man/man2.webp"
+                  alt="Мужская стрижка – работа мастера"
+                  loading="lazy"
+                  decoding="async"
+                />
+              </div>
+              <div class="promo-carousel__slide">
+                <img
+                  class="lazyload"
+                  src="/assets/images/spa/mass.webp"
+                  alt="массаж с камнями"
+                  loading="lazy"
+                  decoding="async"
+                />
+              </div>
+              <div class="promo-carousel__slide">
+                <img
+                  class="lazyload"
+                  src="/assets/images/br-la/br4.webp"
+                  alt="архитектура бровей – работа мастера"
+                  loading="lazy"
+                  decoding="async"
+                />
+              </div>
+              <div class="promo-carousel__slide">
+                <img
+                  class="lazyload"
+                  src="/assets/images/cut/cut4.webp"
+                  alt="Детская стрижка девочек – работа мастера"
+                  loading="lazy"
+                  decoding="async"
+                />
+              </div>
+              <div class="promo-carousel__slide">
+                <img
+                  class="lazyload"
+                  src="/assets/images/cut/cut3.webp"
+                  alt="укладка женских волос – работа мастера"
+                  loading="lazy"
+                  decoding="async"
+                />
+              </div>
+              <div class="promo-carousel__slide">
+                <img
+                  class="lazyload"
+                  src="/assets/images/makeup/mak.webp"
+                  alt="дневной образ – работа мастера"
+                  loading="lazy"
+                  decoding="async"
+                />
+              </div>
+              <div class="promo-carousel__slide">
+                <img
+                  class="lazyload"
+                  src="/assets/images/makeup/mak2.webp"
+                  alt="вечерний образ – работа мастера"
+                  loading="lazy"
+                  decoding="async"
+                />
+              </div>
+              <div class="promo-carousel__slide">
+                <img
+                  class="lazyload"
+                  src="/assets/images/cosmet/inj.webp"
+                  alt="инъекция – работа мастера"
+                  loading="lazy"
+                  decoding="async"
+                />
+              </div>
+            </div>
+            <div class="promo-carousel__controls"></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="reviews">
+        <div class="container">
+          <h2 class="section-title">Отзывы</h2>
+
+          <div class="promo-carousel promo-carousel--reviews" id="homeReviews">
+            <div class="promo-carousel__container">
+              <div class="promo-carousel__slide">
+                <div class="reviews-carousel__grid">
+                  <article class="review-card">
+                    <a
+                      class="review-card__link"
+                      href="/reviews"
+                      aria-label="Перейти ко всем отзывам"
+                    ></a>
+                    <div class="review-card__meta">
+                      <div class="review-card__avatar" aria-hidden="true">
+                        ЕИ
+                      </div>
+                      <div class="review-card__author">
+                        <strong>Елизавета Исакова</strong>
+                      </div>
+                    </div>
+                    <div class="review-card__rating" aria-label="Оценка 5 из 5">
+                      <span>★</span><span>★</span><span>★</span><span>★</span
+                      ><span>★</span>
+                    </div>
+                    <blockquote class="review-card__text">
+                      Всегда с удовольствием хожу в салон на маникюр. и
+                      администратор и мастера компетентные, приятные девушки.
+                      Сегодня делали снятие маникюра и даже за эту дешевую
+                      процедуру сделали подарочек, очень приятно! Спасибо🥰
+                      Рекомендую!
+                    </blockquote>
+                  </article>
+
+                  <article class="review-card">
+                    <a
+                      class="review-card__link"
+                      href="/reviews"
+                      aria-label="Перейти ко всем отзывам"
+                    ></a>
+                    <div class="review-card__meta">
+                      <div class="review-card__avatar" aria-hidden="true">
+                        АВ
+                      </div>
+                      <div class="review-card__author">
+                        <strong>Александра Вице</strong>
+                      </div>
+                    </div>
+                    <div class="review-card__rating" aria-label="Оценка 5 из 5">
+                      <span>★</span><span>★</span><span>★</span><span>★</span
+                      ><span>★</span>
+                    </div>
+                    <blockquote class="review-card__text">
+                      Недавно посетила салон красоты «Aquanika» и осталась очень
+                      довольна качеством обслуживания и профессионализмом
+                      мастеров. С самого начала меня встретили дружелюбные
+                      администраторы, которые помогли выбрать подходящие
+                      процедуры и сориентировали по ценам. Мастера оказались
+                      настоящими профессионалами своего дела. Результат
+                      превзошёл все мои ожидания, и я получила массу
+                      комплиментов от окружающих. Также хочу отметить уютную
+                      атмосферу салона, приятную музыку и интерьер, который
+                      создаёт ощущение комфорта и расслабления. В целом, я
+                      осталась очень довольна посещением салона красоты
+                      «Aquanika» и рекомендую его всем.
+                    </blockquote>
+                  </article>
+                </div>
+              </div>
+
+              <div class="promo-carousel__slide">
+                <div class="reviews-carousel__grid">
+                  <article class="review-card">
+                    <a
+                      class="review-card__link"
+                      href="/reviews"
+                      aria-label="Перейти ко всем отзывам"
+                    ></a>
+                    <div class="review-card__meta">
+                      <div class="review-card__avatar" aria-hidden="true">
+                        ИГ
+                      </div>
+                      <div class="review-card__author">
+                        <strong>Ирина Григорьева</strong>
+                      </div>
+                    </div>
+                    <div class="review-card__rating" aria-label="Оценка 5 из 5">
+                      <span>★</span><span>★</span><span>★</span><span>★</span
+                      ><span>★</span>
+                    </div>
+                    <blockquote class="review-card__text">
+                      Хочу выразить благодарность салону за отличную работу!
+                      Особенно понравилась процедура вакуумного массажа, мастер
+                      Алина — настоящий профессионал. У меня остались только
+                      приятные впечатления. Буду рекомендовать салон друзьям и
+                      планирую приобрести абонемент. Спасибо за качественную
+                      услугу!
+                    </blockquote>
+                  </article>
+
+                  <article class="review-card">
+                    <a
+                      class="review-card__link"
+                      href="/reviews"
+                      aria-label="Перейти ко всем отзывам"
+                    ></a>
+                    <div class="review-card__meta">
+                      <div class="review-card__avatar" aria-hidden="true">
+                        НГ
+                      </div>
+                      <div class="review-card__author">
+                        <strong>Наталья Глухова</strong>
+                      </div>
+                    </div>
+                    <div class="review-card__rating" aria-label="Оценка 5 из 5">
+                      <span>★</span><span>★</span><span>★</span><span>★</span
+                      ><span>★</span>
+                    </div>
+                    <blockquote class="review-card__text">
+                      Сегодня была впервые в этом салоне. Меня встретили
+                      вежливые администраторы! Предложили чай, кофе. А когда
+                      отказалась, предложили воду — я взяла. Бутылочка воды —
+                      бесплатно! Четко по времени пригласили в кабинет. Юля —
+                      косметолог, не могу передать словами, какая классная!
+                      Мастер своего дела, любящая свою работу, внимательная,
+                      добрая, очень отзывчивая! Обновила моё лицо с первой
+                      процедуры! Буду ходить к ней всегда! Сима сразу завоевала
+                      мои симпатии — буду ходить на массажи! Домашняя, уютная
+                      атмосфера — то, что нужно загнанному работой человеку. Я
+                      отдохнула! Рекомендую всем этот салон! Я точно буду
+                      постоянной клиенткой! Цены не кусаются! Спасибо, спасибо!
+                      А ещё и подарки подарили!
+                    </blockquote>
+                  </article>
+                </div>
+              </div>
+
+              <div class="promo-carousel__slide">
+                <div class="reviews-carousel__grid">
+                  <article class="review-card">
+                    <a
+                      class="review-card__link"
+                      href="/reviews"
+                      aria-label="Перейти ко всем отзывам"
+                    ></a>
+                    <div class="review-card__meta">
+                      <div class="review-card__avatar" aria-hidden="true">
+                        ЕК
+                      </div>
+                      <div class="review-card__author">
+                        <strong>Евгения Кропотова</strong>
+                      </div>
+                    </div>
+                    <div class="review-card__rating" aria-label="Оценка 5 из 5">
+                      <span>★</span><span>★</span><span>★</span><span>★</span
+                      ><span>★</span>
+                    </div>
+                    <blockquote class="review-card__text">
+                      Была сегодня на процедурах у косметолога Юлии Лумповой —
+                      очень профессиональный специалист. Подобрала мне линейку
+                      процедур, объясняет и обосновывает, что нужно колоть, а
+                      что не нужно. Очень бережный подход, всё комфортно, всё
+                      устраивает. Причём очень красивая и ухоженная девушка — ей
+                      хочется доверять. Приду не раз. Рекомендую 💖
+                    </blockquote>
+                  </article>
+
+                  <article class="review-card">
+                    <a
+                      class="review-card__link"
+                      href="/reviews"
+                      aria-label="Перейти ко всем отзывам"
+                    ></a>
+                    <div class="review-card__meta">
+                      <div class="review-card__avatar" aria-hidden="true">
+                        ОК
+                      </div>
+                      <div class="review-card__author">
+                        <strong>Ольга Курочкина</strong>
+                      </div>
+                    </div>
+                    <div class="review-card__rating" aria-label="Оценка 5 из 5">
+                      <span>★</span><span>★</span><span>★</span><span>★</span
+                      ><span>★</span>
+                    </div>
+                    <blockquote class="review-card__text">
+                      Сегодня впервые была в данном салоне. Записалась без
+                      проблем на удобное время. При входе встретили вежливые
+                      администраторы. В салоне тихо и уютно. Предложили чай,
+                      кофе. Процедура прошла легко — даже не заметила, как
+                      пролетело время. Результат получился супер. Благодарна
+                      мастеру Ксении. Осталась всем довольна.
+                    </blockquote>
+                  </article>
+                </div>
+              </div>
+
+              <div class="promo-carousel__slide">
+                <div class="reviews-carousel__grid">
+                  <article class="review-card">
+                    <a
+                      class="review-card__link"
+                      href="/reviews"
+                      aria-label="Перейти ко всем отзывам"
+                    ></a>
+                    <div class="review-card__meta">
+                      <div class="review-card__avatar" aria-hidden="true">
+                        ЛА
+                      </div>
+                      <div class="review-card__author">
+                        <strong>Лена Андреева</strong>
+                      </div>
+                    </div>
+                    <div class="review-card__rating" aria-label="Оценка 5 из 5">
+                      <span>★</span><span>★</span><span>★</span><span>★</span
+                      ><span>★</span>
+                    </div>
+                    <blockquote class="review-card__text">
+                      Пишу отзыв сразу после салона, так как осталась неимоверно
+                      довольна! Ходила на маникюр и педикюр — сделали всё
+                      быстро, качественно, как я и хотела. Анастасии Костюковой
+                      приношу своё благодарство — профессионал с большой буквы!
+                      В Aquanika множество услуг, вплоть до коррекции фигуры.
+                      Как новый клиент получила подарки — очень приятно. Можно
+                      купить косметику собственного производства Vita Udin.
+                      Также проходят акции и программы лояльности Ozon.
+                      Рекомендую салон, если хотите максимум комфорта, уюта и
+                      качества!
+                    </blockquote>
+                  </article>
+
+                  <article class="review-card">
+                    <a
+                      class="review-card__link"
+                      href="/reviews"
+                      aria-label="Перейти ко всем отзывам"
+                    ></a>
+                    <div class="review-card__meta">
+                      <div class="review-card__avatar" aria-hidden="true">
+                        КР
+                      </div>
+                      <div class="review-card__author">
+                        <strong>Кира Раевская</strong>
+                      </div>
+                    </div>
+                    <div class="review-card__rating" aria-label="Оценка 5 из 5">
+                      <span>★</span><span>★</span><span>★</span><span>★</span
+                      ><span>★</span>
+                    </div>
+                    <blockquote class="review-card__text">
+                      Очень рада что решила посетить салон aquanika
+                      и&nbsp;не&nbsp;капли не&nbsp;пожалела!! Бровист Кристина
+                      сделала мне брови огонь))) Она прям мастер своего дела,
+                      все четко и&nbsp;аккуратно. А&nbsp;еще у&nbsp;них есть
+                      крутая штука подводно-вакуумный массаж. Я&nbsp;попробовала
+                      и&nbsp;обалдела, За&nbsp;один раз скинула 2&nbsp;кг
+                      и&nbsp;уменьшила талию на&nbsp;2&nbsp;см) Все очень
+                      приветливые и&nbsp;готовы помочь. В&nbsp;общем,
+                      в&nbsp;Aquanika есть все, что нужно для красоты
+                      и&nbsp;здоровья. Я&nbsp;всем рекомендую!
+                    </blockquote>
+                  </article>
+                </div>
+              </div>
+            </div>
+            <div class="promo-carousel__controls"></div>
+          </div>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>
