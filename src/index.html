@@ -16,21 +16,11 @@
     </title>
 
     <meta name="yandex-verification" content="e0756192125e9994" />
-
-    <!-- ========== SECURITY HEADERS (set via HTTP headers in production) ========== -->
-    <meta name="referrer" content="strict-origin-when-cross-origin" />
     <meta http-equiv="X-Content-Type-Options" content="nosniff" />
-    <meta http-equiv="X-XSS-Protection" content="1; mode=block" />
     <meta
       http-equiv="Permissions-Policy"
       content="geolocation=(), microphone=(), camera=()"
     />
-    <meta
-      http-equiv="Strict-Transport-Security"
-      content="max-age=31536000; includeSubDomains; preload"
-    />
-    <meta http-equiv="Cross-Origin-Opener-Policy" content="same-origin" />
-    <!-- ========== END SECURITY HEADERS ========== -->
 
     <!-- Favicon -->
     <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
@@ -502,6 +492,8 @@
     <!-- Фиксированные кнопки -->
     <div class="fixed-buttons">
       <a
+        id="booking-button"
+        data-ym-goal="online-booking"
         href="https://n265102.yclients.com/"
         target="_blank"
         rel="noopener noreferrer"
@@ -528,5 +520,17 @@
 
     <!-- Подключение JavaScript -->
     <script type="module" src="./js/main.js"></script>
+
+    <!-- Yandex.Metrika: скрипт загружается из ./js/main.js (после согласия пользователя).
+         Оставляем только noscript для пользователей с отключённым JS. -->
+    <noscript>
+      <div>
+        <img
+          src="https://mc.yandex.ru/watch/105193701"
+          style="position: absolute; left: -9999px"
+          alt=""
+        />
+      </div>
+    </noscript>
   </body>
 </html>

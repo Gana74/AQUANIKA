@@ -1,6 +1,24 @@
 User-agent: *
 Allow: /
+Disallow: /fragments/
+Disallow: /components/
+
+# Особые правила для поисковиков
+User-agent: Yandex
+Allow: /
+
+
+
+
+Disallow: /fragments/
+Disallow: /components/
+Clean-param: utm_source&utm_medium&utm_campaign&utm_term&utm_content
+
+User-agent: Googlebot
+Allow: /
+Disallow: /fragments/
+Disallow: /components/
 
 # Карта сайта
 Sitemap: https://aquanika74.ru/sitemap.xml
-
+Host: https://aquanika74.ru

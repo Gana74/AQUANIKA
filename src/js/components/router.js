@@ -191,9 +191,6 @@ function extractPageContentSafely(html) {
     const parser = new DOMParser();
     const doc = parser.parseFromString(html, "text/html");
 
-    // Извлекаем мета-теги из head фрагмента и обновляем основной документ
-    updateMetaTagsFromFragment(doc);
-
     // Полностью безопасное извлечение - только текстовые узлы и разрешенные элементы
     const mainEl = doc.querySelector("main");
     if (mainEl) {
@@ -205,61 +202,6 @@ function extractPageContentSafely(html) {
     console.warn("Safe HTML parse failed, using fallback", e);
     return [document.createTextNode("Контент временно недоступен")];
   }
-}
-
-// Обновление мета-тегов из фрагмента в основной документ
-function updateMetaTagsFromFragment(fragmentDoc) {
-  const head = fragmentDoc.querySelector("head");
-  if (!head) return;
-
-  // Обновляем title
-  const fragmentTitle = head.querySelector("title");
-  if (fragmentTitle) {
-    document.title = fragmentTitle.textContent;
-  }
-
-  // Обновляем meta description
-  const fragmentDesc = head.querySelector('meta[name="description"]');
-  if (fragmentDesc) {
-    let descMeta = document.querySelector('meta[name="description"]');
-    if (!descMeta) {
-      descMeta = document.createElement("meta");
-      descMeta.setAttribute("name", "description");
-      document.head.appendChild(descMeta);
-    }
-    descMeta.setAttribute(
-      "content",
-      fragmentDesc.getAttribute("content") || ""
-    );
-  }
-
-  // Обновляем canonical
-  const fragmentCanonical = head.querySelector('link[rel="canonical"]');
-  if (fragmentCanonical) {
-    let canonical = document.querySelector('link[rel="canonical"]');
-    if (!canonical) {
-      canonical = document.createElement("link");
-      canonical.setAttribute("rel", "canonical");
-      document.head.appendChild(canonical);
-    }
-    canonical.setAttribute(
-      "href",
-      fragmentCanonical.getAttribute("href") || ""
-    );
-  }
-
-  // Обновляем Open Graph теги
-  const ogTags = head.querySelectorAll('meta[property^="og:"]');
-  ogTags.forEach((ogTag) => {
-    const property = ogTag.getAttribute("property");
-    let existing = document.querySelector(`meta[property="${property}"]`);
-    if (!existing) {
-      existing = document.createElement("meta");
-      existing.setAttribute("property", property);
-      document.head.appendChild(existing);
-    }
-    existing.setAttribute("content", ogTag.getAttribute("content") || "");
-  });
 }
 
 // Усиление безопасности внешних ссылок

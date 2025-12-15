@@ -1,4 +1,5 @@
 // Импорт компонентов
+import "../styles/main.css";
 import "lazysizes";
 import "./components/toTopButton.js";
 import { initVideoModal } from "./components/modalVideo.js";
